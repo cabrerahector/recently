@@ -1,0 +1,76 @@
+/*
+Recently plugin stylesheet
+Developed by Hector Cabrera
+cabrerahector.com | @cabrerahector
+
+Use the following classes to style your popular posts list as you like.
+*/
+
+/* Styles the "Sorry, no data so far" message */
+.recently-no-data {
+}
+
+/* UL - Popular Posts container styles */
+.recently-list {	
+}
+
+	/* LI - Post container styles */
+	.recently-list li {
+		overflow:hidden;
+		float:none;
+		clear:both;		
+	}
+	
+	.recently-with-thumbs li {
+		list-style:none;
+	}
+	
+		/* Thumbnail styles */
+		.recently-thumbnail-wrapper {
+			display:inline;
+			float:left;
+			margin:0 5px 0 0;
+		}
+		
+			.recently-thumbnail {				
+				border:none;
+			}
+
+		/* Title styles */
+		.recently-post-title {
+		}
+		
+		/* Excerpt styles */
+		.recently-excerpt {
+		}
+		
+		/* Metadata tag styles */
+		.recently-meta {
+			display:block;
+			font-size:0.7em;
+			line-height:1.2em;
+		}
+			
+			/* Comments count styles */
+			.recently-comments {
+			}
+			
+			/* Views count styles */
+			.recently-views {
+			}
+			
+			/* Author styles */
+			.recently-author {
+			}
+			
+			/* Post date styles */
+			.recently-date {
+			}
+			
+			/* Post category styles */
+			.recently-category {
+			}
+		
+		/* WP-PostRatings styles */
+		.recently-rating {
+		}

@@ -1,0 +1,49 @@
+.recently_boxes {
+	display:none;
+	overflow:hidden;
+	width:100%;
+}
+
+.recently_box {
+	overflow:hidden;
+	display:inline;
+	float:right;
+	margin:0 0 15px 0;
+	padding:10px;
+	width:230px;
+	background:#f9f9f9;
+	border: 1px solid #ccc;
+}
+
+#recently_donate { margin-top:15px; }
+
+#recently_support { clear:right; }
+
+.clear {
+	float:none;
+	clear:both;
+	width:100%;
+}
+	
+	/* FAQ */		
+	#recently_faq {
+	}
+		
+		#recently_faq h4 {
+			margin:18px 0 0 0;
+		}
+		
+			#recently_faq h4 a.active { color:#d74e21; }
+	
+		.recently-ans {
+			/*display:none;*/
+			margin:5px 0 0 0;
+			width:96%;
+			padding:1% 2%;
+			background:#e5e5e5;
+		}
+		
+			.recently-ans p {
+				margin:0 0 0 0;
+				padding:0;
+			}
