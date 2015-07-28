@@ -7,30 +7,31 @@ jQuery(document).ready(function($){
 		// taxonomy filter
 		rw.children('p.taxonomy-filter').children('label').children('input[type=radio]').on('change', function(){
 			
-			var me = $(this);
+			var me = $(this),
+			tax_field = rw.find('.tax-field');
 			
 			if ( -1 == me.val() ) {
-				me.parent().parent().children('.tax-field').hide();
+				tax_field.hide();
 				
-				me.parent().parent().children('.tax-field').children('.tax-id-field').show();
-				me.parent().parent().children('.tax-field').children('.tax-slug-field').hide();
+				tax_field.children('.tax-id-field').show();
+				tax_field.children('.tax-slug-field').hide();
 				
 				// Clear fields
-				me.parent().parent().children('.tax-field').children('.tax-id-field').children('input[type=text]').val('');
-				me.parent().parent().children('.tax-field').children('.tax-slug-field').children('input[type=text]').val('');
+				tax_field.children('.tax-id-field').children('input[type=text]').val('');
+				tax_field.children('.tax-slug-field').children('input[type=text]').val('');
 			} else {
-				me.parent().parent().children('.tax-field').show();
+				tax_field.show();
 				
 				if ( 'post_format' == me.val() ) {
-					me.parent().parent().children('.tax-field').children('.tax-slug-field').show();
-					me.parent().parent().children('.tax-field').children('.tax-id-field').hide();
+					tax_field.children('.tax-slug-field').show();
+					tax_field.children('.tax-id-field').hide();
 					
-					me.parent().parent().children('.tax-field').children('.tax-slug-field').children('input[type=text]').val('');
+					tax_field.children('.tax-slug-field').children('input[type=text]').val('');
 				} else {
-					me.parent().parent().children('.tax-field').children('.tax-id-field').show();
-					me.parent().parent().children('.tax-field').children('.tax-slug-field').hide();
+					tax_field.children('.tax-id-field').show();
+					tax_field.children('.tax-slug-field').hide();
 					
-					me.parent().parent().children('.tax-field').children('.tax-id-field').children('input[type=text]').val('');
+					tax_field.children('.tax-id-field').children('input[type=text]').val('');
 				}
 			}
 			

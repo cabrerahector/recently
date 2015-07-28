@@ -66,8 +66,7 @@
 	}
 	?>
     
-    <span class="tax-field"<?php echo ( !isset($instance['args']['tax_query']) ) ? ' style="display:none;"' : ''; ?>>
-    	<br />
+    <div class="tax-field" style="display:<?php echo ( !isset($instance['args']['tax_query']) ) ? "none" : "block"; ?>; width:90%; margin:10px 0; padding:3% 5%; background:#f5f5f5;">
     	<span class="tax-id-field">
             <label for="<?php echo $this->get_field_id( 'tax_id' ); ?>"><?php _e('Term IDs', $this->plugin_slug); ?>:</label>
             <input type="text" id="<?php echo $this->get_field_id( 'tax_id' ); ?>" name="<?php echo $this->get_field_name( 'tax_id' ); ?>" value="<?php echo implode(',', $tax_terms); ?>" class="widefat" /><br />
@@ -79,7 +78,7 @@
             <input type="text" id="<?php echo $this->get_field_id( 'tax_slug' ); ?>" name="<?php echo $this->get_field_name( 'tax_slug' ); ?>" value="<?php echo implode(',', $tax_terms); ?>" class="widefat" /><br />
             <small><?php _e('Taxonomy slugs, separated by comma', $this->plugin_slug); ?>.</small>
         </span>
-    </span>
+    </div>
 </p>
 
 <p style="margin-bottom:0;">
