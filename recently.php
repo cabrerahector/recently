@@ -1633,7 +1633,7 @@ if ( !class_exists('Recently') ) {
 
 			$comments = ($instance['meta_tag']['comment_count'])
 			  ? get_comments_number()
-			  : '';
+			  : 0;
 
 			return $comments;
 
