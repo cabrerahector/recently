@@ -547,7 +547,7 @@ if ( !class_exists('Recently') ) {
 			}
 			
 			// Author IDs
-			$new_instance['author_id'] = preg_replace( '|[^0-9,-]|', '', $new_instance['author_id'] );
+			$new_instance['author_id'] = trim( preg_replace('|[^0-9,-]|', '', $new_instance['author_id']), "," );
 			
 			if ( !empty($new_instance['author_id']) ) {
 				
