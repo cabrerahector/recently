@@ -485,7 +485,7 @@ if ( !class_exists('Recently') ) {
 				// Filter by Post Format
 				if ( 'post_format' == $new_instance['taxonomy'] ) {
 					
-					$tax_slugs = preg_replace( '|[^a-z0-9,]|', '', $new_instance['tax_slug'] );
+					$tax_slugs = trim( preg_replace('|[^a-z0-9,]|', '', $new_instance['tax_slug']), "," );
 					
 					if ( !empty($tax_slugs) ) {
 						
@@ -501,7 +501,7 @@ if ( !class_exists('Recently') ) {
 				else {
 					
 					// Taxonomy IDs
-					$new_instance['tax_id'] = preg_replace( '|[^0-9,-]|', '', $new_instance['tax_id'] );
+					$new_instance['tax_id'] = trim( preg_replace('|[^0-9,-]|', '', $new_instance['tax_id']), "," );
 					
 					if ( '' != $new_instance['tax_id'] ) {
 					
