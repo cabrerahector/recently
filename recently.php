@@ -1282,7 +1282,7 @@ if ( !class_exists('Recently') ) {
 
 			} // Nothing to display
 			else {
-				$content = "<p class=\"recently-no-data\">".__('Sorry, nothing to show yet.', $this->plugin_slug)."</p>";
+				$content = apply_filters( 'recently_no_data', "<p class=\"recently-no-data\">".__('Sorry, nothing to show yet.', $this->plugin_slug)."</p>" );
 			}
 			
 			// Restore original Post Data
