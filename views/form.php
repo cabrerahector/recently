@@ -52,17 +52,15 @@
 	$tax_terms = array();
 	
 	if ( isset($instance['args']['tax_query']) ) {
-		
-		if ( isset($instance['args']['tax_query'][0]) ) {
-			for ( $i=0; $i < count($instance['args']['tax_query'][0]['terms']); $i++ )
-				$tax_terms[] = $instance['args']['tax_query'][0]['terms'][$i];
+		foreach( $instance['args']['tax_query'] as $tax_query ) {
+			if ( !is_array($tax_query) ) {
+				continue;
+			}
+			
+			for ( $i=0; $i < count($tax_query['terms']); $i++ ) {
+				$tax_terms[] = ( isset($tax_query['operator']) && 'NOT IN' == $tax_query['operator'] ) ? (-1) * $tax_query['terms'][$i] : $tax_query['terms'][$i];
+			}
 		}
-		
-		if ( isset($instance['args']['tax_query'][1]) ) {
-			for ( $i=0; $i < count($instance['args']['tax_query'][1]['terms']); $i++ )
-				$tax_terms[] = (-1) * $instance['args']['tax_query'][1]['terms'][$i];
-		}
-		
 	}
 	?>
     
