@@ -45,33 +45,43 @@
 			if ( !current_theme_supports( 'post-formats' ) && 'post_format' == $taxonomy->name )
 				continue;
 			
-			echo '<label><input type="radio" name="' . $this->get_field_name( 'taxonomy' ) . '" value="' . $taxonomy->name . '"' . ( (isset($instance['args']['tax_query']) && $taxonomy->name == $instance['args']['tax_query'][0]['taxonomy']) ? ' checked' : '') . '> ' . $taxonomy->labels->singular_name . '</label><br>';
+			echo '<label><input type="radio" name="' . $this->get_field_name( 'taxonomy' ) . '" value="' . $taxonomy->name . '"' . ( ( (isset($instance['args']['tax_query']) && isset($instance['args']['tax_query']['taxonomy']) && $taxonomy->name == $instance['args']['tax_query']['taxonomy']) || (isset($instance['args']['tax_query'][0]) && isset($instance['args']['tax_query'][0]['taxonomy']) && $taxonomy->name == $instance['args']['tax_query'][0]['taxonomy']) ) ? ' checked' : '' ) . '> ' . $taxonomy->labels->singular_name . '</label><br>';
 		}
 	}
 	
 	$tax_terms = array();
 	
 	if ( isset($instance['args']['tax_query']) ) {
-		foreach( $instance['args']['tax_query'] as $tax_query ) {
-			if ( !is_array($tax_query) ) {
-				continue;
+		// Slugs
+		if ( isset($instance['args']['tax_query']['taxonomy']) ) {
+			for ( $i=0; $i < count($instance['args']['tax_query']['terms']); $i++ ) {
+				$tax_terms[] = $instance['args']['tax_query']['terms'][$i];
 			}
-			
-			for ( $i=0; $i < count($tax_query['terms']); $i++ ) {
-				$tax_terms[] = ( isset($tax_query['operator']) && 'NOT IN' == $tax_query['operator'] ) ? (-1) * $tax_query['terms'][$i] : $tax_query['terms'][$i];
+		} // IDs
+		else {
+			foreach( $instance['args']['tax_query'] as $tax_query ) {
+				if ( !is_array($tax_query) ) {
+					continue;
+				}
+				
+				if ( isset($tax_query['terms']) ) {
+					for ( $i=0; $i < count($tax_query['terms']); $i++ ) {
+						$tax_terms[] = ( isset($tax_query['operator']) && 'NOT IN' == $tax_query['operator'] ) ? (-1) * $tax_query['terms'][$i] : $tax_query['terms'][$i];
+					}
+				}
 			}
 		}
 	}
 	?>
     
     <div class="tax-field" style="display:<?php echo ( !isset($instance['args']['tax_query']) ) ? "none" : "block"; ?>; width:90%; margin:10px 0; padding:3% 5%; background:#f5f5f5;">
-    	<span class="tax-id-field">
+    	<span class="tax-id-field"<?php echo ( !isset($instance['args']['tax_query'][0]['taxonomy']) ) ? ' style="display:none;"' : ''; ?>>
             <label for="<?php echo $this->get_field_id( 'tax_id' ); ?>"><?php _e('Term IDs', $this->plugin_slug); ?>:</label>
             <input type="text" id="<?php echo $this->get_field_id( 'tax_id' ); ?>" name="<?php echo $this->get_field_name( 'tax_id' ); ?>" value="<?php echo implode(',', $tax_terms); ?>" class="widefat" /><br />
             <small><?php _e('Taxonomy IDs, separated by comma (prefix a minus sign to exclude)', $this->plugin_slug); ?>.</small>
         </span>
         
-        <span class="tax-slug-field"<?php echo ( !isset($instance['args']['tax_query']) || ( isset($instance['args']['tax_query']) && 'post_format' != $instance['args']['tax_query'][0]['taxonomy'] ) ) ? ' style="display:none;"' : ''; ?>>
+        <span class="tax-slug-field"<?php echo ( !isset($instance['args']['tax_query']['taxonomy']) || 'post_format' != $instance['args']['tax_query']['taxonomy'] ) ? ' style="display:none;"' : ''; ?>>
             <label for="<?php echo $this->get_field_id( 'tax_slug' ); ?>"><?php _e('Term Slugs', $this->plugin_slug); ?>:</label>
             <input type="text" id="<?php echo $this->get_field_id( 'tax_slug' ); ?>" name="<?php echo $this->get_field_name( 'tax_slug' ); ?>" value="<?php echo implode(',', $tax_terms); ?>" class="widefat" /><br />
             <small><?php _e('Taxonomy slugs, separated by comma', $this->plugin_slug); ?>.</small>
