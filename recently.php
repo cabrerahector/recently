@@ -485,11 +485,11 @@ if ( !class_exists('Recently') ) {
 				// Filter by Post Format
 				if ( 'post_format' == $new_instance['taxonomy'] ) {
 					
-					$tax_slugs = trim( preg_replace('|[^a-z0-9,]|', '', $new_instance['tax_slug']), "," );
+					$tax_slugs = trim( preg_replace('|[^a-z0-9,-]|', '', $new_instance['tax_slug']), "," );
 					
 					if ( !empty($tax_slugs) ) {
 						
-						$instance['args']['tax_query'] = array(
+						$instance['args']['tax_query'][] = array(
 							'taxonomy' => $new_instance['taxonomy'],
 							'field' => 'slug',
 							'terms' => explode(",", $tax_slugs)
