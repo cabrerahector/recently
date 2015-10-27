@@ -1272,8 +1272,6 @@ if ( !class_exists('Recently') ) {
 					$recents->the_post();					
 					$content .= $this->__render_recent_item( $instance );
 				}
-				// Restore original Post Data
-				wp_reset_postdata();
 	
 				// END HTML wrapper
 				if ($instance['markup']['custom_html']) {
@@ -1281,13 +1279,16 @@ if ( !class_exists('Recently') ) {
 				} else {
 					$content .= "\n". "</ul>". "\n";
 				}
-	
-				return $content;
 
+			} // Nothing to display
+			else {
+				$content = "<p class=\"recently-no-data\">".__('Sorry, nothing to show yet.', $this->plugin_slug)."</p>";
 			}
 			
-			// Nothing to display
-			return "<p class=\"recently-no-data\">".__('Sorry, nothing to show yet.', $this->plugin_slug)."</p>";
+			// Restore original Post Data
+			wp_reset_postdata();
+			
+			return $content;
 
 		} // end __get_recents
 
