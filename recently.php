@@ -1598,7 +1598,7 @@ if ( !class_exists('Recently') ) {
 				
 				// WordPress Popular Posts support
 				if ( function_exists('wpp_get_views') ) {					
-					$pageviews = wpp_get_views( $p->ID );					
+					$pageviews = wpp_get_views( $p->ID, NULL, false );					
 				} // WP-PostViews support
 				elseif ( $this->__is_plugin_active('wp-postviews/wp-postviews.php') ) {
 					// this plugin stores views data in the post meta table
