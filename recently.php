@@ -3,7 +3,7 @@
 Plugin Name: Recently
 Plugin URI: http://wordpress.org/extend/plugins/recently
 Description: Recently is a highly customizable widget that displays your most recent posts
-Version: 1.0.0
+Version: 1.0.1
 Author: Hector Cabrera
 Author URI: http://cabrerahector.com
 Author Email: hcabrerab@gmail.com
@@ -61,7 +61,7 @@ if ( !class_exists('Recently') ) {
 		 * @since	1.0.0
 		 * @var		string
 		 */
-		private $version = '1.0.0';
+		private $version = '1.0.1';
 
 		/**
 		 * Plugin identifier.
