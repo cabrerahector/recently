@@ -3,8 +3,8 @@ Contributors: hcabrera
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PASXEM2E7JUVC
 Tags: recent, posts, widget
 Requires at least: 3.9
-Tested up to: 4.2.3
-Stable tag: 1.0.0
+Tested up to: 4.3.1
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -121,7 +121,11 @@ For the time being, the [Support Forum](http://wordpress.org/support/plugin/rece
 
 == Changelog ==
 
-= 1.0 =
+= 1.0.1 =
+* Adds the recently_no_data filter hook
+* Minor bug fixes and improvements
+
+= 1.0.0 =
 * Public release
 
 == Upgrade Notice ==
