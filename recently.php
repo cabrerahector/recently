@@ -2198,6 +2198,10 @@ if ( !class_exists('Recently') ) {
 			preg_match_all($pattern, $string, $matches);
 
 			array_map('strtolower', $matches[0]);
+			
+			if ( in_array("{pid}", $matches[0]) ) {
+				$string = str_replace( "{pid}", $data['id'], $string );
+			}
 
 			if ( in_array("{title}", $matches[0]) ) {
 				$string = str_replace( "{title}", $data['title'], $string );
