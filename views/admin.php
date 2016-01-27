@@ -11,52 +11,70 @@ else
 // Update options on form submission
 if ( isset($_POST['section']) ) {
 	
-	if ( "misc" == $_POST['section'] ) {		
-		$current = 'tools';
-						
-		$this->user_settings['tools']['misc']['include_stylesheet'] = $_POST['css'];
+	if ( "misc" == $_POST['section'] ) {
 		
-		update_site_option('recently_config', $this->user_settings);
-		echo "<div class=\"updated\"><p><strong>" . __('Settings saved.', $this->plugin_slug ) . "</strong></p></div>";		
-	}	
-	elseif ( "markup" == $_POST['section'] ) {		
 		$current = 'tools';
 		
-		// link attrs
-		$this->user_settings['tools']['markup']['link']['attr']['target'] = $_POST['link_target'];
-		$this->user_settings['tools']['markup']['link']['attr']['rel'] = $_POST['link_rel'];
+		if ( isset( $_POST['recently-admin-token'] ) && wp_verify_nonce( $_POST['recently-admin-token'], 'recently-update-misc-options' ) ) {
 		
-		// thumb
-		if ($_POST['thumb_source'] == "custom_field" && (!isset($_POST['thumb_field']) || empty($_POST['thumb_field']))) {
-			echo '<div id="wpp-message" class="error fade"><p>'.__('Please provide the name of your custom field.', $this->plugin_slug).'</p></div>';
-		} else {				
-			$this->user_settings['tools']['markup']['thumbnail']['source'] = $_POST['thumb_source'];
-			$this->user_settings['tools']['markup']['thumbnail']['field'] = ( !empty( $_POST['thumb_field']) ) ? $_POST['thumb_field'] : '';
-			$this->user_settings['tools']['markup']['thumbnail']['default'] = ( !empty( $_POST['upload_thumb_src']) ) ? $_POST['upload_thumb_src'] : "";
-			$this->user_settings['tools']['markup']['thumbnail']['resize'] = $_POST['thumb_field_resize'];
+			$this->user_settings['tools']['misc']['include_stylesheet'] = $_POST['css'];
 			
-			update_site_option('recently_config', $this->user_settings);				
+			update_site_option('recently_config', $this->user_settings);
 			echo "<div class=\"updated\"><p><strong>" . __('Settings saved.', $this->plugin_slug ) . "</strong></p></div>";
+		
 		}
-	}
-	elseif ( "data" == $_POST['section'] ) {		
+		
+	}	
+	elseif ( "markup" == $_POST['section'] ) {
+		
 		$current = 'tools';
 		
-		$this->user_settings['tools']['data']['ajax'] = $_POST['ajax'];
+		if ( isset( $_POST['recently-admin-token'] ) && wp_verify_nonce( $_POST['recently-admin-token'], 'recently-update-html-options' ) ) {
 		
-		// if any of the caching settings was updated, destroy all transients created by the plugin
-		if ( $this->user_settings['tools']['data']['cache']['active'] != $_POST['cache'] || $this->user_settings['tools']['data']['cache']['interval']['time'] != $_POST['cache_interval_time'] || $this->user_settings['tools']['data']['cache']['interval']['value'] != $_POST['cache_interval_value'] ) {
-			$this->__flush_transients();
+			// link attrs
+			$this->user_settings['tools']['markup']['link']['attr']['target'] = $_POST['link_target'];
+			$this->user_settings['tools']['markup']['link']['attr']['rel'] = $_POST['link_rel'];
+			
+			// thumb
+			if ($_POST['thumb_source'] == "custom_field" && (!isset($_POST['thumb_field']) || empty($_POST['thumb_field']))) {
+				echo '<div id="wpp-message" class="error fade"><p>'.__('Please provide the name of your custom field.', $this->plugin_slug).'</p></div>';
+			} else {				
+				$this->user_settings['tools']['markup']['thumbnail']['source'] = $_POST['thumb_source'];
+				$this->user_settings['tools']['markup']['thumbnail']['field'] = ( !empty( $_POST['thumb_field']) ) ? $_POST['thumb_field'] : '';
+				$this->user_settings['tools']['markup']['thumbnail']['default'] = ( !empty( $_POST['upload_thumb_src']) ) ? $_POST['upload_thumb_src'] : "";
+				$this->user_settings['tools']['markup']['thumbnail']['resize'] = $_POST['thumb_field_resize'];
+				
+				update_site_option('recently_config', $this->user_settings);				
+				echo "<div class=\"updated\"><p><strong>" . __('Settings saved.', $this->plugin_slug ) . "</strong></p></div>";
+			}
+		
 		}
 		
-		$this->user_settings['tools']['data']['cache']['active'] = $_POST['cache'];			
-		$this->user_settings['tools']['data']['cache']['interval']['time'] = $_POST['cache_interval_time'];
-		$this->user_settings['tools']['data']['cache']['interval']['value'] = ( isset($_POST['cache_interval_value']) && is_numeric($_POST['cache_interval_value']) && $_POST['cache_interval_value'] > 0 ) 
-		  ? $_POST['cache_interval_value']
-		  : 1;
+	}
+	elseif ( "data" == $_POST['section'] ) {
 		
-		update_site_option('recently_config', $this->user_settings);
-		echo "<div class=\"updated\"><p><strong>" . __('Settings saved.', $this->plugin_slug ) . "</strong></p></div>";		
+		$current = 'tools';
+		
+		if ( isset( $_POST['recently-admin-token'] ) && wp_verify_nonce( $_POST['recently-admin-token'], 'recently-update-data-options' ) ) {
+		
+			$this->user_settings['tools']['data']['ajax'] = $_POST['ajax'];
+			
+			// if any of the caching settings was updated, destroy all transients created by the plugin
+			if ( $this->user_settings['tools']['data']['cache']['active'] != $_POST['cache'] || $this->user_settings['tools']['data']['cache']['interval']['time'] != $_POST['cache_interval_time'] || $this->user_settings['tools']['data']['cache']['interval']['value'] != $_POST['cache_interval_value'] ) {
+				$this->__flush_transients();
+			}
+			
+			$this->user_settings['tools']['data']['cache']['active'] = $_POST['cache'];			
+			$this->user_settings['tools']['data']['cache']['interval']['time'] = $_POST['cache_interval_time'];
+			$this->user_settings['tools']['data']['cache']['interval']['value'] = ( isset($_POST['cache_interval_value']) && is_numeric($_POST['cache_interval_value']) && $_POST['cache_interval_value'] > 0 ) 
+			  ? $_POST['cache_interval_value']
+			  : 1;
+			
+			update_site_option('recently_config', $this->user_settings);
+			echo "<div class=\"updated\"><p><strong>" . __('Settings saved.', $this->plugin_slug ) . "</strong></p></div>";	
+		
+		}
+			
 	}
 		
 }
@@ -143,7 +161,7 @@ $recently_rand = $rand;
                     <tr valign="top">
                         <th scope="row"><label for="link_rel"><?php _e("REL attribute", $this->plugin_slug); ?>:</label></th>
                         <td>
-                            <input type="text" id="link_rel" name="link_rel" value="<?php echo $this->user_settings['tools']['markup']['link']['attr']['rel']; ?>" />
+                            <input type="text" id="link_rel" name="link_rel" value="<?php echo esc_attr( $this->user_settings['tools']['markup']['link']['attr']['rel'] ); ?>" />
                             <p class="description"><?php _e("The rel attribute specifies the relationship between the current document and the linked document", $this->plugin_slug); ?>.</p>
                         </td>
                     </tr>
@@ -179,7 +197,7 @@ $recently_rand = $rand;
                     <tr valign="top" <?php if ($this->user_settings['tools']['markup']['thumbnail']['source'] != "custom_field") {?>style="display:none;"<?php } ?> id="row_custom_field">
                         <th scope="row"><label for="thumb_field"><?php _e("Custom field name", $this->plugin_slug); ?>:</label></th>
                         <td>
-                            <input type="text" id="thumb_field" name="thumb_field" value="<?php echo $this->user_settings['tools']['markup']['thumbnail']['field']; ?>" size="10" <?php if ($this->user_settings['tools']['markup']['thumbnail']['source'] != "custom_field") {?>style="display:none;"<?php } ?> />
+                            <input type="text" id="thumb_field" name="thumb_field" value="<?php echo esc_attr( $this->user_settings['tools']['markup']['thumbnail']['field'] ); ?>" size="10" <?php if ($this->user_settings['tools']['markup']['thumbnail']['source'] != "custom_field") {?>style="display:none;"<?php } ?> />
                         </td>
                     </tr>
                     <tr valign="top" <?php if ($this->user_settings['tools']['markup']['thumbnail']['source'] != "custom_field") {?>style="display:none;"<?php } ?> id="row_custom_field_resize">
@@ -210,6 +228,8 @@ $recently_rand = $rand;
             
             <input type="hidden" name="section" value="markup" />
             <br /><input type="submit" class="button-secondary action" id="btn_th_ops" value="<?php _e("Apply", $this->plugin_slug); ?>" name="" />
+            
+            <?php wp_nonce_field( 'recently-update-html-options', 'recently-admin-token' ); ?>
         </form>
         <br />
         <p style="display:block; float:none; clear:both">&nbsp;</p>
@@ -266,6 +286,8 @@ $recently_rand = $rand;
                     </tr>
                 </tbody>
             </table>
+            
+            <?php wp_nonce_field( 'recently-update-data-options', 'recently-admin-token' ); ?>
         </form>
         <br />
         <p style="display:block; float:none; clear:both">&nbsp;</p>
@@ -293,6 +315,8 @@ $recently_rand = $rand;
                     </tr>
                 </tbody>
             </table>
+            
+            <?php wp_nonce_field( 'recently-update-misc-options', 'recently-admin-token' ); ?>
         </form>        
     </div>
     <!-- End tools -->
