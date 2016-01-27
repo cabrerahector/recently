@@ -1454,12 +1454,12 @@ if ( !class_exists('Recently') ) {
 					$words = explode(" ", $title_sub, $instance['shorten_title']['length'] + 1);
 					if (count($words) > $instance['shorten_title']['length']) {
 						array_pop($words);
-						$title_sub = implode(" ", $words) . "...";
+						$title_sub = rtrim( implode(" ", $words), ",." ) . " ...";
 					}
 
 				}
 				elseif (strlen($title_sub) > $instance['shorten_title']['length']) {
-					$title_sub = mb_substr($title_sub, 0, $instance['shorten_title']['length'], $this->charset) . "...";
+					$title_sub = rtrim( mb_substr($title_sub, 0, $instance['shorten_title']['length'], $this->charset), " ,." ) . "...";
 				}
 			}
 
@@ -2157,13 +2157,13 @@ if ( !class_exists('Recently') ) {
 
 					if ( count($words) > $instance['post-excerpt']['length'] ) {
 						array_pop($words);
-						$excerpt = implode(" ", $words) . "...";
+						$excerpt = rtrim( implode(" ", $words), ".," ) . " ...";
 					}
 
 				} else { // by characters
 
 					if ( strlen($excerpt) > $instance['post-excerpt']['length'] ) {
-						$excerpt = mb_substr( $excerpt, 0, $instance['post-excerpt']['length'], $this->charset ) . "...";
+						$excerpt = rtrim( mb_substr( $excerpt, 0, $instance['post-excerpt']['length'], $this->charset ), ".," ) . "...";
 					}
 
 				}
