@@ -453,7 +453,7 @@ if ( !class_exists('Recently') ) {
 			// Post type
 			$instance['args']['post_type'] = ( '' == $new_instance['post_type'] )
 			  ? array('post')
-			  : explode(",", preg_replace( '|[^a-z0-9,]|', '', $new_instance['post_type'] ));
+			  : explode(",", preg_replace( '|[^a-z0-9,_-]|', '', $new_instance['post_type'] ));
 			
 			// Post per page
 			$instance['args']['posts_per_page'] = ( $this->__is_numeric($new_instance['posts_per_page']) && $new_instance['posts_per_page'] > 0 )
