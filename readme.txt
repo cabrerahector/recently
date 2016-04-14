@@ -1,10 +1,10 @@
 === Recently ===
 Contributors: hcabrera
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PASXEM2E7JUVC
-Tags: recent, posts, widget
+Tags: recent, posts, widget, recently
 Requires at least: 3.9
-Tested up to: 4.3.1
-Stable tag: 1.0.1
+Tested up to: 4.5
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ A highly customizable Recent Posts widget.
 
 == Description ==
 
-Let's face it: WordPress' default Recent Posts widget does the job as described, but it's not very flexible. Things like excluding certain entries from the list or displaying recent posts by category can't be done with the stock Recent Posts widget. Therefore, let me introduce Recently.
+Let's face it: WordPress' default Recent Posts widget does the job as promised, but it's not very flexible. Things like excluding certain entries from the list or displaying recent posts by category can't be done with the stock Recent Posts widget. Therefore, let me introduce Recently.
 
 Recently is a WordPress widget that displays your site's most recent posts. And it doesn't stop there:
 
@@ -120,6 +120,9 @@ For the time being, the [Support Forum](http://wordpress.org/support/plugin/rece
 3. Recently Widget with custom HTML.
 
 == Changelog ==
+
+= 1.0.2 =
+* Minor bug fixes and improvements
 
 = 1.0.1 =
 * Adds the recently_no_data filter hook
