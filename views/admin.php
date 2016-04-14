@@ -403,7 +403,7 @@ $recently_rand = $rand;
         <p><?php _e( 'This version includes the following changes', $this->plugin_slug ); ?>:</p>
         
         <ul>
-            <li>Initial release.</li>
+            <li>Minor bug fixes and improvements.</li>
         </ul>
                 
     </div>
