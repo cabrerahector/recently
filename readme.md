@@ -28,9 +28,9 @@ Recently is a highly customizable [widget](http://wordpress.org/plugins/recently
 * **WordPress Multisite support**.
 * **WordPress Popular Posts support** - Display the views count of your recent posts!
 * **Custom Post-type support**. Wanna show other stuff than just posts and pages?
-* Display a **thumbnail** of your recent posts! (see [technical requirements](https://github.com/cabrerahector/recently/wiki/5.-FAQ#im-unable-to-activate-the-display-post-thumbnail-option-why)).
-* Use **your own layout**! [Control how your recent posts are shown on your theme](https://github.com/cabrerahector/recently/wiki/5.-FAQ#how-can-i-use-my-own-html-markup-with-your-plugin).
-* **Localizable** to your own language (See [here](https://github.com/cabrerahector/recently/wiki/5.-FAQ#i-want-to-translate-your-plugin-into-my-language--help-you-update-a-translation-what-do-i-need-to-do) for more info).
+* Display a **thumbnail** of your recent posts! (see [technical requirements](https://github.com/cabrerahector/recently/wiki/2.-FAQ#im-unable-to-activate-the-display-post-thumbnail-option-why)).
+* Use **your own layout**! [Control how your recent posts are shown on your theme](https://github.com/cabrerahector/recently/wiki/2.-FAQ#how-can-i-use-my-own-html-markup-with-your-plugin).
+* **Localizable** to your own language (See [here](https://github.com/cabrerahector/recently/wiki/2.-FAQ#i-want-to-translate-your-plugin-into-my-language--help-you-update-a-translation-what-do-i-need-to-do) for more info).
 * **[WP-PostRatings](http://wordpress.org/extend/plugins/wp-postratings/) support**. Show your visitors how your readers are rating your posts!
 
 
@@ -53,7 +53,7 @@ Recently is a highly customizable [widget](http://wordpress.org/plugins/recently
 
 Before submitting an issue, please:
 
-1. Read the documentation, it's there for a reason. Links: [Requirements](https://github.com/cabrerahector/recently#requirements) | [Installation](https://github.com/cabrerahector/recently#installation) | [Wiki](https://github.com/cabrerahector/recently/wiki) | [Frequently asked questions](https://github.com/cabrerahector/recently/wiki/5.-FAQ).
+1. Read the documentation, it's there for a reason. Links: [Requirements](https://github.com/cabrerahector/recently#requirements) | [Installation](https://github.com/cabrerahector/recently#installation) | [Wiki](https://github.com/cabrerahector/recently/wiki) | [Frequently asked questions](https://github.com/cabrerahector/recently/wiki/2.-FAQ).
 2. If it's a bug, please check the [issue tracker](https://github.com/cabrerahector/recently/issues) first make sure no one has reported it already.
 
 When submitting an issue, please answer the following questions:
@@ -67,7 +67,7 @@ When submitting an issue, please answer the following questions:
 
 * If you have any ideas/suggestions/bug reports, and if there's not an issue filed for it already (see [issue tracker](https://github.com/cabrerahector/recently/issues), please [create an issue](https://github.com/cabrerahector/recently/issues/new) so I can keep track of it.
 * Developers can send [pull requests](https://help.github.com/articles/using-pull-requests) to suggest fixes / improvements to the source.
-* Want to translate Recently into your language or update a current translation? Check if it's [already supported](https://github.com/cabrerahector/recently/tree/master/lang) or download [this file](https://github.com/cabrerahector/recently/blob/master/lang/recently.pot) to translate the strings (see "[I want to translate your plugin into my language / help you update a translation. What do I need to do?](https://github.com/cabrerahector/recently/wiki/5.-FAQ#i-want-to-translate-your-plugin-into-my-language--help-you-update-a-translation-what-do-i-need-to-do)" for more).
+* Want to translate Recently into your language or update a current translation? Check if it's [already supported](https://github.com/cabrerahector/recently/tree/master/lang) or download [this file](https://github.com/cabrerahector/recently/blob/master/lang/recently.pot) to translate the strings (see "[I want to translate your plugin into my language / help you update a translation. What do I need to do?](https://github.com/cabrerahector/recently/wiki/2.-FAQ#i-want-to-translate-your-plugin-into-my-language--help-you-update-a-translation-what-do-i-need-to-do)" for more).
 
 
 ## License
