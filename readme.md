@@ -30,7 +30,6 @@ Recently is a highly customizable [widget](http://wordpress.org/plugins/recently
 * **Custom Post-type support**. Wanna show other stuff than just posts and pages?
 * Display a **thumbnail** of your recent posts! (see [technical requirements](https://github.com/cabrerahector/recently/wiki/5.-FAQ#im-unable-to-activate-the-display-post-thumbnail-option-why)).
 * Use **your own layout**! [Control how your recent posts are shown on your theme](https://github.com/cabrerahector/recently/wiki/5.-FAQ#how-can-i-use-my-own-html-markup-with-your-plugin).
-* **Shortcode support** - use the `[wpp]` shortcode to showcase your most popular posts on pages, too! (see "[Using WPP on posts & pages](https://github.com/cabrerahector/recently/wiki/1.-Using-WPP-on-posts-&-pages)").
 * **Localizable** to your own language (See [here](https://github.com/cabrerahector/recently/wiki/5.-FAQ#i-want-to-translate-your-plugin-into-my-language--help-you-update-a-translation-what-do-i-need-to-do) for more info).
 * **[WP-PostRatings](http://wordpress.org/extend/plugins/wp-postratings/) support**. Show your visitors how your readers are rating your posts!
 
