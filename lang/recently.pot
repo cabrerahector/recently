@@ -1,5 +1,5 @@
-# Copyright (C) 2014 Wordpress Popular Posts
-# This file is distributed under the same license as the Wordpress Popular Posts package.
+# Copyright (C) 2015 Recently
+# This file is distributed under the same license as the Recently package.
 #, fuzzy
 msgid ""
 msgstr ""
