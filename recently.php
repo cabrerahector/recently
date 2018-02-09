@@ -290,7 +290,7 @@ if ( !class_exists('Recently') ) {
                 add_site_option('recently_config', $this->default_user_settings);
                 $this->user_settings = $this->default_user_settings;
             } else {
-                $this->user_settings = $this->__merge_array_r( $this->default_user_settings, $this->user_settings );
+                $this->user_settings = $this->merge_array_r( $this->default_user_settings, $this->user_settings );
             }
 
             // Add the options page and menu item.
@@ -328,7 +328,7 @@ if ( !class_exists('Recently') ) {
                 $this->thumbs = true;
 
                 // Get available thumbnail size(s)
-                $this->default_thumbnail_sizes = $this->__get_image_sizes();
+                $this->default_thumbnail_sizes = $this->get_image_sizes();
 
                 // Set uploads folder
                 $wp_upload_dir = wp_upload_dir();
@@ -424,7 +424,7 @@ if ( !class_exists('Recently') ) {
                 <?php
                 }
             } else {
-                echo $this->__get_recents( $instance );
+                echo $this->get_recents( $instance );
             }
 
             echo $after_widget . "\n";
@@ -456,12 +456,12 @@ if ( !class_exists('Recently') ) {
               : explode(",", preg_replace( '|[^a-z0-9,_-]|', '', $new_instance['post_type'] ));
 
             // Post per page
-            $instance['args']['posts_per_page'] = ( $this->__is_numeric($new_instance['posts_per_page']) && $new_instance['posts_per_page'] > 0 )
+            $instance['args']['posts_per_page'] = ( $this->is_numeric($new_instance['posts_per_page']) && $new_instance['posts_per_page'] > 0 )
               ? $new_instance['posts_per_page']
               : 10;
 
             // Offset
-            $instance['args']['offset'] = ( $this->__is_numeric($new_instance['offset']) && $new_instance['offset'] >= 0 )
+            $instance['args']['offset'] = ( $this->is_numeric($new_instance['offset']) && $new_instance['offset'] >= 0 )
               ? $new_instance['offset']
               : 0;
 
@@ -585,7 +585,7 @@ if ( !class_exists('Recently') ) {
             // post title
             $instance['shorten_title']['active'] = isset( $new_instance['shorten_title-active'] );
             $instance['shorten_title']['words'] = $new_instance['shorten_title-words'];
-            $instance['shorten_title']['length'] = ( $this->__is_numeric($new_instance['shorten_title-length']) && $new_instance['shorten_title-length'] > 0 )
+            $instance['shorten_title']['length'] = ( $this->is_numeric($new_instance['shorten_title-length']) && $new_instance['shorten_title-length'] > 0 )
               ? $new_instance['shorten_title-length']
               : 25;
 
@@ -593,7 +593,7 @@ if ( !class_exists('Recently') ) {
             $instance['post-excerpt']['keep_format'] = isset( $new_instance['post-excerpt-format'] );
             $instance['post-excerpt']['words'] = $new_instance['post-excerpt-words'];
             $instance['post-excerpt']['active'] = isset( $new_instance['post-excerpt-active'] );
-            $instance['post-excerpt']['length'] = ( $this->__is_numeric($new_instance['post-excerpt-length']) && $new_instance['post-excerpt-length'] > 0 )
+            $instance['post-excerpt']['length'] = ( $this->is_numeric($new_instance['post-excerpt-length']) && $new_instance['post-excerpt-length'] > 0 )
               ? $new_instance['post-excerpt-length']
               : 55;
 
@@ -615,7 +615,7 @@ if ( !class_exists('Recently') ) {
                     $instance['thumbnail']['crop'] = $size['crop'];
                 } // Set thumbnail size manually
                 else {
-                    if ($this->__is_numeric($new_instance['thumbnail-width']) && $this->__is_numeric($new_instance['thumbnail-height'])) {
+                    if ($this->is_numeric($new_instance['thumbnail-width']) && $this->is_numeric($new_instance['thumbnail-height'])) {
                         $instance['thumbnail']['width'] = $new_instance['thumbnail-width'];
                         $instance['thumbnail']['height'] = $new_instance['thumbnail-height'];
                         $instance['thumbnail']['crop'] = true;
@@ -673,7 +673,7 @@ if ( !class_exists('Recently') ) {
         public function form( $instance ) {
 
             // parse instance values
-            $instance = $this->__merge_array_r(
+            $instance = $this->merge_array_r(
                 $this->defaults,
                 $instance
             );
@@ -908,7 +908,7 @@ if ( !class_exists('Recently') ) {
 
                     foreach( $blogs_ids as $blog_id ) {
                         switch_to_blog( $blog_id );
-                        self::__activate();
+                        self::activate_site();
                     }
 
                     // switch back to current blog
@@ -920,7 +920,7 @@ if ( !class_exists('Recently') ) {
 
             }
 
-            self::__activate();
+            self::activate_site();
 
         } // end activate
 
@@ -937,7 +937,7 @@ if ( !class_exists('Recently') ) {
 
             // run activation for the new blog
             switch_to_blog( $blog_id );
-            self::__activate();
+            self::activate_site();
 
             // switch back to current blog
             restore_current_blog();
@@ -950,11 +950,11 @@ if ( !class_exists('Recently') ) {
          * @since	1.0.0
          * @global	object	wpdb
          */
-        private static function __activate() {
+        private static function activate_site() {
 
             // TODO
 
-        } // end __activate
+        } // end activate_site
 
         /**
          * Fired when the plugin is deactivated.
@@ -977,7 +977,7 @@ if ( !class_exists('Recently') ) {
 
                     foreach( $blogs_ids as $blog_id ) {
                         switch_to_blog( $blog_id );
-                        self::__deactivate();
+                        self::deactivate_site();
                     }
 
                     // Switch back to current blog
@@ -989,7 +989,7 @@ if ( !class_exists('Recently') ) {
 
             }
 
-            self::__deactivate();
+            self::deactivate_site();
 
         } // end deactivate
 
@@ -998,9 +998,9 @@ if ( !class_exists('Recently') ) {
          *
          * @since	1.0.0
          */
-        private static function __deactivate() {
+        private static function deactivate_site() {
             // TODO
-        } // end __deactivate
+        } // end deactivate_site
 
         /**
          * Checks if an upgrade procedure is required.
@@ -1015,7 +1015,7 @@ if ( !class_exists('Recently') ) {
             if ( !$recently_ver ) {
                 add_site_option('recently_ver', $this->version);
             } elseif ( version_compare($recently_ver, $this->version, '<') ) {
-                $this->__upgrade();
+                $this->upgrade();
             }
 
         } // end upgrade_check
@@ -1026,13 +1026,13 @@ if ( !class_exists('Recently') ) {
          * @since	1.0.0
          * @global	object	wpdb
          */
-        private function __upgrade() {
+        private function upgrade() {
             // TODO
 
             // Update Recently version
             update_site_option('recent_options', $this->version);
 
-        } // end __upgrade
+        } // end upgrade
 
         /**
          * Checks if the technical requirements are met.
@@ -1042,7 +1042,7 @@ if ( !class_exists('Recently') ) {
          * @global	string $wp_version
          * @return	array
          */
-        private function __check_requirements() {
+        private function check_requirements() {
 
             global $wp_version;
 
@@ -1063,7 +1063,7 @@ if ( !class_exists('Recently') ) {
 
             return $errors;
 
-        } // end __check_requirements
+        } // end check_requirements
 
         /**
          * Outputs error messages to wp-admin.
@@ -1072,7 +1072,7 @@ if ( !class_exists('Recently') ) {
          */
         public function check_admin_notices() {
 
-            $errors = $this->__check_requirements();
+            $errors = $this->check_requirements();
 
             if ( empty($errors) )
                 return;
@@ -1135,7 +1135,7 @@ if ( !class_exists('Recently') ) {
          *
          * @since	1.0.0
          */
-        private function __flush_transients() {
+        private function flush_transients() {
 
             $recently_transients = get_site_option('recently_transients');
 
@@ -1146,7 +1146,7 @@ if ( !class_exists('Recently') ) {
                 update_site_option('recently_transients', array());
             }
 
-        } // end __flush_transients
+        } // end flush_transients
 
         /**
          * Queries the database and returns the posts (if any met the criteria set by the user).
@@ -1161,7 +1161,7 @@ if ( !class_exists('Recently') ) {
             global $wpdb;
 
             // parse instance values
-            $instance = $this->__merge_array_r(
+            $instance = $this->merge_array_r(
                 $this->defaults,
                 $instance
             );
@@ -1179,10 +1179,10 @@ if ( !class_exists('Recently') ) {
          * @param	array	instance	The current instance of the widget / shortcode parameters
          * @return	string	HTML list of recent posts
          */
-        private function __get_recents( $instance ) {
+        private function get_recents( $instance ) {
 
             // Parse instance values
-            $instance = $this->__merge_array_r(
+            $instance = $this->merge_array_r(
                 $this->defaults,
                 $instance
             );
@@ -1270,7 +1270,7 @@ if ( !class_exists('Recently') ) {
                 // Loop through items
                 while ( $recents->have_posts() ) {
                     $recents->the_post();
-                    $content .= $this->__render_recent_item( $instance );
+                    $content .= $this->render_recent_item( $instance );
                 }
 
                 // END HTML wrapper
@@ -1290,7 +1290,7 @@ if ( !class_exists('Recently') ) {
 
             return $content;
 
-        } // end __get_recents
+        } // end get_recents
 
         /**
          * Returns the formatted post.
@@ -1301,7 +1301,7 @@ if ( !class_exists('Recently') ) {
          * @param	array	instance	The current instance of the widget / shortcode parameters
          * @return	string
          */
-        private function __render_recent_item($instance) {
+        private function render_recent_item($instance) {
             global $post;
 
             if ( defined('ICL_LANGUAGE_CODE') && function_exists('icl_object_id') ) {
@@ -1344,7 +1344,7 @@ if ( !class_exists('Recently') ) {
                     'date' => $date
                 );
 
-                $content = $this->__format_content( htmlspecialchars_decode($instance['markup']['post-html'], ENT_QUOTES ), $data, $instance['rating'] ). "\n";
+                $content = $this->format_content( htmlspecialchars_decode($instance['markup']['post-html'], ENT_QUOTES ), $data, $instance['rating'] ). "\n";
 
             }
             // build regular layout
@@ -1369,7 +1369,7 @@ if ( !class_exists('Recently') ) {
             }
 
             return $content;
-        } // end __render_recent_item
+        } // end render_recent_item
 
         /**
          * Cache.
@@ -1522,7 +1522,7 @@ if ( !class_exists('Recently') ) {
                 if ($path != '') {
                     // user has requested to resize cf image
                     if ( $this->user_settings['tools']['markup']['thumbnail']['resize'] ) {
-                        $thumb .= $this->__get_img($p, null, $path, array($tbWidth, $tbHeight), $crop, $this->user_settings['tools']['markup']['thumbnail']['source'], $title);
+                        $thumb .= $this->get_img($p, null, $path, array($tbWidth, $tbHeight), $crop, $this->user_settings['tools']['markup']['thumbnail']['source'], $title);
                     }
                     // use original size
                     else {
@@ -1573,7 +1573,7 @@ if ( !class_exists('Recently') ) {
                 }
                 // Get/generate custom thumbnail
                 else {
-                    $thumb .= $this->__get_img($p, $p->ID, null, array($tbWidth, $tbHeight), $crop, $this->user_settings['tools']['markup']['thumbnail']['source'], $title);
+                    $thumb .= $this->get_img($p, $p->ID, null, array($tbWidth, $tbHeight), $crop, $this->user_settings['tools']['markup']['thumbnail']['source'], $title);
                 }
 
             }
@@ -1600,7 +1600,7 @@ if ( !class_exists('Recently') ) {
                 if ( function_exists('wpp_get_views') ) {
                     $pageviews = wpp_get_views( $p->ID, NULL, false );
                 } // WP-PostViews support
-                elseif ( $this->__is_plugin_active('wp-postviews/wp-postviews.php') ) {
+                elseif ( $this->is_plugin_active('wp-postviews/wp-postviews.php') ) {
                     // this plugin stores views data in the post meta table
                     if ( !$pageviews = get_post_meta( $p->ID, 'views', true ) ) {
                         $pageviews = 0;
@@ -1834,15 +1834,15 @@ if ( !class_exists('Recently') ) {
          * @param	string	source	Image source
          * @return	string
          */
-        private function __get_img($p, $id = null, $url = null, $dim = array(80, 80), $crop = true, $source = "featured", $title) {
+        private function get_img($p, $id = null, $url = null, $dim = array(80, 80), $crop = true, $source = "featured", $title) {
 
-            if ( (!$id || empty($id) || !$this->__is_numeric($id)) && (!$url || empty($url)) ) {
+            if ( (!$id || empty($id) || !$this->is_numeric($id)) && (!$url || empty($url)) ) {
                 return $this->_render_image($this->default_thumbnail, $dim, 'recently-thumbnail recently-def-noID', $title);
             }
 
             // Get image by post ID (parent)
             if ( $id ) {
-                $file_path = $this->__get_image_file_paths($id, $source);
+                $file_path = $this->get_image_file_paths($id, $source);
 
                 // No images found, return default thumbnail
                 if ( !$file_path ) {
@@ -1857,7 +1857,7 @@ if ( !class_exists('Recently') ) {
                 preg_match('/[^\?]+\.(jpg|JPG|jpe|JPE|jpeg|JPEG|gif|GIF|png|PNG)/', $image_url, $matches);
                 $image_url = $matches[0];
 
-                $attachment_id = $this->__get_attachment_id($image_url);
+                $attachment_id = $this->get_attachment_id($image_url);
 
                 // Image is hosted locally
                 if ( $attachment_id ) {
@@ -1865,7 +1865,7 @@ if ( !class_exists('Recently') ) {
                 }
                 // Image is hosted outside WordPress
                 else {
-                    $external_image = $this->__fetch_external_image($p->ID, $image_url);
+                    $external_image = $this->fetch_external_image($p->ID, $image_url);
 
                     if ( !$external_image ) {
                         return $this->_render_image($this->default_thumbnail, $dim, 'recently-thumbnail recently-def-noPath recently-no-external', $title);
@@ -1882,9 +1882,9 @@ if ( !class_exists('Recently') ) {
                 return $this->_render_image( trailingslashit($this->uploads_dir['baseurl']) . $p->ID . '-' . $source . '-' . $dim[0] . 'x' . $dim[1] . '.' . $file_info['extension'], $dim, 'recently-thumbnail recently-cached-thumb recently-' . $source, $title );
             }
 
-            return $this->__image_resize($p, $file_path, $dim, $crop, $source);
+            return $this->image_resize($p, $file_path, $dim, $crop, $source);
 
-        } // end __get_img
+        } // end get_img
 
         /**
          * Resizes image.
@@ -1896,7 +1896,7 @@ if ( !class_exists('Recently') ) {
          * @param	string	source		Image source
          * @return	string
          */
-        private function __image_resize($p, $path, $dimension, $crop, $source) {
+        private function image_resize($p, $path, $dimension, $crop, $source) {
 
             $image = wp_get_image_editor($path);
 
@@ -1918,7 +1918,7 @@ if ( !class_exists('Recently') ) {
             // image file path is invalid
             return $this->_render_image($this->default_thumbnail, $dimension, 'recently-thumbnail recently-imgeditor-error recently-' . $source, '', $image->get_error_message());
 
-        } // end __image_resize
+        } // end image_resize
 
         /**
          * Get image absolute path / URL.
@@ -1928,7 +1928,7 @@ if ( !class_exists('Recently') ) {
          * @param	string	source	Image source
          * @return	array
          */
-        private function __get_image_file_paths($id, $source) {
+        private function get_image_file_paths($id, $source) {
 
             $file_path = '';
 
@@ -1961,7 +1961,7 @@ if ( !class_exists('Recently') ) {
                         if ( isset($src_attr[2]) && !empty($src_attr[2]) ) {
 
                             // image from Media Library
-                            if ( $attachment_id = $this->__get_attachment_id( $src_attr[2] ) ) {
+                            if ( $attachment_id = $this->get_attachment_id( $src_attr[2] ) ) {
 
                                 $file_path = get_attached_file($attachment_id);
 
@@ -1972,7 +1972,7 @@ if ( !class_exists('Recently') ) {
 
                             } // external image?
                             else {
-                                return $this->__fetch_external_image($id, $src_attr[2]);
+                                return $this->fetch_external_image($id, $src_attr[2]);
                             }
 
                         }
@@ -1985,7 +1985,7 @@ if ( !class_exists('Recently') ) {
 
             return false;
 
-        } // end __get_image_file_paths
+        } // end get_image_file_paths
 
         /**
          * Render image tag.
@@ -2020,7 +2020,7 @@ if ( !class_exists('Recently') ) {
         * @param	string	url
         * @return	bool|int
         */
-        private function __get_attachment_id($url) {
+        private function get_attachment_id($url) {
 
             // Split the $url into two parts with the wp-content directory as the separator.
             $parse_url  = explode( parse_url( WP_CONTENT_URL, PHP_URL_PATH ), $url );
@@ -2047,7 +2047,7 @@ if ( !class_exists('Recently') ) {
             // Returns null if no attachment is found.
             return isset($attachment[0]) ? $attachment[0] : NULL;
 
-        } // __get_attachment_id
+        } // get_attachment_id
 
         /**
         * Fetchs external images.
@@ -2056,7 +2056,7 @@ if ( !class_exists('Recently') ) {
         * @param	string	url
         * @return	bool|int
         */
-        private function __fetch_external_image($id, $url){
+        private function fetch_external_image($id, $url){
 
             $full_image_path = trailingslashit( $this->uploads_dir['basedir'] ) . "{$id}_". sanitize_file_name( rawurldecode(wp_basename( $url )) );
 
@@ -2105,7 +2105,7 @@ if ( !class_exists('Recently') ) {
 
             return false;
 
-        } // end __fetch_external_image
+        } // end fetch_external_image
 
         /**
          * Builds post's excerpt
@@ -2118,7 +2118,7 @@ if ( !class_exists('Recently') ) {
          */
         protected function _get_summary($id, $instance){
 
-            if ( !$this->__is_numeric($id) )
+            if ( !$this->is_numeric($id) )
                 return false;
 
             global $wpdb;
@@ -2200,7 +2200,7 @@ if ( !class_exists('Recently') ) {
          * @param	bool	Used to display post rating (if functionality is available)
          * @return	string
          */
-        private function __format_content($string, $data = array(), $rating) {
+        private function format_content($string, $data = array(), $rating) {
 
             if (empty($string) || (empty($data) || !is_array($data)))
                 return false;
@@ -2297,7 +2297,7 @@ if ( !class_exists('Recently') ) {
 
             return $string;
 
-        } // end __format_content
+        } // end format_content
 
         /**
          * Returns HTML list via AJAX
@@ -2307,7 +2307,7 @@ if ( !class_exists('Recently') ) {
          */
         public function get_recently( ) {
 
-            if ( $this->__is_numeric($_GET['widget_id']) && ($_GET['widget_id'] != '') ) {
+            if ( $this->is_numeric($_GET['widget_id']) && ($_GET['widget_id'] != '') ) {
                 $id = $_GET['widget_id'];
             } else {
                 die("Invalid ID");
@@ -2316,7 +2316,7 @@ if ( !class_exists('Recently') ) {
             $widget_instances = $this->get_settings();
 
             if ( isset($widget_instances[$id]) ) {
-                echo $this->__get_recents( $widget_instances[$id] );
+                echo $this->get_recents( $widget_instances[$id] );
             } else {
                 echo "Invalid Widget ID";
             }
@@ -2335,7 +2335,7 @@ if ( !class_exists('Recently') ) {
          * @since	1.0.0
          * @return	bool
          */
-        private function __is_plugin_active( $plugin ) {
+        private function is_plugin_active( $plugin ) {
 
             if ( is_multisite() ) {
                 $plugins = get_site_option( 'active_sitewide_plugins' );
@@ -2354,7 +2354,7 @@ if ( !class_exists('Recently') ) {
          * @param	string	$size
          * @return	array|bool
          */
-        private function __get_image_sizes( $size = '' ) {
+        private function get_image_sizes( $size = '' ) {
 
             global $_wp_additional_image_sizes;
 
@@ -2417,7 +2417,7 @@ if ( !class_exists('Recently') ) {
          * @param	int	number
          * @return	bool
          */
-        private function __is_numeric($number){
+        private function is_numeric($number){
             return !empty($number) && is_numeric($number) && (intval($number) == floatval($number));
         }
 
@@ -2430,14 +2430,14 @@ if ( !class_exists('Recently') ) {
          * @param	array	array2
          * @return	array
          */
-        private function __merge_array_r( array &$array1, array &$array2 ) {
+        private function merge_array_r( array &$array1, array &$array2 ) {
 
             $merged = $array1;
 
             foreach ( $array2 as $key => &$value ) {
 
                 if ( is_array( $value ) && isset ( $merged[$key] ) && is_array( $merged[$key] ) ) {
-                    $merged[$key] = $this->__merge_array_r( $merged[$key], $value );
+                    $merged[$key] = $this->merge_array_r( $merged[$key], $value );
                 } else {
                     $merged[$key] = $value;
                 }
@@ -2445,7 +2445,7 @@ if ( !class_exists('Recently') ) {
 
             return $merged;
 
-        } // end __merge_array_r
+        } // end merge_array_r
 
         /**
          * Debug function.
@@ -2454,7 +2454,7 @@ if ( !class_exists('Recently') ) {
          * @param	mixed $v variable to display with var_dump()
          * @param	mixed $v,... unlimited optional number of variables to display with var_dump()
          */
-        private function __debug($v) {
+        private function debug($v) {
 
             if ( !defined('WP_DEBUG') || !WP_DEBUG )
                 return;
@@ -2467,7 +2467,7 @@ if ( !class_exists('Recently') ) {
 
             }
 
-        } // end __debug
+        } // end debug
 
     } // end class
 
