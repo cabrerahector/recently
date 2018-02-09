@@ -6,14 +6,14 @@ Description: Recently is a highly customizable widget that displays your most re
 Version: 1.0.2
 Author: Hector Cabrera
 Author URI: http://cabrerahector.com
-Author Email: hcabrerab@gmail.com
+Author Email: me@cabrerahector.com
 Text Domain: recently
 Domain Path: /lang/
 Network: false
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Copyright 2015 Hector Cabrera (hcabrerab@gmail.com)
+Copyright 2015-2018 Hector Cabrera (me@cabrerahector.com)
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License, version 2, as
