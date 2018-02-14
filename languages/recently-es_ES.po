@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Recently\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/wordpress-popular-posts\n"
-"POT-Creation-Date: 2015-06-22 13:09-0430\n"
-"PO-Revision-Date: 2018-02-09 12:59-0400\n"
+"POT-Creation-Date: 2018-02-13 20:38-0400\n"
+"PO-Revision-Date: 2018-02-13 20:44-0400\n"
 "Last-Translator: Héctor Cabrera <hcabrerab@gmail.com>\n"
 "Language-Team: Héctor Cabrera <me@cabrerahector.com>\n"
 "Language: es\n"
@@ -14,694 +14,749 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.0.6\n"
-"X-Poedit-KeywordsList: _e;__;__ngettext;__ngettext_noop;_n_noop;_x;_nx;_nx_noop;_ex;"
-"esc_attr__;esc_attr_e;esc_attr_x;esc_html__;esc_html_e;esc_html_x;_c;_nc;_n:1,2\n"
+"X-Poedit-KeywordsList: _e;__;__ngettext;__ngettext_noop;_n_noop;_x;_nx;"
+"_nx_noop;_ex;esc_attr__;esc_attr_e;esc_attr_x;esc_html__;esc_html_e;"
+"esc_html_x;_c;_nc;_n:1,2\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPath-1: ..\n"
 
-#: ../recently.php:283
-msgid "Your site's most recent posts."
-msgstr "Las entradas más recientes de tu sitio."
-
-#: ../recently.php:402
-#, php-format
-msgid ""
-"Error: cannot ajaxify Recently on this theme. It's missing the <em>id</em> attribute "
-"on <em>before_widget</em> (see <a href=\"%s\" target=\"_blank\" rel=\"external nofollow"
-"\">register_sidebar</a> for more)"
-msgstr ""
-"Error: no es posible ajaxificar Recently en este tema. Falta el atributo <em>id</em> "
-"en <em>before_widget</em> (ver <a href=\"%s\" target=\"_blank\" rel=\"external nofollow"
-"\">register_sidebar</a> para más información)."
-
-#: ../recently.php:786
+#: ../admin/class-recently-admin.php:173
 msgid "Upload"
 msgstr "Subir"
 
-#: ../recently.php:862
+#: ../admin/class-recently-admin.php:195
+msgid "Overview"
+msgstr "General"
+
+#: ../admin/class-recently-admin.php:196
+msgid ""
+"Welcome to Recently's Dashboard! In this screen you will tools to further "
+"tweak Recently to your needs and more!"
+msgstr ""
+"&iexcl;Bienvenido al Dashboard de Recently! En esta pantalla "
+"encontrar&aacute;s herramientas para que puedas ajustar Recently de acuerdo "
+"a tus preferencias, y mucho m&aacute;s!"
+
+#: ../admin/class-recently-admin.php:202
+msgid "Like this plugin?"
+msgstr "¿Te gusta este plugin?"
+
+#: ../admin/class-recently-admin.php:204
+msgid ""
+"Each donation motivates me to keep releasing free stuff for the WordPress "
+"community!"
+msgstr ""
+"¡Cada donación me motiva a continuar publicando cosas gratis para la "
+"comunidad de WordPress!"
+
+#: ../admin/class-recently-admin.php:211
+#, php-format
+msgid "You can <a href=\"%s\" target=\"_blank\">leave a review</a>, too!"
+msgstr "¡También puedes <a href=\"%s\" target=\"_blank\">dejar un review</a>!"
+
+#: ../admin/class-recently-admin.php:218
+#, php-format
+msgid ""
+"<p><strong>For more information:</strong></p><ul><li><a href=\"%1$s"
+"\">Documentation</a></li><li><a href=\"%2$s\">Support</a></li></ul>"
+msgstr ""
+"<p><strong>Para mayor informaci&oacute;n:</strong></p><ul><li><a href=\"%1$s"
+"\">Documentaci&oacute;n</a></li><li><a href=\"%2$s\">Soporte</a></li></ul>"
+
+#: ../admin/class-recently-admin.php:269
 msgid "Settings"
 msgstr "Ajustes"
 
-#. translators: the %1$s fragment outputs the version number
-#: ../recently.php:1056
+#: ../admin/class-recently-admin.php:496
 #, php-format
 msgid ""
-"Your PHP installation is too old. Recently requires at least PHP version %1$s to "
-"function correctly. Please contact your hosting provider and ask them to upgrade PHP "
-"to %1$s or higher."
+"Your PHP installation is too old. Recently requires at least PHP version "
+"%1$s to function correctly. Please contact your hosting provider and ask "
+"them to upgrade PHP to %1$s or higher."
 msgstr ""
-"Tu versión de PHP es muy antigua. Recently requiere al menos PHP versión %1$s para "
-"funcionar correctamente. Por favor, contacta a tu proveedor de hospedaje y solicítales "
-"que se actualicen a PHP %1$s o mayor."
+"Tu versión de PHP es muy antigua. Recently requiere al menos PHP versión "
+"%1$s para funcionar correctamente. Por favor, contacta a tu proveedor de "
+"hospedaje y solicítales que se actualicen a PHP %1$s o mayor."
 
-#. translators: the %1$s fragment outputs the version number
-#: ../recently.php:1061
+#: ../admin/class-recently-admin.php:503
 #, php-format
 msgid ""
-"Your WordPress version is too old. Recently requires at least WordPress version %1$s "
-"to function correctly. Please update your blog via Dashboard &gt; Update."
+"Your WordPress version is too old. Recently requires at least WordPress "
+"version %1$s to function correctly. Please update your blog via Dashboard "
+"&gt; Update."
 msgstr ""
-"Tu versión de WordPress es muy antigua. Recently requiere al menos WordPress versión "
-"%1$s para funcionar correctamente. Por favor, actualiza tu blog vía Escritorio > "
-"Actualizaciones."
+"Tu versión de WordPress es muy antigua. Recently requiere al menos WordPress "
+"versión %1$s para funcionar correctamente. Por favor, actualiza tu blog vía "
+"Escritorio > Actualizaciones."
 
-#. translators: the %1$s fragment outputs the errors found during plugin activation, and %2$s the plugin name
-#: ../recently.php:1084
+#: ../admin/class-recently-admin.php:528
 #, php-format
 msgid ""
-"<div class=\"error\"><p>%1$s</p><p><i>%2$s</i> has been <strong>deactivated</strong>.</"
-"p></div>"
+"<div class=\"notice notice-error\"><p>%1$s</p><p><i>%2$s</i> has been "
+"<strong>deactivated</strong>.</p></div>"
 msgstr ""
-"<div class=\"error\"><p>%1$s</p><p><i>%2$s</i> ha sido <strong>desactivado</strong>.</"
-"p></div>"
+"<div class=\"notice notice-error\"><p>%1$s</p><p><i>%2$s</i> ha sido "
+"<strong>desactivado</strong>.</p></div>"
 
-#: ../recently.php:1118
+#: ../admin/partials/admin.php:6 ../admin/partials/admin.php:148
+msgid "Tools"
+msgstr "Herramientas"
+
+#: ../admin/partials/admin.php:7 ../admin/partials/admin.php:149
+msgid "Parameters"
+msgstr "Parámetros"
+
+#: ../admin/partials/admin.php:31 ../admin/partials/admin.php:56
+#: ../admin/partials/admin.php:82
+msgid "Settings saved."
+msgstr "Opciones guardadas."
+
+#: ../admin/partials/admin.php:48
+msgid "Please provide the name of your custom field."
+msgstr "Por favor, ingresa el nombre de tu custom field."
+
+#: ../admin/partials/admin.php:91
+msgid ""
+"Any changes made to Recently's default stylesheet will be lost after every "
+"plugin update. In order to prevent this from happening, please copy the "
+"recently.css file (located at wp-content/plugins/recently/style) into your "
+"theme's directory"
+msgstr ""
+"Cualquier cambio hecho en la hoja de estilos por defecto de Recently se "
+"perderá cada vez que actualice el plugin. Para evitar esto, por favor mueve "
+"el archivo recently.css (ubicado en wp-content/plugins/recently/style) a la "
+"carpeta de tu tema"
+
+#: ../admin/partials/admin.php:106
+msgid "This operation will delete all cached thumbnails and cannot be undone."
+msgstr ""
+"Esta operación eliminará todas las miniaturas en cache y no se puede "
+"deshacer."
+
+#: ../admin/partials/admin.php:106
+msgid "Do you want to continue?"
+msgstr "¿Quieres continuar?"
+
+#: ../admin/partials/admin.php:118
 msgid "Success! All files have been deleted!"
 msgstr "¡Éxito! ¡Todos los archivos fueron eliminados!"
 
-#: ../recently.php:1120
+#: ../admin/partials/admin.php:122
 msgid "The thumbnail cache is already empty!"
 msgstr "¡El cache de miniaturas ya está vacío!"
 
-#: ../recently.php:1123
+#: ../admin/partials/admin.php:126 ../admin/partials/admin.php:134
 msgid "Invalid action."
 msgstr "Acción inválida."
 
-#: ../recently.php:1126
+#: ../admin/partials/admin.php:130
 msgid ""
-"Sorry, you do not have enough permissions to do this. Please contact the site "
-"administrator for support."
+"Sorry, you do not have enough permissions to do this. Please contact the "
+"site administrator for support."
 msgstr ""
-"Lo lamento, no tienes suficientes permisos para hacer ésto. Por favor, contacta al "
-"administrador para obtener ayuda."
+"Lo lamento, no tienes suficientes permisos para hacer ésto. Por favor, "
+"contacta al administrador para obtener ayuda."
 
-#: ../recently.php:1290
+#: ../admin/partials/admin.php:147
+msgid "Menu"
+msgstr "Men&uacute;"
+
+#: ../admin/partials/admin.php:163
+msgid "HTML Markup"
+msgstr "Markup HTML"
+
+#: ../admin/partials/admin.php:166
+msgid "Links"
+msgstr "Links"
+
+#: ../admin/partials/admin.php:170
+msgid "Open links in"
+msgstr "Abrir links en"
+
+#: ../admin/partials/admin.php:173
+msgid "Current window"
+msgstr "Ventana actual"
+
+#: ../admin/partials/admin.php:174
+msgid "New tab/window"
+msgstr "Nueva ventana"
+
+#: ../admin/partials/admin.php:180
+msgid "REL attribute"
+msgstr "Atributo REL"
+
+#: ../admin/partials/admin.php:183
+msgid ""
+"The rel attribute specifies the relationship between the current document "
+"and the linked document"
+msgstr ""
+"El atributo rel especifica la relación entre el documento actual y el "
+"documento al que se enlaza"
+
+#: ../admin/partials/admin.php:189
+msgid "Thumbnails"
+msgstr "Miniaturas"
+
+#: ../admin/partials/admin.php:193
+msgid "Default thumbnail"
+msgstr "Miniatura por defecto"
+
+#: ../admin/partials/admin.php:198
+msgid "Upload thumbnail"
+msgstr "Subir miniatura"
+
+#: ../admin/partials/admin.php:200
+msgid ""
+"How-to: upload (or select) an image, set Size to Full and click on Upload"
+msgstr ""
+"Tutorial: sube (o selecciona) una imagen, configura Tamaño a Tamaño Completo "
+"y haz clic en Subir"
+
+#: ../admin/partials/admin.php:204
+msgid "Pick image from"
+msgstr "Selecciona la imagen desde"
+
+#: ../admin/partials/admin.php:207
+msgid "Featured image"
+msgstr "La imagen destacada"
+
+#: ../admin/partials/admin.php:208
+msgid "First image on post"
+msgstr "La primera imagen en el post"
+
+#: ../admin/partials/admin.php:209
+msgid "First attachment"
+msgstr "Primer imagen adjunta"
+
+#: ../admin/partials/admin.php:210
+msgid "Custom field"
+msgstr "Custom field"
+
+#: ../admin/partials/admin.php:213
+msgid "Tell Recently where it should get thumbnails from"
+msgstr "Dile a Recently de dónde debe obtener la imagen"
+
+#: ../admin/partials/admin.php:217
+msgid "Custom field name"
+msgstr "Nombre del custom field"
+
+#: ../admin/partials/admin.php:223
+msgid "Resize image from Custom field?"
+msgstr "Ajustar el tamaño de la imagen del custom field?"
+
+#: ../admin/partials/admin.php:226
+msgid "No, I will upload my own thumbnail"
+msgstr "No, subiré mi propia miniatura"
+
+#: ../admin/partials/admin.php:227
+msgid "Yes"
+msgstr "Sí"
+
+#: ../admin/partials/admin.php:238
+msgid "Empty image cache"
+msgstr "Vaciar cache de imágenes"
+
+#: ../admin/partials/admin.php:239
+msgid "Use this button to clear Recently's thumbnails cache"
+msgstr "Utiliza este botón para vaciar el caché de miniaturas de Recently"
+
+#: ../admin/partials/admin.php:249 ../admin/partials/admin.php:303
+#: ../admin/partials/admin.php:332
+msgid "Apply"
+msgstr "Aplicar"
+
+#: ../admin/partials/admin.php:256
+msgid "Data"
+msgstr "Datos"
+
+#: ../admin/partials/admin.php:261
+msgid "Ajaxify widget"
+msgstr "Usar Ajax con el widget"
+
+#: ../admin/partials/admin.php:264 ../admin/partials/admin.php:323
+msgid "Disabled"
+msgstr "Deshabilitado"
+
+#: ../admin/partials/admin.php:265 ../admin/partials/admin.php:322
+msgid "Enabled"
+msgstr "Habilitado"
+
+#: ../admin/partials/admin.php:269
+msgid ""
+"If you are using a caching plugin such as WP Super Cache, enabling this "
+"feature will keep the Recently widget from being cached by it"
+msgstr ""
+"Si utilizas un plugin de cache como WP Super Cache, habilitar esta "
+"funcionalidad impedirá que el widget de Recently sea cacheado"
+
+#: ../admin/partials/admin.php:273
+msgid "Cache Policy"
+msgstr "Pol&iacute;tica de Caché"
+
+#: ../admin/partials/admin.php:276
+msgid "Never cache"
+msgstr "Nunca almacenar en caché"
+
+#: ../admin/partials/admin.php:277
+msgid "Enable caching"
+msgstr "Habilitar caché"
+
+#: ../admin/partials/admin.php:281
+msgid ""
+"Sets Recently's cache expiration time. Recently can be cached for a "
+"specified amount of time. Recommended for large / high traffic sites"
+msgstr ""
+"Configura el tiempo de expiración del caché. Recently puede ser almacenado "
+"en caché por un tiempo específico. Recomendado para sitios grandes / de "
+"mucho tráfico"
+
+#: ../admin/partials/admin.php:285
+msgid "Refresh cache every"
+msgstr "Actualizar caché cada"
+
+#: ../admin/partials/admin.php:289
+msgid "Minute(s)"
+msgstr "Minuto(s)"
+
+#: ../admin/partials/admin.php:290
+msgid "Hour(s)"
+msgstr "Hora(s)"
+
+#: ../admin/partials/admin.php:291
+msgid "Day(s)"
+msgstr "Día(s)"
+
+#: ../admin/partials/admin.php:292
+msgid "Week(s)"
+msgstr "Semana(s)"
+
+#: ../admin/partials/admin.php:293
+msgid "Month(s)"
+msgstr "Mes(es)"
+
+#: ../admin/partials/admin.php:294
+msgid "Year(s)"
+msgstr "Año(s)"
+
+#: ../admin/partials/admin.php:297
+msgid "Really? That long?"
+msgstr "¿En serio? ¿Tanto tiempo?"
+
+#: ../admin/partials/admin.php:314
+msgid "Miscellaneous"
+msgstr "Misceláneos"
+
+#: ../admin/partials/admin.php:319
+msgid "Use plugin's stylesheet"
+msgstr "Utilizar la hoja de estilos del plugin"
+
+#: ../admin/partials/admin.php:326
+msgid ""
+"By default, the plugin includes a stylesheet called recently.css which you "
+"can use to style your recent posts listing. If you wish to use your own "
+"stylesheet or do not want it to have it included in the header section of "
+"your site, use this."
+msgstr ""
+"Por defecto, el plugin incluye una hoja de estilos llamada recently.css que "
+"puedes utilizar para darle estilos a tu listado de entradas recientes. Si "
+"quieres utilizar tu propia hoja de estilos o no quieres que se incluya en el "
+"header de tu sitio web, utiliza esto."
+
+#: ../admin/partials/admin.php:346
+msgid ""
+"With the following Content Tags you can customize the Recently widget when "
+"using the Custom HTML markup option"
+msgstr ""
+"Con los Content Tags que están a continuación puedes personalizar el widget "
+"de Recently cuando estés utilizando la función de Markup HTML personalizado"
+
+#: ../admin/partials/admin.php:351
+msgid "Parameter"
+msgstr "Parámetro"
+
+#: ../admin/partials/admin.php:352
+msgid "What it does "
+msgstr "Lo que hace"
+
+#: ../admin/partials/admin.php:358
+msgid ""
+"displays thumbnail linked to post/page (requires enabling the thumbnail "
+"option)"
+msgstr ""
+"muestra miniaturas enlazadas al post/la página (requiere habilitar la opción "
+"miniatura)"
+
+#: ../admin/partials/admin.php:362
+msgid ""
+"displays thumbnail image without linking to post/page (requires enabling the "
+"thumbnail option)"
+msgstr ""
+"muestra miniaturas sin enlace al post/la página (requiere habilitar la "
+"opción miniatura)"
+
+#: ../admin/partials/admin.php:366
+msgid "displays linked post/page title"
+msgstr "muestra título con link hacia el post/la página"
+
+#: ../admin/partials/admin.php:370
+msgid "displays post/page excerpt (requires enabling the excerpt option)"
+msgstr ""
+"muestra el resumen del post/ la página (requiere habilitar la opción de "
+"resumen)"
+
+#: ../admin/partials/admin.php:374
+msgid "displays the default Metadata tags"
+msgstr "muestra los Metadata Tags por defecto"
+
+#: ../admin/partials/admin.php:378
+msgid ""
+"displays post/page current rating (requires WP-PostRatings installed and "
+"enabled)"
+msgstr ""
+"muestra el rating actual del post/la página (requiere tener WP-PostRatings "
+"instalado y habilitado)"
+
+#: ../admin/partials/admin.php:382
+msgid ""
+"displays post/page current rating as an integer (requires WP-PostRatings "
+"installed and enabled)"
+msgstr ""
+"muestra la rating actual del post/la página como un entero (requiere tener "
+"WP-PostRatings instalado y habilitado)"
+
+#: ../admin/partials/admin.php:386
+msgid "outputs the URL of the post/page"
+msgstr "devuelve la URL del post/la página"
+
+#: ../admin/partials/admin.php:390
+msgid "displays post/page title, no link"
+msgstr "muestra el título del post/la página, sin enlace"
+
+#: ../admin/partials/admin.php:394
+msgid ""
+"displays linked author name (requires enabling author under Metadata Tags)"
+msgstr ""
+"muestra el nombre del autor con enlace (requiere habilitar autor en Metadata "
+"Tags)"
+
+#: ../admin/partials/admin.php:398
+msgid ""
+"displays linked taxonomy name (requires enabling taxonomy under Metadata "
+"Tags)"
+msgstr ""
+"muestra la taxonomía con enlace (requiere habilitar taxonomía en Metadata "
+"Tags)"
+
+#: ../admin/partials/admin.php:402
+msgid ""
+"displays current views count as an integer only (requires enabling views "
+"under Metadata Tags)"
+msgstr ""
+"muestra la cantidad de vistas como entero (requiere habilitar vistas en "
+"Metadata Tags)"
+
+#: ../admin/partials/admin.php:406
+msgid ""
+"displays current comments count as an integer only (requires enabling "
+"comments under Metadata Tags)"
+msgstr ""
+"muestra el número de comentarios como entero (requiere habilitar comentarios "
+"en Metadata Tags)"
+
+#: ../admin/partials/admin.php:410
+msgid "displays post/page date (requires enabling date under Metadata Tags)"
+msgstr ""
+"muestra la fecha del post/la página (requiere habilitar fecha en Metadata "
+"Tags)"
+
+#: ../includes/class-recently-output.php:126
 msgid "Sorry, nothing to show yet."
 msgstr "Lo lamentamos, no hay nada que mostrar aún."
 
-#. translators: %s placeholder will be replaced with the comments count value
-#: ../recently.php:1775
+#: ../includes/class-recently-output.php:542
+#, php-format
+msgid "%s ago"
+msgstr "hace %s"
+
+#: ../includes/class-recently-output.php:759
 #, php-format
 msgid "1 comment"
 msgid_plural "%s comments"
 msgstr[0] "1 comentario"
 msgstr[1] "%s comentarios"
 
-#. translators: %s placeholder will be replaced with the views count vaLue
-#: ../recently.php:1783
+#: ../includes/class-recently-output.php:766
 #, php-format
 msgid "1 view"
 msgid_plural "%s views"
 msgstr[0] "1 vista"
 msgstr[1] "%s vistas"
 
-#. translators: %s placeholder will be replaced with the author name
-#: ../recently.php:1792
+#: ../includes/class-recently-output.php:774
 #, php-format
 msgid "by %s"
 msgstr "por %s"
 
-#. translators: %s placeholder will be replaced with the post date
-#: ../recently.php:1799
+#: ../includes/class-recently-output.php:780
+#, php-format
+msgid "posted %s"
+msgstr "publicado hace %s"
+
+#: ../includes/class-recently-output.php:780
 #, php-format
 msgid "posted on %s"
 msgstr "publicado en %s"
 
-#: ../views/admin.php:20 ../views/admin.php:39 ../views/admin.php:59
-msgid "Settings saved."
-msgstr "Opciones guardadas."
-
-#: ../views/admin.php:31
-msgid "Please provide the name of your custom field."
-msgstr "Por favor, ingresa el nombre de tu custom field."
-
-#: ../views/admin.php:65
-msgid ""
-"Any changes made to Recently's default stylesheet will be lost after every plugin "
-"update. In order to prevent this from happening, please copy the recently.css file "
-"(located at wp-content/plugins/recently/style) into your theme's directory"
-msgstr ""
-"Cualquier cambio hecho en la hoja de estilos por defecto de Recently se perderá cada "
-"vez que actualice el plugin. Para evitar esto, por favor mueve el archivo recently.css "
-"(ubicado en wp-content/plugins/recently/style) a la carpeta de tu tema"
-
-#: ../views/admin.php:83
-msgid "This operation will delete all cached thumbnails and cannot be undone."
-msgstr "Esta operación eliminará todas las miniaturas en cache y no se puede deshacer."
-
-#: ../views/admin.php:83
-msgid "Do you want to continue?"
-msgstr "¿Quieres continuar?"
-
-#: ../views/admin.php:113
-msgid "Tools"
-msgstr "Herramientas"
-
-#: ../views/admin.php:114
-msgid "Parameters"
-msgstr "Parámetros"
-
-#: ../views/admin.php:115
-msgid "About"
-msgstr "Acerca de"
-
-#: ../views/admin.php:127
-msgid "HTML Markup"
-msgstr "Markup HTML"
-
-#: ../views/admin.php:130
-msgid "Links"
-msgstr "Links"
-
-#: ../views/admin.php:134
-msgid "Open links in"
-msgstr "Abrir links en"
-
-#: ../views/admin.php:137
-msgid "Current window"
-msgstr "Ventana actual"
-
-#: ../views/admin.php:138
-msgid "New tab/window"
-msgstr "Nueva ventana"
-
-#: ../views/admin.php:144
-msgid "REL attribute"
-msgstr "Atributo REL"
-
-#: ../views/admin.php:147
-msgid ""
-"The rel attribute specifies the relationship between the current document and the "
-"linked document"
-msgstr ""
-"El atributo rel especifica la relación entre el documento actual y el documento al que "
-"se enlaza"
-
-#: ../views/admin.php:153
-msgid "Thumbnails"
-msgstr "Miniaturas"
-
-#: ../views/admin.php:157
-msgid "Default thumbnail"
-msgstr "Miniatura por defecto"
-
-#: ../views/admin.php:162
-msgid "Upload thumbnail"
-msgstr "Subir miniatura"
-
-#: ../views/admin.php:164
-msgid "How-to: upload (or select) an image, set Size to Full and click on Upload"
-msgstr ""
-"Tutorial: sube (o selecciona) una imagen, configura Tamaño a Tamaño Completo y haz "
-"clic en Subir"
-
-#: ../views/admin.php:168
-msgid "Pick image from"
-msgstr "Selecciona la imagen desde"
-
-#: ../views/admin.php:171
-msgid "Featured image"
-msgstr "La imagen destacada"
-
-#: ../views/admin.php:172
-msgid "First image on post"
-msgstr "La primera imagen en el post"
-
-#: ../views/admin.php:173
-msgid "Custom field"
-msgstr "Custom field"
-
-#: ../views/admin.php:176
-msgid "Tell Recently where it should get thumbnails from"
-msgstr "Dile a Recently de dónde debe obtener la imagen"
-
-#: ../views/admin.php:180
-msgid "Custom field name"
-msgstr "Nombre del custom field"
-
-#: ../views/admin.php:186
-msgid "Resize image from Custom field?"
-msgstr "Ajustar el tamaño de la imagen del custom field?"
-
-#: ../views/admin.php:189
-msgid "No, I will upload my own thumbnail"
-msgstr "No, subiré mi propia miniatura"
-
-#: ../views/admin.php:190
-msgid "Yes"
-msgstr "Sí"
-
-#: ../views/admin.php:201
-msgid "Empty image cache"
-msgstr "Vaciar cache de imágenes"
-
-#: ../views/admin.php:202
-msgid "Use this button to clear Recently's thumbnails cache"
-msgstr "Utiliza este botón para vaciar el caché de miniaturas de Recently"
-
-#: ../views/admin.php:212 ../views/admin.php:264 ../views/admin.php:291
-msgid "Apply"
-msgstr "Aplicar"
-
-#: ../views/admin.php:217
-msgid "Data"
-msgstr "Datos"
-
-#: ../views/admin.php:222
-msgid "Ajaxify widget"
-msgstr "Usar Ajax con el widget"
-
-#: ../views/admin.php:225 ../views/admin.php:282
-msgid "Disabled"
-msgstr "Deshabilitado"
-
-#: ../views/admin.php:226 ../views/admin.php:281
-msgid "Enabled"
-msgstr "Habilitado"
-
-#: ../views/admin.php:230
-msgid ""
-"If you are using a caching plugin such as WP Super Cache, enabling this feature will "
-"keep the Recently widget from being cached by it"
-msgstr ""
-"Si utilizas un plugin de cache como WP Super Cache, habilitar esta funcionalidad "
-"impedirá que el widget de Recently sea cacheado"
-
-#: ../views/admin.php:234
-msgid "Cache Expiry Policy"
-msgstr "Pol&iacute;tica de Expiraci&oacute;n del Caché"
-
-#: ../views/admin.php:234
-msgid "What is this?"
-msgstr "¿Qué es ésto?"
-
-#: ../views/admin.php:237
-msgid "Never cache"
-msgstr "Nunca almacenar en caché"
-
-#: ../views/admin.php:238
-msgid "Enable caching"
-msgstr "Habilitar caché"
-
-#: ../views/admin.php:242
-msgid ""
-"Sets Recently's cache expiration time. Recently can be cached for a specified amount "
-"of time. Recommended for large / high traffic sites"
-msgstr ""
-"Configura el tiempo de expiración del caché. Recently puede ser almacenado en caché "
-"por un tiempo específico. Recomendado para sitios grandes / de mucho tráfico"
-
-#: ../views/admin.php:246
-msgid "Refresh cache every"
-msgstr "Actualizar caché cada"
-
-#: ../views/admin.php:250
-msgid "Minute(s)"
-msgstr "Minuto(s)"
-
-#: ../views/admin.php:251
-msgid "Hour(s)"
-msgstr "Hora(s)"
-
-#: ../views/admin.php:252
-msgid "Day(s)"
-msgstr "Día(s)"
-
-#: ../views/admin.php:253
-msgid "Week(s)"
-msgstr "Semana(s)"
-
-#: ../views/admin.php:254
-msgid "Month(s)"
-msgstr "Mes(es)"
-
-#: ../views/admin.php:255
-msgid "Year(s)"
-msgstr "Año(s)"
-
-#: ../views/admin.php:258
-msgid "Really? That long?"
-msgstr "¿En serio? ¿Tanto tiempo?"
-
-#: ../views/admin.php:273
-msgid "Miscellaneous"
-msgstr "Misceláneos"
-
-#: ../views/admin.php:278
-msgid "Use plugin's stylesheet"
-msgstr "Utilizar la hoja de estilos del plugin"
-
-#: ../views/admin.php:285
-msgid ""
-"By default, the plugin includes a stylesheet called recently.css which you can use to "
-"style your recent posts listing. If you wish to use your own stylesheet or do not want "
-"it to have it included in the header section of your site, use this."
-msgstr ""
-"Por defecto, el plugin incluye una hoja de estilos llamada recently.css que puedes "
-"utilizar para darle estilos a tu listado de entradas recientes. Si quieres utilizar tu "
-"propia hoja de estilos o no quieres que se incluya en el header de tu sitio web, "
-"utiliza esto."
-
-#: ../views/admin.php:303
-msgid ""
-"With the following Content Tags you can customize the Recently widget when using the "
-"Custom HTML markup option"
-msgstr ""
-"Con los Content Tags que están a continuación puedes personalizar el widget de "
-"Recently cuando estés utilizando la función de Markup HTML personalizado"
-
-#: ../views/admin.php:308
-msgid "Parameter"
-msgstr "Parámetro"
-
-#: ../views/admin.php:309
-msgid "What it does "
-msgstr "Lo que hace"
-
-#: ../views/admin.php:315
-msgid "displays thumbnail linked to post/page (requires enabling the thumbnail option)"
-msgstr ""
-"muestra miniaturas enlazadas al post/la página (requiere habilitar la opción miniatura)"
-
-#: ../views/admin.php:319
-msgid ""
-"displays thumbnail image without linking to post/page (requires enabling the thumbnail "
-"option)"
-msgstr ""
-"muestra miniaturas sin enlace al post/la página (requiere habilitar la opción "
-"miniatura)"
-
-#: ../views/admin.php:323
-msgid "displays linked post/page title"
-msgstr "muestra título con link hacia el post/la página"
-
-#: ../views/admin.php:327
-msgid "displays post/page excerpt (requires enabling the excerpt option)"
-msgstr "muestra el resumen del post/ la página (requiere habilitar la opción de resumen)"
-
-#: ../views/admin.php:331
-msgid "displays the default Metadata tags"
-msgstr "muestra los Metadata Tags por defecto"
-
-#: ../views/admin.php:335
-msgid "displays post/page current rating (requires WP-PostRatings installed and enabled)"
-msgstr ""
-"muestra el rating actual del post/la página (requiere tener WP-PostRatings instalado y "
-"habilitado)"
-
-#: ../views/admin.php:339
-msgid ""
-"displays post/page current rating as an integer (requires WP-PostRatings installed and "
-"enabled)"
-msgstr ""
-"muestra la rating actual del post/la página como un entero (requiere tener WP-"
-"PostRatings instalado y habilitado)"
-
-#: ../views/admin.php:343
-msgid "outputs the URL of the post/page"
-msgstr "devuelve la URL del post/la página"
-
-#: ../views/admin.php:347
-msgid "displays post/page title, no link"
-msgstr "muestra el título del post/la página, sin enlace"
-
-#: ../views/admin.php:351
-msgid "displays linked author name (requires enabling author under Metadata Tags)"
-msgstr ""
-"muestra el nombre del autor con enlace (requiere habilitar autor en Metadata Tags)"
-
-#: ../views/admin.php:355
-msgid "displays linked taxonomy name (requires enabling taxonomy under Metadata Tags)"
-msgstr "muestra la taxonomía con enlace (requiere habilitar taxonomía en Metadata Tags)"
-
-#: ../views/admin.php:359
-msgid ""
-"displays current views count as an integer only (requires enabling views under "
-"Metadata Tags)"
-msgstr ""
-"muestra la cantidad de vistas como entero (requiere habilitar vistas en Metadata Tags)"
-
-#: ../views/admin.php:363
-msgid ""
-"displays current comments count as an integer only (requires enabling comments under "
-"Metadata Tags)"
-msgstr ""
-"muestra el número de comentarios como entero (requiere habilitar comentarios en "
-"Metadata Tags)"
-
-#: ../views/admin.php:367
-msgid "displays post/page date (requires enabling date under Metadata Tags)"
-msgstr "muestra la fecha del post/la página (requiere habilitar fecha en Metadata Tags)"
-
-#. translators: %s is a placeholder for version number, don't forget to include it!
-#: ../views/admin.php:378
-#, php-format
-msgid "About Recently %s"
-msgstr "Acerca de Recently %s"
-
-#: ../views/admin.php:379
-msgid "This version includes the following changes"
-msgstr "Esta versión incluye los siguientes cambios"
-
-#: ../views/admin.php:389
-msgid "Do you like this plugin?"
-msgstr "¿Te gusta este plugin?"
-
-#: ../views/admin.php:396
-msgid ""
-"Each donation motivates me to keep releasing free stuff for the WordPress community!"
-msgstr ""
-"¡Cada donación me motiva a continuar publicando cosas gratis para la comunidad de "
-"WordPress!"
-
-#. translators: %s is a placeholder for the Review form URL, don't forget to include it!
-#: ../views/admin.php:397
-#, php-format
-msgid "You can <a href=\"%s\" target=\"_blank\">leave a review</a>, too!"
-msgstr "¡También puedes <a href=\"%s\" target=\"_blank\">dejar un review</a>!"
-
-#: ../views/admin.php:401
-msgid "Need help?"
-msgstr "¿Necesitas ayuda?"
-
-#. translators: %s is a placeholder for the forum URL, don't forget to include it!
-#: ../views/admin.php:402
+#: ../includes/class-recently-widget.php:29
+msgid "Your site's most recent posts."
+msgstr "Las entradas más recientes de tu sitio."
+
+#: ../includes/class-recently-widget.php:90
 #, php-format
 msgid ""
-"Visit <a href=\"%s\" target=\"_blank\">the forum</a> for support, questions and "
-"feedback."
+"Error: cannot ajaxify Recently on this theme. It's missing the <em>id</em> "
+"attribute on <em>before_widget</em> (see <a href=\"%s\" target=\"_blank\" "
+"rel=\"external nofollow\">register_sidebar</a> for more)"
 msgstr ""
-"Visita <a href=\"%s\" target=\"_blank\">el foro</a> para obtener soporte, para "
-"preguntas y comentarios."
+"Error: no es posible ajaxificar Recently en este tema. Falta el atributo "
+"<em>id</em> en <em>before_widget</em> (ver <a href=\"%s\" target=\"_blank\" "
+"rel=\"external nofollow\">register_sidebar</a> para más información)."
 
-#: ../views/admin.php:403
-msgid "Let's make this plugin even better!"
-msgstr "¡Hagamos a este plugin aún mejor!"
-
-#: ../views/form.php:3
+#: ../includes/widget-form.php:3
 msgid "Title"
 msgstr "Título"
 
-#: ../views/form.php:8
+#: ../includes/widget-form.php:8
 msgid "Show up to"
 msgstr "Mostrar hasta"
 
-#: ../views/form.php:9
+#: ../includes/widget-form.php:9
 msgid "posts"
 msgstr "entradas"
 
-#: ../views/form.php:13
+#: ../includes/widget-form.php:13
 msgid "Offset"
 msgstr "Offset"
 
-#: ../views/form.php:15
+#: ../includes/widget-form.php:15
 msgid "Number of posts to displace or pass over"
 msgstr "Número de posts a omitir"
 
-#: ../views/form.php:20
+#: ../includes/widget-form.php:20
 msgid "Filters"
 msgstr "Filtros"
 
-#: ../views/form.php:23
+#: ../includes/widget-form.php:23
 msgid "Types"
 msgstr "Tipos"
 
-#: ../views/form.php:25
+#: ../includes/widget-form.php:25
 msgid "Post types, separated by comma"
 msgstr "Tipos de entradas, separadas por coma"
 
-#: ../views/form.php:29
+#: ../includes/widget-form.php:29
 msgid "Posts to exclude"
 msgstr "Entradas a excluir"
 
-#: ../views/form.php:31
+#: ../includes/widget-form.php:31
 msgid "Post / Page IDs, separated by comma"
 msgstr "IDs de posts / páginas, separadas por coma"
 
-#: ../views/form.php:35
+#: ../includes/widget-form.php:35
 msgid "Taxonomy"
 msgstr "Taxonomía"
 
-#: ../views/form.php:37
+#: ../includes/widget-form.php:37
 msgid "None"
 msgstr "Ninguna"
 
-#: ../views/form.php:72
+#: ../includes/widget-form.php:71
 msgid "Term IDs"
 msgstr "IDs de los términos"
 
-#: ../views/form.php:74
+#: ../includes/widget-form.php:73
 msgid "Taxonomy IDs, separated by comma (prefix a minus sign to exclude)"
 msgstr ""
-"IDs de las taxonomías, separadas por coma (coloca un signo negativo por delante para "
-"excluir)"
+"IDs de las taxonomías, separadas por coma (coloca un signo negativo por "
+"delante para excluir)"
 
-#: ../views/form.php:78
+#: ../includes/widget-form.php:77
 msgid "Term Slugs"
 msgstr "Slugs de los términos"
 
-#: ../views/form.php:80
+#: ../includes/widget-form.php:79
 msgid "Taxonomy slugs, separated by comma"
 msgstr "Slugs de las taxonomías, separados por coma"
 
-#: ../views/form.php:99
+#: ../includes/widget-form.php:98
 msgid "Authors"
 msgstr "Autores"
 
-#: ../views/form.php:101
+#: ../includes/widget-form.php:100
 msgid "Author IDs, separated by comma (prefix a minus sign to exclude)"
 msgstr ""
-"IDs de los autores, separados por coma (coloca un signo negativo por delante para "
-"excluir)"
+"IDs de los autores, separados por coma (coloca un signo negativo por delante "
+"para excluir)"
 
-#: ../views/form.php:106
+#: ../includes/widget-form.php:105
 msgid "Posts settings"
 msgstr "Configuración de las entradas"
 
-#: ../views/form.php:110
+#: ../includes/widget-form.php:109
 msgid "Display post rating"
 msgstr "Mostrar el rating de la entrada"
 
-#: ../views/form.php:113
+#: ../includes/widget-form.php:112
 msgid "Shorten title"
 msgstr "Acortar título"
 
-#: ../views/form.php:116
+#: ../includes/widget-form.php:115
 msgid "Shorten title to"
 msgstr "Acortar el título en"
 
-#: ../views/form.php:117 ../views/form.php:128
+#: ../includes/widget-form.php:116 ../includes/widget-form.php:127
 msgid "characters"
 msgstr "caracteres"
 
-#: ../views/form.php:118 ../views/form.php:129
+#: ../includes/widget-form.php:117 ../includes/widget-form.php:128
 msgid "words"
 msgstr "palabras"
 
-#: ../views/form.php:121
+#: ../includes/widget-form.php:120
 msgid "Display post excerpt"
 msgstr "Mostrar resumen de la entrada"
 
-#: ../views/form.php:124
+#: ../includes/widget-form.php:123
 msgid "Keep text format and links"
 msgstr "Mantener el formato de textos y links"
 
-#: ../views/form.php:126
+#: ../includes/widget-form.php:125
 msgid "Excerpt length"
 msgstr "Longitud del resumen"
 
-#: ../views/form.php:132
+#: ../includes/widget-form.php:131
 msgid "Display post thumbnail"
 msgstr "Mostrar miniatura"
 
-#: ../views/form.php:135
+#: ../includes/widget-form.php:134
 msgid "Use predefined size"
 msgstr "Usar tamaño predeterminado"
 
-#: ../views/form.php:147
+#: ../includes/widget-form.php:149
 msgid "Set size manually"
 msgstr "Configurar tamaño manualmente"
 
-#: ../views/form.php:149
+#: ../includes/widget-form.php:151
 msgid "Width"
 msgstr "Ancho"
 
-#: ../views/form.php:152
+#: ../includes/widget-form.php:154
 msgid "Height"
 msgstr "Alto"
 
-#: ../views/form.php:158
+#: ../includes/widget-form.php:160
 msgid "Metadata Tag settings"
 msgstr "Configuración del Metadata Tag"
 
-#: ../views/form.php:160
+#: ../includes/widget-form.php:162
 msgid "Display comment count"
 msgstr "Mostrar cantidad de comentarios"
 
-#: ../views/form.php:162
+#: ../includes/widget-form.php:164
 msgid "Display views"
 msgstr "Mostrar vistas"
 
-#: ../views/form.php:164
+#: ../includes/widget-form.php:166
 msgid "Display author"
 msgstr "Mostrar autor"
 
-#: ../views/form.php:166
+#: ../includes/widget-form.php:168
 msgid "Display date"
 msgstr "Mostrar fecha"
 
-#: ../views/form.php:169
+#: ../includes/widget-form.php:171
 msgid "Date Format"
 msgstr "Formato de la fecha"
 
-#: ../views/form.php:171
+#: ../includes/widget-form.php:173
+msgid "Relative"
+msgstr "Relativa"
+
+#: ../includes/widget-form.php:174
 msgid "WordPress Date Format"
 msgstr "Formato de fecha de WordPress"
 
-#: ../views/form.php:178
+#: ../includes/widget-form.php:181
 msgid "Display taxonomy"
 msgstr "Mostrar taxonomía"
 
-#: ../views/form.php:195
+#: ../includes/widget-form.php:198
 msgid "HTML Markup settings"
 msgstr "Configuración del Markup HTML"
 
-#: ../views/form.php:197
+#: ../includes/widget-form.php:200
 msgid "Use custom HTML Markup"
 msgstr "Usar markup HTML personalizado"
 
-#: ../views/form.php:201
+#: ../includes/widget-form.php:204
 msgid "Before / after title"
 msgstr "Antes / después del título"
 
-#: ../views/form.php:207
+#: ../includes/widget-form.php:210
 msgid "Before / after Recently"
 msgstr "Antes / deespués de Recently"
 
-#: ../views/form.php:213
+#: ../includes/widget-form.php:216
 msgid "Post HTML Markup"
 msgstr "Markup HTML de la entrada"
 
-#: ../views/form.php:215
+#: ../includes/widget-form.php:218
 #, php-format
 msgid "See available <a href=\"%s\" target=\"_blank\">Content Tags</a>"
 msgstr "Mira los <a href=\"%s\" target=\"_blank\">Content Tags</a> disponibles"
 
-#~ msgid "displays thumbnail linked to post/page, requires enabling thumbnails"
-#~ msgstr ""
-#~ "muestra una miniatura con link hacia el post/la página, requiere habilitar la "
-#~ "miniatura"
+#~ msgid "About"
+#~ msgstr "Acerca de"
+
+#~ msgid "What is this?"
+#~ msgstr "¿Qué es ésto?"
+
+#~ msgid "About Recently %s"
+#~ msgstr "Acerca de Recently %s"
+
+#~ msgid "This version includes the following changes"
+#~ msgstr "Esta versión incluye los siguientes cambios"
+
+#~ msgid "Need help?"
+#~ msgstr "¿Necesitas ayuda?"
 
 #~ msgid ""
-#~ "displays thumbnail image without linking to post/page, requires enabling thumbnails"
+#~ "Visit <a href=\"%s\" target=\"_blank\">the forum</a> for support, "
+#~ "questions and feedback."
 #~ msgstr ""
-#~ "muestra una miniatura sin link hacia el post/la página, requiere habilitar la "
-#~ "miniatura"
+#~ "Visita <a href=\"%s\" target=\"_blank\">el foro</a> para obtener soporte, "
+#~ "para preguntas y comentarios."
+
+#~ msgid "Let's make this plugin even better!"
+#~ msgstr "¡Hagamos a este plugin aún mejor!"
+
+#~ msgid "displays thumbnail linked to post/page, requires enabling thumbnails"
+#~ msgstr ""
+#~ "muestra una miniatura con link hacia el post/la página, requiere "
+#~ "habilitar la miniatura"
+
+#~ msgid ""
+#~ "displays thumbnail image without linking to post/page, requires enabling "
+#~ "thumbnails"
+#~ msgstr ""
+#~ "muestra una miniatura sin link hacia el post/la página, requiere "
+#~ "habilitar la miniatura"
 
 #~ msgid "displays post/page excerpt, and requires enabling excerpts"
-#~ msgstr "muestra el resumen del post/la página, y requiere habilitar el resumen"
+#~ msgstr ""
+#~ "muestra el resumen del post/la página, y requiere habilitar el resumen"
 
 #~ msgid "Stats Tag settings"
 #~ msgstr "Configuración del Stats Tag"
@@ -716,15 +771,15 @@ msgstr "Mira los <a href=\"%s\" target=\"_blank\">Content Tags</a> disponibles"
 #~ msgstr "Mostrar categoría"
 
 #~ msgid ""
-#~ "If you are using a caching plugin such as WP Super Cache, enabling this feature "
-#~ "will keep the popular list from being cached by it"
+#~ "If you are using a caching plugin such as WP Super Cache, enabling this "
+#~ "feature will keep the popular list from being cached by it"
 #~ msgstr ""
-#~ "Si utilizas un plugin de cacheo como WP Super Cache, habilitar esta funcionalidad "
-#~ "evitará que "
+#~ "Si utilizas un plugin de cacheo como WP Super Cache, habilitar esta "
+#~ "funcionalidad evitará que "
 
 #~ msgid ""
-#~ "How-to: upload (or select) an image, set Size to Full and click on Upload. After "
-#~ "it's done, hit on Apply to save changes"
+#~ "How-to: upload (or select) an image, set Size to Full and click on "
+#~ "Upload. After it's done, hit on Apply to save changes"
 #~ msgstr ""
-#~ "Tutorial: sube (o selecciona) una imagen, configura Tamaño a Tamaño Completo y haz "
-#~ "clic en Subir."
+#~ "Tutorial: sube (o selecciona) una imagen, configura Tamaño a Tamaño "
+#~ "Completo y haz clic en Subir."
