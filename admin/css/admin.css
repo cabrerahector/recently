@@ -1,0 +1,126 @@
+#recently-message { display: none; }
+
+/*
+ * Navigation
+ */
+#recently-menu {
+    float: none;
+    clear: both;
+}
+
+    #recently-menu ul {
+        text-align: center;
+    }
+
+        #recently-menu ul li {
+            padding: 0 15px 0 10px;
+            margin: 0 0px;
+            display: inline;
+            border-right: #ddd 1px solid;
+        }
+
+        #recently-menu ul li:first-child {
+            display: none;
+        }
+
+        #recently-menu ul li:last-child {
+            border: none;
+        }
+
+            #recently-menu ul li a {
+            }
+
+            #recently-menu ul li.current a {
+                color: #00a0d2;
+                text-decoration: none;
+            }
+
+.recently-wrapper {
+    margin: 20px 20px 0 2px;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+    .recently-header {
+        overflow: hidden;
+        display: block;
+        padding: 25px 0 0 0;
+    }
+
+        .recently-header h2,
+        .recently-header h3,
+        .recently-header h4,
+        .recently-header h5 {
+            text-align: center;
+        }
+
+        .recently-header h2 {
+            margin: 0 0 5px 0;
+            font-size: 1.0em;
+            font-weight: 400;
+            line-height: 1.0em;
+        }
+
+        .recently-header h3 {
+            margin: 0 0 30px 0;
+            font-size: 3.5em;
+            letter-spacing: -1px;
+            line-height: 1.0em;
+        }
+
+        .recently-header h4 {
+            margin: 0 0 8px 0;
+            font-size: 2.0em;
+            font-weight: 100;
+            line-height: 1.0em;
+            letter-spacing: -2px;
+        }
+
+        .recently-header h5 {
+            margin: 0 0 0 0;
+            font-size: 0.9em;
+            font-weight: 300;
+            line-height: 0.9em;
+        }
+
+    .recently-content {
+        float: none;
+        clear: both;
+        width: 100%;
+    }
+
+.clear {
+    float:none;
+    clear:both;
+    width:100%;
+}
+
+/*
+ * Media Queries
+ */
+
+/* Small devices */
+@media only screen and (max-width: 480px){
+
+}
+
+/* Tablets & small desktops */
+@media only screen and (max-width: 768px) {
+
+    .recently-wrapper {
+        margin: 20px 12px 0 2px;
+    }
+
+        #recently-listing .recently-tabbed-nav li a span:last-child {
+            display: none;
+        }
+
+        #recently-listing .recently-tabbed-nav li a .fa {
+            margin: 0 0 0 0;
+        }
+
+}
+
+/* Medium desktops, Large desktops & other devices */
+@media only screen and (max-width: 992px) { /* 960 + 16 + 16 */
+
+}
