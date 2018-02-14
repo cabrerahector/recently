@@ -246,7 +246,7 @@ if ( !$recently_rand = get_option("recently_rand") ) {
             </table>
 
             <input type="hidden" name="section" value="markup" />
-            <br /><input type="submit" class="button-secondary action" id="btn_th_ops" value="<?php _e("Apply", 'recently'); ?>" name="" />
+            <br /><input type="submit" class="button-primary action" id="btn_th_ops" value="<?php _e("Apply", 'recently'); ?>" name="" />
 
             <?php wp_nonce_field( 'recently-update-html-options', 'recently-admin-token' ); ?>
         </form>
@@ -300,7 +300,7 @@ if ( !$recently_rand = get_option("recently_rand") ) {
                     <tr valign="top">
                         <td colspan="2">
                             <input type="hidden" name="section" value="data" />
-                            <input type="submit" class="button-secondary action" id="btn_ajax_ops" value="<?php _e("Apply", 'recently'); ?>" name="" />
+                            <input type="submit" class="button-primary action" id="btn_ajax_ops" value="<?php _e("Apply", 'recently'); ?>" name="" />
                         </td>
                     </tr>
                 </tbody>
@@ -329,7 +329,7 @@ if ( !$recently_rand = get_option("recently_rand") ) {
                     <tr valign="top">
                         <td colspan="2">
                             <input type="hidden" name="section" value="misc" />
-                            <input type="submit" class="button-secondary action" value="<?php _e("Apply", 'recently'); ?>" name="" />
+                            <input type="submit" class="button-primary action" value="<?php _e("Apply", 'recently'); ?>" name="" />
                         </td>
                     </tr>
                 </tbody>
