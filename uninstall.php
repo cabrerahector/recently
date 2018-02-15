@@ -3,10 +3,10 @@
  * Fired when the plugin is uninstalled.
  *
  * @package   Recently
- * @author    Hector Cabrera <hcabrerab@gmail.com>
+ * @author    Hector Cabrera <me@cabrerahector.com>
  * @license   GPL-2.0+
  * @link      http://cabrerahector.com
- * @copyright 2015 Hector Cabrera
+ * @copyright 2015-2018 Hector Cabrera
  */
 
 // If uninstall, not called from WordPress, then exit
