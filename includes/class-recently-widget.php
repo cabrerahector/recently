@@ -93,21 +93,14 @@ class Recently_Widget extends WP_Widget {
             ?>
             <script type="text/javascript">
                 window.addEventListener('DOMContentLoaded', function() {
-                    // jQuery is available, so proceed
-                    if ( window.jQuery ) {
-
-                        jQuery(document).ready(function($){
-                            $.get('<?php echo admin_url('admin-ajax.php'); ?>', {
-                                action: 'get_recently',
-                                recently_widget_id: '<?php echo $this->number; ?>'
-                            }, function(data){
-                                $('#<?php echo $widget_id; ?>').append(data);
-                            });
-                        });
-
-                    } else { // jQuery is not defined
-                        if ( window.console && window.console.log )
-                            window.console.log('Recently: jQuery is not defined!');
+                    if ( 'undefined' != typeof RecentlyWidget ) {
+                        RecentlyWidget.get(
+                            '<?php echo admin_url('admin-ajax.php'); ?>',
+                            'action=get_recently&recently_widget_id=<?php echo $this->number; ?>',
+                            function( response ){
+                                document.getElementById('<?php echo $widget_id; ?>').innerHTML += response;
+                            }
+                        );
                     }
                 });
             </script>
