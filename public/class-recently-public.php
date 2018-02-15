@@ -87,7 +87,7 @@ class Recently_Public {
      * @since    2.0.0
      */
     public function enqueue_scripts() {
-        wp_register_script( 'recently-js', plugin_dir_url( __FILE__ ) . 'js/recently.min.js', array(), $this->version, false );
+        wp_register_script( 'recently-js', plugin_dir_url( __FILE__ ) . 'js/recently.min.js', array(), $this->version, true );
         wp_enqueue_script( 'recently-js' );
     }
 
