@@ -3,8 +3,8 @@ Contributors: hcabrera
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PASXEM2E7JUVC
 Tags: recent, posts, widget, recently
 Requires at least: 3.9
-Tested up to: 4.5
-Stable tag: 1.0.2
+Tested up to: 4.9.4
+Stable tag: 2.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
