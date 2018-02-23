@@ -69,7 +69,7 @@ if ( isset($_POST['section']) ) {
 
             // if any of the caching settings was updated, destroy all transients created by the plugin
             if ( $this->options['tools']['data']['cache']['active'] != $_POST['cache'] || $this->options['tools']['data']['cache']['interval']['time'] != $_POST['cache_interval_time'] || $this->options['tools']['data']['cache']['interval']['value'] != $_POST['cache_interval_value'] ) {
-                $this->__flush_transients();
+                $this->flush_transients();
             }
 
             $this->options['tools']['data']['cache']['active'] = $_POST['cache'];
