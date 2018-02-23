@@ -2,7 +2,7 @@
 Contributors: hcabrera
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PASXEM2E7JUVC
 Tags: recent, posts, widget, recently
-Requires at least: 3.9
+Requires at least: 4.5
 Tested up to: 4.9.4
 Requires PHP: 5.2
 Stable tag: 2.0.0
