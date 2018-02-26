@@ -84,7 +84,7 @@ class Recently_Widget extends WP_Widget {
             echo $before_title . $title . $after_title;
         }
 
-        if ( $this->admin_options['tools']['data']['ajax'] ) {
+        if ( $this->admin_options['tools']['data']['ajax'] && !is_customize_preview() ) {
             if ( empty($before_widget) || !preg_match('/id="[^"]*"/', $before_widget) ) {
             ?>
             <p><?php printf( __('Error: cannot ajaxify Recently on this theme. It\'s missing the <em>id</em> attribute on <em>before_widget</em> (see <a href="%s" target="_blank" rel="external nofollow">register_sidebar</a> for more)', $this->plugin_slug ), 'https://codex.wordpress.org/Function_Reference/register_sidebar' ); ?>.</p>
