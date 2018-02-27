@@ -13,6 +13,8 @@ Changelog
 * Improves compatibility with WP-SpamShield, Polylang and WPML.
 * Tons of minor bug fixes and improvements.
 
+See: [Release Notes](https://cabrerahector.com/wordpress/recently-2-0-is-out/).
+
 #### 1.0.2 ####
 * Minor bug fixes and improvements
 
