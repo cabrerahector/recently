@@ -8,8 +8,6 @@ $tabs = array(
     'debug' => 'Debug'
 );
 
-//echo '<pre>'; var_dump( $this->options ); echo '</pre>';
-
 // Set active tab
 if ( isset( $_GET['tab'] ) && isset( $tabs[$_GET['tab']] ) )
     $current = $_GET['tab'];
