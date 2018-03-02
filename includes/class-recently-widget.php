@@ -64,6 +64,11 @@ class Recently_Widget extends WP_Widget {
          */
         extract( $args, EXTR_SKIP );
 
+        $instance = Recently_Helper::merge_array_r(
+            Recently_Settings::$defaults[ 'widget_options' ],
+            (array) $instance
+        );
+
         $markup = ( $instance['markup']['custom_html'] || has_filter('recently_custom_html') )
             ? 'custom'
             : 'regular';
