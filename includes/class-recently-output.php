@@ -482,7 +482,7 @@ class Recently_Output {
                 $pageviews = wpp_get_views( $post->ID, NULL, false );
             }
             // WP-PostViews support
-            elseif ( $this->is_plugin_active('wp-postviews/wp-postviews.php') ) {
+            elseif ( Recently_Helper::is_plugin_active('wp-postviews/wp-postviews.php') ) {
                 // this plugin stores views data in the post meta table
                 if ( !$pageviews = get_post_meta( $post->ID, 'views', true ) ) {
                     $pageviews = 0;

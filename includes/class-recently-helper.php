@@ -3,6 +3,23 @@
 class Recently_Helper {
 
     /**
+     * Checks if a given plugin is active
+     *
+     * @since	1.0.0
+     * @return	bool
+     */
+    public static function is_plugin_active( $plugin ) {
+
+        if ( is_multisite() ) {
+            $plugins = get_site_option( 'active_sitewide_plugins' );
+            return isset( $plugins[$plugin] );
+        }
+
+        return in_array( $plugin, get_option( 'active_plugins' ) );
+
+    }
+
+    /**
      * Checks for valid number.
      *
      * @since   1.0.0
