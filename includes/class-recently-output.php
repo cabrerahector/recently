@@ -203,7 +203,7 @@ class Recently_Output {
                 'title' => '<a href="' . $permalink . '" title="' . $post_title_attr . '" class="recently-post-title" target="' . $this->admin_options['tools']['markup']['link']['attr']['target'] . '" rel="' . esc_attr($this->admin_options['tools']['markup']['link']['attr']['rel']) . '">' . $post_title . '</a>',
                 'summary' => $post_excerpt,
                 'stats' => $post_meta,
-                'img' => ( !empty( $post_thumbnail ) ) ? '<a href="' . $permalink . '" title="' . $post_title_attr . '" target="' . $this->admin_options['tools']['markup']['link']['attr']['target'] . '" rel="' . esc_attr($this->admin_options['tools']['markup']['link']['attr']['rel']) . '">' . $post_thumbnail . '</a>' : '',
+                'img' => ( !empty( $post_thumbnail ) ) ? '<a href="' . $permalink . '" title="' . $post_title_attr . '" target="' . $this->admin_options['tools']['markup']['link']['attr']['target'] . '" rel="' . esc_attr($this->admin_options['tools']['markup']['link']['attr']['rel']) . '" class="recently-thumbnail-wrapper">' . $post_thumbnail . '</a>' : '',
                 'img_no_link' => $post_thumbnail,
                 'url' => $permalink,
                 'text_title' => $post_title_attr,
@@ -222,7 +222,7 @@ class Recently_Output {
             $is_single = Recently_Helper::is_single();
 
             $post_thumbnail = ( !empty($post_thumbnail) )
-              ? "<a " . ( $is_single == $postID ? '' : "href=\"{$permalink}\"" ) . " title=\"{$post_title_attr}\" target=\"{$this->admin_options['tools']['markup']['link']['attr']['target']}\" rel=\"" . esc_attr($this->admin_options['tools']['markup']['link']['attr']['rel']) . "\">{$post_thumbnail}</a>\n"
+              ? "<a " . ( $is_single == $postID ? '' : "href=\"{$permalink}\"" ) . " title=\"{$post_title_attr}\" target=\"{$this->admin_options['tools']['markup']['link']['attr']['target']}\" rel=\"" . esc_attr($this->admin_options['tools']['markup']['link']['attr']['rel']) . "\" class=\"recently-thumbnail-wrapper\">{$post_thumbnail}</a>\n"
               : "";
 
             $post_excerpt = ( !empty($post_excerpt) )
