@@ -63,6 +63,11 @@ The FAQ section has been moved [here](https://github.com/cabrerahector/recently/
 
 == Changelog ==
 
+= 2.0.1 =
+* Fixes missing helper method messing up the Customizer.
+* Updates default widget stylesheet.
+* Other minor fixes and improvements.
+
 = 2.0.0 =
 *If you're using a caching plugin, flushing its cache after upgrading to this version is highly recommended.*
 
