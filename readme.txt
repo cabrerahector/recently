@@ -19,7 +19,7 @@ Recently is a WordPress widget that displays your site's most recent posts. And 
 
 = Main Features =
 * **Thumbnails support!** (*see the [FAQ section](https://github.com/cabrerahector/recently/wiki/2.-FAQ) for technical requirements*).
-* **Use your own layout**! Control how your recent posts are shown on your theme.
+* **[Use your own layout](https://github.com/cabrerahector/recently/wiki/2.-FAQ#how-can-i-use-my-own-html-markup-with-your-plugin)**! Control how your recent posts are shown on your theme.
 * **Custom Post-type support**. Wanna show other stuff than just posts and pages?
 * **Categories, tags, and custom taxonomies support!**
 * **[WordPress Popular Posts](https://wordpress.org/extend/plugins/wordpress-popular-posts/)** / **[WP-PostViews](https://wordpress.org/extend/plugins/wp-postratings/)** / **[Top 10](https://wordpress.org/plugins/top-10/)** **support**: display the number of page views of your posts!
