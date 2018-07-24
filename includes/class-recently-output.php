@@ -208,7 +208,7 @@ class Recently_Output {
                 'url' => $permalink,
                 'text_title' => $post_title_attr,
                 'taxonomy' => $post_taxonomies,
-                'author' => ( !empty($post_author) ) ? '<a href="' . get_author_posts_url( $post->author ) . '">' . $post_author . '</a>' : '',
+                'author' => ( !empty($post_author) ) ? '<a href="' . get_author_posts_url( $post->post_author ) . '">' . $post_author . '</a>' : '',
                 'views' => number_format_i18n( $post_views ),
                 'comments' => number_format_i18n( $post_comments ),
                 'date' => $post_date
