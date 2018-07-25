@@ -98,10 +98,10 @@ class Recently_Settings {
                 'data' => array(
                     'ajax' => false,
                     'cache' => array(
-                        'active' => false,
+                        'active' => true,
                         'interval' => array(
-                            'time' => 'hour',
-                            'value' => 1
+                            'time' => 'minute',
+                            'value' => 5
                         )
                     )
                 ),
