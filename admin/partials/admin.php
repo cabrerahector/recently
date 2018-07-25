@@ -268,7 +268,7 @@ if ( !$recently_rand = get_option("recently_rand") ) {
                         </td>
                     </tr>
                     <tr valign="top">
-                        <th scope="row"><label for="cache"><?php _e("Cache Policy", 'recently'); ?>:</label></th>
+                        <th scope="row"><label for="cache"><?php _e("Data Caching", 'recently'); ?>:</label></th>
                         <td>
                             <select name="cache" id="cache">
                                 <option <?php if ( !$this->options['tools']['data']['cache']['active'] ) { ?>selected="selected"<?php } ?> value="0"><?php _e("Never cache", 'recently'); ?></option>
@@ -276,7 +276,7 @@ if ( !$recently_rand = get_option("recently_rand") ) {
                             </select>
 
                             <br />
-                            <p class="description"><?php _e("Sets Recently's cache expiration time. Recently can be cached for a specified amount of time. Recommended for large / high traffic sites", 'recently'); ?>.</p>
+                            <p class="description"><?php _e("Recently can cache the recent posts list for a specified amount of time. Recommended for large / high traffic sites", 'recently'); ?>.</p>
                         </td>
                     </tr>
                     <tr valign="top" <?php if ( !$this->options['tools']['data']['cache']['active'] ) { ?>style="display:none;"<?php } ?> id="cache_refresh_interval">

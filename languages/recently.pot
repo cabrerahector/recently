@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Recently\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/recently\n"
-"POT-Creation-Date: 2018-02-13 20:38-0400\n"
+"POT-Creation-Date: 2018-07-25 10:25-0400\n"
 "PO-Revision-Date: 2015-06-09 16:53-0430\n"
 "Last-Translator: Héctor Cabrera <me@cabrerahector.com>\n"
 "Language-Team: Héctor Cabrera <me@cabrerahector.com>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.0.7\n"
 "X-Poedit-KeywordsList: _e;__;__ngettext;__ngettext_noop;_n_noop;_x;_nx;_nx_noop;_ex;"
 "esc_attr__;esc_attr_e;esc_attr_x;esc_html__;esc_html_e;esc_html_x;_c;_nc;_n:1,2\n"
 "X-Poedit-Basepath: .\n"
@@ -83,321 +83,321 @@ msgid ""
 "<strong>deactivated</strong>.</p></div>"
 msgstr ""
 
-#: ../admin/partials/admin.php:6 ../admin/partials/admin.php:148
+#: ../admin/partials/admin.php:6 ../admin/partials/admin.php:146
 msgid "Tools"
 msgstr ""
 
-#: ../admin/partials/admin.php:7 ../admin/partials/admin.php:149
+#: ../admin/partials/admin.php:7 ../admin/partials/admin.php:147
 msgid "Parameters"
 msgstr ""
 
-#: ../admin/partials/admin.php:31 ../admin/partials/admin.php:56
-#: ../admin/partials/admin.php:82
+#: ../admin/partials/admin.php:29 ../admin/partials/admin.php:54
+#: ../admin/partials/admin.php:80
 msgid "Settings saved."
 msgstr ""
 
-#: ../admin/partials/admin.php:48
+#: ../admin/partials/admin.php:46
 msgid "Please provide the name of your custom field."
 msgstr ""
 
-#: ../admin/partials/admin.php:91
+#: ../admin/partials/admin.php:89
 msgid ""
 "Any changes made to Recently's default stylesheet will be lost after every plugin "
 "update. In order to prevent this from happening, please copy the recently.css file "
 "(located at wp-content/plugins/recently/style) into your theme's directory"
 msgstr ""
 
-#: ../admin/partials/admin.php:106
+#: ../admin/partials/admin.php:104
 msgid "This operation will delete all cached thumbnails and cannot be undone."
 msgstr ""
 
-#: ../admin/partials/admin.php:106
+#: ../admin/partials/admin.php:104
 msgid "Do you want to continue?"
 msgstr ""
 
-#: ../admin/partials/admin.php:118
+#: ../admin/partials/admin.php:116
 msgid "Success! All files have been deleted!"
 msgstr ""
 
-#: ../admin/partials/admin.php:122
+#: ../admin/partials/admin.php:120
 msgid "The thumbnail cache is already empty!"
 msgstr ""
 
-#: ../admin/partials/admin.php:126 ../admin/partials/admin.php:134
+#: ../admin/partials/admin.php:124 ../admin/partials/admin.php:132
 msgid "Invalid action."
 msgstr ""
 
-#: ../admin/partials/admin.php:130
+#: ../admin/partials/admin.php:128
 msgid ""
 "Sorry, you do not have enough permissions to do this. Please contact the site "
 "administrator for support."
 msgstr ""
 
-#: ../admin/partials/admin.php:147
+#: ../admin/partials/admin.php:145
 msgid "Menu"
 msgstr ""
 
-#: ../admin/partials/admin.php:163
+#: ../admin/partials/admin.php:161
 msgid "HTML Markup"
 msgstr ""
 
-#: ../admin/partials/admin.php:166
+#: ../admin/partials/admin.php:164
 msgid "Links"
 msgstr ""
 
-#: ../admin/partials/admin.php:170
+#: ../admin/partials/admin.php:168
 msgid "Open links in"
 msgstr ""
 
-#: ../admin/partials/admin.php:173
+#: ../admin/partials/admin.php:171
 msgid "Current window"
 msgstr ""
 
-#: ../admin/partials/admin.php:174
+#: ../admin/partials/admin.php:172
 msgid "New tab/window"
 msgstr ""
 
-#: ../admin/partials/admin.php:180
+#: ../admin/partials/admin.php:178
 msgid "REL attribute"
 msgstr ""
 
-#: ../admin/partials/admin.php:183
+#: ../admin/partials/admin.php:181
 msgid ""
 "The rel attribute specifies the relationship between the current document and the "
 "linked document"
 msgstr ""
 
-#: ../admin/partials/admin.php:189
+#: ../admin/partials/admin.php:187
 msgid "Thumbnails"
 msgstr ""
 
-#: ../admin/partials/admin.php:193
+#: ../admin/partials/admin.php:191
 msgid "Default thumbnail"
 msgstr ""
 
-#: ../admin/partials/admin.php:198
+#: ../admin/partials/admin.php:196
 msgid "Upload thumbnail"
 msgstr ""
 
-#: ../admin/partials/admin.php:200
+#: ../admin/partials/admin.php:198
 msgid "How-to: upload (or select) an image, set Size to Full and click on Upload"
 msgstr ""
 
-#: ../admin/partials/admin.php:204
+#: ../admin/partials/admin.php:202
 msgid "Pick image from"
 msgstr ""
 
-#: ../admin/partials/admin.php:207
+#: ../admin/partials/admin.php:205
 msgid "Featured image"
 msgstr ""
 
-#: ../admin/partials/admin.php:208
+#: ../admin/partials/admin.php:206
 msgid "First image on post"
 msgstr ""
 
-#: ../admin/partials/admin.php:209
+#: ../admin/partials/admin.php:207
 msgid "First attachment"
 msgstr ""
 
-#: ../admin/partials/admin.php:210
+#: ../admin/partials/admin.php:208
 msgid "Custom field"
 msgstr ""
 
-#: ../admin/partials/admin.php:213
+#: ../admin/partials/admin.php:211
 msgid "Tell Recently where it should get thumbnails from"
 msgstr ""
 
-#: ../admin/partials/admin.php:217
+#: ../admin/partials/admin.php:215
 msgid "Custom field name"
 msgstr ""
 
-#: ../admin/partials/admin.php:223
+#: ../admin/partials/admin.php:221
 msgid "Resize image from Custom field?"
 msgstr ""
 
-#: ../admin/partials/admin.php:226
+#: ../admin/partials/admin.php:224
 msgid "No, I will upload my own thumbnail"
 msgstr ""
 
-#: ../admin/partials/admin.php:227
+#: ../admin/partials/admin.php:225
 msgid "Yes"
 msgstr ""
 
-#: ../admin/partials/admin.php:238
+#: ../admin/partials/admin.php:236
 msgid "Empty image cache"
 msgstr ""
 
-#: ../admin/partials/admin.php:239
+#: ../admin/partials/admin.php:237
 msgid "Use this button to clear Recently's thumbnails cache"
 msgstr ""
 
-#: ../admin/partials/admin.php:249 ../admin/partials/admin.php:303
-#: ../admin/partials/admin.php:332
+#: ../admin/partials/admin.php:247 ../admin/partials/admin.php:301
+#: ../admin/partials/admin.php:330
 msgid "Apply"
 msgstr ""
 
-#: ../admin/partials/admin.php:256
+#: ../admin/partials/admin.php:254
 msgid "Data"
 msgstr ""
 
-#: ../admin/partials/admin.php:261
+#: ../admin/partials/admin.php:259
 msgid "Ajaxify widget"
 msgstr ""
 
-#: ../admin/partials/admin.php:264 ../admin/partials/admin.php:323
+#: ../admin/partials/admin.php:262 ../admin/partials/admin.php:321
 msgid "Disabled"
 msgstr ""
 
-#: ../admin/partials/admin.php:265 ../admin/partials/admin.php:322
+#: ../admin/partials/admin.php:263 ../admin/partials/admin.php:320
 msgid "Enabled"
 msgstr ""
 
-#: ../admin/partials/admin.php:269
+#: ../admin/partials/admin.php:267
 msgid ""
 "If you are using a caching plugin such as WP Super Cache, enabling this feature will "
 "keep the Recently widget from being cached by it"
 msgstr ""
 
-#: ../admin/partials/admin.php:273
-msgid "Cache Policy"
+#: ../admin/partials/admin.php:271
+msgid "Data Caching"
 msgstr ""
 
-#: ../admin/partials/admin.php:276
+#: ../admin/partials/admin.php:274
 msgid "Never cache"
 msgstr ""
 
-#: ../admin/partials/admin.php:277
+#: ../admin/partials/admin.php:275
 msgid "Enable caching"
 msgstr ""
 
-#: ../admin/partials/admin.php:281
+#: ../admin/partials/admin.php:279
 msgid ""
-"Sets Recently's cache expiration time. Recently can be cached for a specified amount "
-"of time. Recommended for large / high traffic sites"
+"Recently can cache the recent posts list for a specified amount of time. Recommended "
+"for large / high traffic sites"
 msgstr ""
 
-#: ../admin/partials/admin.php:285
+#: ../admin/partials/admin.php:283
 msgid "Refresh cache every"
 msgstr ""
 
-#: ../admin/partials/admin.php:289
+#: ../admin/partials/admin.php:287
 msgid "Minute(s)"
 msgstr ""
 
-#: ../admin/partials/admin.php:290
+#: ../admin/partials/admin.php:288
 msgid "Hour(s)"
 msgstr ""
 
-#: ../admin/partials/admin.php:291
+#: ../admin/partials/admin.php:289
 msgid "Day(s)"
 msgstr ""
 
-#: ../admin/partials/admin.php:292
+#: ../admin/partials/admin.php:290
 msgid "Week(s)"
 msgstr ""
 
-#: ../admin/partials/admin.php:293
+#: ../admin/partials/admin.php:291
 msgid "Month(s)"
 msgstr ""
 
-#: ../admin/partials/admin.php:294
+#: ../admin/partials/admin.php:292
 msgid "Year(s)"
 msgstr ""
 
-#: ../admin/partials/admin.php:297
+#: ../admin/partials/admin.php:295
 msgid "Really? That long?"
 msgstr ""
 
-#: ../admin/partials/admin.php:314
+#: ../admin/partials/admin.php:312
 msgid "Miscellaneous"
 msgstr ""
 
-#: ../admin/partials/admin.php:319
+#: ../admin/partials/admin.php:317
 msgid "Use plugin's stylesheet"
 msgstr ""
 
-#: ../admin/partials/admin.php:326
+#: ../admin/partials/admin.php:324
 msgid ""
 "By default, the plugin includes a stylesheet called recently.css which you can use to "
 "style your recent posts listing. If you wish to use your own stylesheet or do not want "
 "it to have it included in the header section of your site, use this."
 msgstr ""
 
-#: ../admin/partials/admin.php:346
+#: ../admin/partials/admin.php:344
 msgid ""
 "With the following Content Tags you can customize the Recently widget when using the "
 "Custom HTML markup option"
 msgstr ""
 
-#: ../admin/partials/admin.php:351
+#: ../admin/partials/admin.php:349
 msgid "Parameter"
 msgstr ""
 
-#: ../admin/partials/admin.php:352
+#: ../admin/partials/admin.php:350
 msgid "What it does "
 msgstr ""
 
-#: ../admin/partials/admin.php:358
+#: ../admin/partials/admin.php:356
 msgid "displays thumbnail linked to post/page (requires enabling the thumbnail option)"
 msgstr ""
 
-#: ../admin/partials/admin.php:362
+#: ../admin/partials/admin.php:360
 msgid ""
 "displays thumbnail image without linking to post/page (requires enabling the thumbnail "
 "option)"
 msgstr ""
 
-#: ../admin/partials/admin.php:366
+#: ../admin/partials/admin.php:364
 msgid "displays linked post/page title"
 msgstr ""
 
-#: ../admin/partials/admin.php:370
+#: ../admin/partials/admin.php:368
 msgid "displays post/page excerpt (requires enabling the excerpt option)"
 msgstr ""
 
-#: ../admin/partials/admin.php:374
+#: ../admin/partials/admin.php:372
 msgid "displays the default Metadata tags"
 msgstr ""
 
-#: ../admin/partials/admin.php:378
+#: ../admin/partials/admin.php:376
 msgid "displays post/page current rating (requires WP-PostRatings installed and enabled)"
 msgstr ""
 
-#: ../admin/partials/admin.php:382
+#: ../admin/partials/admin.php:380
 msgid ""
 "displays post/page current rating as an integer (requires WP-PostRatings installed and "
 "enabled)"
 msgstr ""
 
-#: ../admin/partials/admin.php:386
+#: ../admin/partials/admin.php:384
 msgid "outputs the URL of the post/page"
 msgstr ""
 
-#: ../admin/partials/admin.php:390
+#: ../admin/partials/admin.php:388
 msgid "displays post/page title, no link"
 msgstr ""
 
-#: ../admin/partials/admin.php:394
+#: ../admin/partials/admin.php:392
 msgid "displays linked author name (requires enabling author under Metadata Tags)"
 msgstr ""
 
-#: ../admin/partials/admin.php:398
+#: ../admin/partials/admin.php:396
 msgid "displays linked taxonomy name (requires enabling taxonomy under Metadata Tags)"
 msgstr ""
 
-#: ../admin/partials/admin.php:402
+#: ../admin/partials/admin.php:400
 msgid ""
 "displays current views count as an integer only (requires enabling views under "
 "Metadata Tags)"
 msgstr ""
 
-#: ../admin/partials/admin.php:406
+#: ../admin/partials/admin.php:404
 msgid ""
 "displays current comments count as an integer only (requires enabling comments under "
 "Metadata Tags)"
 msgstr ""
 
-#: ../admin/partials/admin.php:410
+#: ../admin/partials/admin.php:408
 msgid "displays post/page date (requires enabling date under Metadata Tags)"
 msgstr ""
 
@@ -443,7 +443,7 @@ msgstr ""
 msgid "Your site's most recent posts."
 msgstr ""
 
-#: ../includes/class-recently-widget.php:90
+#: ../includes/class-recently-widget.php:95
 #, php-format
 msgid ""
 "Error: cannot ajaxify Recently on this theme. It's missing the <em>id</em> attribute "
