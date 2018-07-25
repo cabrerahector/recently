@@ -1,5 +1,12 @@
 Changelog
 =========
+#### 2.0.2 ####
+*If you're using a caching plugin, flushing its cache after upgrading to this version is highly recommended.*
+
+* Fixes Content Tag `{author}` returning a bad URL.
+* Data Caching enabled by default (new installs only).
+* Minor copy adjustments.
+
 #### 2.0.1 ####
 * Fixes missing helper method messing up the Customizer.
 * Updates default widget stylesheet.

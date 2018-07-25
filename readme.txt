@@ -63,6 +63,13 @@ The FAQ section has been moved [here](https://github.com/cabrerahector/recently/
 
 == Changelog ==
 
+= 2.0.2 =
+*If you're using a caching plugin, flushing its cache after upgrading to this version is highly recommended.*
+
+* Fixes Content Tag `{author}` returning a bad URL.
+* Data Caching enabled by default (new installs only).
+* Minor copy adjustments.
+
 = 2.0.1 =
 * Fixes missing helper method messing up the Customizer.
 * Updates default widget stylesheet.
@@ -83,16 +90,6 @@ The FAQ section has been moved [here](https://github.com/cabrerahector/recently/
 
 See: [Release Notes](https://cabrerahector.com/wordpress/recently-2-0-is-out/).
 
-= 1.0.2 =
-* Minor bug fixes and improvements
-
-= 1.0.1 =
-* Adds the recently_no_data filter hook
-* Minor bug fixes and improvements
-
-= 1.0.0 =
-* Public release
-
 == Upgrade Notice ==
-= 2.0.0 =
+= 2.0.2 =
 If you're using a caching plugin, flushing its cache after upgrading to this version is highly recommended.
