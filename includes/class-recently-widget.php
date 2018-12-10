@@ -388,6 +388,8 @@ class Recently_Widget extends WP_Widget {
      */
     public function get_recents( $instance = null ) {
 
+        $id = null;
+
         if ( defined('DOING_AJAX') && DOING_AJAX ) {
 
             if (
@@ -395,22 +397,19 @@ class Recently_Widget extends WP_Widget {
                 && Recently_Helper::is_number( $_GET['recently_widget_id'] )
             ) {
 
-                $id = $_GET['recently_widget_id'];
                 $widget_instances = $this->get_settings();
 
-                if ( isset( $widget_instances[$id] ) ) {
+                if ( isset( $widget_instances[$_GET['recently_widget_id']] ) ) {
+                    $id = $_GET['recently_widget_id'];
                     $instance = $widget_instances[$id];
-
-                    if ( !isset( $instance['widget_id'] ) ) {
-                        $instance['widget_id'] = $this->id;
-                    }
                 }
-
             }
 
         }
 
         if ( is_array( $instance ) && !empty( $instance ) ) {
+
+            $instance['widget_id'] = ( !$id ) ? $this->id : $this->id_base . '-' . $id;
 
             // Return cached results
             if ( $this->admin_options['tools']['data']['cache']['active'] ) {
@@ -514,7 +513,7 @@ class Recently_Widget extends WP_Widget {
             $instance
         );
 
-        $args = apply_filters( 'recently_pre_get_posts', $instance['widget_id'], $instance['args'] );
+        $args = apply_filters( 'recently_pre_get_posts', $instance['args'], $instance['widget_id'] );
         $args = apply_filters( 'recently_query_args', $args );
 
         return new WP_Query( $args );
