@@ -46,6 +46,11 @@ class Recently {
     private function load_dependencies(){
 
         /**
+         * The REST API endpoint.
+         */
+        require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-recently-rest-controller.php';
+
+        /**
          * The class responsible for defining internationalization functionality of the plugin.
          */
         require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-recently-i18n.php';
@@ -150,6 +155,8 @@ class Recently {
 
         $plugin_public = new Recently_Public( $this->get_plugin_name(), $this->get_version() );
 
+        // Register REST API endpoint(s)
+        $this->loader->add_action( 'rest_api_init', $plugin_public, 'init_rest_route' );
         // Add WPP's stylesheet and scripts
         $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
         $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );

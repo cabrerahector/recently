@@ -64,6 +64,16 @@ class Recently_Public {
     }
 
     /**
+     * Initiates Recently's REST controller class.
+     *
+     * @since    4.0.13
+     */
+    public function init_rest_route() {
+        $rest_controller = new Recently_REST_Endpoints();
+        $rest_controller->register_routes();
+    }
+
+    /**
      * Register the stylesheets for the public-facing side of the site.
      *
      * @since    2.0.0
