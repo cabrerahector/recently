@@ -84,7 +84,7 @@ class Recently_REST_Endpoints extends WP_REST_Controller {
         if ( ! isset($instance['widget_id']) )
             $instance['widget_id'] = 'recently-' . $instance_id;
 
-        $args = apply_filters( 'recently_pre_get_posts', $instance['widget_id'], $instance['args'] );
+        $args = apply_filters( 'recently_pre_get_posts', $instance['args'], $instance['widget_id'] );
         $args = apply_filters( 'recently_query_args', $args );
 
         $output = new Recently_Output( new WP_Query($args), $instance );
