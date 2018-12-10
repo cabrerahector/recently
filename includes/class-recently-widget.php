@@ -513,7 +513,7 @@ class Recently_Widget extends WP_Widget {
             $instance
         );
 
-        $args = apply_filters( 'recently_pre_get_posts', $instance['widget_id'], $instance['args'] );
+        $args = apply_filters( 'recently_pre_get_posts', $instance['args'], $instance['widget_id'] );
         $args = apply_filters( 'recently_query_args', $args );
 
         return new WP_Query( $args );
