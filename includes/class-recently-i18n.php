@@ -32,11 +32,8 @@ class Recently_i18n {
      * @since    1.0.0
      */
     public function load_plugin_textdomain() {
-
         $locale = apply_filters( 'plugin_locale', get_locale(), 'recently' );
         load_textdomain( 'recently', WP_LANG_DIR . '/' . 'recently' . '/' . 'recently' . '-' . $locale . '.mo' );
-        load_plugin_textdomain( 'recently', false, dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/' );
-
     }
 
 } // End Recently_i18n class
