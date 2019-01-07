@@ -901,7 +901,7 @@ class Recently_Output {
             $string = str_replace( "{date}", $data['date'], $string );
         }
 
-        return $string;
+        return apply_filters( "recently_parse_custom_content_tags", $string, $data['id'] );
 
     }
 
