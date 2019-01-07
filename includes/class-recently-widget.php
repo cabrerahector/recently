@@ -92,7 +92,7 @@ class Recently_Widget extends WP_Widget {
                 $translate = Recently_Translate::get_instance();
             ?>
             <script type="text/javascript">
-                window.addEventListener('DOMContentLoaded', function() {
+                document.addEventListener('DOMContentLoaded', function() {
                     if ( 'undefined' != typeof RecentlyWidget ) {
                         RecentlyWidget.get(
                             '<?php echo esc_url_raw( rest_url( 'recently/v1/widget/' . $this->number ) ); ?>',
