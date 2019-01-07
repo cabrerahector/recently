@@ -33,7 +33,7 @@ class Recently_i18n {
      */
     public function load_plugin_textdomain() {
         $locale = apply_filters( 'plugin_locale', get_locale(), 'recently' );
-        load_textdomain( 'recently', WP_LANG_DIR . '/' . 'recently' . '/' . 'recently' . '-' . $locale . '.mo' );
+        load_textdomain( 'recently', WP_LANG_DIR . '/plugins/recently-' . $locale . '.mo' );
     }
 
 } // End Recently_i18n class
