@@ -34,12 +34,6 @@ class Recently_Widget extends WP_Widget {
         $this->options = Recently_Settings::get( 'widget_options' );
         $this->admin_options = Recently_Settings::get( 'admin_options' );
 
-        // Widget's AJAX hook
-        if ( $this->admin_options['tools']['data']['ajax'] ) {
-            add_action( 'wp_ajax_get_recently', array( $this, 'get_recents') );
-            add_action( 'wp_ajax_nopriv_get_recently', array( $this, 'get_recents') );
-        }
-
     }
 
     /**
@@ -95,15 +89,16 @@ class Recently_Widget extends WP_Widget {
             <p><?php printf( __('Error: cannot ajaxify Recently on this theme. It\'s missing the <em>id</em> attribute on <em>before_widget</em> (see <a href="%s" target="_blank" rel="external nofollow">register_sidebar</a> for more)', $this->plugin_slug ), 'https://codex.wordpress.org/Function_Reference/register_sidebar' ); ?>.</p>
             <?php
             } else {
+                $translate = Recently_Translate::get_instance();
             ?>
             <script type="text/javascript">
                 window.addEventListener('DOMContentLoaded', function() {
                     if ( 'undefined' != typeof RecentlyWidget ) {
                         RecentlyWidget.get(
-                            '<?php echo admin_url('admin-ajax.php'); ?>',
-                            'action=get_recently&recently_widget_id=<?php echo $this->number; ?>',
+                            '<?php echo esc_url_raw( rest_url( 'recently/v1/widget/' . $this->number ) ); ?>',
+                            'lang=<?php echo $translate->get_current_language(); ?>',
                             function( response ){
-                                document.getElementById('<?php echo $widget_id; ?>').innerHTML += response;
+                                document.getElementById('<?php echo $widget_id; ?>').innerHTML += JSON.parse( response ).widget;
                             }
                         );
                     }
@@ -388,28 +383,9 @@ class Recently_Widget extends WP_Widget {
      */
     public function get_recents( $instance = null ) {
 
-        $id = null;
-
-        if ( defined('DOING_AJAX') && DOING_AJAX ) {
-
-            if (
-                isset( $_GET['recently_widget_id'] ) 
-                && Recently_Helper::is_number( $_GET['recently_widget_id'] )
-            ) {
-
-                $widget_instances = $this->get_settings();
-
-                if ( isset( $widget_instances[$_GET['recently_widget_id']] ) ) {
-                    $id = $_GET['recently_widget_id'];
-                    $instance = $widget_instances[$id];
-                }
-            }
-
-        }
-
         if ( is_array( $instance ) && !empty( $instance ) ) {
 
-            $instance['widget_id'] = ( !$id ) ? $this->id : $this->id_base . '-' . $id;
+            $instance['widget_id'] = $this->id;
 
             // Return cached results
             if ( $this->admin_options['tools']['data']['cache']['active'] ) {
@@ -483,14 +459,6 @@ class Recently_Widget extends WP_Widget {
             echo ( $this->admin_options['tools']['data']['cache']['active'] ? '<!-- cached -->' : '' );
             $output->output();
 
-        }
-
-        if (
-            defined('DOING_AJAX') 
-            && DOING_AJAX && !is_preview() 
-            && !( is_singular() && isset( $_GET['fl_builder'] ) )
-        ) {
-            wp_die();
         }
 
     }

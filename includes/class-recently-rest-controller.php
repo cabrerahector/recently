@@ -69,6 +69,7 @@ class Recently_REST_Endpoints extends WP_REST_Controller {
      */
     public function prepare_item_for_response( $widget, $request ) {
         $instance_id = $request->get_param('id');
+        $lang = $request->get_param('lang');
 
         if (
             ! $widget
@@ -86,6 +87,35 @@ class Recently_REST_Endpoints extends WP_REST_Controller {
 
         $args = apply_filters( 'recently_pre_get_posts', $instance['args'], $instance['widget_id'] );
         $args = apply_filters( 'recently_query_args', $args );
+
+        if ( $lang ) {
+            $current_locale = get_locale();
+            $locale = null;
+
+            // Polylang support
+            if ( function_exists('PLL') ) {
+                $lang_object = PLL()->model->get_language($lang);
+                $locale = ( $lang_object && isset($lang_object->locale) ) ? $lang_object->locale : null;
+
+                $args['lang'] = $lang;
+            } else {
+                // WPML support
+                global $sitepress;
+
+                if ( is_object($sitepress) && method_exists($sitepress, 'get_locale_from_language_code') ) {
+                    do_action( 'wpml_switch_language', $lang );
+                    $locale = $sitepress->get_locale_from_language_code( $lang );
+
+                    $args['suppress_filters'] = false;
+                }
+            }
+
+            // Reload locale if needed
+            if ( $locale && $locale != $current_locale ) {
+                unload_textdomain( 'recently' );
+                load_textdomain( 'recently', WP_LANG_DIR . '/plugins/recently-' . $locale . '.mo' );
+            }
+        }
 
         $output = new Recently_Output( new WP_Query($args), $instance );
 
