@@ -23,7 +23,7 @@ Recently is a WordPress widget that displays your site's most recent posts. And 
 * **Custom Post-type support**. Wanna show other stuff than just posts and pages?
 * **Categories, tags, and custom taxonomies support!**
 * **[WordPress Popular Posts](https://wordpress.org/extend/plugins/wordpress-popular-posts/)** / **[WP-PostViews](https://wordpress.org/extend/plugins/wp-postratings/)** / **[Top 10](https://wordpress.org/plugins/top-10/)** **support**: display the number of page views of your posts!
-* **[WPML](https://wpml.org/) support**!
+* **[Polylang](https://wordpress.org/plugins/polylang/)/[WPML](https://wpml.org/) support**!
 * **[WP-PostRatings](http://wordpress.org/extend/plugins/wp-postratings/) support**. Show your visitors how your readers are rating your posts!
 * **WordPress Multisite support**!
 

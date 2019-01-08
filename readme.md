@@ -24,7 +24,7 @@ Recently is a highly customizable [widget](http://wordpress.org/plugins/recently
 ## Features
 
 * **Multi-widget capable**. That is, you can have several Recently widgets on your blog - each with its own settings!
-* **WPML support**.
+* **[Polylang](https://wordpress.org/plugins/polylang/)/[WPML](https://wpml.org/) support**.
 * **WordPress Multisite support**.
 * **WordPress Popular Posts support** - Display the views count of your recent posts!
 * **Custom Post-type support**. Wanna show other stuff than just posts and pages?
