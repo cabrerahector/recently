@@ -239,13 +239,6 @@ class Recently_Widget extends WP_Widget {
                     'operator' => 'NOT IN'
                 );
 
-                if ( !empty($tax_ids_in) && !empty($tax_ids_out) ) {
-                    
-                }
-                else {
-                    
-                }
-
             }
 
         }
