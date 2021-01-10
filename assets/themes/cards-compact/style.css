@@ -1,0 +1,64 @@
+.recently-cards-compact {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+}
+
+    .recently-cards-compact li {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        margin: 0 0 1.2em 0;
+        padding: 0 0 1em 0;
+        border-bottom: #ddd 1px solid;
+    }
+
+    .recently-cards-compact li:last-of-type,
+    .recently-cards-compact li:only-child {
+        margin: 0;
+        padding: 0;
+        border-bottom: none;
+    }
+
+        .recently-cards-compact li .recently-thumbnail {
+            overflow: hidden;
+            display: inline-block;
+            flex-grow: 0;
+            flex-shrink: 0;
+            margin-right: 1em;
+            font-size: 0.8em;
+            line-height: 1;
+            background: #f0f0f0;
+            border: none;
+        }
+
+        .recently-cards-compact li a {
+            text-decoration: none;
+        }
+
+        .recently-cards-compact li a:hover {
+            text-decoration: underline;
+        }
+
+        .recently-cards-compact li .taxonomies,
+        .recently-cards-compact li .recently-post-title {
+            display: block;
+            font-weight: bold;
+        }
+
+        .recently-cards-compact li .taxonomies {
+            margin-bottom: 0.25em;
+            font-size: 0.7em;
+            line-height: 1;
+        }
+
+        .recently-cards-compact li .recently-post-title {
+            margin-bottom: 0.5em;
+            font-size: 1.2em;
+            line-height: 1.2;
+        }
+
+        .recently-cards-compact li .recently-excerpt {
+            margin: 0;
+            font-size: 0.8em;
+        }

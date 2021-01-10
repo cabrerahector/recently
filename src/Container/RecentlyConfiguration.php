@@ -28,12 +28,16 @@ class RecentlyConfiguration implements ContainerConfigurationInterface
             return new \Recently\Image($container['admin_options']);
         });
 
+        $container['themer'] = $container->service(function(Container $container) {
+            return new \Recently\Themer();
+        });
+
         $container['output'] = $container->service(function(Container $container) {
-            return new \Recently\Output($container['widget_options'], $container['admin_options'], $container['image'], $container['translate']);
+            return new \Recently\Output($container['widget_options'], $container['admin_options'], $container['image'], $container['translate'], $container['themer']);
         });
 
         $container['widget'] = $container->service(function(Container $container) {
-            return new \Recently\Widget\Widget($container['widget_options'], $container['admin_options'], $container['output'], $container['image'], $container['translate']);
+            return new \Recently\Widget\Widget($container['widget_options'], $container['admin_options'], $container['output'], $container['image'], $container['translate'], $container['themer']);
         });
 
         $container['rest'] = $container->service(function(Container $container) {

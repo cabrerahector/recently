@@ -73,6 +73,7 @@ class Front {
     {
         add_action('wp_enqueue_scripts', [$this, 'enqueue_assets']);
         add_filter('script_loader_tag', [$this, 'convert_inline_js_into_json'], 10, 3);
+        add_action('wp_head', [$this, 'inline_loading_css']);
     }
 
     /**
@@ -97,8 +98,7 @@ class Front {
 
         $is_single = Helper::is_single();
 
-        //wp_register_script('recently-js', $plugin_dir_url . 'assets/front/js/recently.min.js', array(), RECENTLY_VERSION, true);
-        wp_register_script('recently-js', $plugin_dir_url . 'assets/front/js/recently.js', array(), RECENTLY_VERSION, true);
+        wp_register_script('recently-js', $plugin_dir_url . 'assets/front/js/recently.min.js', array(), RECENTLY_VERSION, true);
         $params = [
             'ajax_url' => esc_url_raw(rest_url('recently/v1')),
             'ID' => (int) $is_single,
@@ -106,6 +106,49 @@ class Front {
         ];
         wp_enqueue_script('recently-js');
         wp_add_inline_script('recently-js', json_encode($params), 'before');
+    }
+
+    /**
+     * CSS rules for the loading animation.
+     *
+     * @since   3.0.0
+     */
+    public function inline_loading_css()
+    {
+        ?>
+        <style>
+            @-webkit-keyframes bgslide {
+                from {
+                    background-position-x: 0;
+                }
+                to {
+                    background-position-x: -200%;
+                }
+            }
+
+            @keyframes bgslide {
+                    from {
+                        background-position-x: 0;
+                    }
+                    to {
+                        background-position-x: -200%;
+                    }
+            }
+
+            .recently-widget-placeholder {
+                margin: 0 auto;
+                width: 60px;
+                height: 3px;
+                background: #dd3737;
+                background: -webkit-gradient(linear, left top, right top, from(#ffffff), color-stop(10%, #57b078), to(#ffffff));
+                background: linear-gradient(90deg, #ffffff 0%, #57b078 10%, #ffffff 100%);
+                background-size: 200% auto;
+                border-radius: 3px;
+                -webkit-animation: bgslide 1s infinite linear;
+                animation: bgslide 1s infinite linear;
+            }
+        </style>
+        <?php
     }
 
     /**

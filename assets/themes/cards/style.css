@@ -1,0 +1,64 @@
+.recently-cards {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+}
+
+    .recently-cards li {
+        display: flex;
+        list-style: none;
+        margin: 0 0 1.2em 0;
+        padding: 0 0 1em 0;
+        border-bottom: #ddd 1px solid;
+    }
+
+    .recently-cards li:last-of-type,
+    .recently-cards li:only-child {
+        margin: 0;
+        padding: 0;
+        border-bottom: none;
+    }
+
+        .recently-cards li .recently-thumbnail {
+            overflow: hidden;
+            display: inline-block;
+            align-self: flex-start;
+            flex-grow: 0;
+            flex-shrink: 0;
+            margin-right: 1em;
+            font-size: 0.8em;
+            line-height: 1;
+            background: #f0f0f0;
+            border: none;
+        }
+
+        .recently-cards li a {
+            text-decoration: none;
+        }
+
+        .recently-cards li a:hover {
+            text-decoration: underline;
+        }
+
+        .recently-cards li .taxonomies,
+        .recently-cards li .recently-post-title {
+            display: block;
+            font-weight: bold;
+        }
+
+        .recently-cards li .taxonomies {
+            margin-bottom: 0.25em;
+            font-size: 0.7em;
+            line-height: 1;
+        }
+
+        .recently-cards li .recently-post-title {
+            margin-bottom: 0.5em;
+            font-size: 1.2em;
+            line-height: 1.2;
+        }
+
+        .recently-cards li .recently-excerpt {
+            margin: 0;
+            font-size: 0.8em;
+        }

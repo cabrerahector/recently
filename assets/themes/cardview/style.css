@@ -1,0 +1,80 @@
+.recently-cardview {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+}
+
+    .recently-cardview li {
+        list-style: none;
+        margin: 0 0 1.2em 0;
+        padding: 0 0 1em 0;
+        border-bottom: #ddd 1px solid;
+    }
+
+    .recently-cardview li:last-of-type,
+    .recently-cardview li:only-child {
+        margin: 0;
+        padding: 0;
+        border-bottom: none;
+    }
+
+        .recently-cardview .recently-thumbnail-container {
+            position: relative;
+            display: block;
+            width: 100%;
+            margin-bottom: .8em;
+        }
+
+        .recently-cardview li .recently-thumbnail {
+            overflow: hidden;
+            display: block;
+            float: none;
+            margin: 0;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            font-size: 0.8em;
+            line-height: 1;
+            background: #f0f0f0;
+            border: none;
+        }
+
+        .recently-cardview li a {
+            text-decoration: none;
+        }
+
+        .recently-cardview li a:hover {
+            text-decoration: underline;
+        }
+
+        .recently-cardview li .taxonomies,
+        .recently-cardview li .recently-post-title {
+            display: block;
+            font-weight: bold;
+        }
+
+        .recently-cardview li .taxonomies {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 1em;
+            color: #aaa;
+            font-size: 0.7em;
+            line-height: 1;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+            .recently-cardview li .taxonomies a {
+                color: #fff;
+            }
+
+        .recently-cardview li .recently-post-title {
+            margin: 0 0 0.5em;
+            font-size: 1.2em;
+            line-height: 1.2;
+        }
+
+        .recently-cardview li .recently-excerpt {
+            margin: 0;
+            font-size: 0.8em;
+        }

@@ -46,6 +46,14 @@ class Widget extends \WP_Widget {
     private $translate;
 
     /**
+     * Themer object.
+     *
+     * @since   3.0.0
+     * @var     \Recently\Themer
+     */
+    private $themer;
+
+    /**
      * Construct.
      *
      * @since   2.0.0
@@ -54,8 +62,9 @@ class Widget extends \WP_Widget {
      * @param   \Recently\Output    $output
      * @param   \Recently\Image     $image
      * @param   \Recently\Translate $translate
+     * @param   \Recently\Themer    $themer
      */
-    public function __construct(array $options, array $admin_options, \Recently\Output $output, \Recently\Image $image, \Recently\Translate $translate)
+    public function __construct(array $options, array $admin_options, \Recently\Output $output, \Recently\Image $image, \Recently\Translate $translate, \Recently\Themer $themer)
     {
         // Create the widget
         parent::__construct(
@@ -73,6 +82,7 @@ class Widget extends \WP_Widget {
         $this->output = $output;
         $this->image = $image;
         $this->translate = $translate;
+        $this->themer = $themer;
     }
 
     /**
@@ -401,6 +411,39 @@ class Widget extends \WP_Widget {
           ? ! $old_instance['markup']['custom_html'] && $instance['markup']['custom_html'] ? '</h2>' : '' :
           htmlspecialchars($new_instance['title-end'], ENT_QUOTES);
 
+        $instance['theme'] = [
+            'name' => isset($new_instance['theme']) ? $new_instance['theme'] : '',
+            'applied' => isset($new_instance['theme']) ? (bool) $new_instance['theme-applied'] : false
+        ];
+
+        if ( ! isset($new_instance['theme']) || $old_instance['theme']['name'] != $new_instance['theme'] ) {
+            $instance['theme']['applied'] = false;
+        }
+
+        $theme = $instance['theme']['name'] ? $this->themer->get_theme($instance['theme']['name']) : null;
+
+        if (
+            is_array($theme)
+            && isset($theme['json'])
+            && isset($theme['json']['config'])
+            && is_array($theme['json']['config'])
+            && ! $instance['theme']['applied']
+        ) {
+            $instance = Helper::merge_array_r(
+                $instance,
+                $theme['json']['config']
+            );
+            $instance['markup']['custom_html'] = true;
+            $instance['theme']['applied'] = true;
+
+            $current_sidebar_data = $this->get_sidebar_data();
+
+            if ( $current_sidebar_data ) {
+                $instance['markup']['title-start'] = htmlspecialchars($current_sidebar_data['before_title'], ENT_QUOTES);
+                $instance['markup']['title-end'] = htmlspecialchars($current_sidebar_data['after_title'], ENT_QUOTES);
+            }
+        }
+
         return $instance;
     }
 
@@ -502,5 +545,25 @@ class Widget extends \WP_Widget {
         $args = apply_filters('recently_query_args', $args);
 
         return new \WP_Query($args);
+    }
+
+    /**
+     * Returns data on the current sidebar.
+     *
+     * @since   3.0.0
+     * @access  private
+     * @return  array|null
+     */
+    private function get_sidebar_data()
+    {
+        global $wp_registered_sidebars;
+        $sidebars = wp_get_sidebars_widgets();
+
+        foreach ( (array) $sidebars as $sidebar_id => $sidebar ) {
+            if ( in_array($this->id, (array) $sidebar, true ) )
+                return $wp_registered_sidebars[$sidebar_id];
+        }
+
+        return null;
     }
 }

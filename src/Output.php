@@ -11,7 +11,6 @@ class Output {
      */
     private $recents;
 
-
     /**
      * HTML content.
      *
@@ -61,6 +60,14 @@ class Output {
     private $translate;
 
     /**
+     * Themer object.
+     *
+     * @since   3.0.0
+     * @var     \Recently\Themer
+     */
+    private $themer;
+
+    /**
      * Construct
      *
      * @since   2.0.0
@@ -68,13 +75,15 @@ class Output {
      * @param   array               $admin_options
      * @param   \Recently\Image     $image
      * @param   \Recently\Translate $translate
+     * @param   \Recently\Themer    $themer
      */
-    public function __construct(array $public_options, array $admin_options, Image $image, Translate $translate)
+    public function __construct(array $public_options, array $admin_options, Image $image, Translate $translate, Themer $themer)
     {
         $this->options = $public_options;
         $this->admin_options = $admin_options;
         $this->image = $image;
         $this->translate = $translate;
+        $this->themer = $themer;
 
         $this->default_thumbnail_sizes = $this->image->get_sizes();
     }
@@ -99,6 +108,31 @@ class Output {
             if ( has_filter('recently_custom_html') ) {
                 $this->output = apply_filters('recently_custom_html', $this->recents, $this->options);
                 return;
+            }
+
+            if (
+                isset($this->options['theme']['name'])
+                && $this->options['theme']['name']
+            ) {
+                $this->output .= '<div class="recently-sr">';
+
+                if ( @file_exists(get_template_directory() . '/recently/themes/' . $this->options['theme']['name'] . '/style.css') ) {
+                    $theme_stylesheet = get_template_directory() . '/recently/themes/' . $this->options['theme']['name'] . '/style.css';
+                } else {
+                    $theme_stylesheet = $this->themer->get_theme($this->options['theme']['name'])['path'] . '/style.css';
+                }
+
+                $theme_css_rules = wp_strip_all_tags(file_get_contents($theme_stylesheet), true);
+                $additional_styles = '';
+
+                if ( has_filter('recently_additional_theme_styles') ) {
+                    $additional_styles = wp_strip_all_tags(apply_filters('recently_additional_theme_styles', '', $this->options['theme']['name']), true);
+
+                    if ( $additional_styles )
+                        $additional_styles = ' /* additional rules */ ' . $additional_styles;
+                }
+
+                $this->output .= '<style>' . $theme_css_rules . $additional_styles . '</style>';
             }
 
             /* Open HTML wrapper */
@@ -143,6 +177,13 @@ class Output {
             // Output default wrapper
             else {
                 $this->output .= "</ul>" . "\n";
+            }
+
+            if (
+                isset($this->options['theme']['name'])
+                && $this->options['theme']['name']
+            ) {
+                $this->output .= '</div>';
             }
 
         } // Nothing to display

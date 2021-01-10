@@ -1,3 +1,8 @@
+<?php
+$current_sidebar_data = $this->get_sidebar_data();
+$current_sidebar = $current_sidebar_data ? $current_sidebar_data['id'] : null;
+?>
+
 <div class="recently-ph"></div>
 <p>
     <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title', 'recently'); ?>:</label><br />
@@ -200,8 +205,16 @@
 
 <div class="custom-html" style="display:<?php if ($instance['markup']['custom_html']) : ?>block<?php else: ?>none<?php endif; ?>; width:90%; margin:10px 0; padding:3% 5%; background:#f5f5f5;">
     <?php
-    $recently_title_start = $instance['markup']['title-start'];
-    $recently_title_end = $instance['markup']['title-end'];
+    if (
+        $current_sidebar
+        && ! $instance['markup']['custom_html']
+    ) {
+        $recently_title_start = htmlspecialchars($current_sidebar_data['before_title'], ENT_QUOTES);
+        $recently_title_end = htmlspecialchars($current_sidebar_data['after_title'], ENT_QUOTES);
+    } else {
+        $recently_title_start = $instance['markup']['title-start'];
+        $recently_title_end = $instance['markup']['title-end'];
+    }
     ?>
     <p>
         <label for="<?php echo $this->get_field_id( 'title-start' ); ?>"><?php _e('Before / after title', 'recently'); ?>:</label> <br />
@@ -222,4 +235,27 @@
     </p>
 
 </div>
+
+<!-- Theme -->
+<br /><hr /><br />
+
+<legend style="display: inline;"><strong><?php _e('Theme', 'recently'); ?></strong></legend><small>(<?php printf(__('see a <a href="%s">list of supported browsers</a>'), 'https://caniuse.com/#feat=shadowdomv1'); ?>)</small><br /><br />
+
+<?php
+$registered_themes = $this->themer->get_themes();
+ksort($registered_themes);
+?>
+
+<select id="<?php echo $this->get_field_id('theme'); ?>" name="<?php echo $this->get_field_name('theme'); ?>" class="widefat" style="margin-bottom: 5px;"<?php echo ( ! $current_sidebar ) ? ' disabled="disabled"' : ''; ?>>
+    <option value="" <?php if ( '' == $instance['theme']['name'] || ! $current_sidebar ) echo 'selected="selected"'; ?>><?php _e("None", 'recently'); ?></option>
+    <?php foreach ($registered_themes as $theme => $data) : ?>
+    <option value="<?php echo esc_attr($theme); ?>" <?php if ( $theme == $instance['theme']['name'] && $current_sidebar ) echo 'selected="selected"'; ?>><?php echo esc_html($data['json']['name']); ?></option>
+    <?php endforeach; ?>
+</select>
+<input type="hidden" id="<?php echo $this->get_field_id('theme-applied'); ?>" name="<?php echo $this->get_field_name('theme-applied'); ?>" value="<?php echo ($instance['theme']['applied'] && $current_sidebar) ? 1 : 0; ?>" />
+
+<?php if ( ! $current_sidebar ) : ?>
+    <p style="color: red;"><?php _e('Please save this widget (or reload this page) to enable Recently themes.', 'recently'); ?></p>
+<?php endif; ?>
+
 <br /><br />
