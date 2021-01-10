@@ -9,14 +9,14 @@
  * that starts the plugin.
  *
  * @link              https://cabrerahector.com/
- * @since             2.0.0
+ * @since             3.0.0
  * @package           Recently
  *
  * @wordpress-plugin
  * Plugin Name:       Recently
  * Plugin URI:        https://wordpress.org/plugins/recently/
  * Description:       A highly customizable & feature-packed recent posts widget.
- * Version:           2.1.0
+ * Version:           3.0.0
  * Author:            Hector Cabrera
  * Author URI:        https://cabrerahector.com/
  * License:           GPL-2.0+
@@ -29,27 +29,32 @@ if ( ! defined( 'WPINC' ) ) {
     die();
 }
 
-define( 'RECENTLY_VER', '2.1.0' );
+define('RECENTLY_VERSION', '3.0.0');
+define('RECENTLY_MIN_PHP_VERSION', '5.4');
+define('RECENTLY_MIN_WP_VERSION', '4.9');
 
-/*
- * The code that runs during plugin activation.
- */
-require_once plugin_dir_path( __FILE__ ) . 'includes/class-recently-activator.php';
-register_activation_hook( __FILE__, array('Recently_Activator', 'activate') );
+/** Requirements check */
+global $wp_version;
 
-/*
- * The code that runs during plugin deactivation.
- */
-require_once plugin_dir_path( __FILE__ ) . 'includes/class-recently-deactivator.php';
-register_deactivation_hook( __FILE__, array('Recently_Deactivator', 'deactivate') );
+// We're good, continue!
+if ( version_compare(PHP_VERSION, RECENTLY_MIN_PHP_VERSION, '>=') && version_compare($wp_version, RECENTLY_MIN_WP_VERSION, '>=') ) {
+    $recently_main_plugin_file = __FILE__;
+    // Load plugin bootstrap
+    require __DIR__ . '/src/Bootstrap.php';
+} // Nope.
+else {
+    if ( isset($_GET['activate']) )
+        unset($_GET['activate']);
 
-/*
- * The core plugins class.
- */
-require plugin_dir_path( __FILE__ ) . 'includes/class-recently.php';
-
-/*
- * Begin execution of the plugin.
- */
-$recently = new Recently();
-$recently->run();
+    function recently_render_min_requirements_notice() {
+        global $wp_version;
+        echo '<div class="notice notice-error"><p>' . sprintf(
+            __('Recently requires at least PHP %1$s and WordPress %2$s to function correctly. Your site uses PHP %3$s and WordPress %4$s.', 'recently'),
+            RECENTLY_MIN_PHP_VERSION,
+            RECENTLY_MIN_WP_VERSION,
+            PHP_VERSION,
+            $wp_version
+        ) . '</p></div>';
+    }
+    add_action('admin_notices', 'recently_render_min_requirements_notice');
+}

@@ -1,0 +1,506 @@
+<?php
+namespace Recently\Widget;
+
+use Recently\Helper;
+
+class Widget extends \WP_Widget {
+
+    /**
+     * Plugin defaults.
+     *
+     * @since   1.0.0
+     * @var     array
+     */
+    protected $options = array();
+
+    /**
+     * Administrative settings.
+     *
+     * @since   2.0.0
+     * @var     array
+     */
+    private $admin_options = array();
+
+    /**
+     * Image object.
+     *
+     * @since   3.0.0
+     * @var     \Recently\Image
+     */
+    private $image;
+
+    /**
+     * Output object.
+     *
+     * @since   3.0.0
+     * @var     \Recently\Output
+     */
+    private $output;
+
+    /**
+     * Translate object.
+     *
+     * @since   3.0.0
+     * @var     \Recently\Translate    $translate
+     */
+    private $translate;
+
+    /**
+     * Construct.
+     *
+     * @since   2.0.0
+     * @param   array               $options
+     * @param   array               $admin_options
+     * @param   \Recently\Output    $output
+     * @param   \Recently\Image     $image
+     * @param   \Recently\Translate $translate
+     */
+    public function __construct(array $options, array $admin_options, \Recently\Output $output, \Recently\Image $image, \Recently\Translate $translate)
+    {
+        // Create the widget
+        parent::__construct(
+            'recently',
+            'Recently',
+            array(
+                'classname' => 'recently',
+                'description' => __('Your site\'s most recent posts.', 'recently'),
+                'customize_selective_refresh' => false
+            )
+        );
+
+        $this->options = $options;
+        $this->admin_options = $admin_options;
+        $this->output = $output;
+        $this->image = $image;
+        $this->translate = $translate;
+    }
+
+    /**
+     * Widget hooks.
+     *
+     * @since   3.0.0
+     */
+    public function hooks()
+    {
+        // Register the widget
+        add_action('widgets_init', [$this, 'register']);
+    }
+
+    /**
+     * Registers the widget.
+     *
+     * @since   3.0.0
+     */
+    public function register()
+    {
+        register_widget($this);
+    }
+
+    /**
+     * Outputs the content of the widget.
+     *
+     * @since   1.0.0
+     * @param   array   args        The array of form elements
+     * @param   array   instance    The current instance of the widget
+     */
+    public function widget($args, $instance)
+    {
+        /**
+         * @var String $name
+         * @var String $id
+         * @var String $description
+         * @var String $class
+         * @var String $before_widget
+         * @var String $after_widget
+         * @var String $before_title
+         * @var String $after_title
+         * @var String $widget_id
+         * @var String $widget_name
+         */
+        extract($args, EXTR_SKIP);
+
+        $instance = Helper::merge_array_r(
+            \Recently\Settings::$defaults['widget_options'],
+            (array) $instance
+        );
+
+        $markup = ( $instance['markup']['custom_html'] || has_filter('recently_custom_html') )
+            ? 'custom'
+            : 'regular';
+
+        echo "\n". "<!-- Recently widget v" . RECENTLY_VERSION . " [{$markup}] -->" . "\n";
+
+        echo $before_widget . "\n";
+
+        $title = ( '' != $instance['title'] ) ? apply_filters('widget_title', $instance['title']) : 'Recently';
+
+        if (
+            $instance['markup']['custom_html']
+            && $instance['markup']['title-start'] != ""
+            && $instance['markup']['title-end'] != ""
+        ) {
+            echo htmlspecialchars_decode($instance['markup']['title-start'], ENT_QUOTES) . $title . htmlspecialchars_decode($instance['markup']['title-end'], ENT_QUOTES);
+        } else {
+            echo $before_title . $title . $after_title;
+        }
+
+        if ( $this->admin_options['tools']['data']['ajax'] && ! is_customize_preview() ) {
+            ?>
+            <div class="recently-widget-placeholder" data-widget-id="<?php echo esc_attr($widget_id); ?>"></div>
+            <?php
+        } else {
+            echo $this->get_recents($instance);
+        }
+
+        echo $after_widget . "\n";
+        echo "<!-- End Recently Plugin v" . RECENTLY_VERSION . " -->" . "\n";
+    }
+
+    /**
+     * Generates the administration form for the widget.
+     *
+     * @since   1.0.0
+     * @param   array   $instance    The array of keys and values for the widget.
+     */
+    public function form($instance)
+    {
+        $instance = Helper::merge_array_r(
+            \Recently\Settings::$defaults['widget_options'],
+            (array) $instance
+        );
+
+        include(plugin_dir_path(__FILE__) . '/form.php');
+    }
+
+    /**
+     * Processes the widget's options to be saved.
+     *
+     * @since   1.0.0
+     * @param   array   $new_instance   The previous instance of values before the update.
+     * @param   array   $old_instance   The new instance of values to be generated via the update.
+     * @return  array   $instance       Updated instance.
+     */
+    public function update($new_instance, $old_instance)
+    {
+        if ( empty($old_instance) ) {
+            $old_instance = $this->options;
+        } else {
+            $old_instance = Helper::merge_array_r(
+                $this->options,
+                (array) $old_instance
+            );
+        }
+
+        $instance = $old_instance;
+
+        // Widget title
+        $instance['title'] = apply_filters('widget_title', $new_instance['title']);
+
+        /**
+         * Query args
+         */
+        // Post type
+        $instance['args']['post_type'] = ( '' == $new_instance['post_type'] )
+            ? array('post')
+            : explode(",", preg_replace('|[^a-z0-9,_-]|', '', $new_instance['post_type']));
+
+        // Post per page
+        $instance['args']['posts_per_page'] = ( Helper::is_number($new_instance['posts_per_page']) && $new_instance['posts_per_page'] > 0 )
+            ? $new_instance['posts_per_page']
+            : 10;
+
+        // Offset
+        $instance['args']['offset'] = ( Helper::is_number($new_instance['offset']) && $new_instance['offset'] >= 0 )
+            ? $new_instance['offset']
+            : 0;
+
+        // OPTIONAL ARGS
+        // Post IDs
+        $new_instance['post_id'] = preg_replace('|[^0-9,]|', '', $new_instance['post_id']);
+
+        if ( ! empty($new_instance['post_id']) ) {
+            $instance['args']['post__not_in'] = explode(",", $new_instance['post_id']);
+        } else {
+            if ( isset($instance['args']['post__not_in']) )
+                unset($instance['args']['post__not_in']);
+        }
+
+        // Taxonomy
+        if (
+            isset($new_instance['taxonomy'])
+            && ! empty($new_instance['taxonomy'])
+        ) {
+
+            // Reset
+            if ( isset($instance['args']['tax_query']) )
+                unset($instance['args']['tax_query']);
+
+            // Filter by Post Format
+            if ( 'post_format' == $new_instance['taxonomy'] ) {
+
+                $tax_slugs = trim(preg_replace('|[^a-z0-9,-]|', '', $new_instance['tax_slug']), ",");
+
+                $instance['args']['tax_query'][] = array(
+                    'taxonomy' => $new_instance['taxonomy'],
+                    'field' => 'slug',
+                    'terms' => explode(",", $tax_slugs)
+                );
+
+            } // Filter by taxonomy ID
+            else {
+                $tax_ids = null;
+                $tax_ids_in = array();
+                $tax_ids_out = array();
+
+                // Taxonomy IDs
+                $new_instance['tax_id'] = trim(preg_replace('|[^0-9,-]|', '', $new_instance['tax_id']), ",");
+
+                if ( '' != $new_instance['tax_id'] ) {
+                    $tax_ids = explode(",", $new_instance['tax_id']);
+
+                    for ( $i=0; $i < count($tax_ids); $i++ ) {
+                        if ($tax_ids[$i] >= 0)
+                            $tax_ids_in[] = $tax_ids[$i];
+                        else
+                            $tax_ids_out[] = $tax_ids[$i] * -1;
+                    }
+                }
+
+                $instance['args']['tax_query']['relation'] = ( ! empty($tax_ids_in) && ! empty($tax_ids_out) ) ? 'AND' : 'OR';
+
+                $instance['args']['tax_query'][] = array(
+                    'taxonomy' => $new_instance['taxonomy'],
+                    'field' => 'term_id',
+                    'terms' => $tax_ids_in
+                );
+
+                $instance['args']['tax_query'][] = array(
+                    'taxonomy' => $new_instance['taxonomy'],
+                    'field' => 'term_id',
+                    'terms' => $tax_ids_out,
+                    'operator' => 'NOT IN'
+                );
+            }
+        }
+        else {
+            if ( isset($instance['args']['tax_query']) )
+                unset($instance['args']['tax_query']);
+        }
+
+        // Author IDs
+        $new_instance['author_id'] = trim(preg_replace('|[^0-9,-]|', '', $new_instance['author_id']), ",");
+
+        if ( ! empty($new_instance['author_id']) ) {
+
+            $author_ids = explode(",", $new_instance['author_id']);
+            $author_ids_in = array();
+            $author_ids_out = array();
+
+            for ( $i=0; $i < count($author_ids); $i++ ) {
+                if ($author_ids[$i] >= 0)
+                    $author_ids_in[] = $author_ids[$i];
+                else
+                    $author_ids_out[] = $author_ids[$i];
+            }
+
+            if ( ! empty($author_ids_out) ) {
+                // remove minus sign
+                foreach ($author_ids_out as &$value)
+                    $value *= (-1);
+            }
+
+            $instance['args']['author__in'] = $author_ids_in;
+            $instance['args']['author__not_in'] = $author_ids_out;
+
+        } else {
+            if ( isset($instance['args']['author__in']) )
+                unset($instance['args']['author__in']);
+
+            if ( isset($instance['args']['author__not_in']) )
+                unset($instance['args']['author__not_in']);
+        }
+
+        /**
+         * Formatting options
+         */
+        // post title
+        $instance['shorten_title']['active'] = isset($new_instance['shorten_title-active']);
+        $instance['shorten_title']['words'] = $new_instance['shorten_title-words'];
+        $instance['shorten_title']['length'] = ( Helper::is_number($new_instance['shorten_title-length']) && $new_instance['shorten_title-length'] > 0 )
+            ? $new_instance['shorten_title-length']
+            : 25;
+
+        // post excerpt
+        $instance['post-excerpt']['keep_format'] = isset($new_instance['post-excerpt-format']);
+        $instance['post-excerpt']['words'] = $new_instance['post-excerpt-words'];
+        $instance['post-excerpt']['active'] = isset($new_instance['post-excerpt-active']);
+        $instance['post-excerpt']['length'] = ( Helper::is_number($new_instance['post-excerpt-length']) && $new_instance['post-excerpt-length'] > 0 )
+            ? $new_instance['post-excerpt-length']
+            : 55;
+
+        // post thumbnail
+        $instance['thumbnail']['active'] = false;
+        $instance['thumbnail']['width'] = 75;
+        $instance['thumbnail']['height'] = 75;
+
+        $instance['thumbnail']['active'] = isset($new_instance['thumbnail-active']);
+        $instance['thumbnail']['build'] = $new_instance['thumbnail-size-source'];
+
+        // Use predefined thumbnail sizes
+        if ( 'predefined' == $new_instance['thumbnail-size-source'] ) {
+
+            $default_thumbnail_sizes = $recently_image->get_image_sizes();
+            $size = $default_thumbnail_sizes[ $new_instance['thumbnail-size'] ];
+
+            $instance['thumbnail']['width'] = $size['width'];
+            $instance['thumbnail']['height'] = $size['height'];
+            $instance['thumbnail']['crop'] = $size['crop'];
+
+        } // Set thumbnail size manually
+        else {
+            if ( Helper::is_number($new_instance['thumbnail-width']) && Helper::is_number($new_instance['thumbnail-height']) ) {
+                $instance['thumbnail']['width'] = $new_instance['thumbnail-width'];
+                $instance['thumbnail']['height'] = $new_instance['thumbnail-height'];
+                $instance['thumbnail']['crop'] = true;
+            }
+        }
+
+        // WP Post Rating support
+        $instance['rating'] = isset($new_instance['rating']);
+
+        // Statistics
+        $instance['meta_tag']['comment_count'] = isset($new_instance['comment_count']);
+        $instance['meta_tag']['views'] = isset($new_instance['views']);
+        $instance['meta_tag']['author'] = isset($new_instance['author']);
+        $instance['meta_tag']['date']['active'] = isset($new_instance['date']);
+        $instance['meta_tag']['date']['format'] = empty($new_instance['date_format'])
+            ? 'F j, Y'
+            : $new_instance['date_format'];
+        $instance['meta_tag']['taxonomy']['active'] = isset($new_instance['show_tax']);
+        $instance['meta_tag']['taxonomy']['names'] = ( ! empty($new_instance['taxonomy_name']) && isset($new_instance['show_tax']) ) ? $new_instance['taxonomy_name'] : array();
+
+        // Custom HTML
+        $instance['markup']['custom_html'] = isset($new_instance['custom_html']);
+        $instance['markup']['recently-start'] = empty($new_instance['recently-start'])
+          ? ! $old_instance['markup']['custom_html'] && $instance['markup']['custom_html'] ? htmlspecialchars('<ul class="recently-list">', ENT_QUOTES) : ''
+          : htmlspecialchars($new_instance['recently-start'], ENT_QUOTES);
+
+        $instance['markup']['recently-end'] = empty($new_instance['recently-end'])
+          ? ! $old_instance['markup']['custom_html'] && $instance['markup']['custom_html'] ? htmlspecialchars('</ul>', ENT_QUOTES) : ''
+          : htmlspecialchars($new_instance['recently-end'], ENT_QUOTES);
+
+        $instance['markup']['post-html'] = empty($new_instance['post-html'])
+          ? htmlspecialchars('<li>{thumb} {title} {meta}</li>', ENT_QUOTES)
+          : htmlspecialchars($new_instance['post-html'], ENT_QUOTES);
+
+        $instance['markup']['title-start'] = empty($new_instance['title-start'])
+          ? ! $old_instance['markup']['custom_html'] && $instance['markup']['custom_html'] ? '<h2>' : ''
+          : htmlspecialchars($new_instance['title-start'], ENT_QUOTES);
+
+        $instance['markup']['title-end'] = empty($new_instance['title-end'])
+          ? ! $old_instance['markup']['custom_html'] && $instance['markup']['custom_html'] ? '</h2>' : '' :
+          htmlspecialchars($new_instance['title-end'], ENT_QUOTES);
+
+        return $instance;
+    }
+
+    /**
+     * Outputs HTML list
+     *
+     * @since   1.0.0
+     */
+    public function get_recents($instance = null)
+    {
+        if ( is_array($instance) && ! empty($instance) ) {
+            $instance['widget_id'] = $this->id;
+
+            // Return cached results
+            if ( $this->admin_options['tools']['data']['cache']['active'] ) {
+
+                $transient_name = md5(json_encode($instance));
+                $recents = get_transient($transient_name);
+
+                if ( false === $recents ) {
+                    $recents = $this->query_posts($instance);
+
+                    switch( $this->admin_options['tools']['data']['cache']['interval']['time'] ){
+                        case 'minute':
+                            $time = 60;
+                            break;
+                        case 'hour':
+                            $time = 60 * 60;
+                            break;
+                        case 'day':
+                            $time = 60 * 60 * 24;
+                           break;
+                        case 'week':
+                            $time = 60 * 60 * 24 * 7;
+                            break;
+                        case 'month':
+                            $time = 60 * 60 * 24 * 30;
+                            break;
+                        case 'year':
+                            $time = 60 * 60 * 24 * 365;
+                            break;
+                        default:
+                            $time = 60 * 60;
+                            break;
+                    }
+
+                    $expiration = $time * $this->admin_options['tools']['data']['cache']['interval']['value'];
+
+                    // Store transient
+                    set_transient($transient_name, $recents, $expiration);
+
+                    // Store transient in Recently transients array for garbage collection
+                    $recently_transients = get_option('recently_transients');
+
+                    if ( ! $recently_transients ) {
+                        $recently_transients = array($transient_name);
+                        add_option('recently_transients', $recently_transients);
+                    } else {
+                        if ( ! in_array($transient_name, $recently_transients) ) {
+                            $recently_transients[] = $transient_name;
+                            update_option('recently_transients', $recently_transients);
+                        }
+                    }
+                }
+
+            } // Get recent posts
+            else {
+                $recents = $this->query_posts($instance);
+            }
+
+            $this->output->set_public_options($instance);
+            $this->output->set_data($recents);
+            $this->output->build_output();
+
+            echo ( $this->admin_options['tools']['data']['cache']['active'] ? '<!-- cached -->' : '' );
+            $this->output->output();
+        }
+    }
+
+    /**
+     * Queries the database and returns the posts (if any met the criteria set by the user).
+     *
+     * @since   1.0.0
+     * @global  object      $wpdb
+     * @param   array       $instance
+     * @return  null|array
+     */
+    protected function query_posts($instance)
+    {
+        global $wpdb;
+
+        // parse instance values
+        $instance = Helper::merge_array_r(
+            $this->options,
+            $instance
+        );
+
+        $args = apply_filters('recently_pre_get_posts', $instance['args'], $instance['widget_id']);
+        $args = apply_filters('recently_query_args', $args);
+
+        return new \WP_Query($args);
+    }
+}
