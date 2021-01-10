@@ -54,7 +54,7 @@ class Activator {
     }
 
     /**
-     * When a new MU site is added, generate its WPP DB tables.
+     * Runs when a new MU site is added.
      *
      * @since    1.0.0
      */

@@ -39,7 +39,7 @@ class I18N {
     public function load_plugin_textdomain()
     {
         // This is basically a "hack" and should be removed in the future
-        // if/when we figure out why Polylang doesn't load WPP's mo files 
+        // if/when we figure out why Polylang doesn't load Recently's mo files 
         // while WPML does that automatically.
         if ( ! is_admin() && ! $this->config['tools']['data']['ajax'] && function_exists('PLL') ) {
             unload_textdomain('recently');

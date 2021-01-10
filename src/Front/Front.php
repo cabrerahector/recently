@@ -155,7 +155,7 @@ class Front {
      * Converts inline script tag into type=application/json.
      *
      * This function mods the original script tag as printed
-     * by WordPress which contains the data for the wpp_params
+     * by WordPress which contains the data for the recently_params
      * object into a JSON script. This improves compatibility
      * with Content Security Policy (CSP).
      *

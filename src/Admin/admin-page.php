@@ -43,7 +43,7 @@ if ( isset($_POST['section']) ) {
 
             // thumb
             if ($_POST['thumb_source'] == "custom_field" && (!isset($_POST['thumb_field']) || empty($_POST['thumb_field']))) {
-                echo '<div id="wpp-message" class="error fade"><p>'.__('Please provide the name of your custom field.', 'recently').'</p></div>';
+                echo '<div id="recently-message" class="error fade"><p>'.__('Please provide the name of your custom field.', 'recently').'</p></div>';
             } else {
                 $this->options['tools']['markup']['thumbnail']['source'] = $_POST['thumb_source'];
                 $this->options['tools']['markup']['thumbnail']['field'] = ( !empty( $_POST['thumb_field']) ) ? $_POST['thumb_field'] : '';
@@ -245,7 +245,7 @@ if ( !$recently_rand = get_option("recently_rand") ) {
                     <tr valign="top">
                         <th scope="row"></th>
                         <td>
-                            <input type="button" name="wpp-reset-cache" id="wpp-reset-cache" class="button-secondary" value="<?php _e("Empty image cache", 'recently'); ?>" onclick="confirm_clear_image_cache()" />
+                            <input type="button" name="recently-reset-cache" id="recently-reset-cache" class="button-secondary" value="<?php _e("Empty image cache", 'recently'); ?>" onclick="confirm_clear_image_cache()" />
                             <p class="description"><?php _e("Use this button to clear Recently's thumbnails cache", 'recently'); ?>.</p>
                         </td>
                     </tr>
