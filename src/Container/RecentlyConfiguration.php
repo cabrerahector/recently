@@ -53,7 +53,7 @@ class RecentlyConfiguration implements ContainerConfigurationInterface
         });
 
         $container['recently'] = $container->service(function(Container $container) {
-            return new \Recently\Recently($container['rest'], $container['admin'], $container['front'], $container['widget']);
+            return new \Recently\Recently($container['i18n'], $container['rest'], $container['admin'], $container['front'], $container['widget']);
         });
     }
 }
