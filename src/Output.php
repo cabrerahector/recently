@@ -270,13 +270,14 @@ class Output {
 
             $data = array(
                 'id' => $post->ID,
-                'title' => '<a href="' . $permalink . '" title="' . $post_title_attr . '" class="recently-post-title" target="' . $this->admin_options['tools']['markup']['link']['attr']['target'] . '" rel="' . esc_attr($this->admin_options['tools']['markup']['link']['attr']['rel']) . '">' . $post_title . '</a>',
+                'title' => '<a href="' . $permalink . '" ' . ($post_title_attr !== $post_title ? 'title="' . $post_title_attr . '" ' : '' ) . 'class="recently-post-title" target="' . $this->admin_options['tools']['markup']['link']['attr']['target'] . '" rel="' . esc_attr($this->admin_options['tools']['markup']['link']['attr']['rel']) . '">' . $post_title . '</a>',
+                'title_attr' => $post_title_attr,
                 'summary' => $post_excerpt,
                 'stats' => $post_meta,
-                'img' => ( ! empty($post_thumbnail) ) ? '<a href="' . $permalink . '" title="' . $post_title_attr . '" target="' . $this->admin_options['tools']['markup']['link']['attr']['target'] . '" rel="' . esc_attr($this->admin_options['tools']['markup']['link']['attr']['rel']) . '" class="recently-thumbnail-wrapper">' . $post_thumbnail . '</a>' : '',
+                'img' => ( ! empty($post_thumbnail) ) ? '<a href="' . $permalink . '"' . ($post_title_attr !== $post_title ? 'title="' . $post_title_attr . '" ' : '' ) . 'target="' . $this->admin_options['tools']['markup']['link']['attr']['target'] . '" rel="' . esc_attr($this->admin_options['tools']['markup']['link']['attr']['rel']) . '" class="recently-thumbnail-wrapper">' . $post_thumbnail . '</a>' : '',
                 'img_no_link' => $post_thumbnail,
                 'url' => $permalink,
-                'text_title' => $post_title_attr,
+                'text_title' => $post_title,
                 'taxonomy' => $post_taxonomies,
                 'author' => ( !empty($post_author) ) ? '<a href="' . get_author_posts_url( $post->post_author ) . '">' . $post_author . '</a>' : '',
                 'views' => number_format_i18n( $post_views ),
@@ -297,7 +298,7 @@ class Output {
             $is_single = Helper::is_single();
 
             $post_thumbnail = ( ! empty($post_thumbnail) )
-              ? "<a " . ( $is_single == $postID ? '' : "href=\"{$permalink}\"" ) . " title=\"{$post_title_attr}\" target=\"{$this->admin_options['tools']['markup']['link']['attr']['target']}\" rel=\"" . esc_attr($this->admin_options['tools']['markup']['link']['attr']['rel']) . "\" class=\"recently-thumbnail-wrapper\">{$post_thumbnail}</a>\n"
+              ? "<a " . ( $is_single == $postID ? '' : "href=\"{$permalink}\"" ) . " " . ($post_title_attr !== $post_title ? "title=\"{$post_title_attr}\" " : "") . "target=\"{$this->admin_options['tools']['markup']['link']['attr']['target']}\" rel=\"" . esc_attr($this->admin_options['tools']['markup']['link']['attr']['rel']) . "\" class=\"recently-thumbnail-wrapper\">{$post_thumbnail}</a>\n"
               : "";
 
             $post_excerpt = ( ! empty($post_excerpt) )
@@ -325,7 +326,7 @@ class Output {
             $content =
                 "<li" . ( ( is_array($recently_post_class) && ! empty($recently_post_class) ) ? ' class="' . esc_attr( implode(" ", $recently_post_class) ) . '"' : '' ) . ">\n"
                 . $post_thumbnail
-                . "<a " . ( $is_single == $postID ? '' : "href=\"{$permalink}\"" ) . " title=\"{$post_title_attr}\" class=\"recently-post-title\" target=\"{$this->admin_options['tools']['markup']['link']['attr']['target']}\" rel=\"" . esc_attr($this->admin_options['tools']['markup']['link']['attr']['rel']) . "\">{$post_title}</a>\n"
+                . "<a " . ( $is_single == $postID ? '' : "href=\"{$permalink}\"" ) . " " . ($post_title_attr !== $post_title ? "title=\"{$post_title_attr}\" " : "") . "class=\"recently-post-title\" target=\"{$this->admin_options['tools']['markup']['link']['attr']['target']}\" rel=\"" . esc_attr($this->admin_options['tools']['markup']['link']['attr']['rel']) . "\">{$post_title}</a>\n"
                 . $post_excerpt
                 . $post_meta
                 . $post_rating
@@ -704,7 +705,7 @@ class Output {
             return false;
 
         $params = array();
-        $pattern = '/\{(pid|excerpt|summary|meta|stats|title|image|thumb|thumb_img|thumb_url|rating|score|url|text_title|author|taxonomy|category|views|comments|date|total_items|item_position)\}/i';
+        $pattern = '/\{(pid|excerpt|summary|meta|stats|title|title_attr|image|thumb|thumb_img|thumb_url|rating|score|url|text_title|author|taxonomy|category|views|comments|date|total_items|item_position)\}/i';
         preg_match_all($pattern, $string, $matches);
 
         array_map('strtolower', $matches[0]);
@@ -715,6 +716,10 @@ class Output {
 
         if ( in_array("{title}", $matches[0]) ) {
             $string = str_replace("{title}", $data['title'], $string);
+        }
+
+        if ( in_array("{title_attr}", $matches[0]) ) {
+            $string = str_replace("{title_attr}", $data['title_attr'], $string);
         }
 
         if ( in_array("{meta}", $matches[0]) || in_array("{stats}", $matches[0]) ) {
