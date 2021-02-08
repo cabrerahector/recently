@@ -36,8 +36,8 @@ Recently is a highly customizable [widget](http://wordpress.org/plugins/recently
 
 ## Requirements
 
-* WordPress 4.7 or above.
-* PHP 5.2+ or above.
+* WordPress 4.9 or above.
+* PHP 5.4 or above.
 * Either the [ImageMagik](http://www.php.net/manual/en/intro.imagick.php) or [GD](http://www.php.net/manual/en/intro.image.php) library installed and enabled on your server (not really required, but needed to create thumbnails).
 
 
