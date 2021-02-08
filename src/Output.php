@@ -298,7 +298,7 @@ class Output {
             $is_single = Helper::is_single();
 
             $post_thumbnail = ( ! empty($post_thumbnail) )
-              ? "<a " . ( $is_single == $postID ? '' : "href=\"{$permalink}\"" ) . " " . ($post_title_attr !== $post_title ? "title=\"{$post_title_attr}\" " : "") . "target=\"{$this->admin_options['tools']['markup']['link']['attr']['target']}\" rel=\"" . esc_attr($this->admin_options['tools']['markup']['link']['attr']['rel']) . "\" class=\"recently-thumbnail-wrapper\">{$post_thumbnail}</a>\n"
+              ? "<a href=\"{$permalink}\" " . ($post_title_attr !== $post_title ? "title=\"{$post_title_attr}\" " : "") . "target=\"{$this->admin_options['tools']['markup']['link']['attr']['target']}\" rel=\"" . esc_attr($this->admin_options['tools']['markup']['link']['attr']['rel']) . "\" class=\"recently-thumbnail-wrapper\">{$post_thumbnail}</a>\n"
               : "";
 
             $post_excerpt = ( ! empty($post_excerpt) )
@@ -326,7 +326,7 @@ class Output {
             $content =
                 "<li" . ( ( is_array($recently_post_class) && ! empty($recently_post_class) ) ? ' class="' . esc_attr( implode(" ", $recently_post_class) ) . '"' : '' ) . ">\n"
                 . $post_thumbnail
-                . "<a " . ( $is_single == $postID ? '' : "href=\"{$permalink}\"" ) . " " . ($post_title_attr !== $post_title ? "title=\"{$post_title_attr}\" " : "") . "class=\"recently-post-title\" target=\"{$this->admin_options['tools']['markup']['link']['attr']['target']}\" rel=\"" . esc_attr($this->admin_options['tools']['markup']['link']['attr']['rel']) . "\">{$post_title}</a>\n"
+                . "<a href=\"{$permalink}\" " . ($post_title_attr !== $post_title ? "title=\"{$post_title_attr}\" " : "") . "class=\"recently-post-title\" target=\"{$this->admin_options['tools']['markup']['link']['attr']['target']}\" rel=\"" . esc_attr($this->admin_options['tools']['markup']['link']['attr']['rel']) . "\">{$post_title}</a>\n"
                 . $post_excerpt
                 . $post_meta
                 . $post_rating
