@@ -20,7 +20,7 @@
             "active": false
         },
         "rating": false,
-        "stats_tag": {
+        "meta_tag": {
             "comment_count": false,
             "views": false,
             "author": false,
