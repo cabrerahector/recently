@@ -24,13 +24,13 @@ Recently is a highly customizable [widget](http://wordpress.org/plugins/recently
 ## Features
 
 * **Multi-widget capable**. That is, you can have several Recently widgets on your blog - each with its own settings!
-* **[Polylang](https://wordpress.org/plugins/polylang/)/[WPML](https://wpml.org/) support**.
+* **[Polylang](https://wordpress.org/plugins/polylang/)/[WPML 3.2+](https://wpml.org/) support** - Show the translated version of your recent posts!
 * **WordPress Multisite support**.
 * **WordPress Popular Posts support** - Display the views count of your recent posts!
-* **Custom Post-type support**. Wanna show other stuff than just posts and pages?
-* Display a **thumbnail** of your recent posts! (see [technical requirements](https://github.com/cabrerahector/recently/wiki/3.-FAQ#im-unable-to-activate-the-display-post-thumbnail-option-why)).
-* Use **your own layout**! [Control how your recent posts are shown on your theme](https://github.com/cabrerahector/recently/wiki/3.-FAQ#how-can-i-use-my-own-html-markup-with-your-plugin).
-* **Localizable** to your own language (See [here](https://github.com/cabrerahector/recently/wiki/3.-FAQ#i-want-to-translate-your-plugin-into-my-language--help-you-update-a-translation-what-do-i-need-to-do) for more info).
+* **Custom Post-type support**. - Want to show other stuff than just posts and pages, eg. Recent *Products*? [You can](https://github.com/cabrerahector/recently/wiki/3.-FAQ#i-want-to-have-a-recent-list-of-my-custom-post-type-how-can-i-do-that)!
+* Display a **thumbnail** of your recent posts! (see the [FAQ section](https://github.com/cabrerahector/recently/wiki/3.-FAQ#how-does-recently-pick-my-posts-thumbnails) for more details.)
+* Use **your own layout**! Recently is flexible enough to let you customize the look and feel of your recent posts list! (see [customizing Recently's HTML markup](https://github.com/cabrerahector/recently/wiki/3.-FAQ#how-can-i-use-my-own-html-markup-with-your-plugin) and [How to style Recently](https://github.com/cabrerahector/recently/wiki/4.-Styling-the-list) for more.)
+* **Localizable** to your own language (See [translating Recently into your language](https://github.com/cabrerahector/recently/wiki/3.-FAQ#i-want-to-translate-your-plugin-into-my-language--help-you-update-a-translation-what-do-i-need-to-do) for more info).
 * **[WP-PostRatings](http://wordpress.org/extend/plugins/wp-postratings/) support**. Show your visitors how your readers are rating your posts!
 
 
