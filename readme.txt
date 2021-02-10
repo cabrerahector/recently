@@ -47,7 +47,7 @@ Please make sure your site meets the [minimum requirements](https://github.com/c
 = Done! What's next? =
 
 1. Go to *Appearance > Widgets*, drag the *Recently* widget onto your sidebar, configure it, and when you're done click on *Save*.
-2. If you have a caching plugin installed on your site, flush its cache now. Then, go to *Settings > Recently* and enable the *Ajaxify widget* feature.
+2. If you have a caching plugin installed on your site, flush its cache now. Then, go to *Settings > Recently* and enable the *Ajaxify widget* feature (more details: [Is Recently compatible with caching plugins?](https://github.com/cabrerahector/recently/wiki/3.-FAQ#can-recently-work-with-caching-plugins-such-as-wp-super-cache)).
 
 That's it!
 
