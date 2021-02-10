@@ -59,7 +59,7 @@ Recently is a highly customizable [widget](http://wordpress.org/plugins/recently
 ### Done! What's next? ###
 
 1. In your admin console, go to Appearance > Widgets, drag the Recently widget to your sidebar and click on Save.
-2. If you have a caching plugin installed on your site, flush its cache now. Then, go to *Settings > Recently* and enable the *Ajaxify widget* feature (more details: [Is Recently compatible with caching plugins?](https://github.com/cabrerahector/recently/wiki/3.-FAQ#can-recently-work-with-caching-plugins-such-as-wp-super-cache)).
+2. If you have a caching plugin installed on your site you may need to adjust some settings to make sure Recently can work: [Is Recently compatible with caching plugins?](https://github.com/cabrerahector/recently/wiki/3.-FAQ#can-recently-work-with-caching-plugins-such-as-wp-super-cache)
 
 ## Support
 
