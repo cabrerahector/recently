@@ -43,11 +43,23 @@ Recently is a highly customizable [widget](http://wordpress.org/plugins/recently
 
 ## Installation
 
-1. [Download the plugin](http://wordpress.org/plugins/recently/) and extract its contents.
+### Automatic installation ###
+
+1. Log in into your WordPress dashboard.
+2. Go to Plugins > Add New.
+3. In the "Search Plugins" field, type in **Recently** and hit Enter.
+4. Find the plugin in the search results list and click on the "Install Now" button.
+
+### Manual installation ###
+
+1. [Download the plugin](https://wordpress.org/plugins/recently/) and extract its contents.
 2. Upload the `recently` folder to the `/wp-content/plugins/` directory.
 3. Activate **Recently** through the 'Plugins' menu in WordPress.
-4. In your admin console, go to Appeareance > Widgets, drag the Recently widget to your sidebar and click on Save.
-5. If you have a caching plugin installed on your site, flush its cache now so Recently can be displayed on your site.
+
+### Done! What's next? ###
+
+1. In your admin console, go to Appearance > Widgets, drag the Recently widget to your sidebar and click on Save.
+2. If you have a caching plugin installed on your site, flush its cache now so Recently can be displayed on your site.
 
 ## Support
 
