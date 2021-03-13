@@ -18,14 +18,16 @@ Let's face it: WordPress' default Recent Posts widget does the job as promised b
 Recently is a WordPress widget that displays your site's most recent posts. And it doesn't stop there:
 
 = Main Features =
-* **Thumbnails support!** (*see the [FAQ section](https://github.com/cabrerahector/recently/wiki/3.-FAQ) for technical requirements*).
-* **[Use your own layout](https://github.com/cabrerahector/recently/wiki/3.-FAQ#how-can-i-use-my-own-html-markup-with-your-plugin)**! Control how your recent posts are shown on your theme.
-* **Custom Post-type support**. Wanna show other stuff than just posts and pages?
-* **Categories, tags, and custom taxonomies support!**
-* **[WordPress Popular Posts](https://wordpress.org/extend/plugins/wordpress-popular-posts/)** / **[WP-PostViews](https://wordpress.org/extend/plugins/wp-postratings/)** / **[Top 10](https://wordpress.org/plugins/top-10/)** **support**: display the number of page views of your posts!
-* **[Polylang](https://wordpress.org/plugins/polylang/)/[WPML](https://wpml.org/) support**!
+* **Multi-widget capable**. That is, you can have several Recently widgets on your blog - each with its own settings!
+* **[Polylang](https://wordpress.org/plugins/polylang/)/[WPML 3.2+](https://wpml.org/) support** - Show the translated version of your recent posts!
+* **WordPress Multisite support**.
+* **[WordPress Popular Posts](https://wordpress.org/extend/plugins/wordpress-popular-posts/)** / **[WP-PostViews](https://wordpress.org/extend/plugins/wp-postratings/)** / **[Top 10](https://wordpress.org/plugins/top-10/)** **support**: - Display the views count of your recent posts!
+* **Custom Post-type support**. - Want to show other stuff than just posts and pages, eg. Recent *Products*? [You can](https://github.com/cabrerahector/recently/wiki/3.-FAQ#i-want-to-have-a-recent-list-of-my-custom-post-type-how-can-i-do-that)!
+* List recent posts filtered by categories, tags, or custom taxonomies!
+* Display a **thumbnail** of your recent posts! (see the [FAQ section](https://github.com/cabrerahector/recently/wiki/3.-FAQ#how-does-recently-pick-my-posts-thumbnails) for more details.)
+* Use **your own layout**! Recently is flexible enough to let you customize the look and feel of your recent posts list! (see [customizing Recently's HTML markup](https://github.com/cabrerahector/recently/wiki/3.-FAQ#how-can-i-use-my-own-html-markup-with-your-plugin) and [How to style Recently](https://github.com/cabrerahector/recently/wiki/4.-Styling-the-list) for more.)
+* **Localizable** to your own language (See [translating Recently into your language](https://github.com/cabrerahector/recently/wiki/3.-FAQ#i-want-to-translate-your-plugin-into-my-language--help-you-update-a-translation-what-do-i-need-to-do) for more info).
 * **[WP-PostRatings](http://wordpress.org/extend/plugins/wp-postratings/) support**. Show your visitors how your readers are rating your posts!
-* **WordPress Multisite support**!
 
 == Installation ==
 
