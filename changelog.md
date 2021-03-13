@@ -1,5 +1,19 @@
 Changelog
 =========
+#### 3.0.0 ####
+**If you're using a caching plugin, flushing its cache after installing/upgrading to this version is highly recommended.**
+
+* Code has been refactored to make maintenance easier in the future.
+* Widget Themes support!
+* Retina displays support!
+* New Content Tags added: total_items, item_position, and title_attr.
+* Minor usability improvements.
+* Improves compatibility with Polylang/WPML.
+* Improved CSP compatibility. Note that this may cause issues on some set-ups, please check the Release Notes for more details.
+
+See the [Release Notes](https://cabrerahector.com/wordpress/recently-3-0-has-been-released/) for more details.
+[Full Changelog](https://github.com/cabrerahector/recently/blob/master/changelog.md).
+
 #### 2.1.0 ####
 *If you're using a caching plugin, flushing its cache after installing/upgrading to this version is highly recommended.*
 
