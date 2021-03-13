@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Recently\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/recently\n"
-"POT-Creation-Date: 2021-01-10 18:56-0400\n"
+"POT-Creation-Date: 2021-03-13 12:21-0400\n"
 "PO-Revision-Date: 2015-06-09 16:53-0430\n"
 "Last-Translator: Héctor Cabrera <me@cabrerahector.com>\n"
 "Language-Team: Héctor Cabrera <me@cabrerahector.com>\n"
@@ -350,89 +350,101 @@ msgid "displays linked post/page title"
 msgstr ""
 
 #: ../src/Admin/admin-page.php:380
-msgid "displays post/page excerpt (requires enabling the excerpt option)"
+msgid "similar to text_title, sanitized for use in title/alt attributes"
 msgstr ""
 
 #: ../src/Admin/admin-page.php:384
-msgid "displays the default Metadata tags"
+msgid "displays post/page excerpt (requires enabling the excerpt option)"
 msgstr ""
 
 #: ../src/Admin/admin-page.php:388
-msgid "displays post/page current rating (requires WP-PostRatings installed and enabled)"
+msgid "displays the default Metadata tags"
 msgstr ""
 
 #: ../src/Admin/admin-page.php:392
+msgid "displays post/page current rating (requires WP-PostRatings installed and enabled)"
+msgstr ""
+
+#: ../src/Admin/admin-page.php:396
 msgid ""
 "displays post/page current rating as an integer (requires WP-PostRatings installed and "
 "enabled)"
 msgstr ""
 
-#: ../src/Admin/admin-page.php:396
+#: ../src/Admin/admin-page.php:400
 msgid "outputs the URL of the post/page"
 msgstr ""
 
-#: ../src/Admin/admin-page.php:400
+#: ../src/Admin/admin-page.php:404
 msgid "displays post/page title, no link"
 msgstr ""
 
-#: ../src/Admin/admin-page.php:404
+#: ../src/Admin/admin-page.php:408
 msgid "displays linked author name (requires enabling author under Metadata Tags)"
 msgstr ""
 
-#: ../src/Admin/admin-page.php:408
+#: ../src/Admin/admin-page.php:412
 msgid "displays linked taxonomy name (requires enabling taxonomy under Metadata Tags)"
 msgstr ""
 
-#: ../src/Admin/admin-page.php:412
+#: ../src/Admin/admin-page.php:416
 msgid ""
 "displays current views count as an integer only (requires enabling views under "
 "Metadata Tags)"
 msgstr ""
 
-#: ../src/Admin/admin-page.php:416
+#: ../src/Admin/admin-page.php:420
 msgid ""
 "displays current comments count as an integer only (requires enabling comments under "
 "Metadata Tags)"
 msgstr ""
 
-#: ../src/Admin/admin-page.php:420
+#: ../src/Admin/admin-page.php:424
 msgid "displays post/page date (requires enabling date under Metadata Tags)"
+msgstr ""
+
+#: ../src/Admin/admin-page.php:428
+msgid "outputs number of recent posts found"
+msgstr ""
+
+#: ../src/Admin/admin-page.php:432
+msgid "outputs the position of the post in the listing"
 msgstr ""
 
 #: ../src/Output.php:191
 msgid "Sorry, nothing to show yet."
 msgstr ""
 
-#: ../src/Output.php:456
+#: ../src/Output.php:457
 #, php-format
 msgid "%s ago"
 msgstr ""
 
-#: ../src/Output.php:656
+#: ../src/Output.php:657
 #, php-format
 msgid "1 comment"
 msgid_plural "%s comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/Output.php:663
+#: ../src/Output.php:664
 #, php-format
 msgid "1 view"
 msgid_plural "%s views"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/Output.php:671
+#: ../src/Output.php:672
 #, php-format
 msgid "by %s"
 msgstr ""
 
-#: ../src/Output.php:677
+#: ../src/Output.php:678
 #, php-format
 msgid "posted %s"
 msgstr ""
 
-#: ../src/Output.php:677
+#: ../src/Output.php:678
 #, php-format
 msgid "posted on %s"
 msgstr ""
