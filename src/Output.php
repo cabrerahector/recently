@@ -421,7 +421,19 @@ class Output {
 
             // WordPress Popular Posts support
             if ( function_exists('wpp_get_views') ) {
-                $pageviews = wpp_get_views($post->ID, NULL, false);
+                $trid = $this->translate->get_object_id(
+                    $post->ID,
+                    get_post_type($post->ID),
+                    true,
+                    $this->translate->get_default_language()
+                );
+
+                if ( $post->ID != $trid ) {
+                    $pageviews = wpp_get_views($trid, NULL, false);
+                }
+                else {
+                    $pageviews = wpp_get_views($post->ID, NULL, false);
+                }
             }
             // WP-PostViews support
             elseif ( Helper::is_plugin_active('wp-postviews/wp-postviews.php') ) {
@@ -457,9 +469,23 @@ class Output {
     {
         global $post;
 
-        $comments = ( $this->options['meta_tag']['comment_count'] )
-            ? get_comments_number( $post->ID )
-            : 0;
+        $comments = 0;
+
+        if ( $this->options['meta_tag']['comment_count'] ) {
+            $trid = $this->translate->get_object_id(
+                $post->ID,
+                get_post_type($post->ID),
+                true,
+                $this->translate->get_default_language()
+            );
+
+            if ( $post->ID != $trid ) {
+                $comments = get_comments_number($trid);
+            }
+            else {
+                $comments = get_comments_number($post->ID);
+            }
+        }
 
         return $comments;
     }
