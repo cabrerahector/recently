@@ -214,16 +214,7 @@ class Output {
         $permalink = $this->get_permalink($postID);
 
         // Thumbnail
-        $post_thumbnail = $this->image->get(
-            $postID,
-            [
-                $this->options['thumbnail']['width'],
-                $this->options['thumbnail']['height']
-            ],
-            $this->admin_options['tools']['markup']['thumbnail']['source'],
-            $this->options['thumbnail']['crop'],
-            $this->options['thumbnail']['build']
-        );
+        $post_thumbnail = $this->get_thumbnail($postID);
 
         // Post title (and title attribute)
         $post_title_attr = esc_attr(wp_strip_all_tags($this->get_title()));
@@ -354,6 +345,40 @@ class Output {
         }
 
         return get_permalink($post->ID);
+    }
+
+    /**
+     * Return the processed thumbnail.
+     *
+     * @since   3.0.1
+     * @access  private
+     * @param   int     $post_id
+     * @return  string
+     */
+    private function get_thumbnail($post_id)
+    {
+        $thumbnail = '';
+
+        if ( $this->options['thumbnail']['active'] ) {
+            $trid = $this->translate->get_object_id($post_id, get_post_type($post_id));
+
+            if ( $post_id != $trid ) {
+                $post_id = $trid;
+            }
+
+            $thumbnail = $this->image->get(
+                $post_id,
+                [
+                    $this->options['thumbnail']['width'],
+                    $this->options['thumbnail']['height']
+                ],
+                $this->admin_options['tools']['thumbnail']['source'],
+                $this->options['thumbnail']['crop'],
+                $this->options['thumbnail']['build']
+            );
+        }
+
+        return $thumbnail;
     }
 
     /**
