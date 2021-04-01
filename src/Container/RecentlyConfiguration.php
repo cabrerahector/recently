@@ -40,8 +40,12 @@ class RecentlyConfiguration implements ContainerConfigurationInterface
             return new \Recently\Widget\Widget($container['widget_options'], $container['admin_options'], $container['output'], $container['image'], $container['translate'], $container['themer']);
         });
 
+        $container['widget_endpoint'] = $container->service(function(Container $container) {
+            return new \Recently\REST\WidgetEndpoint($container['admin_options'], $container['translate'], $container['output']);
+        });
+
         $container['rest'] = $container->service(function(Container $container) {
-            return new \Recently\REST\Controller($container['admin_options'], $container['translate'], $container['output']);
+            return new \Recently\REST\Controller($container['widget_endpoint']);
         });
 
         $container['admin'] = $container->service(function(Container $container) {

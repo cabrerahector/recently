@@ -75,6 +75,17 @@ class Translate {
     }
 
     /**
+     * Sets the code of the currently active language.
+     *
+     * @since    3.0.1
+     * @return   string|null
+     */
+    public function set_current_language($code = null)
+    {
+        $this->current_language = $code;
+    }
+
+    /**
      * Retrieves the ID of an object.
      *
      * @since   2.0.0
