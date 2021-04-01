@@ -53,6 +53,8 @@ Please make sure your site meets the [minimum requirements](https://github.com/c
 1. Go to *Appearance > Widgets*, drag the *Recently* widget onto your sidebar, configure it, and when you're done click on *Save*.
 2. If you have a caching plugin installed on your site you may need to adjust some settings to make sure Recently can work: [Is Recently compatible with caching plugins?](https://github.com/cabrerahector/recently/wiki/3.-FAQ#can-recently-work-with-caching-plugins-such-as-wp-super-cache)
 
+Make sure to stop by the **[Wiki](https://github.com/cabrerahector/recently/wiki)** as well, you'll find even more info there!
+
 That's it!
 
 == Frequently Asked Questions ==
