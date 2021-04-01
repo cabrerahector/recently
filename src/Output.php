@@ -718,8 +718,8 @@ class Output {
 
         // author
         if ( $this->options['meta_tag']['author'] ) {
-            $display_name = '<a href="' . get_author_posts_url($post->post_author) . '">' . $author . '</a>';
-            /* translators: %s placeholder will be replaced with the author name */
+            $author_url = get_author_posts_url($post->post_author);
+            $display_name = '<a href="' . $this->translate->url($author_url, $this->translate->get_current_language()) . '">' . $author . '</a>';
             $meta[] = '<span class="recently-author">' . sprintf(__('by %s', 'recently'), $display_name).'</span>';
         }
 
