@@ -106,7 +106,7 @@ class Settings {
                         'active' => true,
                         'interval' => array(
                             'time' => 'minute',
-                            'value' => 5
+                            'value' => 1
                         )
                     )
                 ),
