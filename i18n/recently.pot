@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Recently\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/recently\n"
-"POT-Creation-Date: 2021-03-13 12:21-0400\n"
+"POT-Creation-Date: 2021-04-04 11:07-0400\n"
 "PO-Revision-Date: 2015-06-09 16:53-0430\n"
 "Last-Translator: Héctor Cabrera <me@cabrerahector.com>\n"
 "Language-Team: Héctor Cabrera <me@cabrerahector.com>\n"
@@ -415,41 +415,41 @@ msgstr ""
 msgid "Sorry, nothing to show yet."
 msgstr ""
 
-#: ../src/Output.php:457
+#: ../src/Output.php:508
 #, php-format
 msgid "%s ago"
 msgstr ""
 
-#: ../src/Output.php:657
+#: ../src/Output.php:708
 #, php-format
 msgid "1 comment"
 msgid_plural "%s comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/Output.php:664
+#: ../src/Output.php:715
 #, php-format
 msgid "1 view"
 msgid_plural "%s views"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/Output.php:672
+#: ../src/Output.php:723
 #, php-format
 msgid "by %s"
 msgstr ""
 
-#: ../src/Output.php:678
+#: ../src/Output.php:729
 #, php-format
 msgid "posted %s"
 msgstr ""
 
-#: ../src/Output.php:678
+#: ../src/Output.php:729
 #, php-format
 msgid "posted on %s"
 msgstr ""
 
-#: ../src/REST/Controller.php:95
+#: ../src/REST/WidgetEndpoint.php:71
 msgid "Invalid Widget Instance ID"
 msgstr ""
 
