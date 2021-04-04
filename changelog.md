@@ -1,5 +1,13 @@
 Changelog
 =========
+#### 3.0.1 ####
+
+* Fixes a bug where the user couldn't disable the display of thumbnails.
+* Improves compatibility with WordPress Popular Posts and Polylang.
+* Minor code enhancements.
+
+[Release notes](https://cabrerahector.com/wordpress/recently-3-0-has-been-released/#minor-updates-and-hotfixes)
+
 #### 3.0.0 ####
 **If you're using a caching plugin, flushing its cache after installing/upgrading to this version is highly recommended.**
 
