@@ -372,7 +372,7 @@ class Output {
                     $this->options['thumbnail']['width'],
                     $this->options['thumbnail']['height']
                 ],
-                $this->admin_options['tools']['thumbnail']['source'],
+                $this->admin_options['tools']['markup']['thumbnail']['source'],
                 $this->options['thumbnail']['crop'],
                 $this->options['thumbnail']['build']
             );
