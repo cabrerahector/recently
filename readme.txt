@@ -73,6 +73,12 @@ The FAQ section has been moved [here](https://github.com/cabrerahector/recently/
 
 == Changelog ==
 
+= 3.0.2 =
+
+* Fixes thumbnails not displaying under certain conditions.
+* Fixes an issue where the Tiny theme would change the widget title to "Trending."
+* Updates plugin screenshots to showcase the new themes.
+
 = 3.0.1 =
 
 * Fixes a bug where the user couldn't disable the display of thumbnails.

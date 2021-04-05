@@ -1,5 +1,13 @@
 Changelog
 =========
+#### 3.0.2 ####
+
+* Fixes thumbnails not displaying under certain conditions.
+* Fixes an issue where the Tiny theme would change the widget title to "Trending."
+* Updates plugin screenshots to showcase the new themes.
+
+[Release notes](https://cabrerahector.com/wordpress/recently-3-0-has-been-released/#minor-updates-and-hotfixes)
+
 #### 3.0.1 ####
 
 * Fixes a bug where the user couldn't disable the display of thumbnails.
