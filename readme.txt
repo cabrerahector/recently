@@ -65,7 +65,11 @@ The FAQ section has been moved [here](https://github.com/cabrerahector/recently/
 
 1. Widgets Control Panel.
 2. Recently Widget.
-3. Recently Widget with custom HTML.
+3. Recently Widget with Cards theme.
+4. Recently Widget with Cardview theme.
+5. Recently Widget with Midnight theme.
+6. Recently Widget with Tiles theme.
+7. Recently Widget with Tiny theme.
 
 == Changelog ==
 
