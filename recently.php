@@ -16,7 +16,7 @@
  * Plugin Name:       Recently
  * Plugin URI:        https://wordpress.org/plugins/recently/
  * Description:       A highly customizable & feature-packed recent posts widget.
- * Version:           3.0.1
+ * Version:           3.0.2
  * Author:            Hector Cabrera
  * Author URI:        https://cabrerahector.com/
  * License:           GPL-2.0+
@@ -29,7 +29,7 @@ if ( ! defined( 'WPINC' ) ) {
     die();
 }
 
-define('RECENTLY_VERSION', '3.0.1');
+define('RECENTLY_VERSION', '3.0.2');
 define('RECENTLY_MIN_PHP_VERSION', '5.4');
 define('RECENTLY_MIN_WP_VERSION', '4.9');
 
