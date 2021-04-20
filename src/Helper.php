@@ -158,4 +158,27 @@ class Helper {
         return false;
     }
 
+    /**
+     * Adds scheme to a given URL.
+     *
+     * @since   3.0.3
+     * @param   string      $url
+     * @param   string      $scheme
+     * @return  string|bool
+     */
+    static function add_scheme($url = null, $scheme = 'https://')
+    {
+        $url_args = parse_url($url);
+
+        if ( $url_args ) {
+            // No need to do anything, URL is fine
+            if ( isset($url_args['scheme']) )
+                return $url;
+            // Return URL with scheme
+            return $scheme . $url_args['host'] . $url_args['path'];
+        }
+
+        // Invalid/malformed URL
+        return false;
+    }
 }
