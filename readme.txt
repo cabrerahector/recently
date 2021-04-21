@@ -29,6 +29,12 @@ Recently is a WordPress widget that displays your site's most recent posts. And 
 * **Localizable** to your own language (See [translating Recently into your language](https://github.com/cabrerahector/recently/wiki/3.-FAQ#i-want-to-translate-your-plugin-into-my-language--help-you-update-a-translation-what-do-i-need-to-do) for more info).
 * **[WP-PostRatings](http://wordpress.org/extend/plugins/wp-postratings/) support**. Show your visitors how your readers are rating your posts!
 
+= Support the Project! =
+
+If you'd like to support my work and efforts to creating and maintaining more open source projects your donations and messages of support mean a lot!
+
+[Buy me a coffee](https://ko-fi.com/cabrerahector) | [PayPal Me](https://paypal.me/cabrerahector)
+
 **Recently** is now also on [GitHub](https://github.com/cabrerahector/recently)!
 
 == Installation ==
