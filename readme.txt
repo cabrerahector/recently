@@ -73,11 +73,19 @@ The FAQ section has been moved [here](https://github.com/cabrerahector/recently/
 
 == Changelog ==
 
+= 3.0.3 =
+
+* Fixes a fatal PHP error when using an image source other than Featured Image (thanks rianovost!)
+
+[Release notes](https://cabrerahector.com/wordpress/recently-3-0-has-been-released/#minor-updates-and-hotfixes)
+
 = 3.0.2 =
 
 * Fixes thumbnails not displaying under certain conditions.
 * Fixes an issue where the Tiny theme would change the widget title to "Trending."
 * Updates plugin screenshots to showcase the new themes.
+
+[Release notes](https://cabrerahector.com/wordpress/recently-3-0-has-been-released/#minor-updates-and-hotfixes)
 
 = 3.0.1 =
 
