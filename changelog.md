@@ -1,5 +1,11 @@
 Changelog
 =========
+#### 3.0.4 ####
+
+* Fixes an issue where when using multiple widgets on the same page posts would be duplicated (thanks rianovost!)
+
+[Release notes](https://cabrerahector.com/wordpress/recently-3-0-has-been-released/#minor-updates-and-hotfixes)
+
 #### 3.0.3 ####
 
 * Fixes a fatal PHP error when using an image source other than Featured Image (thanks rianovost!)
