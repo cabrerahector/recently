@@ -3,6 +3,7 @@ Changelog
 #### 3.0.4 ####
 
 * Fixes an issue where when using multiple widgets on the same page posts would be duplicated (thanks rianovost!)
+* Enables the Ajaxify Widget option by default (affects new installs only) for better out-of-the-box compat with caching plugins.
 
 [Release notes](https://cabrerahector.com/wordpress/recently-3-0-has-been-released/#minor-updates-and-hotfixes)
 
