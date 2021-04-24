@@ -103,6 +103,8 @@ class Output {
                 $this->options
             );
 
+            $this->output = "\n" . ( WP_DEBUG ? '<!-- Recently v' . RECENTLY_VERSION . ( $this->admin_options['tools']['data']['cache']['active'] ? ' - cached' : '' ) . ' -->' : '' ) . "\n";
+
             // Allow WP themers / coders access to raw data
             // so they can build their own output
             if ( has_filter('recently_custom_html') ) {

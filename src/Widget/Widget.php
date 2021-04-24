@@ -138,8 +138,6 @@ class Widget extends \WP_Widget {
             ? 'custom'
             : 'regular';
 
-        echo "\n". "<!-- Recently widget v" . RECENTLY_VERSION . " [{$markup}] -->" . "\n";
-
         echo $before_widget . "\n";
 
         $title = ( '' != $instance['title'] ) ? apply_filters('widget_title', $instance['title']) : 'Recently';
@@ -163,7 +161,6 @@ class Widget extends \WP_Widget {
         }
 
         echo $after_widget . "\n";
-        echo "<!-- End Recently Plugin v" . RECENTLY_VERSION . " -->" . "\n";
     }
 
     /**
@@ -518,7 +515,6 @@ class Widget extends \WP_Widget {
             $this->output->set_data($recents);
             $this->output->build_output();
 
-            echo ( $this->admin_options['tools']['data']['cache']['active'] ? '<!-- cached -->' : '' );
             $this->output->output();
         }
     }
