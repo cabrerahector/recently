@@ -101,7 +101,7 @@ class Settings {
                     ),
                 ),
                 'data' => array(
-                    'ajax' => false,
+                    'ajax' => true,
                     'cache' => array(
                         'active' => true,
                         'interval' => array(
