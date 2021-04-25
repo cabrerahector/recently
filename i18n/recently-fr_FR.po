@@ -1,0 +1,741 @@
+# Copyright (C) 2015 Recently
+# This file is distributed under the same license as the Recently package.
+# Utilisateur <christophe@caron.tv>, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: Recently\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/recently\n"
+"POT-Creation-Date: 2021-04-04 11:07-0400\n"
+"PO-Revision-Date: 2021-04-25 17:10+0200\n"
+"Last-Translator: Utilisateur <christophe@caron.tv>\n"
+"Language-Team: Christophe Caron\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-KeywordsList: _e;__;__ngettext;__ngettext_noop;_n_noop;_x;_nx;"
+"_nx_noop;_ex;esc_attr__;esc_attr_e;esc_attr_x;esc_html__;esc_html_e;"
+"esc_html_x;_c;_nc;_n:1,2\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+#: ../recently.php:52
+#, php-format
+msgid ""
+"Recently requires at least PHP %1$s and WordPress %2$s to function "
+"correctly. Your site uses PHP %3$s and WordPress %4$s."
+msgstr ""
+"Recently requiert au moins PHP %1$s et WordPress %2$s pour fonctionner "
+"correctement. Votre site utilise PHP %3$s et WordPress %4$s."
+
+#: ../src/Admin/Admin.php:170
+msgid "Upload"
+msgstr "Envoyer"
+
+#: ../src/Admin/Admin.php:217
+msgid "Overview"
+msgstr "Aperçu"
+
+#: ../src/Admin/Admin.php:218
+msgid ""
+"Welcome to Recently's Dashboard! In this screen you will tools to further "
+"tweak Recently to your needs and more!"
+msgstr ""
+"Bienvenue sur le tableau de bord de Recently! Dans cet écran, vous trouverez "
+"des outils pour peaufiner davantage Recently suivant vos besoins et plus "
+"encore!"
+
+#: ../src/Admin/Admin.php:224
+msgid "Like this plugin?"
+msgstr "Aimez-vous ce plugin ?"
+
+#: ../src/Admin/Admin.php:226
+msgid ""
+"Each donation motivates me to keep releasing free stuff for the WordPress "
+"community!"
+msgstr ""
+"Chaque don me motive pour maintenir la gratuité; des développements pour la "
+"communauté WordPress!"
+
+#: ../src/Admin/Admin.php:233
+#, php-format
+msgid "You can <a href=\"%s\" target=\"_blank\">leave a review</a>, too!"
+msgstr ""
+"Vous pouvez aussi <a href=\"%s\" target=\"_blank\"> laisser un commentaire </"
+"a>!"
+
+#: ../src/Admin/Admin.php:240
+#, php-format
+msgid ""
+"<p><strong>For more information:</strong></p><ul><li><a href=\"%1$s"
+"\">Documentation</a></li><li><a href=\"%2$s\">Support</a></li></ul>"
+msgstr ""
+"<p> <strong> Pour plus d'informations: </ strong> </ p> <ul> <li> <a href="
+"\"%1$s\"> Documentation </a> </ li> <li> <a href = \"%2$s\"> Support </a> </ "
+"li> </ ul>"
+
+#: ../src/Admin/Admin.php:264
+msgid "Settings"
+msgstr "Paramètres"
+
+#: ../src/Admin/admin-page.php:6 ../src/Admin/admin-page.php:147
+msgid "Tools"
+msgstr "Outils"
+
+#: ../src/Admin/admin-page.php:7 ../src/Admin/admin-page.php:148
+msgid "Parameters"
+msgstr "Paramètres"
+
+#: ../src/Admin/admin-page.php:29 ../src/Admin/admin-page.php:55
+#: ../src/Admin/admin-page.php:81
+msgid "Settings saved."
+msgstr "Paramètres sauvegardés."
+
+#: ../src/Admin/admin-page.php:46
+msgid "Please provide the name of your custom field."
+msgstr "Veuillez indiquer le nom de votre champ personnalisé."
+
+#: ../src/Admin/admin-page.php:90
+msgid ""
+"Any changes made to Recently's default stylesheet will be lost after every "
+"plugin update. In order to prevent this from happening, please copy the "
+"recently.css file (located at wp-content/plugins/recently/style) into your "
+"theme's directory"
+msgstr ""
+"Toute modification apportée à la feuille de style par défaut de Recently "
+"sera perdue après chaque mise à jour du plugin. Afin d'éviter cela, veuillez "
+"copier le fichier recently.css (situé dans wp-content/plugins/recently/"
+"style) dans le répertoire de votre thème"
+
+#: ../src/Admin/admin-page.php:105
+msgid "This operation will delete all cached thumbnails and cannot be undone."
+msgstr ""
+"Cette opération supprime toutes les vignettes mises en cache et ne peut être "
+"annulée."
+
+#: ../src/Admin/admin-page.php:105
+msgid "Do you want to continue?"
+msgstr "Souhaitez-vous poursuivre?"
+
+#: ../src/Admin/admin-page.php:117
+msgid "Success! All files have been deleted!"
+msgstr "Succès! Tous les fichiers ont été supprimés!"
+
+#: ../src/Admin/admin-page.php:121
+msgid "The thumbnail cache is already empty!"
+msgstr "Le cache des vignettes est déjà vide!"
+
+#: ../src/Admin/admin-page.php:125 ../src/Admin/admin-page.php:133
+msgid "Invalid action."
+msgstr "Action invalide."
+
+#: ../src/Admin/admin-page.php:129
+msgid ""
+"Sorry, you do not have enough permissions to do this. Please contact the "
+"site administrator for support."
+msgstr ""
+"Désolé, vous n’avez pas assez de permissions pour faire ceci. Veuillez "
+"contacter l’administrateur du site."
+
+#: ../src/Admin/admin-page.php:146
+msgid "Menu"
+msgstr "Menu"
+
+#: ../src/Admin/admin-page.php:162
+msgid "HTML Markup"
+msgstr "Balisage HTML"
+
+#: ../src/Admin/admin-page.php:165
+msgid "Links"
+msgstr "Liens"
+
+#: ../src/Admin/admin-page.php:169
+msgid "Open links in"
+msgstr "Ouvrir les liens dans"
+
+#: ../src/Admin/admin-page.php:172
+msgid "Current window"
+msgstr "Fenêtre actuelle"
+
+#: ../src/Admin/admin-page.php:173
+msgid "New tab/window"
+msgstr "Nouvel onglet/fenêtre"
+
+#: ../src/Admin/admin-page.php:179
+msgid "REL attribute"
+msgstr "Attribut REL"
+
+#: ../src/Admin/admin-page.php:182
+msgid ""
+"The rel attribute specifies the relationship between the current document "
+"and the linked document"
+msgstr ""
+"Cette opération supprime toutes les vignettes mises en cache et ne peut être "
+"annulée"
+
+#: ../src/Admin/admin-page.php:188
+msgid "Thumbnails"
+msgstr "Vignettes"
+
+#: ../src/Admin/admin-page.php:192
+msgid "Default thumbnail"
+msgstr "Vignette par défaut"
+
+#: ../src/Admin/admin-page.php:197
+msgid "Upload thumbnail"
+msgstr "Charger la vignette"
+
+#: ../src/Admin/admin-page.php:199
+msgid ""
+"How-to: upload (or select) an image, set Size to Full and click on Upload"
+msgstr ""
+"Comment faire : téléchargez (ou sélectionnez) une image, réglez la taille "
+"sur Plein et cliquez sur Télécharger."
+
+#: ../src/Admin/admin-page.php:203
+msgid "Pick image from"
+msgstr "Choisissez l'image dans"
+
+#: ../src/Admin/admin-page.php:206
+msgid "Featured image"
+msgstr "Image en vedette"
+
+#: ../src/Admin/admin-page.php:207
+msgid "First image on post"
+msgstr "Première image de la publication"
+
+#: ../src/Admin/admin-page.php:208
+msgid "First attachment"
+msgstr "Première pièce jointe"
+
+#: ../src/Admin/admin-page.php:209
+msgid "Custom field"
+msgstr "Champs personnalisés"
+
+#: ../src/Admin/admin-page.php:212
+msgid "Tell Recently where it should get thumbnails from"
+msgstr "Indiquez à Recently d'où il doit obtenir des vignettes"
+
+#: ../src/Admin/admin-page.php:216
+msgid "Lazy load"
+msgstr "Chargement lent"
+
+#: ../src/Admin/admin-page.php:219
+msgid "No"
+msgstr "Non"
+
+#: ../src/Admin/admin-page.php:220 ../src/Admin/admin-page.php:237
+msgid "Yes"
+msgstr "Oui"
+
+#: ../src/Admin/admin-page.php:223
+msgid ""
+"Set to No to load thumbnails right away or choose Yes to load them only when "
+"in view."
+msgstr ""
+"Choisissez Non pour charger les vignettes immédiatement ou choisissez Oui "
+"pour les charger uniquement lorsqu'elles sont affichées."
+
+#: ../src/Admin/admin-page.php:227
+msgid "Custom field name"
+msgstr "Nom du champ personnalisé"
+
+#: ../src/Admin/admin-page.php:233
+msgid "Resize image from Custom field?"
+msgstr "Redimensionner une image à partir d'un Champ personnalisé ?"
+
+#: ../src/Admin/admin-page.php:236
+msgid "No, I will upload my own thumbnail"
+msgstr "Non, je vais télécharger ma propre vignette."
+
+#: ../src/Admin/admin-page.php:248
+msgid "Empty image cache"
+msgstr "Vider le cache"
+
+#: ../src/Admin/admin-page.php:249
+msgid "Use this button to clear Recently's thumbnails cache"
+msgstr "Utilisez ce bouton pour vider le cache des vignettes de Recently"
+
+#: ../src/Admin/admin-page.php:259 ../src/Admin/admin-page.php:313
+#: ../src/Admin/admin-page.php:342
+msgid "Apply"
+msgstr "Appliquer"
+
+#: ../src/Admin/admin-page.php:266
+msgid "Data"
+msgstr "Données"
+
+#: ../src/Admin/admin-page.php:271
+msgid "Ajaxify widget"
+msgstr "Gadget Ajaxify"
+
+#: ../src/Admin/admin-page.php:274 ../src/Admin/admin-page.php:333
+msgid "Disabled"
+msgstr "Désactivée"
+
+#: ../src/Admin/admin-page.php:275 ../src/Admin/admin-page.php:332
+msgid "Enabled"
+msgstr "Activé"
+
+#: ../src/Admin/admin-page.php:279
+msgid ""
+"If you are using a caching plugin such as WP Super Cache, enabling this "
+"feature will keep the Recently widget from being cached by it"
+msgstr ""
+"Si vous utilisez un plugin de mise en cache tel que WP Super Cache, "
+"l'activation de cette fonction empêchera le widget Recently d'être mis en "
+"cache par ce dernier"
+
+#: ../src/Admin/admin-page.php:283
+msgid "Data Caching"
+msgstr "Mise en cache des données"
+
+#: ../src/Admin/admin-page.php:286
+msgid "Never cache"
+msgstr "Ne jamais mettre en cache"
+
+#: ../src/Admin/admin-page.php:287
+msgid "Enable caching"
+msgstr "Activer la mise en cache"
+
+#: ../src/Admin/admin-page.php:291
+msgid ""
+"Recently can cache the recent posts list for a specified amount of time. "
+"Recommended for large / high traffic sites"
+msgstr ""
+"Recently peut mettre en cache la liste des publications récentes pendant une "
+"durée déterminée. Recommandé pour les sites importants/à fort trafic"
+
+#: ../src/Admin/admin-page.php:295
+msgid "Refresh cache every"
+msgstr "Rafraîchir le cache tous les"
+
+#: ../src/Admin/admin-page.php:299
+msgid "Minute(s)"
+msgstr "Minute(s)"
+
+#: ../src/Admin/admin-page.php:300
+msgid "Hour(s)"
+msgstr "Heure(s)"
+
+#: ../src/Admin/admin-page.php:301
+msgid "Day(s)"
+msgstr "Jour(s)"
+
+#: ../src/Admin/admin-page.php:302
+msgid "Week(s)"
+msgstr "Semaine(s)"
+
+#: ../src/Admin/admin-page.php:303
+msgid "Month(s)"
+msgstr "Mois"
+
+#: ../src/Admin/admin-page.php:304
+msgid "Year(s)"
+msgstr "Année(s)"
+
+#: ../src/Admin/admin-page.php:307
+msgid "Really? That long?"
+msgstr "Vraiment? Aussi long?"
+
+#: ../src/Admin/admin-page.php:324
+msgid "Miscellaneous"
+msgstr "Autres"
+
+#: ../src/Admin/admin-page.php:329
+msgid "Use plugin's stylesheet"
+msgstr "Utiliser la feuille de style du plugin"
+
+#: ../src/Admin/admin-page.php:336
+msgid ""
+"By default, the plugin includes a stylesheet called recently.css which you "
+"can use to style your recent posts listing. If you wish to use your own "
+"stylesheet or do not want it to have it included in the header section of "
+"your site, use this."
+msgstr ""
+"Par défaut, le plugin comprend une feuille de style appelée recently.css  "
+"que vous pouvez utiliser pour styliser votre liste de publications récentes. "
+"Si vous souhaitez utiliser votre propre feuille de style ou ne voulez pas "
+"qu'elle soit incluse dans la section d'en-tête de votre site, utilisez ceci."
+
+#: ../src/Admin/admin-page.php:356
+msgid ""
+"With the following Content Tags you can customize the Recently widget when "
+"using the Custom HTML markup option"
+msgstr ""
+"Les balises de contenu suivantes vous permettent de personnaliser le widget "
+"Recently lorsque vous utilisez l'option de balisage HTML personnalisé"
+
+#: ../src/Admin/admin-page.php:361
+msgid "Parameter"
+msgstr "Paramètre"
+
+#: ../src/Admin/admin-page.php:362
+msgid "What it does "
+msgstr "Ce qu'il faut faire"
+
+#: ../src/Admin/admin-page.php:368
+msgid ""
+"displays thumbnail linked to post/page (requires enabling the thumbnail "
+"option)"
+msgstr ""
+"affiche la vignette liée à la publication/page (nécessite l'activation de "
+"l'option vignette)"
+
+#: ../src/Admin/admin-page.php:372
+msgid ""
+"displays thumbnail image without linking to post/page (requires enabling the "
+"thumbnail option)"
+msgstr ""
+"affiche une image miniature sans établir de lien avec la publication/la page "
+"(il faut activer l'option miniature)"
+
+#: ../src/Admin/admin-page.php:376
+msgid "displays linked post/page title"
+msgstr "affiche le titre de la publication/page liée"
+
+#: ../src/Admin/admin-page.php:380
+msgid "similar to text_title, sanitized for use in title/alt attributes"
+msgstr ""
+"similaire au text_title, nettoyé pour être utilisé dans les title/alt "
+"attributes "
+
+#: ../src/Admin/admin-page.php:384
+msgid "displays post/page excerpt (requires enabling the excerpt option)"
+msgstr ""
+"affiche l'extrait de la publication ou de la page (il faut activer l'option "
+"d'extrait)"
+
+#: ../src/Admin/admin-page.php:388
+msgid "displays the default Metadata tags"
+msgstr "affiche les balises des métadonnées par défaut"
+
+#: ../src/Admin/admin-page.php:392
+msgid ""
+"displays post/page current rating (requires WP-PostRatings installed and "
+"enabled)"
+msgstr ""
+"affiche l'évaluation actuelle de la publication/de la page (nécessite "
+"l'installation et l'activation de WP-PostRatings)"
+
+#: ../src/Admin/admin-page.php:396
+msgid ""
+"displays post/page current rating as an integer (requires WP-PostRatings "
+"installed and enabled)"
+msgstr ""
+"affiche l'évaluation actuelle de la publication ou de la page sous la forme "
+"d'un nombre entier (WP-PostRatings doit être installé et activé)."
+
+#: ../src/Admin/admin-page.php:400
+msgid "outputs the URL of the post/page"
+msgstr "donne l'URL de l'article/page"
+
+#: ../src/Admin/admin-page.php:404
+msgid "displays post/page title, no link"
+msgstr "affiche le titre de l'article ou de la page, sans lien"
+
+#: ../src/Admin/admin-page.php:408
+msgid ""
+"displays linked author name (requires enabling author under Metadata Tags)"
+msgstr ""
+"affiche le nom de l'auteur lié (il faut activer l'auteur sous Balises des "
+"métadonnées)"
+
+#: ../src/Admin/admin-page.php:412
+msgid ""
+"displays linked taxonomy name (requires enabling taxonomy under Metadata "
+"Tags)"
+msgstr ""
+"affiche le nom du classement liée (il faut activer le classement sous "
+"Balises des métadonnées)"
+
+#: ../src/Admin/admin-page.php:416
+msgid ""
+"displays current views count as an integer only (requires enabling views "
+"under Metadata Tags)"
+msgstr ""
+"affiche le nombre de vues actuelles sous la forme d'un nombre entier "
+"uniquement (nécessite l'activation des vues sous Balises ded métadonnées)"
+
+#: ../src/Admin/admin-page.php:420
+msgid ""
+"displays current comments count as an integer only (requires enabling "
+"comments under Metadata Tags)"
+msgstr ""
+"affiche le nombre actuel de commentaires sous la forme d'un nombre entier "
+"uniquement (nécessite l'activation des commentaires sous Balises des "
+"métadonnées)"
+
+#: ../src/Admin/admin-page.php:424
+msgid "displays post/page date (requires enabling date under Metadata Tags)"
+msgstr ""
+"affiche la date de la publication/de la page (il faut activer la date sous "
+"Balises des métadonnées)"
+
+#: ../src/Admin/admin-page.php:428
+msgid "outputs number of recent posts found"
+msgstr "donne le nombre de messages récents trouvés"
+
+#: ../src/Admin/admin-page.php:432
+msgid "outputs the position of the post in the listing"
+msgstr "donne la position de la publication dans la liste"
+
+#: ../src/Output.php:191
+msgid "Sorry, nothing to show yet."
+msgstr "Désolé, rien à montrer pour le moment."
+
+#: ../src/Output.php:508
+#, php-format
+msgid "%s ago"
+msgstr "il y a %s"
+
+#: ../src/Output.php:708
+#, php-format
+msgid "1 comment"
+msgid_plural "%s comments"
+msgstr[0] "1 commentaire"
+msgstr[1] "%s commentaires"
+
+#: ../src/Output.php:715
+#, php-format
+msgid "1 view"
+msgid_plural "%s views"
+msgstr[0] "1 vue"
+msgstr[1] "%s vues"
+
+#: ../src/Output.php:723
+#, php-format
+msgid "by %s"
+msgstr "par %s"
+
+#: ../src/Output.php:729
+#, php-format
+msgid "posted %s"
+msgstr "publié %s"
+
+#: ../src/Output.php:729
+#, php-format
+msgid "posted on %s"
+msgstr "publié le %s"
+
+#: ../src/REST/WidgetEndpoint.php:71
+msgid "Invalid Widget Instance ID"
+msgstr "ID d'instance de widget non valide"
+
+#: ../src/Widget/Widget.php:75
+msgid "Your site's most recent posts."
+msgstr "Vos publications les plus récents de votre site."
+
+#: ../src/Widget/form.php:8
+msgid "Title"
+msgstr "Titre"
+
+#: ../src/Widget/form.php:13
+msgid "Show up to"
+msgstr "Montrer jusqu'à"
+
+#: ../src/Widget/form.php:14
+msgid "posts"
+msgstr "articles"
+
+#: ../src/Widget/form.php:18
+msgid "Offset"
+msgstr "Décalage"
+
+#: ../src/Widget/form.php:20
+msgid "Number of posts to displace or pass over"
+msgstr "Nombre de publication à déplacer ou à franchir"
+
+#: ../src/Widget/form.php:25
+msgid "Filters"
+msgstr "Filtres"
+
+#: ../src/Widget/form.php:28
+msgid "Types"
+msgstr "Types"
+
+#: ../src/Widget/form.php:30
+msgid "Post types, separated by comma"
+msgstr "Types de publications, séparées par une virgule"
+
+#: ../src/Widget/form.php:34
+msgid "Posts to exclude"
+msgstr "Publications à exclure"
+
+#: ../src/Widget/form.php:36
+msgid "Post / Page IDs, separated by comma"
+msgstr "Publication/ ID Page, séparé par une virgule"
+
+#: ../src/Widget/form.php:40
+msgid "Taxonomy"
+msgstr "Classification"
+
+#: ../src/Widget/form.php:42 ../src/Widget/form.php:250
+msgid "None"
+msgstr "Aucun"
+
+#: ../src/Widget/form.php:76
+msgid "Term IDs"
+msgstr "ID du terme"
+
+#: ../src/Widget/form.php:78
+msgid "Taxonomy IDs, separated by comma (prefix a minus sign to exclude)"
+msgstr ""
+"ID de classement, séparés par une virgule (préfixer d'un signe moins pour "
+"exclure)"
+
+#: ../src/Widget/form.php:82
+msgid "Term Slugs"
+msgstr "Terme identifiant le texte d'un contenu \"Slugs\""
+
+#: ../src/Widget/form.php:84
+msgid "Taxonomy slugs, separated by comma"
+msgstr "Sujets de Classification, séparés par une virgule"
+
+#: ../src/Widget/form.php:103
+msgid "Authors"
+msgstr "Auteurs"
+
+#: ../src/Widget/form.php:105
+msgid "Author IDs, separated by comma (prefix a minus sign to exclude)"
+msgstr ""
+"ID des auteurs, séparés par une virgule (préfixer d'un signe moins pour "
+"exclure)"
+
+#: ../src/Widget/form.php:110
+msgid "Posts settings"
+msgstr "Paramètres des publications"
+
+#: ../src/Widget/form.php:114
+msgid "Display post rating"
+msgstr "Afficher l'évaluation due la publication"
+
+#: ../src/Widget/form.php:117
+msgid "Shorten title"
+msgstr "Abbréviation du titre"
+
+#: ../src/Widget/form.php:120
+msgid "Shorten title to"
+msgstr "Abbréviation du titre en"
+
+#: ../src/Widget/form.php:121 ../src/Widget/form.php:132
+msgid "characters"
+msgstr "caractères"
+
+#: ../src/Widget/form.php:122 ../src/Widget/form.php:133
+msgid "words"
+msgstr "mots"
+
+#: ../src/Widget/form.php:125
+msgid "Display post excerpt"
+msgstr "Afficher l'extrait de la publication"
+
+#: ../src/Widget/form.php:128
+msgid "Keep text format and links"
+msgstr "Conserver le format du texte et les liens"
+
+#: ../src/Widget/form.php:130
+msgid "Excerpt length"
+msgstr "Longueur de l'extrait"
+
+#: ../src/Widget/form.php:136
+msgid "Display post thumbnail"
+msgstr "Afficher la vignette de la publication"
+
+#: ../src/Widget/form.php:139
+msgid "Use predefined size"
+msgstr "Utiliser une taille prédéfinie"
+
+#: ../src/Widget/form.php:153
+msgid "Set size manually"
+msgstr "Définir la taille manuellement"
+
+#: ../src/Widget/form.php:155
+msgid "Width"
+msgstr "Largeur"
+
+#: ../src/Widget/form.php:158
+msgid "Height"
+msgstr "Hauteur"
+
+#: ../src/Widget/form.php:164
+msgid "Metadata Tag settings"
+msgstr "Paramètres des balises de métadonnées"
+
+#: ../src/Widget/form.php:166
+msgid "Display comment count"
+msgstr "Afficher le nombre de commentaires"
+
+#: ../src/Widget/form.php:168
+msgid "Display views"
+msgstr "Afficher les vues"
+
+#: ../src/Widget/form.php:170
+msgid "Display author"
+msgstr "Afficher auteur"
+
+#: ../src/Widget/form.php:172
+msgid "Display date"
+msgstr "Afficher date"
+
+#: ../src/Widget/form.php:175
+msgid "Date Format"
+msgstr "Format Date"
+
+#: ../src/Widget/form.php:177
+msgid "Relative"
+msgstr "Relative"
+
+#: ../src/Widget/form.php:178
+msgid "WordPress Date Format"
+msgstr "Format de date WordPress"
+
+#: ../src/Widget/form.php:185
+msgid "Display taxonomy"
+msgstr "Afficher la classification"
+
+#: ../src/Widget/form.php:202
+msgid "HTML Markup settings"
+msgstr "Paramètres de balisage HTML"
+
+#: ../src/Widget/form.php:204
+msgid "Use custom HTML Markup"
+msgstr "Utiliser un balisage HTML personnalisé"
+
+#: ../src/Widget/form.php:220
+msgid "Before / after title"
+msgstr "Avant / après le titre"
+
+#: ../src/Widget/form.php:226
+msgid "Before / after Recently"
+msgstr "Avant / après Recently"
+
+#: ../src/Widget/form.php:232
+msgid "Post HTML Markup"
+msgstr "Afficher le balisage HTML"
+
+#: ../src/Widget/form.php:234
+#, php-format
+msgid "See available <a href=\"%s\" target=\"_blank\">Content Tags</a>"
+msgstr ""
+"Voir les <a href=\"%s\" target=\"_blank\">balises de contenu disponibles</a>"
+
+#: ../src/Widget/form.php:242
+msgid "Theme"
+msgstr "Thème"
+
+#: ../src/Widget/form.php:242
+#, php-format
+msgid "see a <a href=\"%s\">list of supported browsers</a>"
+msgstr "voir une liste <a href=\"%s\">des navigateurs pris en charge</a>"
+
+#: ../src/Widget/form.php:258
+msgid ""
+"Please save this widget (or reload this page) to enable Recently themes."
+msgstr ""
+"S’il vous plaît enregistrer ce widget (ou recharger cette page) pour activer "
+"les thèmes récemment."
