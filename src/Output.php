@@ -707,14 +707,14 @@ class Output {
         // comments
         if ( $this->options['meta_tag']['comment_count'] ) {
             /* translators: %s placeholder will be replaced with the comments count value */
-            $comments_text = sprintf(_n('1 comment', '%s comments', $comments, 'recently'), number_format_i18n($comments));
+            $comments_text = sprintf(_n('%s comment', '%s comments', $comments, 'recently'), number_format_i18n($comments));
             $meta[] = '<span class="recently-comments">' . $comments_text . '</span>';
         }
 
         // views
         if ( $this->options['meta_tag']['views'] ) {
             /* translators: %s placeholder will be replaced with the views count vaLue */
-            $views_text = sprintf(_n('1 view', '%s views', $pageviews, 'recently'), number_format_i18n($pageviews));
+            $views_text = sprintf(_n('%s view', '%s views', $pageviews, 'recently'), number_format_i18n($pageviews));
             $meta[] = '<span class="recently-views">' . $views_text . "</span>";
         }
 

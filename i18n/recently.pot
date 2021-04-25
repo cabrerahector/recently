@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Recently\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/recently\n"
-"POT-Creation-Date: 2021-04-04 11:07-0400\n"
+"POT-Creation-Date: 2021-04-25 18:48-0400\n"
 "PO-Revision-Date: 2015-06-09 16:53-0430\n"
 "Last-Translator: Héctor Cabrera <me@cabrerahector.com>\n"
 "Language-Team: Héctor Cabrera <me@cabrerahector.com>\n"
@@ -64,8 +64,12 @@ msgid ""
 "a></li><li><a href=\"%2$s\">Support</a></li></ul>"
 msgstr ""
 
-#: ../src/Admin/Admin.php:264
+#: ../src/Admin/Admin.php:266
 msgid "Settings"
+msgstr ""
+
+#: ../src/Admin/Admin.php:267
+msgid "Support"
 msgstr ""
 
 #: ../src/Admin/admin-page.php:6 ../src/Admin/admin-page.php:147
@@ -411,40 +415,40 @@ msgstr ""
 msgid "outputs the position of the post in the listing"
 msgstr ""
 
-#: ../src/Output.php:191
+#: ../src/Output.php:193
 msgid "Sorry, nothing to show yet."
 msgstr ""
 
-#: ../src/Output.php:508
+#: ../src/Output.php:510
 #, php-format
 msgid "%s ago"
 msgstr ""
 
-#: ../src/Output.php:708
+#: ../src/Output.php:710
 #, php-format
-msgid "1 comment"
+msgid "%s comment"
 msgid_plural "%s comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/Output.php:715
+#: ../src/Output.php:717
 #, php-format
-msgid "1 view"
+msgid "%s view"
 msgid_plural "%s views"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/Output.php:723
+#: ../src/Output.php:725
 #, php-format
 msgid "by %s"
 msgstr ""
 
-#: ../src/Output.php:729
+#: ../src/Output.php:731
 #, php-format
 msgid "posted %s"
 msgstr ""
 
-#: ../src/Output.php:729
+#: ../src/Output.php:731
 #, php-format
 msgid "posted on %s"
 msgstr ""
