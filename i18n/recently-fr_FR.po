@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: Recently\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/recently\n"
 "POT-Creation-Date: 2021-04-04 11:07-0400\n"
-"PO-Revision-Date: 2021-04-25 17:10+0200\n"
+"PO-Revision-Date: 2021-04-25 17:45+0200\n"
 "Last-Translator: Utilisateur <christophe@caron.tv>\n"
 "Language-Team: Christophe Caron\n"
 "Language: fr\n"
@@ -376,7 +376,7 @@ msgstr "Paramètre"
 
 #: ../src/Admin/admin-page.php:362
 msgid "What it does "
-msgstr "Ce qu'il faut faire"
+msgstr "Ce que cela fait "
 
 #: ../src/Admin/admin-page.php:368
 msgid ""
@@ -402,7 +402,7 @@ msgstr "affiche le titre de la publication/page liée"
 msgid "similar to text_title, sanitized for use in title/alt attributes"
 msgstr ""
 "similaire au text_title, nettoyé pour être utilisé dans les title/alt "
-"attributes "
+"attributes"
 
 #: ../src/Admin/admin-page.php:384
 msgid "displays post/page excerpt (requires enabling the excerpt option)"
