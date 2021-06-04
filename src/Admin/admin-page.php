@@ -191,8 +191,25 @@ if ( !$recently_rand = get_option("recently_rand") ) {
                     <tr valign="top">
                         <th scope="row"><label for="thumb_default"><?php _e("Default thumbnail", 'recently'); ?>:</label></th>
                         <td>
+                            <?php
+                            $fallback_thumbnail_url = trim($this->options['tools']['markup']['thumbnail']['default']);
+
+                            if ( ! $fallback_thumbnail_url )
+                                $fallback_thumbnail_url = $this->image->get_default_url();
+
+                            echo $this->image->get_default_url() . '<br />' . $fallback_thumbnail_url;
+
+                            $fallback_thumbnail_url = str_replace(
+                                parse_url(
+                                    $fallback_thumbnail_url
+                                    , PHP_URL_SCHEME
+                                ) . ':',
+                                '',
+                                $fallback_thumbnail_url
+                            );
+                            ?>
                             <div id="thumb-review">
-                                <img src="<?php echo ( $this->options['tools']['markup']['thumbnail']['default'] ) ? str_replace( parse_url( $this->options['tools']['markup']['thumbnail']['default'], PHP_URL_SCHEME ) . ':', '', $this->options['tools']['markup']['thumbnail']['default'] ) : $this->image->get_default_url(); ?>" alt="" />
+                                <img src="<?php echo esc_url($fallback_thumbnail_url); ?>" alt="" />
                             </div>
                             <input id="upload_thumb_button" type="button" class="button" value="<?php _e( "Upload thumbnail", 'recently' ); ?>" />
                             <input type="hidden" id="upload_thumb_src" name="upload_thumb_src" value="" />
