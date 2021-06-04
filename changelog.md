@@ -1,5 +1,18 @@
 Changelog
 =========
+#### 3.0.5 ####
+
+- Fixes a potential XSS vulnerability (props to Yu Iwama of Secure Sky Technology Inc. and the JPCERT/CC Vulnerability Coordination Group).
+- Fixes a potential code injection vulnerability (props to Jerome & NinTechNet).
+- Fixes a fatal error that can occur when using stock thumbnail sizes (props to @rianovost).
+- Fixes a srcset bug that affects specific PHP locales (props to @fredel).
+- Fixes a srcset not loading images due to improper SSL/HTTPS configuration (props to @aj4h).
+- Fixes a views/comments translation issue that affects some languages.
+
+If you're using a caching plugin, flushing its cache after installing/upgrading to this version is highly recommended.
+
+[Release notes](https://cabrerahector.com/wordpress/recently-3-0-has-been-released/#minor-updates-and-hotfixes)
+
 #### 3.0.4 ####
 
 * Fixes an issue where when using multiple widgets on the same page posts would be duplicated (thanks rianovost!)
