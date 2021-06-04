@@ -197,8 +197,6 @@ if ( !$recently_rand = get_option("recently_rand") ) {
                             if ( ! $fallback_thumbnail_url )
                                 $fallback_thumbnail_url = $this->image->get_default_url();
 
-                            echo $this->image->get_default_url() . '<br />' . $fallback_thumbnail_url;
-
                             $fallback_thumbnail_url = str_replace(
                                 parse_url(
                                     $fallback_thumbnail_url
