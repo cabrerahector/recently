@@ -12,8 +12,7 @@
 
 namespace Recently\Admin;
 
-use Recently\Helper;
-use Recently\Output;
+use Recently\{ Helper, Image, Output };
 
 class Admin {
 
@@ -48,7 +47,7 @@ class Admin {
      * @param   array               $config     Admin settings.
      * @param   \Recently\Image     $image      Image class.
      */
-    public function __construct(array $config, \Recently\Image $image)
+    public function __construct(array $config, Image $image)
     {
         $this->options = $config;
         $this->image = $image;

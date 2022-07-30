@@ -1,7 +1,7 @@
 <?php
 namespace Recently\Widget;
 
-use Recently\Helper;
+use Recently\{ Helper, Image, Output, Themer, Translate };
 
 class Widget extends \WP_Widget {
 
@@ -64,7 +64,7 @@ class Widget extends \WP_Widget {
      * @param   \Recently\Translate $translate
      * @param   \Recently\Themer    $themer
      */
-    public function __construct(array $options, array $admin_options, \Recently\Output $output, \Recently\Image $image, \Recently\Translate $translate, \Recently\Themer $themer)
+    public function __construct(array $options, array $admin_options, Output $output, Image $image, Translate $translate, Themer $themer)
     {
         // Create the widget
         parent::__construct(

@@ -1,6 +1,8 @@
 <?php
 namespace Recently\REST;
 
+use Recently\REST\WidgetEndpoint;
+
 class Controller {
 
     /**
@@ -18,7 +20,7 @@ class Controller {
      * @since   3.0.0
      * @param   \Recently\REST\WidgetEndpoint
      */
-    public function __construct(\Recently\REST\WidgetEndpoint $widget_endpoint)
+    public function __construct( WidgetEndpoint $widget_endpoint )
     {
         $this->widget_endpoint = $widget_endpoint;
     }

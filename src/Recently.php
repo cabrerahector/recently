@@ -7,6 +7,11 @@
 
 namespace Recently;
 
+use Recently\Admin\Admin;
+use Recently\Front\Front;
+use Recently\REST\Controller;
+use Recently\Widget\Widget;
+
 class Recently {
 
     /**
@@ -60,7 +65,7 @@ class Recently {
      * @param   Front\Front     $front
      * @param   Widget\Widget   $widget
      */
-    public function __construct(I18N $i18n, Rest\Controller $rest, Admin\Admin $admin, Front\Front $front, Widget\Widget $widget)
+    public function __construct(I18N $i18n, Controller $rest, Admin $admin, Front $front, Widget $widget)
     {
         $this->i18n = $i18n;
         $this->rest = $rest;

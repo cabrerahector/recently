@@ -1,7 +1,7 @@
 <?php
 namespace Recently\REST;
 
-use Recently\Query;
+use Recently\{ Query, Translate };
 
 abstract class Endpoint extends \WP_REST_Controller
 {
@@ -32,7 +32,7 @@ abstract class Endpoint extends \WP_REST_Controller
      * @param   \Recently\Translate
      * @param   \Recently\Output
      */
-    public function __construct(array $config, \Recently\Translate $translate)
+    public function __construct(array $config, Translate $translate)
     {
         $this->config = $config;
         $this->translate = $translate;

@@ -23,7 +23,7 @@
 
 namespace Recently\Front;
 
-use Recently\Helper;
+use Recently\{ Helper, Translate };
 
 class Front {
 
@@ -58,7 +58,7 @@ class Front {
      * @param   array  $config
      * @param   \WordPressPopularPosts\Translate $translate
      */
-    public function __construct(array $config, \Recently\Translate $translate)
+    public function __construct(array $config, Translate $translate)
     {
         $this->admin_options = $config;
         $this->translate = $translate;

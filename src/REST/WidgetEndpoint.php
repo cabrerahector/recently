@@ -1,6 +1,8 @@
 <?php
 namespace Recently\REST;
 
+use Recently\{ Translate, Output };
+
 class WidgetEndpoint extends Endpoint
 {
 
@@ -21,7 +23,7 @@ class WidgetEndpoint extends Endpoint
      * @param   \Recently\Translate
      * @param   \Recently\Output
      */
-    public function __construct(array $config, \Recently\Translate $translate, \Recently\Output $output)
+    public function __construct(array $config, Translate $translate, Output $output)
     {
         $this->config = $config;
         $this->translate = $translate;
