@@ -94,6 +94,8 @@ class Widget extends \WP_Widget {
     {
         // Register the widget
         add_action('widgets_init', [$this, 'register']);
+        // Remove widget from Legacy Widget block
+        add_filter('widget_types_to_hide_from_legacy_widget_block', [$this, 'remove_from_legacy_widget_block']);
     }
 
     /**
@@ -561,5 +563,18 @@ class Widget extends \WP_Widget {
         }
 
         return null;
+    }
+
+    /**
+     * Removes the standard widget from the Legacy Widget block.
+     *
+     * @since   4.0.0
+     * @param   array
+     * @return  array
+     */
+    public function remove_from_legacy_widget_block(array $widget_types)
+    {
+        $widget_types[] = 'recently';
+        return $widget_types;
     }
 }
