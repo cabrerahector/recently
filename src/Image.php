@@ -62,7 +62,7 @@ class Image {
         $this->admin_options = $admin_options;
 
         // Set default thumbnail
-        $this->default_thumbnail = plugins_url() . "/recently/assets/images/no_thumb.jpg";
+        $this->default_thumbnail = plugins_url('assets/images/no_thumb.jpg', dirname(__FILE__, 1));
 
         if ( $this->is_image_url($this->admin_options['tools']['markup']['thumbnail']['default']) )
             $this->default_thumbnail = $this->admin_options['tools']['markup']['thumbnail']['default'];

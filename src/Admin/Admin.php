@@ -281,7 +281,7 @@ class Admin {
         $recently_uploads_dir = $this->image->get_plugin_uploads_dir();
 
         if ( is_array($recently_uploads_dir) && ! empty($recently_uploads_dir) ) {
-            $token = isset($_POST['token']) ? $_POST['token'] : null;
+            $token = isset($_POST['token']) ? $_POST['token'] : null; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- This is a nonce
             $key = get_option("recently_rand");
 
             if (

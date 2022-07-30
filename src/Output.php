@@ -213,7 +213,7 @@ class Output {
         $postID = $post->ID;
 
         // Permalink
-        $permalink = $this->get_permalink($postID);
+        $permalink = esc_url($this->get_permalink($postID));
 
         // Thumbnail
         $post_thumbnail = $this->get_thumbnail($postID);
@@ -263,16 +263,16 @@ class Output {
 
             $data = array(
                 'id' => $post->ID,
-                'title' => '<a href="' . $permalink . '" ' . ($post_title_attr !== $post_title ? 'title="' . $post_title_attr . '" ' : '' ) . 'class="recently-post-title" target="' . $this->admin_options['tools']['markup']['link']['attr']['target'] . '" rel="' . esc_attr($this->admin_options['tools']['markup']['link']['attr']['rel']) . '">' . $post_title . '</a>',
+                'title' => '<a href="' . $permalink . '" ' . ($post_title_attr !== $post_title ? 'title="' . $post_title_attr . '" ' : '' ) . 'class="recently-post-title" target="' . esc_attr($this->admin_options['tools']['markup']['link']['attr']['target']) . '" rel="' . esc_attr($this->admin_options['tools']['markup']['link']['attr']['rel']) . '">' . esc_html($post_title) . '</a>',
                 'title_attr' => $post_title_attr,
                 'summary' => $post_excerpt,
                 'stats' => $post_meta,
-                'img' => ( ! empty($post_thumbnail) ) ? '<a href="' . $permalink . '"' . ($post_title_attr !== $post_title ? 'title="' . $post_title_attr . '" ' : '' ) . 'target="' . $this->admin_options['tools']['markup']['link']['attr']['target'] . '" rel="' . esc_attr($this->admin_options['tools']['markup']['link']['attr']['rel']) . '" class="recently-thumbnail-wrapper">' . $post_thumbnail . '</a>' : '',
+                'img' => ( ! empty($post_thumbnail) ) ? '<a href="' . $permalink . '"' . ($post_title_attr !== $post_title ? 'title="' . $post_title_attr . '" ' : '' ) . 'target="' . esc_attr($this->admin_options['tools']['markup']['link']['attr']['target']) . '" rel="' . esc_attr($this->admin_options['tools']['markup']['link']['attr']['rel']) . '" class="recently-thumbnail-wrapper">' . $post_thumbnail . '</a>' : '',
                 'img_no_link' => $post_thumbnail,
                 'url' => $permalink,
                 'text_title' => $post_title,
                 'taxonomy' => $post_taxonomies,
-                'author' => ( !empty($post_author) ) ? '<a href="' . get_author_posts_url( $post->post_author ) . '">' . $post_author . '</a>' : '',
+                'author' => ( ! empty($post_author) ) ? '<a href="' . esc_url(get_author_posts_url($post->post_author)) . '">' . esc_html($post_author) . '</a>' : '',
                 'views' => number_format_i18n( $post_views ),
                 'comments' => number_format_i18n( $post_comments ),
                 'date' => $post_date,
@@ -291,7 +291,7 @@ class Output {
             $is_single = Helper::is_single();
 
             $post_thumbnail = ( ! empty($post_thumbnail) )
-              ? "<a href=\"{$permalink}\" " . ($post_title_attr !== $post_title ? "title=\"{$post_title_attr}\" " : "") . "target=\"{$this->admin_options['tools']['markup']['link']['attr']['target']}\" rel=\"" . esc_attr($this->admin_options['tools']['markup']['link']['attr']['rel']) . "\" class=\"recently-thumbnail-wrapper\">{$post_thumbnail}</a>\n"
+              ? "<a href=\"{$permalink}\" " . ($post_title_attr !== $post_title ? "title=\"{$post_title_attr}\" " : "") . "target=\"" . esc_attr($this->admin_options['tools']['markup']['link']['attr']['target']) . "\" rel=\"" . esc_attr($this->admin_options['tools']['markup']['link']['attr']['rel']) . "\" class=\"recently-thumbnail-wrapper\">{$post_thumbnail}</a>\n"
               : "";
 
             $post_excerpt = ( ! empty($post_excerpt) )
@@ -319,7 +319,7 @@ class Output {
             $content =
                 "<li" . ( ( is_array($recently_post_class) && ! empty($recently_post_class) ) ? ' class="' . esc_attr( implode(" ", $recently_post_class) ) . '"' : '' ) . ">\n"
                 . $post_thumbnail
-                . "<a href=\"{$permalink}\" " . ($post_title_attr !== $post_title ? "title=\"{$post_title_attr}\" " : "") . "class=\"recently-post-title\" target=\"{$this->admin_options['tools']['markup']['link']['attr']['target']}\" rel=\"" . esc_attr($this->admin_options['tools']['markup']['link']['attr']['rel']) . "\">{$post_title}</a>\n"
+                . "<a href=\"{$permalink}\" " . ($post_title_attr !== $post_title ? "title=\"{$post_title_attr}\" " : "") . "class=\"recently-post-title\" target=\"" . esc_attr($this->admin_options['tools']['markup']['link']['attr']['target']) . "\" rel=\"" . esc_attr($this->admin_options['tools']['markup']['link']['attr']['rel']) . "\">{$post_title}</a>\n"
                 . $post_excerpt
                 . $post_meta
                 . $post_rating
