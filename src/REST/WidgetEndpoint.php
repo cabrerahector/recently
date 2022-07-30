@@ -5,6 +5,14 @@ use Recently\{ Translate, Output };
 
 class WidgetEndpoint extends Endpoint
 {
+    /**
+     * Translate object.
+     *
+     * @since   3.0.1
+     * @var     \Recently\Translate    $translate
+     * @access  private
+     */
+    protected $translate;
 
     /**
      * Output object.

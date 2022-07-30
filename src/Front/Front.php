@@ -44,14 +44,6 @@ class Front {
     private $translate;
 
     /**
-     * Output object.
-     *
-     * @since   3.0.0
-     * @var     \Recently\Output       $output
-     */
-    private $output;
-
-    /**
      * Initialize the class and set its properties.
      *
      * @since   2.0.0

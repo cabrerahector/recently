@@ -22,20 +22,20 @@ class Widget extends \WP_Widget {
     private $admin_options = array();
 
     /**
-     * Image object.
-     *
-     * @since   3.0.0
-     * @var     \Recently\Image
-     */
-    private $image;
-
-    /**
      * Output object.
      *
      * @since   3.0.0
      * @var     \Recently\Output
      */
     private $output;
+
+    /**
+     * Image object.
+     *
+     * @since   3.0.0
+     * @var     \Recently\Image
+     */
+    private $image;
 
     /**
      * Translate object.
