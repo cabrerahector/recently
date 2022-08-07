@@ -118,8 +118,8 @@ class Output {
             ) {
                 $this->output .= '<div class="recently-sr">';
 
-                if ( @file_exists(get_template_directory() . '/recently/themes/' . $this->options['theme']['name'] . '/style.css') ) {
-                    $theme_stylesheet = get_template_directory() . '/recently/themes/' . $this->options['theme']['name'] . '/style.css';
+                if ( @file_exists(get_stylesheet_directory() . '/recently/themes/' . $this->options['theme']['name'] . '/style.css') ) {
+                    $theme_stylesheet = get_stylesheet_directory() . '/recently/themes/' . $this->options['theme']['name'] . '/style.css';
                 } else {
                     $theme_stylesheet = $this->themer->get_theme($this->options['theme']['name'])['path'] . '/style.css';
                 }
