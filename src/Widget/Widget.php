@@ -2,8 +2,11 @@
 namespace Recently\Widget;
 
 use Recently\{ Helper, Image, Output, Themer, Translate };
+use Recently\Traits\QueriesPosts;
 
 class Widget extends \WP_Widget {
+
+    use QueriesPosts;
 
     /**
      * Plugin defaults.
@@ -456,62 +459,7 @@ class Widget extends \WP_Widget {
         if ( is_array($instance) && ! empty($instance) ) {
             $instance['widget_id'] = $this->id;
 
-            // Return cached results
-            if ( $this->admin_options['tools']['data']['cache']['active'] ) {
-
-                $transient_name = md5(json_encode($instance));
-                $recents = get_transient($transient_name);
-
-                if ( false === $recents ) {
-                    $recents = $this->query_posts($instance);
-
-                    switch( $this->admin_options['tools']['data']['cache']['interval']['time'] ){
-                        case 'minute':
-                            $time = 60;
-                            break;
-                        case 'hour':
-                            $time = 60 * 60;
-                            break;
-                        case 'day':
-                            $time = 60 * 60 * 24;
-                           break;
-                        case 'week':
-                            $time = 60 * 60 * 24 * 7;
-                            break;
-                        case 'month':
-                            $time = 60 * 60 * 24 * 30;
-                            break;
-                        case 'year':
-                            $time = 60 * 60 * 24 * 365;
-                            break;
-                        default:
-                            $time = 60 * 60;
-                            break;
-                    }
-
-                    $expiration = $time * $this->admin_options['tools']['data']['cache']['interval']['value'];
-
-                    // Store transient
-                    set_transient($transient_name, $recents, $expiration);
-
-                    // Store transient in Recently transients array for garbage collection
-                    $recently_transients = get_option('recently_transients');
-
-                    if ( ! $recently_transients ) {
-                        $recently_transients = array($transient_name);
-                        add_option('recently_transients', $recently_transients);
-                    } else {
-                        if ( ! in_array($transient_name, $recently_transients) ) {
-                            $recently_transients[] = $transient_name;
-                            update_option('recently_transients', $recently_transients);
-                        }
-                    }
-                }
-
-            } // Get recent posts
-            else {
-                $recents = $this->query_posts($instance);
-            }
+            $recents = $this->maybe_query($instance);
 
             $this->output->set_public_options($instance);
             $this->output->set_data($recents);
@@ -519,30 +467,6 @@ class Widget extends \WP_Widget {
 
             $this->output->output();
         }
-    }
-
-    /**
-     * Queries the database and returns the posts (if any met the criteria set by the user).
-     *
-     * @since   1.0.0
-     * @global  object      $wpdb
-     * @param   array       $instance
-     * @return  null|array
-     */
-    protected function query_posts($instance)
-    {
-        global $wpdb;
-
-        // parse instance values
-        $instance = Helper::merge_array_r(
-            $this->options,
-            $instance
-        );
-
-        $args = apply_filters('recently_pre_get_posts', $instance['args'], $instance['widget_id']);
-        $args = apply_filters('recently_query_args', $args);
-
-        return new \WP_Query($args);
     }
 
     /**
