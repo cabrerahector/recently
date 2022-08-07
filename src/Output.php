@@ -666,6 +666,9 @@ class Output {
             // remove style/script tags
             $excerpt = preg_replace('@<(script|style)[^>]*?>.*?</\\1>@si', '', $excerpt);
 
+            // remove blocks that are not appropriate for the excerpt
+            $excerpt = excerpt_remove_blocks($excerpt);
+
             // remove HTML tags if requested
             if ( $this->options['post-excerpt']['keep_format'] ) {
                 $excerpt = strip_tags($excerpt, '<a><b><i><em><strong>');
