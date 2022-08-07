@@ -528,10 +528,10 @@ class Output {
         $post_tax = '';
 
         if (
-            (isset($this->options['meta_tag']['category']) && $this->options['meta_tag']['category']) 
-            || $this->options['meta_tag']['taxonomy'] 
+            $this->options['meta_tag']['taxonomy'] 
         ) {
             $taxonomy = 'category';
+            $tax_separator = esc_html( apply_filters('recently_tax_separator', ' &mdash; ') );
 
             if (
                 $this->options['meta_tag']['taxonomy']['active']
@@ -560,19 +560,44 @@ class Output {
                     is_array($terms) 
                     && ! empty($terms)
                 ) {
+                    $taxonomy_links = [];
+
                     foreach( $terms as $term ) {
                         $term_link = get_term_link($term);
 
                         if ( is_wp_error($term_link) )
                             continue;
 
-                        $post_tax .= "<a href=\"{$term_link}\" class=\"{$term->taxonomy} {$term->slug} {$term->taxonomy}-{$term->term_id}\">{$term->name}</a>, ";
+                        if ( ! isset($taxonomy_links[$term->taxonomy]['name']) )
+                            $taxonomy_links[$term->taxonomy]['name'] = get_taxonomy($term->taxonomy)->label;
+
+                        $taxonomy_links[$term->taxonomy]['links'][] = "<a href=\"" . esc_url($term_link) . "\" class=\"" . esc_attr("{$term->taxonomy} {$term->slug} {$term->taxonomy}-{$term->term_id}") . "\">" . esc_html($term->name) . "</a>";
+                    }
+
+                    if ( $taxonomy_links ) {
+                        ksort($taxonomy_links);
+
+                        $pretty_tax_links = [];
+
+                        foreach( $taxonomy_links as $taxonomy => $data ) {
+                            $pretty_tax_links[] = [
+                                'label' => $data['name'] . ': ',
+                                'links' => implode(', ', $data['links'])
+                            ];
+                        }
+
+                        $pretty_tax_links = apply_filters( 'recently_taxonomy_links', $pretty_tax_links );
+                        $show_labels = apply_filters( 'recently_show_taxonomy_links_labels', ( count($pretty_tax_links) > 1 ? true : false ) );
+
+                        foreach( $pretty_tax_links as $tax_links ) {
+                            $post_tax .= ( $show_labels ? '<span class="recently-taxonomy-label">' . esc_html( $tax_links['label'] ) . '</span>': '' ) . $tax_links['links'] . $tax_separator;
+                        }
                     }
                 }
             }
 
             if ( '' != $post_tax )
-                $post_tax = rtrim($post_tax, ", ");
+                $post_tax = rtrim($post_tax, $tax_separator);
 
         }
 

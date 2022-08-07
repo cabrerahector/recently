@@ -50,7 +50,7 @@ abstract class Endpoint extends \WP_REST_Controller
      *
      * @since   3.0.1
      */
-    protected function set_lang($lang, &$args)
+    protected function set_lang(?string $lang, &$args)
     {
         // Multilang support
         if ( $lang ) {

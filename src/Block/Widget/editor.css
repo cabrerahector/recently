@@ -1,0 +1,71 @@
+.wp-block-recently-widget.in-edit-mode {
+    padding: 1.8em 1.5em;
+    background: #fafafa;
+}
+
+    .wp-block-recently-widget .wpp-list {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .wp-block-recently-widget .option-subset {
+        margin: 0 0 1em;
+        padding: 1.25em 1.5em;
+        background: #f0f0f0;
+    }
+
+    .wp-block-recently-widget .not-a-legend {
+        margin: 1em 0;
+        padding: 0 0 0.35em;
+        font-size: 0.9rem;
+        border-bottom: #ccc 1px solid;
+    }
+
+    .wp-block-recently-widget .components-base-control {
+        margin-bottom: 1em;
+    }
+
+    .wp-block-recently-widget .components-base-control.components-checkbox-control {
+        margin-bottom: 0.5em;
+    }
+
+            .wp-block-recently-widget .components-base-control.components-checkbox-control .components-base-control__field .components-checkbox-control__input-container {
+                margin-right: 0.5em;
+            }
+
+        .wp-block-recently-widget .components-base-control .components-base-control__help {
+            margin: 0 0 1em;
+            font-size: 0.8em;
+        }
+
+        .wp-block-recently-widget .components-base-control .components-base-control__field {
+        }
+
+            .wp-block-recently-widget .components-base-control .components-base-control__field label {
+                font-size: 0.8rem;
+                font-weight: 600;
+            }
+
+            .wp-block-recently-widget .components-base-control .components-base-control__field .components-text-control__input {
+                padding-left: 8px;
+                padding-right: 8px;
+                color: #000;
+                background: #fff;
+                border-color: #000;
+            }
+
+            .wp-block-recently-widget .components-base-control .components-base-control__field .components-select-control {
+            }
+
+                .wp-block-recently-widget .components-base-control .components-base-control__field .components-select-control .components-input-control__container {
+                }
+
+                    .wp-block-recently-widget .components-base-control .components-base-control__field .components-select-control .components-input-control__container .components-select-control__input {
+                        max-width: none;
+                    }
+
+                    .wp-block-recently-widget .components-base-control .components-base-control__field .components-select-control .components-input-control__container .components-select-control__input[multiple] {
+                        height: 5em;
+                    }

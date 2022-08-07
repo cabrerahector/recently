@@ -3,8 +3,9 @@ namespace Recently\Container;
 
 use Recently\{ I18N, Image, Output, Recently, Settings, Themer, Translate };
 use Recently\Admin\Admin;
+use Recently\Block\Widget\Widget as BlockWidget;
 use Recently\Front\Front;
-use Recently\REST\{ Controller, WidgetEndpoint };
+use Recently\REST\{ Controller, TaxonomiesEndpoint, ThemesEndpoint, ThumbnailsEndpoint, WidgetEndpoint };
 use Recently\Widget\Widget;
 
 class RecentlyConfiguration implements ContainerConfigurationInterface
@@ -44,12 +45,35 @@ class RecentlyConfiguration implements ContainerConfigurationInterface
             return new Widget($container['widget_options'], $container['admin_options'], $container['output'], $container['image'], $container['translate'], $container['themer']);
         });
 
+        $container['block_widget'] = $container->service(function(Container $container) {
+            return new BlockWidget(
+                $container['widget_options'],
+                $container['admin_options'],
+                $container['output'],
+                $container['image'],
+                $container['translate'],
+                $container['themer']
+            );
+        });
+
+        $container['taxonomies_endpoint'] = $container->service(function(Container $container) {
+            return new TaxonomiesEndpoint($container['admin_options'], $container['translate']);
+        });
+
+        $container['themes_endpoint'] = $container->service(function(Container $container) {
+            return new ThemesEndpoint($container['admin_options'], $container['translate'], $container['themer'] );
+        });
+
+        $container['thumbnails_endpoint'] = $container->service(function(Container $container) {
+            return new ThumbnailsEndpoint($container['admin_options'], $container['translate']);
+        });
+
         $container['widget_endpoint'] = $container->service(function(Container $container) {
-            return new WidgetEndpoint($container['admin_options'], $container['translate'], $container['output']);
+            return new WidgetEndpoint($container['widget_options'], $container['admin_options'], $container['translate'], $container['output']);
         });
 
         $container['rest'] = $container->service(function(Container $container) {
-            return new Controller($container['widget_endpoint']);
+            return new Controller($container['taxonomies_endpoint'], $container['themes_endpoint'], $container['thumbnails_endpoint'], $container['widget_endpoint']);
         });
 
         $container['admin'] = $container->service(function(Container $container) {
@@ -61,7 +85,7 @@ class RecentlyConfiguration implements ContainerConfigurationInterface
         });
 
         $container['recently'] = $container->service(function(Container $container) {
-            return new Recently($container['i18n'], $container['rest'], $container['admin'], $container['front'], $container['widget']);
+            return new Recently($container['i18n'], $container['rest'], $container['admin'], $container['front'], $container['widget'], $container['block_widget']);
         });
     }
 }

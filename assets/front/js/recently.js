@@ -3,46 +3,63 @@ var RecentlyWidget = (function(){
 
     "use strict";
 
-    var noop = function(){};
-    var supportsShadowDOMV1 = !! HTMLElement.prototype.attachShadow;
+    let noop = function(){};
+    let supportsShadowDOMV1 = !! HTMLElement.prototype.attachShadow;
 
-    var get = function( url, params, callback ){
+    let get = function( url, params, callback, additional_headers ){
         callback = ( 'function' === typeof callback ) ? callback : noop;
-        ajax("GET", url, params, callback);
+        ajax( "GET", url, params, callback, additional_headers );
     };
 
-    var post = function( url, params, callback ){
+    let post = function( url, params, callback, additional_headers ){
         callback = ( 'function' === typeof callback ) ? callback : noop;
-        ajax("POST", url, params, callback);
+        ajax( "POST", url, params, callback, additional_headers );
     };
 
-    var ajax = function( method, url, params, callback ){
+    let ajax = function( method, url, params, callback, additional_headers ){
         /* Create XMLHttpRequest object and set variables */
-        var xhr = new XMLHttpRequest(),
-        target = url,
-        args = params,
-        valid_methods = ["GET", "POST"];
-        method = -1 != valid_methods.indexOf(method) ? method : "GET";
-        /* Set request method and target URL */
-        xhr.open(method, target + ( "GET" == method ? '?' + args : '' ), true);
+        let xhr = new XMLHttpRequest(),
+            target = url,
+            args = params,
+            valid_methods = ["GET", "POST"],
+            headers = {
+                'X-Requested-With': 'XMLHttpRequest'
+            };
+
+        method = -1 != valid_methods.indexOf( method ) ? method : "GET";
+
         /* Set request headers */
-        if ( "POST" == method ) {
-            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        if ( 'POST' == method ) {
+            headers['Content-Type'] = 'application/x-www-form-urlencoded';
         }
-        xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+
+        if ( 'object' == typeof additional_headers && Object.keys(additional_headers).length ) {
+            headers = Object.assign({}, headers, additional_headers);
+        }
+
+        /* Set request method and target URL */
+        xhr.open( method, target + ( 'GET' == method ? '?' + args : '' ), true );
+
+        for (const key in headers) {
+            if ( headers.hasOwnProperty(key) ) {
+                xhr.setRequestHeader( key, headers[key] );
+            }
+        }
+
         /* Hook into onreadystatechange */
         xhr.onreadystatechange = function() {
             if ( 4 === xhr.readyState && 200 <= xhr.status && 300 > xhr.status ) {
                 if ( 'function' === typeof callback ) {
-                    callback.call(undefined, xhr.response);
+                    callback.call( undefined, xhr.response );
                 }
             }
         };
+
         /* Send request */
-        xhr.send(( "POST" == method ? args : null ));
+        xhr.send( ( 'POST' == method ? args : null ) );
     };
 
-    var theme = function(recently_list) {
+    let theme = function(recently_list) {
         if ( supportsShadowDOMV1 ) {
             let base_styles = document.createElement('style'),
                 dummy_list = document.createElement('ul');
@@ -79,7 +96,7 @@ var RecentlyWidget = (function(){
 
 (function(){
     try {
-        var recently_json = document.querySelector("script#recently-json");
+        let recently_json = document.querySelector("script#recently-json");
         recently_params = JSON.parse(recently_json.textContent);
     } catch (err) {
         console.error("Recently: Couldn't read JSON data");
@@ -87,38 +104,76 @@ var RecentlyWidget = (function(){
 })();
 
 document.addEventListener('DOMContentLoaded', function() {
-    var widget_placeholders = document.querySelectorAll('.recently-widget-placeholder');
+    let widget_placeholders = document.querySelectorAll('.recently-widget-placeholder, .recently-widget-block-placeholder'),
+        w = 0;
 
-    if ( widget_placeholders.length ) {
-        for( var w = 0; w < widget_placeholders.length; w++ ) {
-            fetchWidget(widget_placeholders[w]);
-        }
-    } else {
-        var sr = document.querySelectorAll('.recently-sr');
+    while ( w < widget_placeholders.length ) {
+        fetchWidget(widget_placeholders[w]);
+        w++;
+    }
 
-        if ( sr.length ) {
-            for( var s = 0; s < sr.length; s++ ) {
-                RecentlyWidget.theme(sr[s]);
-            }
+    let sr = document.querySelectorAll('.recently-sr');
+
+    if ( sr.length ) {
+        for( var s = 0; s < sr.length; s++ ) {
+            RecentlyWidget.theme(sr[s]);
         }
     }
 
     function fetchWidget(widget_placeholder) {
-        RecentlyWidget.get(
-            recently_params.ajax_url + '/widget/' + widget_placeholder.getAttribute('data-widget-id').split('-')[1],
-            'is_single=' + recently_params.ID + ( recently_params.lang ? '&lang=' + recently_params.lang : '' ),
-            function(response) {
-                widget_placeholder.insertAdjacentHTML('afterend', JSON.parse(response).widget);
+        let widget_id_attr = widget_placeholder.getAttribute('data-widget-id'),
+            method = 'GET',
+            url = '',
+            headers = {},
+            params = '';
 
-                let parent = widget_placeholder.parentNode,
-                    sr = parent.querySelector('.recently-sr');
+        if ( widget_id_attr ) {
+            url = recently_params.ajax_url + '/widget/' + widget_id_attr.split('-')[1];
+            params = 'is_single=' + recently_params.ID + ( recently_params.lang ? '&lang=' + recently_params.lang : '' );
+        } else {
+            method = 'POST';
+            url = recently_params.api_url + '/v2/widget?is_single=' + recently_params.ID + ( recently_params.lang ? '&lang=' + recently_params.lang : '' );
+            headers = {
+                'Content-Type': 'application/json'
+            };
 
-                parent.removeChild(widget_placeholder);
+            let json_tag = widget_placeholder.parentNode.querySelector('script[type="application/json"]');
 
-                if ( sr ) {
-                    RecentlyWidget.theme(sr);
-                }
+            if ( json_tag ) {
+                let args = JSON.parse(json_tag.textContent);
+                params = JSON.stringify(args);
             }
+        }
+
+        RecentlyWidget.ajax(
+            method,
+            url,
+            params,
+            function(response) {
+                renderWidget(response, widget_placeholder);
+            },
+            headers
         );
+    }
+
+    function renderWidget(response, widget_placeholder) {
+        widget_placeholder.insertAdjacentHTML('afterend', JSON.parse(response).widget);
+
+        let parent = widget_placeholder.parentNode,
+            sr = parent.querySelector('.recently-sr'),
+            json_tag = parent.querySelector('script[type="application/json"]');
+
+        //if ( json_tag )
+            //parent.removeChild(json_tag);
+
+        parent.removeChild(widget_placeholder);
+        parent.classList.add('recently-ajax');
+
+        if ( sr ) {
+            RecentlyWidget.theme(sr);
+        }
+
+        let event = new Event("recently-onload", {"bubbles": true, "cancelable": false});
+        parent.dispatchEvent(event);
     }
 });

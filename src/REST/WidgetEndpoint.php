@@ -2,9 +2,30 @@
 namespace Recently\REST;
 
 use Recently\{ Translate, Output };
+use Recently\Traits\QueriesPosts;
 
 class WidgetEndpoint extends Endpoint
 {
+
+    use QueriesPosts;
+
+    /**
+     * Widget defaults.
+     *
+     * @since   4.0.0
+     * @var     array
+     */
+    protected $options = [];
+
+    /**
+     * Administrative settings.
+     *
+     * @since   4.0.0
+     * @var     array
+     * @access  private
+     */
+    protected $config = [];
+
     /**
      * Translate object.
      *
@@ -28,11 +49,13 @@ class WidgetEndpoint extends Endpoint
      *
      * @since   3.0.1
      * @param   array
+     * @param   array
      * @param   \Recently\Translate
      * @param   \Recently\Output
      */
-    public function __construct(array $config, Translate $translate, Output $output)
+    public function __construct(array $widget_options, array $config, Translate $translate, Output $output)
     {
+        $this->options = $widget_options;
         $this->config = $config;
         $this->translate = $translate;
         $this->output = $output;
@@ -53,15 +76,21 @@ class WidgetEndpoint extends Endpoint
                 'methods'             => \WP_REST_Server::READABLE,
                 'callback'            => array($this, 'get_item'),
                 'permission_callback' => array($this, 'get_item_permissions_check'),
-                'args'                => array(
-                    'lang' => array(
-                        'type' => 'string',
-                        'default' => null,
-                        'sanitize_callback' => 'sanitize_text_field'
-                    ),
-                ),
+                'args'                => $this->get_widget_params(),
             )
         ));
+
+        $version = '2';
+        $namespace = 'recently/v' . $version;
+
+        register_rest_route($namespace, '/widget/', [
+            [
+                'methods'             => 'POST',
+                'callback'            => [$this, 'get_widget_block'],
+                'permission_callback' => '__return_true',
+                'args'                => $this->get_widget_params(),
+            ]
+        ]);
     }
 
     /**
@@ -141,6 +170,64 @@ class WidgetEndpoint extends Endpoint
         $this->output->build_output();
 
         return ['widget' => $this->output->get_output()];
+    }
+
+    /**
+     * Retrieves a recent posts widget for display.
+     *
+     * @since 4.0.0
+     *
+     * @param \WP_REST_Request $request Full details about the request.
+     * @return \WP_Error|\WP_REST_Response Response object on success, or WP_Error object on failure.
+     */
+    public function get_widget_block($request)
+    {
+        $instance = $request->get_params();
+
+        $is_single = $request->get_param('is_single');
+        $lang = $request->get_param('lang');
+
+        // Multilang support
+        $this->set_lang($lang, $args);
+
+        $recent_posts = $this->maybe_query($instance);
+
+        if ( is_numeric($is_single) && $is_single > 0 ) {
+            add_filter('recently_is_single', function($id) use ($is_single) {
+                return $is_single;
+            });
+        }
+
+        $this->output->set_public_options($instance);
+        $this->output->set_data($recent_posts);
+        $this->output->build_output();
+
+        return [
+            'widget' => ( $this->config['tools']['data']['cache']['active'] ? '<!-- cached -->' : '' ) . $this->output->get_output()
+        ];
+    }
+
+    /**
+     * Retrieves the query params for getting a widget instance.
+     *
+     * @since 4.0.0
+     *
+     * @return array Query parameters for getting a widget instance.
+     */
+    public function get_widget_params()
+    {
+        return [
+            'is_single' => [
+                'type' => 'integer',
+                'default' => null,
+                'sanitize_callback' => 'absint'
+            ],
+            'lang' => [
+                'type' => 'string',
+                'default' => null,
+                'sanitize_callback' => 'sanitize_text_field'
+            ],
+        ];
     }
 
 }

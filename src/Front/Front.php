@@ -90,9 +90,11 @@ class Front {
 
         $is_single = Helper::is_single();
 
-        wp_register_script('recently-js', $plugin_dir_url . 'assets/front/js/recently.min.js', array(), RECENTLY_VERSION, true);
+        //wp_register_script('recently-js', $plugin_dir_url . 'assets/front/js/recently.min.js', array(), RECENTLY_VERSION, true);
+        wp_register_script('recently-js', $plugin_dir_url . 'assets/front/js/recently.js', array(), RECENTLY_VERSION, true);
         $params = [
             'ajax_url' => esc_url_raw(rest_url('recently/v1')),
+            'api_url' => esc_url_raw(rest_url('recently')),
             'ID' => (int) $is_single,
             'lang' => function_exists('PLL') ? $this->translate->get_current_language() : 0
         ];
@@ -107,40 +109,13 @@ class Front {
      */
     public function inline_loading_css()
     {
-        ?>
-        <style>
-            @-webkit-keyframes bgslide {
-                from {
-                    background-position-x: 0;
-                }
-                to {
-                    background-position-x: -200%;
-                }
-            }
+        $recently_insert_loading_animation_styles = apply_filters('recently_insert_loading_animation_styles', true);
 
-            @keyframes bgslide {
-                    from {
-                        background-position-x: 0;
-                    }
-                    to {
-                        background-position-x: -200%;
-                    }
-            }
-
-            .recently-widget-placeholder {
-                margin: 0 auto;
-                width: 60px;
-                height: 3px;
-                background: #dd3737;
-                background: -webkit-gradient(linear, left top, right top, from(#ffffff), color-stop(10%, #57b078), to(#ffffff));
-                background: linear-gradient(90deg, #ffffff 0%, #57b078 10%, #ffffff 100%);
-                background-size: 200% auto;
-                border-radius: 3px;
-                -webkit-animation: bgslide 1s infinite linear;
-                animation: bgslide 1s infinite linear;
-            }
-        </style>
-        <?php
+        if ( $recently_insert_loading_animation_styles ) :
+            ?>
+            <style id="recently-loading-animation-styles">@-webkit-keyframes bgslide{from{background-position-x:0}to{background-position-x:-200%}}@keyframes bgslide{from{background-position-x:0}to{background-position-x:-200%}}.recently-widget-block-placeholder,.recently-widget-placeholder{margin:0 auto;width:60px;height:3px;background:#dd3737;background:-webkit-gradient(linear, left top, right top, from(#ffffff), color-stop(10%, #57b078), to(#ffffff));background:linear-gradient(90deg, #ffffff 0%, #57b078 10%, #ffffff 100%);background-size:200% auto;border-radius:3px;-webkit-animation:bgslide 1s infinite linear;animation:bgslide 1s infinite linear}</style>
+            <?php
+        endif;
     }
 
     /**

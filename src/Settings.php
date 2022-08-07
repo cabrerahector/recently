@@ -35,6 +35,7 @@ class Settings {
                 'offset' => 0,
                 'ignore_sticky_posts' => true
             ),
+            'widget_id' => '',
             'title' => '',
             'shorten_title' => array(
                 'active' => false,
