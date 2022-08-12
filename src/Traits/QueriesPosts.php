@@ -61,7 +61,7 @@ trait QueriesPosts
                 $expiration = $time * $this->config['tools']['data']['cache']['interval']['value'];
 
                 // Store transient
-                set_transient($transient_name, $recents, $expiration);
+                set_transient($transient_name, $this->query, $expiration);
 
                 // Store transient in Recently transients array for garbage collection
                 $recently_transients = get_option('recently_transients');
