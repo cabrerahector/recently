@@ -90,13 +90,12 @@ class Front {
 
         $is_single = Helper::is_single();
 
-        //wp_register_script('recently-js', $plugin_dir_url . 'assets/front/js/recently.min.js', array(), RECENTLY_VERSION, true);
-        wp_register_script('recently-js', $plugin_dir_url . 'assets/front/js/recently.js', array(), RECENTLY_VERSION, true);
+        wp_register_script('recently-js', $plugin_dir_url . 'assets/front/js/recently.min.js', array(), RECENTLY_VERSION, true);
         $params = [
             'ajax_url' => esc_url_raw(rest_url('recently/v1')),
             'api_url' => esc_url_raw(rest_url('recently')),
             'ID' => (int) $is_single,
-            'lang' => function_exists('PLL') ? $this->translate->get_current_language() : 0
+            'lang' => $this->translate->get_current_language()
         ];
         wp_enqueue_script('recently-js');
         wp_add_inline_script('recently-js', json_encode($params), 'before');
