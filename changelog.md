@@ -1,5 +1,20 @@
 Changelog
 =========
+#### 4.0.0 ####
+
+This release includes a couple of major changes so please review before updating.
+
+- Minimum required PHP version is now 7.2.
+- Minimum required WordPress version is now 5.3.
+- Introduces Recently's own block!
+- Admin: only users with `edit_others_posts` capability (usually Editors and Administrators) will be able to access certain areas of Recently's dashboard.
+- Widgets: Users will no longer be able to add the "classic" widget to the block-based Widgets screen, only the Recently block.
+- Fixes an issue where widget themes stored in child theme's folder would not be recognized by the plugin.
+- Security enhancements.
+- Minor improvements and fixes.
+
+[Release notes](https://cabrerahector.com/wordpress/recently-4-0-new-recently-block-php-5-support-dropped-minimum-supported-wordpress-version-changed/)
+
 #### 3.0.5 ####
 
 - Fixes a potential XSS vulnerability (props to Yu Iwama of Secure Sky Technology Inc. and the JPCERT/CC Vulnerability Coordination Group).

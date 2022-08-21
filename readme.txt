@@ -85,63 +85,23 @@ The FAQ section has been moved [here](https://github.com/cabrerahector/recently/
 
 == Changelog ==
 
-= 3.0.5 =
+= 4.0.0 =
 
-- Fixes a potential XSS vulnerability (props to Yu Iwama of Secure Sky Technology Inc. and the JPCERT/CC Vulnerability Coordination Group).
-- Fixes a potential code injection vulnerability (props to Jerome & NinTechNet).
-- Fixes a fatal error that can occur when using stock thumbnail sizes (props to @rianovost).
-- Fixes a srcset bug that affects specific PHP locales (props to @fredel).
-- Fixes a srcset not loading images due to improper SSL/HTTPS configuration (props to @aj4h).
-- Fixes a views/comments translation issue that affects some languages.
+This release includes a couple of major changes so please review before updating.
 
-If you're using a caching plugin, flushing its cache after installing/upgrading to this version is highly recommended.
+- Minimum required PHP version is now 7.2.
+- Minimum required WordPress version is now 5.3.
+- Introduces Recently's own block!
+- Admin: only users with `edit_others_posts` capability (usually Editors and Administrators) will be able to access certain areas of Recently's dashboard.
+- Widgets: Users will no longer be able to add the "classic" widget to the block-based Widgets screen, only the Recently block.
+- Fixes an issue where widget themes stored in child theme's folder would not be recognized by the plugin.
+- Security enhancements.
+- Minor improvements and fixes.
 
-[Release notes](https://cabrerahector.com/wordpress/recently-3-0-has-been-released/#minor-updates-and-hotfixes)
+See the [Release notes](https://cabrerahector.com/wordpress/recently-4-0-new-recently-block-php-5-support-dropped-minimum-supported-wordpress-version-changed/) for more details.
 
-= 3.0.4 =
-
-* Fixes an issue where when using multiple widgets on the same page posts would be duplicated (thanks rianovost!)
-* Enables the Ajaxify Widget option by default (affects new installs only) for better out-of-the-box compat with caching plugins.
-
-[Release notes](https://cabrerahector.com/wordpress/recently-3-0-has-been-released/#minor-updates-and-hotfixes)
-
-= 3.0.3 =
-
-* Fixes a fatal PHP error when using an image source other than Featured Image (thanks rianovost!)
-
-[Release notes](https://cabrerahector.com/wordpress/recently-3-0-has-been-released/#minor-updates-and-hotfixes)
-
-= 3.0.2 =
-
-* Fixes thumbnails not displaying under certain conditions.
-* Fixes an issue where the Tiny theme would change the widget title to "Trending."
-* Updates plugin screenshots to showcase the new themes.
-
-[Release notes](https://cabrerahector.com/wordpress/recently-3-0-has-been-released/#minor-updates-and-hotfixes)
-
-= 3.0.1 =
-
-* Fixes a bug where the user couldn't disable the display of thumbnails.
-* Improves compatibility with WordPress Popular Posts and Polylang.
-* Minor code enhancements.
-
-[Release notes](https://cabrerahector.com/wordpress/recently-3-0-has-been-released/#minor-updates-and-hotfixes)
-
-= 3.0.0 =
-
-**If you're using a caching plugin, flushing its cache after installing/upgrading to this version is highly recommended.**
-
-* Code has been refactored to make maintenance easier in the future.
-* Widget Themes support!
-* Retina displays support!
-* New Content Tags added: total_items, item_position, and title_attr.
-* Minor usability improvements.
-* Improves compatibility with Polylang/WPML.
-* Improved CSP compatibility. Note that this may cause issues on some set-ups, please check the Release Notes for more details.
-
-See the [Release Notes](https://cabrerahector.com/wordpress/recently-3-0-has-been-released/) for more details.
 [Full Changelog](https://github.com/cabrerahector/recently/blob/master/changelog.md).
 
 == Upgrade Notice ==
-= 3.0.5 =
+= 4.0.0 =
 If you're using a caching plugin flushing its cache after installing/upgrading to this version is highly recommended.
