@@ -68,6 +68,14 @@ class Output {
     private $themer;
 
     /**
+     * WordPress Date format.
+     *
+     * @var     string
+     * @access  private
+     */
+    private $wp_date_format;
+
+    /**
      * Construct
      *
      * @since   2.0.0
@@ -86,6 +94,11 @@ class Output {
         $this->themer = $themer;
 
         $this->default_thumbnail_sizes = $this->image->get_sizes();
+
+        $this->wp_date_format = get_option('date_format');
+
+        if ( ! $this->wp_date_format )
+            $this->wp_date_format = 'F j, Y';
     }
 
     /**
@@ -506,9 +519,21 @@ class Output {
         $date = '';
 
         if ( $this->options['meta_tag']['date']['active'] ) {
-            $date = ( 'relative' == $this->options['meta_tag']['date']['format'] ) 
-                ? sprintf(__('%s ago', 'recently'), human_time_diff(strtotime($post->post_date), current_time('timestamp')))
-                : date_i18n($this->options['meta_tag']['date']['format'], strtotime($post->post_date));
+            if ( 'relative' == $this->options['meta_tag']['date']['format'] ) {
+                $date = sprintf(
+                    __('%s ago', 'recently'),
+                    human_time_diff(
+                        strtotime($post->post_date),
+                        current_time('timestamp')
+                    )
+                );
+            }
+            else {
+                $date = date_i18n(
+                    ( 'wp_date_format' == $this->options['meta_tag']['date']['format'] ? $this->wp_date_format : $this->options['meta_tag']['date']['format'] ),
+                    strtotime($post->post_date)
+                );
+            }
         }
 
         return $date;
