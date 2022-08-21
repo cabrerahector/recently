@@ -29,6 +29,12 @@ Recently is a WordPress widget that displays your site's most recent posts. And 
 * **Localizable** to your own language (See [translating Recently into your language](https://github.com/cabrerahector/recently/wiki/3.-FAQ#i-want-to-translate-your-plugin-into-my-language--help-you-update-a-translation-what-do-i-need-to-do) for more info).
 * **[WP-PostRatings](http://wordpress.org/extend/plugins/wp-postratings/) support**. Show your visitors how your readers are rating your posts!
 
+= PSA: do not use the classic Recently widget with the new Widgets screen! =
+
+The classic Recently widget doesn't work very well / at all with the new Widgets screen introduced with WordPress 5.8.
+
+This new Widgets screen expects WordPress blocks instead of regular WordPress widgets. If you're using the Recently widget on your block-based Widgets screen please replace it with the [Recently block](https://cabrerahector.com/wordpress/recently-4-0-new-recently-block-php-5-support-dropped-minimum-supported-wordpress-version-changed/).
+
 = Support the Project! =
 
 If you'd like to support my work and efforts to creating and maintaining more open source projects your donations and messages of support mean a lot!
