@@ -6,7 +6,7 @@
  * @author    Hector Cabrera <me@cabrerahector.com>
  * @license   GPL-2.0+
  * @link      http://cabrerahector.com
- * @copyright 2015-2021 Hector Cabrera
+ * @copyright 2022 Hector Cabrera
  */
 
 // If uninstall, not called from WordPress, then exit
