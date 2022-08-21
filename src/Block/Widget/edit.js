@@ -489,6 +489,13 @@ export class RecentlyWidgetBlockEdit extends Component
                     }
                 </div>
             }
+            { _recently.can_show_rating &&
+                <CheckboxControl
+                    label={__('Display post rating', 'recently')}
+                    checked={attributes.rating}
+                    onChange={(value) => setAttributes({ rating: value })}
+                />
+            }
         </Fragment>;
     }
 

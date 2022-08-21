@@ -155,7 +155,8 @@ class Widget extends Block
             'block-recently-widget-js',
             '_recently',
             [
-                'can_show_views' => ( function_exists('wpp_get_views') || Helper::is_plugin_active('wp-postviews/wp-postviews.php') || function_exists('get_tptn_post_count_only') )
+                'can_show_views' => ( function_exists('wpp_get_views') || Helper::is_plugin_active('wp-postviews/wp-postviews.php') || function_exists('get_tptn_post_count_only') ),
+                'can_show_rating' => function_exists('the_ratings_results')
             ]
         );
 
@@ -270,6 +271,10 @@ class Widget extends Block
                     'thumbnail_size' => [
                         'type' => 'string',
                         'default' => ''
+                    ],
+                    'rating' => [
+                        'type' => 'boolean',
+                        'default' => false
                     ],
                     /* meta tag settings */
                     'meta_comments' => [
@@ -534,6 +539,8 @@ class Widget extends Block
             'build' => 'predefined' == $thumbnail_build ? 'predefined' : 'manual',
             'size' => empty($thumbnail_size) ? '' : $thumbnail_size,
         ];
+
+        $this->options['rating'] = (bool) $rating;
 
         $this->options['meta_tag'] = [
             'comment_count' => (bool) $meta_comments,

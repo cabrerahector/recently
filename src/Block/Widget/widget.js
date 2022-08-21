@@ -108,6 +108,10 @@ registerBlockType('recently/widget', {
             type: 'string',
             default: ''
         },
+        rating: {
+            type: 'boolean',
+            default: false
+        },
         /* stats tag settings */
         meta_comments: {
             type: 'boolean',
