@@ -143,7 +143,9 @@ if ( !$recently_rand = get_option("recently_rand") ) {
 
 <nav id="recently-menu">
     <ul>
-        <li <?php echo ( 'tools' == $current ) ? ' class="current"' : ''; ?>><a href="<?php echo admin_url( 'options-general.php?page=recently&tab=tools' ); ?>" title="<?php esc_attr_e( 'Tools', 'recently' ); ?>"><span><?php _e( 'Tools', 'recently' ); ?></span></a></li>
+        <?php if ( current_user_can('edit_others_posts') ) : ?>
+            <li <?php echo ( 'tools' == $current ) ? ' class="current"' : ''; ?>><a href="<?php echo admin_url( 'options-general.php?page=recently&tab=tools' ); ?>" title="<?php esc_attr_e( 'Tools', 'recently' ); ?>"><span><?php _e( 'Tools', 'recently' ); ?></span></a></li>
+        <?php endif ;?>
         <li <?php echo ( 'params' == $current ) ? ' class="current"' : ''; ?>><a href="<?php echo admin_url( 'options-general.php?page=recently&tab=params' ); ?>" title="<?php esc_attr_e( 'Parameters', 'recently' ); ?>"><span><?php _e( 'Parameters', 'recently' ); ?></span></a></li>
     </ul>
 </nav>
