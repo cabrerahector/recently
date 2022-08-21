@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Recently\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/recently\n"
-"POT-Creation-Date: 2022-08-15 16:41-0400\n"
+"POT-Creation-Date: 2022-08-21 11:20-0400\n"
 "PO-Revision-Date: 2015-06-09 16:53-0430\n"
 "Last-Translator: Héctor Cabrera <me@cabrerahector.com>\n"
 "Language-Team: Héctor Cabrera <me@cabrerahector.com>\n"
@@ -25,246 +25,244 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
 "X-Poedit-SearchPathExcluded-2: vendor\n"
 
-#: assets/admin/js/blocks/block-recently-widget.js:170 src/Block/Widget/edit.js:133
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:133
 msgid "Preview"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:170 src/Block/Widget/edit.js:133
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:133
 msgid "Edit"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:204 src/Block/Widget/edit.js:166
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:166
 #: src/Widget/form.php:8
 msgid "Title"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:208 src/Block/Widget/edit.js:171
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:171
 msgid "Limit"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:209 src/Block/Widget/edit.js:172
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:172
 msgid "Max. number of posts to show."
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:213 src/Block/Widget/edit.js:177
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:177
 #: src/Widget/form.php:18
 msgid "Offset"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:214 src/Block/Widget/edit.js:178
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:178
 msgid "Number of posts to displace or pass over."
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:316 src/Block/Widget/edit.js:279
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:279
 #: src/Widget/form.php:25
 msgid "Filters"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:317 src/Block/Widget/edit.js:281
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:281
 msgid "Post Type(s)"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:318 src/Block/Widget/edit.js:282
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:282
 msgid " Post types, separated by comma."
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:322 src/Block/Widget/edit.js:287
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:287
 msgid "Post ID(s) to exclude"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:323 src/Block/Widget/edit.js:288
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:288
 msgid " Post / Page IDs, separated by comma."
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:327 src/Block/Widget/edit.js:293
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:293
 msgid "Author ID(s)"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:328 src/Block/Widget/edit.js:294
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:294
 msgid " Author IDs, separated by comma (prefix a minus sign to exclude)."
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:334 src/Block/Widget/edit.js:303
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:303
 msgid "Term IDs must be comma separated, prefix a minus sign to exclude."
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:451 src/Block/Widget/edit.js:400
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:400
 #: src/Widget/form.php:110
 msgid "Posts settings"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:452 src/Block/Widget/edit.js:402
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:402
 #: src/Widget/form.php:117
 msgid "Shorten title"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:458 src/Block/Widget/edit.js:409
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:409
 #: src/Widget/form.php:120
 msgid "Shorten title to"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:464
-#: assets/admin/js/blocks/block-recently-widget.js:492 src/Block/Widget/edit.js:416
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:416
 #: src/Block/Widget/edit.js:443 src/Widget/form.php:121 src/Widget/form.php:132
 msgid "characters"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:467
-#: assets/admin/js/blocks/block-recently-widget.js:495 src/Block/Widget/edit.js:417
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:417
 #: src/Block/Widget/edit.js:444 src/Widget/form.php:122 src/Widget/form.php:133
 msgid "words"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:474 src/Block/Widget/edit.js:424
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:424
 #: src/Widget/form.php:125
 msgid "Display post excerpt"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:480 src/Block/Widget/edit.js:431
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:431
 #: src/Widget/form.php:128
 msgid "Keep text format and links"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:486 src/Block/Widget/edit.js:436
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:436
 #: src/Widget/form.php:130
 msgid "Excerpt length"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:502 src/Block/Widget/edit.js:451
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:451
 #: src/Widget/form.php:136
 msgid "Display post thumbnail"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:510 src/Block/Widget/edit.js:460
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:460
 #: src/Widget/form.php:154
 msgid "Set size manually"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:513 src/Block/Widget/edit.js:461
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:461
 #: src/Widget/form.php:139
 msgid "Use predefined size"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:518 src/Block/Widget/edit.js:468
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:468
 msgid "Thumbnail width"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:519
-#: assets/admin/js/blocks/block-recently-widget.js:524 src/Block/Widget/edit.js:469
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:469
 #: src/Block/Widget/edit.js:475
 msgid "Size in px units (pixels)"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:523 src/Block/Widget/edit.js:474
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:474
 msgid "Thumbnail height"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:553 src/Block/Widget/edit.js:516
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:494
+#: src/Widget/form.php:114
+msgid "Display post rating"
+msgstr ""
+
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:523
 msgid "Stats Tag settings"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:554 src/Block/Widget/edit.js:518
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:525
 msgid "Display comments count"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:560 src/Block/Widget/edit.js:524
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:531
 #: src/Widget/form.php:169
 msgid "Display views"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:566 src/Block/Widget/edit.js:530
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:537
 #: src/Widget/form.php:171
 msgid "Display author"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:572 src/Block/Widget/edit.js:535
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:542
 #: src/Widget/form.php:173
 msgid "Display date"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:580 src/Block/Widget/edit.js:542
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:549
 #: src/Widget/form.php:176
 msgid "Date Format"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:583 src/Block/Widget/edit.js:545
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:552
 #: src/Widget/form.php:178
 msgid "Relative"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:586 src/Block/Widget/edit.js:546
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:553
 msgid "Month Day, Year"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:589 src/Block/Widget/edit.js:547
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:554
 msgid "yyyy/mm/dd"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:592 src/Block/Widget/edit.js:548
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:555
 msgid "mm/dd/yyyy"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:595 src/Block/Widget/edit.js:549
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:556
 msgid "dd/mm/yyyy"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:598 src/Block/Widget/edit.js:550
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:557
 #: src/Widget/form.php:179
 msgid "WordPress Date Format"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:605 src/Block/Widget/edit.js:557
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:564
 #: src/Widget/form.php:186
 msgid "Display taxonomy"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:614 src/Block/Widget/edit.js:565
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:572
 #: src/Widget/form.php:40
 msgid "Taxonomy"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:667 src/Block/Widget/edit.js:617
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:624
 #: src/Widget/form.php:42 src/Widget/form.php:251
 msgid "None"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:682 src/Block/Widget/edit.js:634
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:641
 #: src/Widget/form.php:203
 msgid "HTML Markup settings"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:683 src/Block/Widget/edit.js:636
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:643
 #: src/Widget/form.php:205
 msgid "Use custom HTML Markup"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:692 src/Block/Widget/edit.js:644
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:651
 msgid "Before title"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:699 src/Block/Widget/edit.js:650
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:657
 msgid "After title"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:706 src/Block/Widget/edit.js:656
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:663
 msgid "Before recent posts"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:713 src/Block/Widget/edit.js:662
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:669
 msgid "After recent posts"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:719 src/Block/Widget/edit.js:667
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:674
 msgid "Post HTML markup"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:725 src/Block/Widget/edit.js:674
+#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:681
 #: src/Widget/form.php:243
 msgid "Theme"
-msgstr ""
-
-#: assets/admin/js/blocks/block-recently-widget.js:926 src/Block/Widget/widget.js:11
-msgid "A highly customizable block that displays your most recent posts."
 msgstr ""
 
 #: src/Admin/Admin.php:169
@@ -652,6 +650,10 @@ msgid ""
 "it to have it included in the header section of your site, use this."
 msgstr ""
 
+#: src/Block/Widget/widget.js:11
+msgid "A highly customizable block that displays your most recent posts."
+msgstr ""
+
 #: src/Output.php:193
 msgid "Sorry, nothing to show yet."
 msgstr ""
@@ -748,10 +750,6 @@ msgstr ""
 
 #: src/Widget/form.php:105
 msgid "Author IDs, separated by comma (prefix a minus sign to exclude)"
-msgstr ""
-
-#: src/Widget/form.php:114
-msgid "Display post rating"
 msgstr ""
 
 #: src/Widget/form.php:156
