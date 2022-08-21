@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Recently\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/recently\n"
-"POT-Creation-Date: 2022-08-21 11:20-0400\n"
+"POT-Creation-Date: 2022-08-21 13:58-0400\n"
 "PO-Revision-Date: 2015-06-09 16:53-0430\n"
 "Last-Translator: Héctor Cabrera <me@cabrerahector.com>\n"
 "Language-Team: Héctor Cabrera <me@cabrerahector.com>\n"
@@ -312,7 +312,7 @@ msgstr ""
 msgid "Tools"
 msgstr ""
 
-#: src/Admin/admin-page.php:7 src/Admin/admin-page.php:148
+#: src/Admin/admin-page.php:7 src/Admin/admin-page.php:149
 msgid "Parameters"
 msgstr ""
 
@@ -351,14 +351,10 @@ msgstr ""
 msgid "Invalid action."
 msgstr ""
 
-#: src/Admin/admin-page.php:129
+#: src/Admin/admin-page.php:129 src/Admin/screen-debug.php:5 src/Admin/screen-tools.php:5
 msgid ""
 "Sorry, you do not have enough permissions to do this. Please contact the site "
 "administrator for support."
-msgstr ""
-
-#: src/Admin/admin-page.php:146
-msgid "Menu"
 msgstr ""
 
 #: src/Admin/screen-params.php:7
@@ -451,199 +447,199 @@ msgstr ""
 msgid "outputs the position of the post in the listing"
 msgstr ""
 
-#: src/Admin/screen-tools.php:7
+#: src/Admin/screen-tools.php:12
 msgid "HTML Markup"
 msgstr ""
 
-#: src/Admin/screen-tools.php:10
+#: src/Admin/screen-tools.php:15
 msgid "Links"
 msgstr ""
 
-#: src/Admin/screen-tools.php:14
+#: src/Admin/screen-tools.php:19
 msgid "Open links in"
 msgstr ""
 
-#: src/Admin/screen-tools.php:17
+#: src/Admin/screen-tools.php:22
 msgid "Current window"
 msgstr ""
 
-#: src/Admin/screen-tools.php:18
+#: src/Admin/screen-tools.php:23
 msgid "New tab/window"
 msgstr ""
 
-#: src/Admin/screen-tools.php:24
+#: src/Admin/screen-tools.php:29
 msgid "REL attribute"
 msgstr ""
 
-#: src/Admin/screen-tools.php:27
+#: src/Admin/screen-tools.php:32
 msgid ""
 "The rel attribute specifies the relationship between the current document and the "
 "linked document"
 msgstr ""
 
-#: src/Admin/screen-tools.php:33
+#: src/Admin/screen-tools.php:38
 msgid "Thumbnails"
 msgstr ""
 
-#: src/Admin/screen-tools.php:37
+#: src/Admin/screen-tools.php:42
 msgid "Default thumbnail"
 msgstr ""
 
-#: src/Admin/screen-tools.php:57
+#: src/Admin/screen-tools.php:62
 msgid "Upload thumbnail"
 msgstr ""
 
-#: src/Admin/screen-tools.php:59
+#: src/Admin/screen-tools.php:64
 msgid "How-to: upload (or select) an image, set Size to Full and click on Upload"
 msgstr ""
 
-#: src/Admin/screen-tools.php:63
+#: src/Admin/screen-tools.php:68
 msgid "Pick image from"
 msgstr ""
 
-#: src/Admin/screen-tools.php:66
+#: src/Admin/screen-tools.php:71
 msgid "Featured image"
 msgstr ""
 
-#: src/Admin/screen-tools.php:67
+#: src/Admin/screen-tools.php:72
 msgid "First image on post"
 msgstr ""
 
-#: src/Admin/screen-tools.php:68
+#: src/Admin/screen-tools.php:73
 msgid "First attachment"
 msgstr ""
 
-#: src/Admin/screen-tools.php:69
+#: src/Admin/screen-tools.php:74
 msgid "Custom field"
 msgstr ""
 
-#: src/Admin/screen-tools.php:72
+#: src/Admin/screen-tools.php:77
 msgid "Tell Recently where it should get thumbnails from"
 msgstr ""
 
-#: src/Admin/screen-tools.php:76
+#: src/Admin/screen-tools.php:81
 msgid "Lazy load"
 msgstr ""
 
-#: src/Admin/screen-tools.php:79
+#: src/Admin/screen-tools.php:84
 msgid "No"
 msgstr ""
 
-#: src/Admin/screen-tools.php:80 src/Admin/screen-tools.php:97
+#: src/Admin/screen-tools.php:85 src/Admin/screen-tools.php:102
 msgid "Yes"
 msgstr ""
 
-#: src/Admin/screen-tools.php:83
+#: src/Admin/screen-tools.php:88
 msgid ""
 "Set to No to load thumbnails right away or choose Yes to load them only when in view."
 msgstr ""
 
-#: src/Admin/screen-tools.php:87
+#: src/Admin/screen-tools.php:92
 msgid "Custom field name"
 msgstr ""
 
-#: src/Admin/screen-tools.php:93
+#: src/Admin/screen-tools.php:98
 msgid "Resize image from Custom field?"
 msgstr ""
 
-#: src/Admin/screen-tools.php:96
+#: src/Admin/screen-tools.php:101
 msgid "No, I will upload my own thumbnail"
 msgstr ""
 
-#: src/Admin/screen-tools.php:108
+#: src/Admin/screen-tools.php:113
 msgid "Empty image cache"
 msgstr ""
 
-#: src/Admin/screen-tools.php:109
+#: src/Admin/screen-tools.php:114
 msgid "Use this button to clear Recently's thumbnails cache"
 msgstr ""
 
-#: src/Admin/screen-tools.php:119 src/Admin/screen-tools.php:173
-#: src/Admin/screen-tools.php:202
+#: src/Admin/screen-tools.php:124 src/Admin/screen-tools.php:178
+#: src/Admin/screen-tools.php:207
 msgid "Apply"
 msgstr ""
 
-#: src/Admin/screen-tools.php:126
+#: src/Admin/screen-tools.php:131
 msgid "Data"
 msgstr ""
 
-#: src/Admin/screen-tools.php:131
+#: src/Admin/screen-tools.php:136
 msgid "Ajaxify widget"
 msgstr ""
 
-#: src/Admin/screen-tools.php:134 src/Admin/screen-tools.php:193
+#: src/Admin/screen-tools.php:139 src/Admin/screen-tools.php:198
 msgid "Disabled"
 msgstr ""
 
-#: src/Admin/screen-tools.php:135 src/Admin/screen-tools.php:192
+#: src/Admin/screen-tools.php:140 src/Admin/screen-tools.php:197
 msgid "Enabled"
 msgstr ""
 
-#: src/Admin/screen-tools.php:139
+#: src/Admin/screen-tools.php:144
 msgid ""
 "If you are using a caching plugin such as WP Super Cache, enabling this feature will "
 "keep the Recently widget from being cached by it"
 msgstr ""
 
-#: src/Admin/screen-tools.php:143
+#: src/Admin/screen-tools.php:148
 msgid "Data Caching"
 msgstr ""
 
-#: src/Admin/screen-tools.php:146
+#: src/Admin/screen-tools.php:151
 msgid "Never cache"
 msgstr ""
 
-#: src/Admin/screen-tools.php:147
+#: src/Admin/screen-tools.php:152
 msgid "Enable caching"
 msgstr ""
 
-#: src/Admin/screen-tools.php:151
+#: src/Admin/screen-tools.php:156
 msgid ""
 "Recently can cache the recent posts list for a specified amount of time. Recommended "
 "for large / high traffic sites"
 msgstr ""
 
-#: src/Admin/screen-tools.php:155
+#: src/Admin/screen-tools.php:160
 msgid "Refresh cache every"
 msgstr ""
 
-#: src/Admin/screen-tools.php:159
+#: src/Admin/screen-tools.php:164
 msgid "Minute(s)"
 msgstr ""
 
-#: src/Admin/screen-tools.php:160
+#: src/Admin/screen-tools.php:165
 msgid "Hour(s)"
 msgstr ""
 
-#: src/Admin/screen-tools.php:161
+#: src/Admin/screen-tools.php:166
 msgid "Day(s)"
 msgstr ""
 
-#: src/Admin/screen-tools.php:162
+#: src/Admin/screen-tools.php:167
 msgid "Week(s)"
 msgstr ""
 
-#: src/Admin/screen-tools.php:163
+#: src/Admin/screen-tools.php:168
 msgid "Month(s)"
 msgstr ""
 
-#: src/Admin/screen-tools.php:164
+#: src/Admin/screen-tools.php:169
 msgid "Year(s)"
 msgstr ""
 
-#: src/Admin/screen-tools.php:167
+#: src/Admin/screen-tools.php:172
 msgid "Really? That long?"
 msgstr ""
 
-#: src/Admin/screen-tools.php:184
+#: src/Admin/screen-tools.php:189
 msgid "Miscellaneous"
 msgstr ""
 
-#: src/Admin/screen-tools.php:189
+#: src/Admin/screen-tools.php:194
 msgid "Use plugin's stylesheet"
 msgstr ""
 
-#: src/Admin/screen-tools.php:196
+#: src/Admin/screen-tools.php:201
 msgid ""
 "By default, the plugin includes a stylesheet called recently.css which you can use to "
 "style your recent posts listing. If you wish to use your own stylesheet or do not want "
@@ -654,40 +650,40 @@ msgstr ""
 msgid "A highly customizable block that displays your most recent posts."
 msgstr ""
 
-#: src/Output.php:193
+#: src/Output.php:206
 msgid "Sorry, nothing to show yet."
 msgstr ""
 
-#: src/Output.php:510
+#: src/Output.php:524
 #, php-format
 msgid "%s ago"
 msgstr ""
 
-#: src/Output.php:748
+#: src/Output.php:773
 #, php-format
 msgid "%s comment"
 msgid_plural "%s comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Output.php:755
+#: src/Output.php:780
 #, php-format
 msgid "%s view"
 msgid_plural "%s views"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Output.php:763
+#: src/Output.php:788
 #, php-format
 msgid "by %s"
 msgstr ""
 
-#: src/Output.php:769
+#: src/Output.php:794
 #, php-format
 msgid "posted %s"
 msgstr ""
 
-#: src/Output.php:769
+#: src/Output.php:794
 #, php-format
 msgid "posted on %s"
 msgstr ""
