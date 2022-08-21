@@ -19,10 +19,6 @@
             border-right: #ddd 1px solid;
         }
 
-        #recently-menu ul li:first-child {
-            display: none;
-        }
-
         #recently-menu ul li:last-child {
             border: none;
         }
