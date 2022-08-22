@@ -18,7 +18,7 @@ A highly customizable Recent Posts widget for WordPress.
 
 ## Description
 
-Recently is a highly customizable [widget](http://wordpress.org/plugins/recently/) to showcase the most recent entries from your [WordPress](http://wordpress.org/) powered site.
+Recently is a highly customizable [widget](https://wordpress.org/plugins/recently/) to showcase the most recent entries from your [WordPress](https://wordpress.org/) powered site.
 
 
 ## Features
@@ -32,14 +32,14 @@ Recently is a highly customizable [widget](http://wordpress.org/plugins/recently
 * Display a **thumbnail** of your recent posts! (see the [FAQ section](https://github.com/cabrerahector/recently/wiki/3.-FAQ#how-does-recently-pick-my-posts-thumbnails) for more details.)
 * Use **your own layout**! Recently is flexible enough to let you customize the look and feel of your recent posts list! (see [customizing Recently's HTML markup](https://github.com/cabrerahector/recently/wiki/3.-FAQ#how-can-i-use-my-own-html-markup-with-your-plugin) and [How to style Recently](https://github.com/cabrerahector/recently/wiki/4.-Styling-the-list) for more.)
 * **Localizable** to your own language (See [translating Recently into your language](https://github.com/cabrerahector/recently/wiki/3.-FAQ#i-want-to-translate-your-plugin-into-my-language--help-you-update-a-translation-what-do-i-need-to-do) for more info).
-* **[WP-PostRatings](http://wordpress.org/extend/plugins/wp-postratings/) support**. Show your visitors how your readers are rating your posts!
+* **[WP-PostRatings](https://wordpress.org/plugins/wp-postratings/) support**. Show your visitors how your readers are rating your posts!
 
 
 ## Requirements
 
 * WordPress 5.3 or above.
 * PHP 7.2 or above.
-* Either the [ImageMagik](http://www.php.net/manual/en/intro.imagick.php) or [GD](http://www.php.net/manual/en/intro.image.php) library installed and enabled on your server (not really required, but needed to create thumbnails).
+* Either the [ImageMagik](https://www.php.net/manual/en/intro.imagick.php) or [GD](https://www.php.net/manual/en/intro.image.php) library installed and enabled on your server (not really required, but needed to create thumbnails).
 
 
 ## Installation
@@ -86,7 +86,7 @@ When submitting an issue, please answer the following questions:
 
 ## License
 
-[GNU General Public License version 2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
+[GNU General Public License version 2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 
 Copyright (C) 2022  Héctor Cabrera - https://cabrerahector.com
 
@@ -101,4 +101,4 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with the Recently plugin; if not, see [http://www.gnu.org/licenses](http://www.gnu.org/licenses/).
+along with the Recently plugin; if not, see [https://www.gnu.org/licenses](https://www.gnu.org/licenses/).
