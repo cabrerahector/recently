@@ -16,7 +16,7 @@
  * Plugin Name:       Recently
  * Plugin URI:        https://wordpress.org/plugins/recently/
  * Description:       A highly customizable & feature-packed recent posts widget.
- * Version:           4.0.0
+ * Version:           4.0.1
  * Requires at least: 5.3
  * Requires PHP:      7.2
  * Author:            Hector Cabrera
@@ -31,7 +31,7 @@ if ( ! defined( 'WPINC' ) ) {
     die();
 }
 
-define('RECENTLY_VERSION', '4.0.0');
+define('RECENTLY_VERSION', '4.0.1');
 
 $recently_main_plugin_file = __FILE__;
 // Load plugin bootstrap
