@@ -85,6 +85,13 @@ The FAQ section has been moved [here](https://github.com/cabrerahector/recently/
 
 == Changelog ==
 
+= 4.0.1 =
+
+- Fixes an issue where the excerpt may output broken HTML under some circumstances.
+- Updated dependencies.
+
+[Release notes](https://cabrerahector.com/wordpress/recently-4-0-new-recently-block-php-5-support-dropped-minimum-supported-wordpress-version-changed/).
+
 = 4.0.0 =
 
 This release includes a couple of major changes so please review before updating.
