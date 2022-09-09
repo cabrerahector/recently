@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Recently\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/recently\n"
-"POT-Creation-Date: 2022-08-21 13:58-0400\n"
+"POT-Creation-Date: 2022-09-09 17:01-0400\n"
 "PO-Revision-Date: 2015-06-09 16:53-0430\n"
 "Last-Translator: Héctor Cabrera <me@cabrerahector.com>\n"
 "Language-Team: Héctor Cabrera <me@cabrerahector.com>\n"
@@ -659,31 +659,31 @@ msgstr ""
 msgid "%s ago"
 msgstr ""
 
-#: src/Output.php:773
+#: src/Output.php:781
 #, php-format
 msgid "%s comment"
 msgid_plural "%s comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Output.php:780
+#: src/Output.php:788
 #, php-format
 msgid "%s view"
 msgid_plural "%s views"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Output.php:788
+#: src/Output.php:796
 #, php-format
 msgid "by %s"
 msgstr ""
 
-#: src/Output.php:794
+#: src/Output.php:802
 #, php-format
 msgid "posted %s"
 msgstr ""
 
-#: src/Output.php:794
+#: src/Output.php:802
 #, php-format
 msgid "posted on %s"
 msgstr ""
