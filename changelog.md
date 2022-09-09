@@ -1,13 +1,13 @@
 Changelog
 =========
-#### 4.0.1 ####
+## 4.0.1 ##
 
 - Fixes an issue where the excerpt may output broken HTML under some circumstances.
 - Updated dependencies.
 
 [Release notes](https://cabrerahector.com/wordpress/recently-4-0-new-recently-block-php-5-support-dropped-minimum-supported-wordpress-version-changed/).
 
-#### 4.0.0 ####
+## 4.0.0 ##
 
 This release includes a couple of major changes so please review before updating.
 
@@ -22,7 +22,7 @@ This release includes a couple of major changes so please review before updating
 
 [Release notes](https://cabrerahector.com/wordpress/recently-4-0-new-recently-block-php-5-support-dropped-minimum-supported-wordpress-version-changed/)
 
-#### 3.0.5 ####
+## 3.0.5 ##
 
 - Fixes a potential XSS vulnerability (props to Yu Iwama of Secure Sky Technology Inc. and the JPCERT/CC Vulnerability Coordination Group).
 - Fixes a potential code injection vulnerability (props to Jerome & NinTechNet).
@@ -35,20 +35,20 @@ If you're using a caching plugin, flushing its cache after installing/upgrading 
 
 [Release notes](https://cabrerahector.com/wordpress/recently-3-0-has-been-released/#minor-updates-and-hotfixes)
 
-#### 3.0.4 ####
+## 3.0.4 ##
 
 * Fixes an issue where when using multiple widgets on the same page posts would be duplicated (thanks rianovost!)
 * Enables the Ajaxify Widget option by default (affects new installs only) for better out-of-the-box compat with caching plugins.
 
 [Release notes](https://cabrerahector.com/wordpress/recently-3-0-has-been-released/#minor-updates-and-hotfixes)
 
-#### 3.0.3 ####
+## 3.0.3 ##
 
 * Fixes a fatal PHP error when using an image source other than Featured Image (thanks rianovost!)
 
 [Release notes](https://cabrerahector.com/wordpress/recently-3-0-has-been-released/#minor-updates-and-hotfixes)
 
-#### 3.0.2 ####
+## 3.0.2 ##
 
 * Fixes thumbnails not displaying under certain conditions.
 * Fixes an issue where the Tiny theme would change the widget title to "Trending."
@@ -56,7 +56,7 @@ If you're using a caching plugin, flushing its cache after installing/upgrading 
 
 [Release notes](https://cabrerahector.com/wordpress/recently-3-0-has-been-released/#minor-updates-and-hotfixes)
 
-#### 3.0.1 ####
+## 3.0.1 ##
 
 * Fixes a bug where the user couldn't disable the display of thumbnails.
 * Improves compatibility with WordPress Popular Posts and Polylang.
@@ -64,7 +64,7 @@ If you're using a caching plugin, flushing its cache after installing/upgrading 
 
 [Release notes](https://cabrerahector.com/wordpress/recently-3-0-has-been-released/#minor-updates-and-hotfixes)
 
-#### 3.0.0 ####
+## 3.0.0 ##
 **If you're using a caching plugin, flushing its cache after installing/upgrading to this version is highly recommended.**
 
 * Code has been refactored to make maintenance easier in the future.
@@ -78,7 +78,7 @@ If you're using a caching plugin, flushing its cache after installing/upgrading 
 See the [Release Notes](https://cabrerahector.com/wordpress/recently-3-0-has-been-released/) for more details.
 [Full Changelog](https://github.com/cabrerahector/recently/blob/master/changelog.md).
 
-#### 2.1.0 ####
+## 2.1.0 ##
 *If you're using a caching plugin, flushing its cache after installing/upgrading to this version is highly recommended.*
 
 * Recently will fetch its ajaxified widgets via the REST API now for faster performance.
@@ -90,19 +90,19 @@ See the [Release Notes](https://cabrerahector.com/wordpress/recently-3-0-has-bee
 
 See the [Release Notes](https://cabrerahector.com/wordpress/recently-2-1-rest-api-support-new-filter-hooks/) for more details.
 
-#### 2.0.2 ####
+## 2.0.2 ##
 *If you're using a caching plugin, flushing its cache after upgrading to this version is highly recommended.*
 
 * Fixes Content Tag `{author}` returning a bad URL.
 * Data Caching enabled by default (new installs only).
 * Minor copy adjustments.
 
-#### 2.0.1 ####
+## 2.0.1 ##
 * Fixes missing helper method messing up the Customizer.
 * Updates default widget stylesheet.
 * Other minor fixes and improvements.
 
-#### 2.0.0 ####
+## 2.0.0 ##
 *If you're using a caching plugin, flushing its cache after upgrading to this version is highly recommended.*
 
 * Plugin code refactored!
@@ -117,12 +117,12 @@ See the [Release Notes](https://cabrerahector.com/wordpress/recently-2-1-rest-ap
 
 See: [Release Notes](https://cabrerahector.com/wordpress/recently-2-0-is-out/).
 
-#### 1.0.2 ####
+## 1.0.2 ##
 * Minor bug fixes and improvements
 
-#### 1.0.1 ####
+## 1.0.1 ##
 * Adds the recently_no_data filter hook
 * Minor bug fixes and improvements
 
-#### 1.0.0 ####
+## 1.0.0 ##
 * Public release
