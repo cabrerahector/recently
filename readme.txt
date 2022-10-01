@@ -5,7 +5,7 @@ Tags: recent, posts, widget, recently
 Requires at least: 5.3
 Tested up to: 6.0.1
 Requires PHP: 7.2
-Stable tag: 4.0.1
+Stable tag: 4.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
