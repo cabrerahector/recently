@@ -1,11 +1,19 @@
 Changelog
 =========
+## 4.0.2 ##
+
+- Fixes an issue where the excerpt would not be truncated at the expected length (props to dimalifragis!)
+- Fixes a PHP warning related to the excerpt generator function (props to dimalifragis!)
+- Updates dependencies.
+
+[Release notes](https://cabrerahector.com/wordpress/recently-4-0-new-recently-block-php-5-support-dropped-minimum-supported-wordpress-version-changed/#4.0.2).
+
 ## 4.0.1 ##
 
 - Fixes an issue where the excerpt may output broken HTML under some circumstances.
 - Updated dependencies.
 
-[Release notes](https://cabrerahector.com/wordpress/recently-4-0-new-recently-block-php-5-support-dropped-minimum-supported-wordpress-version-changed/).
+[Release notes](https://cabrerahector.com/wordpress/recently-4-0-new-recently-block-php-5-support-dropped-minimum-supported-wordpress-version-changed/#4.0.1).
 
 ## 4.0.0 ##
 
