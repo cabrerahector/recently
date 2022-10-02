@@ -118,5 +118,5 @@ See the [Release notes](https://cabrerahector.com/wordpress/recently-4-0-new-rec
 [Full Changelog](https://github.com/cabrerahector/recently/blob/master/changelog.md).
 
 == Upgrade Notice ==
-= 4.0.0 =
-If you're using a caching plugin flushing its cache after installing/upgrading to this version is highly recommended.
+= 4.0.2 =
+If you're using a caching plugin flushing its cache after installing/upgrading to this version is recommended.
