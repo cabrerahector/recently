@@ -116,7 +116,7 @@ class Output {
                 $this->options
             );
 
-            $this->output = "\n" . ( WP_DEBUG ? '<!-- Recently v' . RECENTLY_VERSION . ( $this->admin_options['tools']['data']['cache']['active'] ? ' - cached' : '' ) . ' -->' : '' ) . "\n";
+            $this->output = "\n" . ( WP_DEBUG ? '<!-- Recently v' . RECENTLY_VERSION . ' -->' : '' ) . "\n";
 
             // Allow WP themers / coders access to raw data
             // so they can build their own output

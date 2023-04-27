@@ -60,6 +60,8 @@ class Admin {
      */
     public function hooks()
     {
+        // Upgrade check
+        add_action('init', [$this, 'upgrade_check']);
         // Hook fired when a new blog is activated on WP Multisite
         add_action('wpmu_new_blog', [$this, 'activate_new_site']);
         // Load Recently's admin styles and scripts
@@ -77,6 +79,59 @@ class Admin {
         add_action('deleted_post_meta', [$this, 'deleted_post_meta'], 10, 4);
         // Thickbox setup
         add_action('admin_init', [$this, 'thickbox_setup']);
+    }
+
+    /**
+     * Checks if an upgrade procedure is required.
+     *
+     * @since   4.0.3
+     */
+    public function upgrade_check()
+    {
+        $this->upgrade_site();
+    }
+
+    /**
+     * Upgrades single site.
+     *
+     * @since   4.0.3
+     */
+    private function upgrade_site()
+    {
+        // Get WPP version
+        $recently_ver = get_option('recently_ver');
+
+        if ( ! $recently_ver ) {
+            add_option('recently_ver', RECENTLY_VERSION);
+        } elseif ( version_compare($recently_ver, RECENTLY_VERSION, '<') ) {
+            $this->upgrade();
+        }
+    }
+
+    /**
+     * On plugin upgrade performs a number of actions and some other checks.
+     *
+     * @since   4.0.3
+     * @access  private
+     */
+    private function upgrade()
+    {
+        // Recently's transients
+        $recently_transients = get_option('recently_transients');
+
+        // delete transients
+        if (
+            is_array($recently_transients)
+            && ! empty($recently_transients)
+        ) {
+            for ( $t=0; $t < count($recently_transients); $t++ ) {
+                delete_transient($recently_transients[$t]);
+            }
+        }
+
+        // delete recently_transients option
+        if ( $recently_transients )
+            delete_option('recently_transients');
     }
 
     /**
@@ -367,27 +422,6 @@ class Admin {
                     }
                 }
             }
-        }
-    }
-
-    /**
-     * Deletes cached (transient) data.
-     *
-     * @since   2.0.0
-     * @access  private
-     */
-    private function flush_transients()
-    {
-        $recently_transients = get_option('recently_transients');
-
-        if (
-            is_array($recently_transients ) 
-            && ! empty( $recently_transients )
-        ) {
-            for ( $t=0; $t < count($recently_transients); $t++ )
-                delete_transient($recently_transients[$t]);
-
-            update_option('recently_transients', array());
         }
     }
 }

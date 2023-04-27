@@ -145,34 +145,6 @@ if ( 'tools' == $current ) {
                             </td>
                         </tr>
                         <tr valign="top">
-                            <th scope="row"><label for="cache"><?php _e("Data Caching", 'recently'); ?>:</label></th>
-                            <td>
-                                <select name="cache" id="cache">
-                                    <option <?php if ( ! $this->options['tools']['data']['cache']['active'] ) { ?>selected="selected"<?php } ?> value="0"><?php _e("Never cache", 'recently'); ?></option>
-                                    <option <?php if ( $this->options['tools']['data']['cache']['active'] ) { ?>selected="selected"<?php } ?> value="1"><?php _e("Enable caching", 'recently'); ?></option>
-                                </select>
-
-                                <br />
-                                <p class="description"><?php _e("Recently can cache the recent posts list for a specified amount of time. Recommended for large / high traffic sites", 'recently'); ?>.</p>
-                            </td>
-                        </tr>
-                        <tr valign="top" <?php if ( !$this->options['tools']['data']['cache']['active'] ) { ?>style="display:none;"<?php } ?> id="cache_refresh_interval">
-                            <th scope="row"><label for="cache_interval_value"><?php _e("Refresh cache every", 'recently'); ?>:</label></th>
-                            <td>
-                                <input name="cache_interval_value" type="text" id="cache_interval_value" value="<?php echo ( isset($this->options['tools']['data']['cache']['interval']['value']) ) ? (int) $this->options['tools']['data']['cache']['interval']['value'] : 1; ?>" class="small-text">
-                                <select name="cache_interval_time" id="cache_interval_time">
-                                    <option <?php if ( $this->options['tools']['data']['cache']['interval']['time'] == "minute" ) { ?>selected="selected"<?php } ?> value="minute"><?php _e("Minute(s)", 'recently'); ?></option>
-                                    <option <?php if ( $this->options['tools']['data']['cache']['interval']['time'] == "hour" ) { ?>selected="selected"<?php } ?> value="hour"><?php _e("Hour(s)", 'recently'); ?></option>
-                                    <option <?php if ( $this->options['tools']['data']['cache']['interval']['time'] == "day" ) { ?>selected="selected"<?php } ?> value="day"><?php _e("Day(s)", 'recently'); ?></option>
-                                    <option <?php if ( $this->options['tools']['data']['cache']['interval']['time'] == "week" ) { ?>selected="selected"<?php } ?> value="week"><?php _e("Week(s)", 'recently'); ?></option>
-                                    <option <?php if ( $this->options['tools']['data']['cache']['interval']['time'] == "month" ) { ?>selected="selected"<?php } ?> value="month"><?php _e("Month(s)", 'recently'); ?></option>
-                                    <option <?php if ( $this->options['tools']['data']['cache']['interval']['time'] == "year" ) { ?>selected="selected"<?php } ?> value="month"><?php _e("Year(s)", 'recently'); ?></option>
-                                </select>
-                                <br />
-                                <p class="description" style="display:none;" id="cache_too_long"><?php _e("Really? That long?", 'recently'); ?></p>
-                            </td>
-                        </tr>
-                        <tr valign="top">
                             <td colspan="2">
                                 <input type="hidden" name="section" value="data" />
                                 <input type="submit" class="button-primary action" id="btn_ajax_ops" value="<?php _e("Apply", 'recently'); ?>" name="" />

@@ -102,14 +102,7 @@ class Settings {
                     ),
                 ),
                 'data' => array(
-                    'ajax' => true,
-                    'cache' => array(
-                        'active' => true,
-                        'interval' => array(
-                            'time' => 'minute',
-                            'value' => 1
-                        )
-                    )
+                    'ajax' => true
                 ),
                 'misc' => array(
                     'include_stylesheet' => true

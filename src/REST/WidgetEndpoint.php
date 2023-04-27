@@ -203,7 +203,7 @@ class WidgetEndpoint extends Endpoint
         $this->output->build_output();
 
         return [
-            'widget' => ( $this->config['tools']['data']['cache']['active'] ? '<!-- cached -->' : '' ) . $this->output->get_output()
+            'widget' => $this->output->get_output()
         ];
     }
 

@@ -63,23 +63,10 @@ if ( isset($_POST['section']) ) {
         $current = 'tools';
 
         if ( isset( $_POST['recently-admin-token'] ) && wp_verify_nonce( $_POST['recently-admin-token'], 'recently-update-data-options' ) ) {
-
             $this->options['tools']['data']['ajax'] = $_POST['ajax'];
-
-            // if any of the caching settings was updated, destroy all transients created by the plugin
-            if ( $this->options['tools']['data']['cache']['active'] != $_POST['cache'] || $this->options['tools']['data']['cache']['interval']['time'] != $_POST['cache_interval_time'] || $this->options['tools']['data']['cache']['interval']['value'] != $_POST['cache_interval_value'] ) {
-                $this->flush_transients();
-            }
-
-            $this->options['tools']['data']['cache']['active'] = $_POST['cache'];
-            $this->options['tools']['data']['cache']['interval']['time'] = $_POST['cache_interval_time'];
-            $this->options['tools']['data']['cache']['interval']['value'] = ( isset($_POST['cache_interval_value']) && is_numeric($_POST['cache_interval_value']) && $_POST['cache_interval_value'] > 0 )
-              ? $_POST['cache_interval_value']
-              : 1;
 
             update_site_option('recently_config', $this->options);
             echo "<div class=\"notice notice-success is-dismissible\"><p><strong>" . __('Settings saved.', 'recently' ) . "</strong></p></div>";
-
         }
 
     }
