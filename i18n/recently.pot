@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Recently\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/recently\n"
-"POT-Creation-Date: 2022-10-02 17:58-0400\n"
+"POT-Creation-Date: 2023-04-27 14:40-0400\n"
 "PO-Revision-Date: 2015-06-09 16:53-0430\n"
 "Last-Translator: Héctor Cabrera <me@cabrerahector.com>\n"
 "Language-Team: Héctor Cabrera <me@cabrerahector.com>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 3.2.2\n"
 "X-Poedit-KeywordsList: _e;__;__ngettext;__ngettext_noop;_n_noop;_x;_nx;_nx_noop;_ex;"
 "esc_attr__;esc_attr_e;esc_attr_x;esc_html__;esc_html_e;esc_html_x;_c;_nc;_n:1,2\n"
 "X-Poedit-Basepath: ..\n"
@@ -265,58 +265,58 @@ msgstr ""
 msgid "Theme"
 msgstr ""
 
-#: src/Admin/Admin.php:169
+#: src/Admin/Admin.php:224
 msgid "Upload"
 msgstr ""
 
-#: src/Admin/Admin.php:216
+#: src/Admin/Admin.php:271
 msgid "Overview"
 msgstr ""
 
-#: src/Admin/Admin.php:217
+#: src/Admin/Admin.php:272
 msgid ""
 "Welcome to Recently's Dashboard! In this screen you will tools to further tweak "
 "Recently to your needs and more!"
 msgstr ""
 
-#: src/Admin/Admin.php:223
+#: src/Admin/Admin.php:278
 msgid "Like this plugin?"
 msgstr ""
 
-#: src/Admin/Admin.php:225
+#: src/Admin/Admin.php:280
 msgid ""
 "Each donation motivates me to keep releasing free stuff for the WordPress community!"
 msgstr ""
 
-#: src/Admin/Admin.php:232
+#: src/Admin/Admin.php:287
 #, php-format
 msgid "You can <a href=\"%s\" target=\"_blank\">leave a review</a>, too!"
 msgstr ""
 
-#: src/Admin/Admin.php:239
+#: src/Admin/Admin.php:294
 #, php-format
 msgid ""
 "<p><strong>For more information:</strong></p><ul><li><a href=\"%1$s\">Documentation</"
 "a></li><li><a href=\"%2$s\">Support</a></li></ul>"
 msgstr ""
 
-#: src/Admin/Admin.php:265
+#: src/Admin/Admin.php:320
 msgid "Settings"
 msgstr ""
 
-#: src/Admin/Admin.php:266
+#: src/Admin/Admin.php:321
 msgid "Support"
 msgstr ""
 
-#: src/Admin/admin-page.php:6 src/Admin/admin-page.php:147
+#: src/Admin/admin-page.php:6 src/Admin/admin-page.php:134
 msgid "Tools"
 msgstr ""
 
-#: src/Admin/admin-page.php:7 src/Admin/admin-page.php:149
+#: src/Admin/admin-page.php:7 src/Admin/admin-page.php:136
 msgid "Parameters"
 msgstr ""
 
-#: src/Admin/admin-page.php:29 src/Admin/admin-page.php:55 src/Admin/admin-page.php:81
+#: src/Admin/admin-page.php:29 src/Admin/admin-page.php:55 src/Admin/admin-page.php:69
 msgid "Settings saved."
 msgstr ""
 
@@ -324,34 +324,34 @@ msgstr ""
 msgid "Please provide the name of your custom field."
 msgstr ""
 
-#: src/Admin/admin-page.php:90
+#: src/Admin/admin-page.php:77
 msgid ""
 "Any changes made to Recently's default stylesheet will be lost after every plugin "
 "update. In order to prevent this from happening, please copy the recently.css file "
 "(located at wp-content/plugins/recently/style) into your theme's directory"
 msgstr ""
 
-#: src/Admin/admin-page.php:105
+#: src/Admin/admin-page.php:92
 msgid "This operation will delete all cached thumbnails and cannot be undone."
 msgstr ""
 
-#: src/Admin/admin-page.php:105
+#: src/Admin/admin-page.php:92
 msgid "Do you want to continue?"
 msgstr ""
 
-#: src/Admin/admin-page.php:117
+#: src/Admin/admin-page.php:104
 msgid "Success! All files have been deleted!"
 msgstr ""
 
-#: src/Admin/admin-page.php:121
+#: src/Admin/admin-page.php:108
 msgid "The thumbnail cache is already empty!"
 msgstr ""
 
-#: src/Admin/admin-page.php:125 src/Admin/admin-page.php:133
+#: src/Admin/admin-page.php:112 src/Admin/admin-page.php:120
 msgid "Invalid action."
 msgstr ""
 
-#: src/Admin/admin-page.php:129 src/Admin/screen-debug.php:5 src/Admin/screen-tools.php:5
+#: src/Admin/admin-page.php:116 src/Admin/screen-debug.php:5 src/Admin/screen-tools.php:5
 msgid ""
 "Sorry, you do not have enough permissions to do this. Please contact the site "
 "administrator for support."
@@ -554,8 +554,8 @@ msgstr ""
 msgid "Use this button to clear Recently's thumbnails cache"
 msgstr ""
 
-#: src/Admin/screen-tools.php:124 src/Admin/screen-tools.php:178
-#: src/Admin/screen-tools.php:207
+#: src/Admin/screen-tools.php:124 src/Admin/screen-tools.php:150
+#: src/Admin/screen-tools.php:179
 msgid "Apply"
 msgstr ""
 
@@ -567,11 +567,11 @@ msgstr ""
 msgid "Ajaxify widget"
 msgstr ""
 
-#: src/Admin/screen-tools.php:139 src/Admin/screen-tools.php:198
+#: src/Admin/screen-tools.php:139 src/Admin/screen-tools.php:170
 msgid "Disabled"
 msgstr ""
 
-#: src/Admin/screen-tools.php:140 src/Admin/screen-tools.php:197
+#: src/Admin/screen-tools.php:140 src/Admin/screen-tools.php:169
 msgid "Enabled"
 msgstr ""
 
@@ -581,65 +581,15 @@ msgid ""
 "keep the Recently widget from being cached by it"
 msgstr ""
 
-#: src/Admin/screen-tools.php:148
-msgid "Data Caching"
-msgstr ""
-
-#: src/Admin/screen-tools.php:151
-msgid "Never cache"
-msgstr ""
-
-#: src/Admin/screen-tools.php:152
-msgid "Enable caching"
-msgstr ""
-
-#: src/Admin/screen-tools.php:156
-msgid ""
-"Recently can cache the recent posts list for a specified amount of time. Recommended "
-"for large / high traffic sites"
-msgstr ""
-
-#: src/Admin/screen-tools.php:160
-msgid "Refresh cache every"
-msgstr ""
-
-#: src/Admin/screen-tools.php:164
-msgid "Minute(s)"
-msgstr ""
-
-#: src/Admin/screen-tools.php:165
-msgid "Hour(s)"
-msgstr ""
-
-#: src/Admin/screen-tools.php:166
-msgid "Day(s)"
-msgstr ""
-
-#: src/Admin/screen-tools.php:167
-msgid "Week(s)"
-msgstr ""
-
-#: src/Admin/screen-tools.php:168
-msgid "Month(s)"
-msgstr ""
-
-#: src/Admin/screen-tools.php:169
-msgid "Year(s)"
-msgstr ""
-
-#: src/Admin/screen-tools.php:172
-msgid "Really? That long?"
-msgstr ""
-
-#: src/Admin/screen-tools.php:189
+#: src/Admin/screen-tools.php:161
 msgid "Miscellaneous"
 msgstr ""
 
-#: src/Admin/screen-tools.php:194
+#: src/Admin/screen-tools.php:166
 msgid "Use plugin's stylesheet"
 msgstr ""
 
-#: src/Admin/screen-tools.php:201
+#: src/Admin/screen-tools.php:173
 msgid ""
 "By default, the plugin includes a stylesheet called recently.css which you can use to "
 "style your recent posts listing. If you wish to use your own stylesheet or do not want "
