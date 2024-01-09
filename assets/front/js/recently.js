@@ -1,22 +1,21 @@
-var recently_params = null;
-var RecentlyWidget = (function(){
+const recently_params = document.currentScript.dataset;
+const RecentlyWidget = (function(){
 
     "use strict";
 
-    let noop = function(){};
-    let supportsShadowDOMV1 = !! HTMLElement.prototype.attachShadow;
+    const noop = function(){};
 
-    let get = function( url, params, callback, additional_headers ){
+    const get = function( url, params, callback, additional_headers ){
         callback = ( 'function' === typeof callback ) ? callback : noop;
         ajax( "GET", url, params, callback, additional_headers );
     };
 
-    let post = function( url, params, callback, additional_headers ){
+    const post = function( url, params, callback, additional_headers ){
         callback = ( 'function' === typeof callback ) ? callback : noop;
         ajax( "POST", url, params, callback, additional_headers );
     };
 
-    let ajax = function( method, url, params, callback, additional_headers ){
+    const ajax = function( method, url, params, callback, additional_headers ){
         /* Create XMLHttpRequest object and set variables */
         let xhr = new XMLHttpRequest(),
             target = url,
@@ -59,29 +58,27 @@ var RecentlyWidget = (function(){
         xhr.send( ( 'POST' == method ? args : null ) );
     };
 
-    let theme = function(recently_list) {
-        if ( supportsShadowDOMV1 ) {
-            let base_styles = document.createElement('style'),
-                dummy_list = document.createElement('ul');
+    const theme = function(recently_list) {
+        let base_styles = document.createElement('style'),
+            dummy_list = document.createElement('ul');
 
-            dummy_list.innerHTML = '<li><a href="#"></a></li>';
-            recently_list.parentNode.appendChild(dummy_list);
+        dummy_list.innerHTML = '<li><a href="#"></a></li>';
+        recently_list.parentNode.appendChild(dummy_list);
 
-            let dummy_list_item_styles = getComputedStyle(dummy_list.querySelector('li')),
-                dummy_link_item_styles = getComputedStyle(dummy_list.querySelector('li a'));
+        let dummy_list_item_styles = getComputedStyle(dummy_list.querySelector('li')),
+            dummy_link_item_styles = getComputedStyle(dummy_list.querySelector('li a'));
 
-            base_styles.innerHTML = '.recently-list li {font-size: '+ dummy_list_item_styles.fontSize +'}';
-            base_styles.innerHTML += '.recently-list li a {color: '+ dummy_link_item_styles.color +'}';
+        base_styles.innerHTML = '.recently-list li {font-size: '+ dummy_list_item_styles.fontSize +'}';
+        base_styles.innerHTML += '.recently-list li a {color: '+ dummy_link_item_styles.color +'}';
 
-            recently_list.parentNode.removeChild(dummy_list);
+        recently_list.parentNode.removeChild(dummy_list);
 
-            let recently_list_sr = recently_list.attachShadow({mode: "open"});
+        let recently_list_sr = recently_list.attachShadow({mode: "open"});
 
-            recently_list_sr.append(base_styles);
+        recently_list_sr.append(base_styles);
 
-            while(recently_list.firstElementChild) {
-                recently_list_sr.append(recently_list.firstElementChild);
-            }
+        while(recently_list.firstElementChild) {
+            recently_list_sr.append(recently_list.firstElementChild);
         }
     };
 
@@ -94,18 +91,9 @@ var RecentlyWidget = (function(){
 
 })();
 
-(function(){
-    try {
-        let recently_json = document.querySelector("script#recently-json");
-        recently_params = JSON.parse(recently_json.textContent);
-    } catch (err) {
-        console.error("Recently: Couldn't read JSON data");
-    }
-})();
-
 document.addEventListener('DOMContentLoaded', function() {
-    let widget_placeholders = document.querySelectorAll('.recently-widget-placeholder, .recently-widget-block-placeholder'),
-        w = 0;
+    const widget_placeholders = document.querySelectorAll('.recently-widget-placeholder, .recently-widget-block-placeholder');
+    let w = 0;
 
     while ( w < widget_placeholders.length ) {
         fetchWidget(widget_placeholders[w]);
@@ -115,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let sr = document.querySelectorAll('.recently-sr');
 
     if ( sr.length ) {
-        for( var s = 0; s < sr.length; s++ ) {
+        for( let s = 0; s < sr.length; s++ ) {
             RecentlyWidget.theme(sr[s]);
         }
     }
@@ -128,11 +116,11 @@ document.addEventListener('DOMContentLoaded', function() {
             params = '';
 
         if ( widget_id_attr ) {
-            url = recently_params.ajax_url + '/widget/' + widget_id_attr.split('-')[1];
-            params = 'is_single=' + recently_params.ID + ( recently_params.lang ? '&lang=' + recently_params.lang : '' );
+            url = recently_params.apiUrl + '/v1/widget/' + widget_id_attr.split('-')[1];
+            params = 'is_single=' + recently_params.postId + ( recently_params.lang ? '&lang=' + recently_params.lang : '' );
         } else {
             method = 'POST';
-            url = recently_params.api_url + '/v2/widget?is_single=' + recently_params.ID + ( recently_params.lang ? '&lang=' + recently_params.lang : '' );
+            url = recently_params.apiUrl + '/v2/widget?is_single=' + recently_params.postId + ( recently_params.lang ? '&lang=' + recently_params.lang : '' );
             headers = {
                 'Content-Type': 'application/json'
             };
@@ -163,8 +151,9 @@ document.addEventListener('DOMContentLoaded', function() {
             sr = parent.querySelector('.recently-sr'),
             json_tag = parent.querySelector('script[type="application/json"]');
 
-        //if ( json_tag )
-            //parent.removeChild(json_tag);
+        if ( json_tag ) {
+            parent.removeChild(json_tag);
+        }
 
         parent.removeChild(widget_placeholder);
         parent.classList.add('recently-ajax');

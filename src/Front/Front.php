@@ -63,17 +63,17 @@ class Front {
      */
     public function hooks()
     {
-        add_action('wp_enqueue_scripts', [$this, 'enqueue_assets']);
-        add_filter('script_loader_tag', [$this, 'convert_inline_js_into_json'], 10, 3);
+        add_action('wp_enqueue_scripts', [$this, 'enqueue_styles']);
+        add_action('wp_head', [$this, 'enqueue_scripts'], 1);
         add_action('wp_head', [$this, 'inline_loading_css']);
     }
 
     /**
-     * Enqueues public facing assets.
+     * Enqueues public facing styles.
      *
      * @since   3.0.0
      */
-    public function enqueue_assets()
+    public function enqueue_styles()
     {
         $plugin_dir_url = plugin_dir_url(dirname(dirname(__FILE__)));
 
@@ -87,18 +87,28 @@ class Front {
                 wp_enqueue_style('recently-css', $plugin_dir_url . 'assets/front/css/recently.css', array(), RECENTLY_VERSION, 'all');
             }
         }
+    }
 
+    /**
+     * Enqueues public facing scripts.
+     *
+     * @since   4.0.3
+     */
+    public function enqueue_scripts()
+    {
+        $recently_js_url = plugin_dir_url(dirname(dirname(__FILE__))) . 'assets/front/js/recently.' . (! defined('WP_DEBUG') || false === WP_DEBUG ? 'min.' : '') . 'js';
         $is_single = Helper::is_single();
 
-        wp_register_script('recently-js', $plugin_dir_url . 'assets/front/js/recently.min.js', array(), RECENTLY_VERSION, true);
-        $params = [
-            'ajax_url' => esc_url_raw(rest_url('recently/v1')),
-            'api_url' => esc_url_raw(rest_url('recently')),
-            'ID' => (int) $is_single,
-            'lang' => $this->translate->get_current_language()
-        ];
-        wp_enqueue_script('recently-js');
-        wp_add_inline_script('recently-js', json_encode($params), 'before');
+        wp_print_script_tag(
+            [
+                'id' => 'recently-js',
+                'src' => $recently_js_url,
+                'defer' => true,
+                'data-api-url' => esc_url_raw(rest_url('recently')),
+                'data-post-id' => (int) $is_single,
+                'data-lang' => $this->translate->get_current_language()
+            ]
+        );
     }
 
     /**
@@ -115,47 +125,5 @@ class Front {
             <style id="recently-loading-animation-styles">@-webkit-keyframes bgslide{from{background-position-x:0}to{background-position-x:-200%}}@keyframes bgslide{from{background-position-x:0}to{background-position-x:-200%}}.recently-widget-block-placeholder,.recently-widget-placeholder{margin:0 auto;width:60px;height:3px;background:#dd3737;background:-webkit-gradient(linear, left top, right top, from(#ffffff), color-stop(10%, #57b078), to(#ffffff));background:linear-gradient(90deg, #ffffff 0%, #57b078 10%, #ffffff 100%);background-size:200% auto;border-radius:3px;-webkit-animation:bgslide 1s infinite linear;animation:bgslide 1s infinite linear}</style>
             <?php
         endif;
-    }
-
-    /**
-     * Converts inline script tag into type=application/json.
-     *
-     * This function mods the original script tag as printed
-     * by WordPress which contains the data for the recently_params
-     * object into a JSON script. This improves compatibility
-     * with Content Security Policy (CSP).
-     *
-     * @since   3.0.0
-     * @param   string  $tag
-     * @param   string  $handle
-     * @param   string  $src
-     * @return  string  $tag
-     */
-    function convert_inline_js_into_json($tag, $handle, $src)
-    {
-        if ( 'recently-js' === $handle ) {
-            // id attribute found, replace it
-            if ( false !== strpos($tag, 'recently-js-js-before') ) {
-                $tag = str_replace('recently-js-js-before', 'recently-json', $tag);
-            } // id attribute missing, let's add it
-            else {
-                $pos = strpos($tag, '>');
-                $tag = substr_replace($tag, ' id="recently-json">', $pos, 1);
-            }
-
-            // type attribute found, replace it
-            if ( false !== strpos($tag, 'type') ) {
-                $pos = strpos($tag, 'text/javascript');
-
-                if ( false !== $pos )
-                    $tag = substr_replace($tag, 'application/json', $pos, strlen('text/javascript'));
-            } // type attribute missing, let's add it
-            else {
-                $pos = strpos($tag, '>');
-                $tag = substr_replace($tag, ' type="application/json">', $pos, 1);
-            }
-        }
-
-        return $tag;
     }
 }
