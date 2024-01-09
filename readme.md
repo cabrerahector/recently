@@ -37,8 +37,9 @@ Recently is a highly customizable [widget](https://wordpress.org/plugins/recentl
 
 ## Requirements
 
-* WordPress 5.3 or above.
-* PHP 7.2 or above.
+* WordPress 5.7 or newer.
+* PHP 7.2 or newer.
+* Mbstring PHP Extension.
 * Either the [ImageMagik](https://www.php.net/manual/en/intro.imagick.php) or [GD](https://www.php.net/manual/en/intro.image.php) library installed and enabled on your server (not really required, but needed to create thumbnails).
 
 
