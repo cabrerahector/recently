@@ -17,7 +17,7 @@
  * Plugin URI:        https://wordpress.org/plugins/recently/
  * Description:       A highly customizable & feature-packed recent posts widget.
  * Version:           4.0.2
- * Requires at least: 5.3
+ * Requires at least: 5.7
  * Requires PHP:      7.2
  * Author:            Hector Cabrera
  * Author URI:        https://cabrerahector.com/
