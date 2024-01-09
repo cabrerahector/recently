@@ -35,8 +35,9 @@ class Container implements \ArrayAccess
     public function configure(array $configurations)
     {
         foreach ($configurations as $configuration) {
-            if ( $configuration instanceof ContainerConfigurationInterface )
+            if ( $configuration instanceof ContainerConfigurationInterface ) {
                 $configuration->modify($this);
+            }
         }
     }
 
@@ -47,7 +48,7 @@ class Container implements \ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($key)
+    public function offsetExists($key) : bool /** @TODO: starting PHP 8.0 $key can be declared as mixed $key, see https://www.php.net/manual/en/language.types.declarations.php */
     {
         return array_key_exists($key, $this->values);
     }
@@ -58,7 +59,7 @@ class Container implements \ArrayAccess
      * @param mixed $key
      * @param mixed $value
      */
-    public function offsetSet($key, $value)
+    public function offsetSet($key, $value) : void /** @TODO: starting PHP 8.0 $key and $value can be declared as mixed $key, mixed $value */
     {
         $this->values[$key] = $value;
     }
@@ -68,7 +69,7 @@ class Container implements \ArrayAccess
      *
      * @param mixed $key
      */
-    public function offsetUnset($key)
+    public function offsetUnset($key) : void /** @TODO: starting PHP 8.0 $key can be declared as mixed $key */
     {
         unset($this->values[$key]);
     }
@@ -80,7 +81,8 @@ class Container implements \ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($key)
+    #[\ReturnTypeWillChange]
+    public function offsetGet($key) /** @TODO: starting PHP 8.0 $key can be declared as mixed $key */
     {
         if ( ! $this->offsetExists($key) ) {
             throw new \InvalidArgumentException(sprintf('Container doesn\'t have a value stored for the "%s" key.', $key));
@@ -108,3 +110,4 @@ class Container implements \ArrayAccess
         };
     }
 }
+
