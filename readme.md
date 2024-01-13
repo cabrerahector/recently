@@ -79,7 +79,7 @@ When submitting an issue, please answer the following questions:
 
 ## Contributing
 
-* If you'd like to support my work and efforts to creating and maintaining more open source projects your donations and messages of support mean a lot! [Ko-fi](https://ko-fi.com/cabrerahector) | [Buy me a coffee](https://www.buymeacoffee.com/cabrerahector) | [PayPal Me](https://paypal.me/cabrerahector)
+* If you'd like to support my work and efforts to creating and maintaining more open source projects your donations and messages of support mean a lot! [Ko-fi](https://ko-fi.com/cabrerahector) | [PayPal](https://www.paypal.com/paypalme/cabrerahector)
 * If you have any ideas/suggestions/bug reports, and if there's not an issue filed for it already (see [issue tracker](https://github.com/cabrerahector/recently/issues), please [create an issue](https://github.com/cabrerahector/recently/issues/new) so I can keep track of it.
 * Developers can send [pull requests](https://help.github.com/articles/using-pull-requests) to suggest fixes / improvements to the source.
 * You can also [help translate Recently into your language / help update an existing translation](https://github.com/cabrerahector/recently/wiki/3.-FAQ#i-want-to-translate-your-plugin-into-my-language--help-you-update-a-translation-what-do-i-need-to-do).

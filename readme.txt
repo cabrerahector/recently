@@ -1,6 +1,6 @@
 === Recently ===
 Contributors: hcabrera
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PASXEM2E7JUVC
+Donate link: https://ko-fi.com/cabrerahector
 Tags: recent, posts, widget, recently
 Requires at least: 5.7
 Tested up to: 6.4.2
@@ -39,7 +39,7 @@ This new Widgets screen expects WordPress blocks instead of regular WordPress wi
 
 If you'd like to support my work and efforts to creating and maintaining more open source projects your donations and messages of support mean a lot!
 
-[Ko-fi](https://ko-fi.com/cabrerahector) | [Buy me a coffee](https://www.buymeacoffee.com/cabrerahector) | [PayPal Me](https://paypal.me/cabrerahector)
+[Ko-fi](https://ko-fi.com/cabrerahector) | [PayPal](https://www.paypal.com/paypalme/cabrerahector)
 
 **Recently** is now also on [GitHub](https://github.com/cabrerahector/recently)!
 
