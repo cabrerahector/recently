@@ -92,6 +92,11 @@ const RecentlyWidget = (function(){
 })();
 
 document.addEventListener('DOMContentLoaded', function() {
+    if ( ! Object.keys(recently_params).length ) {
+        console.error('Recently params not found, if you are using a JS minifier tool please add recently.min.js to its exclusion list');
+        return;
+    }
+
     const widget_placeholders = document.querySelectorAll('.recently-widget-placeholder, .recently-widget-block-placeholder');
     let w = 0;
 
