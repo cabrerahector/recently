@@ -90,13 +90,13 @@ The FAQ section has been moved [here](https://github.com/cabrerahector/recently/
 **If you're using a page caching plugin it's highly recommended to clear its cache after upgrading to this version.**
 **If you're using a JS minifying plugin you may need to add recently.min.js to its exclusion list (see [FAQ](https://github.com/cabrerahector/recently/wiki/3.-FAQ#is-recently-compatible-with-plugins-that-minify--bundle-javascript-code)).**
 
-- Min. required Wordpress version is now 5.7.
+- Min. required WordPress version is now 5.7.
 - Improves PHP 8 support.
 - Improves compatibility with XHTML WordPress themes.
-- Query data caching feature has been removed as its now built-in into WordPress.
+- Query data caching feature has been removed as it's now built-in into WordPress.
 - Other minor enhancements.
 
-[Release notes](https://cabrerahector.com/wordpress/recently-4-0-new-recently-block-php-5-support-dropped-minimum-supported-wordpress-version-changed/#4.0.2).
+[Release notes](https://cabrerahector.com/wordpress/recently-4-0-new-recently-block-php-5-support-dropped-minimum-supported-wordpress-version-changed/#4.0.3).
 
 = 4.0.2 =
 
