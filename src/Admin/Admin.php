@@ -168,7 +168,6 @@ class Admin {
         if ( isset($screen->id) ) {
 
             if ( $screen->id == $this->screen_hook_suffix ) {
-                wp_enqueue_style('font-awesome', plugin_dir_url(dirname(dirname(__FILE__))) . 'assets/admin/css/vendor/font-awesome.min.css', array(), '4.7.0', 'all');
                 wp_enqueue_style('recently-admin-styles', plugin_dir_url(dirname(dirname(__FILE__))) . 'assets/admin/css/admin.css', array(), RECENTLY_VERSION, 'all');
 
                 wp_enqueue_script('thickbox');
