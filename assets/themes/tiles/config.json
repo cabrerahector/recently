@@ -44,7 +44,7 @@
         "markup": {
             "recently-start": "<ul class=\"recently-list recently-tiles\">",
             "recently-end": "</ul>",
-            "post-html": "<li>{thumb}<div class=\"recently-post-data\">{taxonomy} {title}</div></li>"
+            "post-html": "<li class=\"{current_class}\">{thumb}<div class=\"recently-post-data\">{taxonomy} {title}</div></li>"
         }
     }
 }

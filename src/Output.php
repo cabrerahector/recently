@@ -225,6 +225,9 @@ class Output {
         $content = '';
         $postID = $post->ID;
 
+        $is_single = $this->is_single();
+        $is_current_post = ( $is_single && $is_single == $postID );
+
         // Permalink
         $permalink = esc_url($this->get_permalink($postID));
 
@@ -276,6 +279,7 @@ class Output {
 
             $data = array(
                 'id' => $post->ID,
+                'is_current_post' => $is_current_post,
                 'title' => '<a href="' . $permalink . '" ' . ($post_title_attr !== $post_title ? 'title="' . $post_title_attr . '" ' : '' ) . 'class="recently-post-title" target="' . esc_attr($this->admin_options['tools']['markup']['link']['attr']['target']) . '" rel="' . esc_attr($this->admin_options['tools']['markup']['link']['attr']['rel']) . '">' . esc_html($post_title) . '</a>',
                 'title_attr' => $post_title_attr,
                 'summary' => $post_excerpt,
@@ -829,13 +833,17 @@ class Output {
             return false;
 
         $params = array();
-        $pattern = '/\{(pid|excerpt|summary|meta|stats|title|title_attr|image|thumb|thumb_img|thumb_url|rating|score|url|text_title|author|taxonomy|category|views|comments|date|total_items|item_position)\}/i';
+        $pattern = '/\{(pid|current_class|excerpt|summary|meta|stats|title|title_attr|image|thumb|thumb_img|thumb_url|rating|score|url|text_title|author|taxonomy|category|views|comments|date|total_items|item_position)\}/i';
         preg_match_all($pattern, $string, $matches);
 
         array_map('strtolower', $matches[0]);
 
         if ( in_array("{pid}", $matches[0]) ) {
             $string = str_replace("{pid}", $data['id'], $string);
+        }
+
+        if ( in_array('{current_class}', $matches[0]) ) {
+            $string = str_replace('{current_class}', ( $data['is_current_post'] ? 'current' : '' ), $string);
         }
 
         if ( in_array("{title}", $matches[0]) ) {
@@ -975,5 +983,16 @@ class Output {
     public function get_output()
     {
         return $this->output;
+    }
+
+    /**
+     * Checks whether we're currently seeing a single post/page/CPT.
+     *
+     * @since   4.1.0
+     * @return  int
+     */
+    public function is_single()
+    {
+        return apply_filters('recently_is_single', Helper::is_single());
     }
 }

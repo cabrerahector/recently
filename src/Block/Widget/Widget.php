@@ -328,7 +328,7 @@ class Widget extends Block
                     ],
                     'post_html' => [
                         'type' => 'string',
-                        'default' => '<li>{thumb} {title} {meta}</li>'
+                        'default' => '<li class="{current_class}">{thumb} {title} {meta}</li>'
                     ],
                     'theme' => [
                         'type' => 'string',

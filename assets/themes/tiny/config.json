@@ -34,7 +34,7 @@
         "markup": {
             "recently-start": "<ul class=\"recently-list recently-tiny\">",
             "recently-end": "</ul>",
-            "post-html": "<li><div class=\"recently-item-data\">{category}</div> {title}</li>"
+            "post-html": "<li class=\"{current_class}\"><div class=\"recently-item-data\">{category}</div> {title}</li>"
         }
     }
 }

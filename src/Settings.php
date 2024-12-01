@@ -73,7 +73,7 @@ class Settings {
                 'custom_html' => false,
                 'recently-start' => '<ul class="recently-list">',
                 'recently-end' => '</ul>',
-                'post-html' => '<li>{thumb} {title} {meta}</li>',
+                'post-html' => '<li class="{current_class}">{thumb} {title} {meta}</li>',
                 'post-start' => '<li>',
                 'post-end' => '</li>',
                 'title-start' => '<h2>',
