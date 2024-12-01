@@ -350,7 +350,7 @@ class Widget extends Block
     {
         extract($this->parse_attributes($attributes));
 
-        $html = '<div class="widget recently' . (( isset($attributes['className']) && $attributes['className'] ) ? ' '. esc_attr($attributes['className']) : '') . '">';
+        $html = '<div class="recently' . (( isset($attributes['className']) && $attributes['className'] ) ? ' '. esc_attr($attributes['className']) : '') . '">';
 
         $theme_data = $this->themer->get_theme($theme);
 
