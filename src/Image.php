@@ -661,7 +661,7 @@ class Image {
                 }
 
                 // Valid image, save it
-                if ( in_array($image_type, [IMAGETYPE_GIF, IMAGETYPE_JPEG, IMAGETYPE_PNG, IMAGETYPE_WEBP]) ) {
+                if ( in_array($image_type, [IMAGETYPE_GIF, IMAGETYPE_JPEG, IMAGETYPE_PNG, IMAGETYPE_WEBP, IMAGETYPE_AVIF]) ) {
                     // move file to Uploads
                     if ( @rename($tmp, $full_image_path) ) {
                         // borrowed from WP - set correct file permissions
@@ -773,13 +773,34 @@ class Image {
              */
             $quality = apply_filters('recently_thumbnail_compression_quality', null);
 
-            if ( ! ctype_digit($quality) )
+            if ( $quality && ! ctype_digit($quality) )
                 $quality = null; // Fallback to core's default
 
             $image->set_quality($quality);
 
             $image->resize($size[0], $size[1], $crop);
-            $new_img = $image->save(trailingslashit($this->get_plugin_uploads_dir()['basedir']) . $filename);
+
+            $mime_type = null;
+
+            // .webp thumbnails?
+            if (
+                'webp' === $this->admin_options['tools']['markup']['thumbnail']['format']
+                && $image->supports_mime_type('image/webp') // .webp support requires WP 5.8 or higher
+            ) {
+                $filename = substr($filename, 0, strrpos($filename, '.')) . '.webp';
+                $mime_type = 'image/webp';
+            }
+            // .avif thumbnails?
+            elseif (
+                'avif' === $this->admin_options['tools']['markup']['thumbnail']['format']
+                && $image->supports_mime_type('image/avif') // .avif support requires WP 6.5 or higher
+            ) {
+                $filename = substr($filename, 0, strrpos($filename, '.')) . '.avif';
+                $mime_type = 'image/avif';
+            }
+
+            $file_path = trailingslashit($this->get_plugin_uploads_dir()['basedir']) . $filename;
+            $new_img = $image->save($file_path, $mime_type);
 
             if ( ! is_wp_error($new_img) )
                 return trailingslashit($this->get_plugin_uploads_dir()['baseurl']) . $filename;
@@ -939,7 +960,7 @@ class Image {
         $file_name = basename($path);
         $file_name = sanitize_file_name($file_name);
         $ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
-        $allowed_ext = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
+        $allowed_ext = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'avif'];
 
         if ( ! in_array($ext, $allowed_ext) )
             return false;
@@ -947,7 +968,7 @@ class Image {
         // sanitize URL, just in case
         $image_url = esc_url($url);
         // remove querystring
-        preg_match('/[^\?]+\.(jpg|jpeg|gif|png|webp)/i', $image_url, $matches);
+        preg_match('/[^\?]+\.(jpg|jpeg|gif|png|webp|avif)/i', $image_url, $matches);
 
         return ( is_array($matches) && ! empty($matches) ) ? $matches : false;
     }

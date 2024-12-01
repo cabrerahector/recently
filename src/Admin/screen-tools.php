@@ -78,6 +78,16 @@ if ( 'tools' == $current ) {
                             </td>
                         </tr>
                         <tr valign="top">
+                            <th scope="row"><label for="thumb_format"><?php esc_html_e('Thumbnail format', 'recently'); ?>:</label></th>
+                            <td>
+                                <select name="thumb_format" id="thumb_format">
+                                    <option <?php if ($this->options['tools']['markup']['thumbnail']['format'] == 'original') { ?>selected="selected"<?php } ?> value="original"><?php esc_html_e('Use original format', 'recently'); ?></option>
+                                    <option <?php if ($this->options['tools']['markup']['thumbnail']['format'] == 'avif') { ?>selected="selected"<?php } ?> value="avif"><?php esc_html_e('Use AVIF (if server supported)', 'recently'); ?></option>
+                                    <option <?php if ($this->options['tools']['markup']['thumbnail']['format'] == 'webp') { ?>selected="selected"<?php } ?> value="webp"><?php esc_html_e('Use WebP (if server supported)', 'recently'); ?></option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr valign="top">
                             <th scope="row"><label for="thumb_lazy_load"><?php _e("Lazy load", 'recently'); ?>:</label></th>
                             <td>
                                 <select name="thumb_lazy_load" id="thumb_lazy_load">

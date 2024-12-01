@@ -424,4 +424,37 @@ class Admin {
             }
         }
     }
+
+    /**
+     * Deletes Recently's thumbnails from the uploads/recently folder.
+     *
+     * @since  4.1.0
+     * @return int   1 on success, 2 if no thumbnails were found, 3 if Recently's folder can't be reached
+     */
+    private function delete_thumbnails()
+    {
+        $recently_uploads_dir = $this->image->get_plugin_uploads_dir();
+
+        if (
+            is_array($recently_uploads_dir)
+            && ! empty($recently_uploads_dir)
+            && is_dir($recently_uploads_dir['basedir'])
+        ) {
+            $files = glob("{$recently_uploads_dir['basedir']}/*");
+
+            if ( is_array($files) && ! empty($files) ) {
+                foreach( $files as $file ) {
+                    if ( is_file($file) ) {
+                        @unlink($file); // delete file
+                    }
+                }
+
+                return 1;
+            }
+
+            return 2;
+        }
+
+        return 3;
+    }
 }

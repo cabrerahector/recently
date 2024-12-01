@@ -95,6 +95,7 @@ class Settings {
                     ),
                     'thumbnail' => array(
                         'source' => 'featured',
+                        'format' => 'original',
                         'field' => '',
                         'resize' => false,
                         'default' => '',
