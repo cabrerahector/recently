@@ -146,9 +146,9 @@ class Widget extends Block
 
         wp_register_script(
             'block-recently-widget-js',
-            plugin_dir_url(dirname(dirname(dirname(__FILE__)))) . 'assets/admin/js/blocks/block-recently-widget.js',
+            plugin_dir_url(dirname(dirname(dirname(__FILE__)))) . 'assets/js/blocks/block-recently-widget.js',
             ['wp-blocks', 'wp-i18n', 'wp-element', 'wp-block-editor', 'wp-server-side-render'],
-            filemtime(plugin_dir_path(dirname(dirname(dirname(__FILE__)))) . 'assets/admin/js/blocks/block-recently-widget.js')
+            filemtime(plugin_dir_path(dirname(dirname(dirname(__FILE__)))) . 'assets/js/blocks/block-recently-widget.js')
         );
 
         wp_localize_script(
