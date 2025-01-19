@@ -54,7 +54,7 @@ if ( isset($_POST['section']) ) {
                 $this->options['tools']['markup']['thumbnail']['source'] = sanitize_text_field( $_POST['thumb_source'] );
                 $this->options['tools']['markup']['thumbnail']['format'] = $thumbnail_format;
                 $this->options['tools']['markup']['thumbnail']['field'] = ( ! empty( $_POST['thumb_field']) ) ? sanitize_text_field($_POST['thumb_field']) : '';
-                $this->options['tools']['markup']['thumbnail']['default'] = ( ! empty( $_POST['upload_thumb_src']) ) ? $_POST['upload_thumb_src'] : "";
+                $this->options['tools']['markup']['thumbnail']['default'] = ( ! empty( $_POST['upload_thumb_src']) ) ? $_POST['upload_thumb_src'] : $this->options['tools']['markup']['thumbnail']['default'];
                 $this->options['tools']['markup']['thumbnail']['resize'] = $_POST['thumb_field_resize'];
                 $this->options['tools']['markup']['thumbnail']['lazyload'] = (bool) $_POST['thumb_lazy_load'];
 
