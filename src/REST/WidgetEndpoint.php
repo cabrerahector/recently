@@ -217,6 +217,12 @@ class WidgetEndpoint extends Endpoint
     public function get_widget_params()
     {
         return [
+            'id' => [
+                'type'              => 'integer',
+                'minimum'           => 1,
+                'sanitize_callback' => 'absint',
+                'validate_callback' => 'rest_validate_request_arg',
+            ],
             'is_single' => [
                 'type' => 'integer',
                 'default' => null,
