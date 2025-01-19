@@ -141,6 +141,7 @@ if ( !$recently_rand = get_option("recently_rand") ) {
             <li <?php echo ( 'tools' == $current ) ? ' class="current"' : ''; ?>><a href="<?php echo admin_url( 'options-general.php?page=recently&tab=tools' ); ?>" title="<?php esc_attr_e( 'Tools', 'recently' ); ?>"><span><?php _e( 'Tools', 'recently' ); ?></span></a></li>
         <?php endif ;?>
         <li <?php echo ( 'params' == $current ) ? ' class="current"' : ''; ?>><a href="<?php echo admin_url( 'options-general.php?page=recently&tab=params' ); ?>" title="<?php esc_attr_e( 'Parameters', 'recently' ); ?>"><span><?php _e( 'Parameters', 'recently' ); ?></span></a></li>
+        <li <?php echo ( 'debug' == $current ) ? 'class="current"' : ''; ?>><a href="<?php echo esc_url(admin_url('options-general.php?page=recently&tab=debug')); ?>" title="Debug"><span>Debug</span></a></li>
     </ul>
 </nav>
 
