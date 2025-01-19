@@ -130,7 +130,7 @@ class Helper {
 
             }
             // Truncate by characters
-            elseif ( mb_substr($text, 0, $length , $charset) > $length ) {
+            elseif ( mb_strlen($text, $charset) > $length ) {
                 $text = rtrim(mb_substr($text, 0, $length , $charset), " ,.") . "...";
             }
         }
