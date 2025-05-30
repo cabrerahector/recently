@@ -23,11 +23,11 @@
   },
   "homepage": "https://github.com/cabrerahector/recently#readme",
   "devDependencies": {
-    "@babel/preset-env": "^7.26.0",
-    "@babel/preset-react": "^7.26.3",
-    "@wordpress/scripts": "^30.9.0"
+    "@babel/preset-env": "^7.27.2",
+    "@babel/preset-react": "^7.27.1",
+    "@wordpress/scripts": "^30.17.0"
   },
   "dependencies": {
-    "caniuse-lite": "^1.0.30001695"
+    "caniuse-lite": "^1.0.30001720"
   }
 }
