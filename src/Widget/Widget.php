@@ -75,7 +75,7 @@ class Widget extends \WP_Widget {
             'Recently',
             array(
                 'classname' => 'recently',
-                'description' => __('Your site\'s most recent posts.', 'recently'),
+                'description' => 'The most recent posts from your site.',
                 'customize_selective_refresh' => false
             )
         );
