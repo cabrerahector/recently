@@ -96,14 +96,13 @@ class Front {
      */
     public function enqueue_scripts()
     {
-        $recently_js_url = plugin_dir_url(dirname(dirname(__FILE__))) . 'assets/front/js/recently.' . (! defined('WP_DEBUG') || false === WP_DEBUG ? 'min.' : '') . 'js';
+        $recently_js_url = plugin_dir_url(dirname(dirname(__FILE__))) . 'assets/front/js/recently.' . (! defined('WP_DEBUG') || false === WP_DEBUG ? 'min.' : '') . 'js?ver=' . RECENTLY_VERSION;
         $is_single = Helper::is_single();
 
         wp_print_script_tag(
             [
                 'id' => 'recently-js',
                 'src' => $recently_js_url,
-                'defer' => true,
                 'data-api-url' => esc_url_raw(rest_url('recently')),
                 'data-post-id' => (int) $is_single,
                 'data-lang' => $this->translate->get_current_language()
