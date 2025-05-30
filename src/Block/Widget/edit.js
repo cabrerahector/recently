@@ -151,14 +151,12 @@ export class RecentlyWidgetBlockEdit extends Component
 
         function onLimitChange(value)
         {
-            let limit = Number.isInteger(Number(value)) && Number(value) > 0 ? value : 10;
-            setAttributes({ posts_per_page: Number(limit) });
+            setAttributes({ posts_per_page: parseInt(value, 10) });
         }
 
         function onOffsetChange(value)
         {
-            let limit = Number.isInteger(Number(value)) && Number(value) >= 0 ? value : 10;
-            setAttributes({ offset: Number(limit) });
+            setAttributes({ offset: parseInt(value, 10) });
         }
 
         return <Fragment>
@@ -170,12 +168,16 @@ export class RecentlyWidgetBlockEdit extends Component
             <TextControl
                 label={__('Limit', 'recently')}
                 help={__('Max. number of posts to show.', 'recently')}
+                type='number'
+                min='1'
                 value={attributes.posts_per_page}
                 onChange={onLimitChange}
             />
             <TextControl
                 label={__('Offset', 'recently')}
                 help={__('Number of posts to displace or pass over.', 'recently')}
+                type='number'
+                min='0'
                 value={attributes.offset}
                 onChange={onOffsetChange}
             />
@@ -325,8 +327,7 @@ export class RecentlyWidgetBlockEdit extends Component
 
         function onTitleLengthChange(value)
         {
-            let length = Number.isInteger(Number(value)) && Number(value) >= 0 ? value : 0;
-            setAttributes({ title_length: Number(length) });
+            setAttributes({ title_length: parseInt(value, 10) });
         }
 
         function onDisplayExcerptChange(value) {
@@ -338,8 +339,7 @@ export class RecentlyWidgetBlockEdit extends Component
 
         function onExcerptLengthChange(value)
         {
-            let length = Number.isInteger(Number(value)) && Number(value) >= 0 ? value : 0;
-            setAttributes({ excerpt_length: Number(length) });
+            setAttributes({ excerpt_length: parseInt(value, 10) });
         }
 
         function onDisplayThumbnailChange(value) {
@@ -351,8 +351,8 @@ export class RecentlyWidgetBlockEdit extends Component
 
         function onThumbnailDimChange(dim, value)
         {
-            let width = Number.isInteger(Number(value)) && Number(value) >= 0 ? value : 0;
-            setAttributes(( 'width' == dim ? { thumbnail_width: Number(width) } : { thumbnail_height: Number(width) } ));
+            let size = parseInt(value, 10);
+            setAttributes(( 'width' === dim ? { thumbnail_width: size } : { thumbnail_height: size } ));
         }
 
         function onThumbnailBuildChange(value)
@@ -408,6 +408,8 @@ export class RecentlyWidgetBlockEdit extends Component
                     <TextControl
                         label={__('Shorten title to', 'recently')}
                         value={attributes.title_length}
+                        type='number'
+                        min='1'
                         onChange={onTitleLengthChange}
                     />
                     <SelectControl
@@ -435,6 +437,8 @@ export class RecentlyWidgetBlockEdit extends Component
                     <TextControl
                         label={__('Excerpt length', 'recently')}
                         value={attributes.excerpt_length}
+                        type='number'
+                        min='1'
                         onChange={onExcerptLengthChange}
                     />
                     <SelectControl
@@ -467,12 +471,16 @@ export class RecentlyWidgetBlockEdit extends Component
                             <TextControl
                                 label={__('Thumbnail width', 'recently')}
                                 help={__('Size in px units (pixels)', 'recently')}
+                                type='number'
+                                min='1'
                                 value={attributes.thumbnail_width}
                                 onChange={(value) => onThumbnailDimChange('width', value)}
                             />
                             <TextControl
                                 label={__('Thumbnail height', 'recently')}
                                 help={__('Size in px units (pixels)', 'recently')}
+                                type='number'
+                                min='1'
                                 value={attributes.thumbnail_height}
                                 onChange={(value) => onThumbnailDimChange('height', value)}
                             />
