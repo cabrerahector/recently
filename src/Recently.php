@@ -9,20 +9,12 @@ namespace Recently;
 
 use Recently\Admin\Admin;
 use Recently\Block\Widget\Widget as BlockWidget;
+use Recently\Compatibility\Compatibility;
 use Recently\Front\Front;
 use Recently\REST\Controller;
 use Recently\Widget\Widget;
 
 class Recently {
-
-    /**
-     * I18N class.
-     *
-     * @since   3.0.0
-     * @var     I18N $i18n
-     * @access  private
-     */
-    private $i18n;
 
     /**
      * REST controller class.
@@ -66,23 +58,32 @@ class Recently {
     private $block_widget;
 
     /**
+     * Compatibility class.
+     *
+     * @var     Compatibility\Compatibility $compatibility
+     * @access  private
+     */
+    private $compatibility;
+
+    /**
      * Constructor.
      *
      * @since   3.0.0
-     * @param   I18N            $i18n
-     * @param   Rest\Controller $rest
-     * @param   Admin\Admin     $admin
-     * @param   Front\Front     $front
-     * @param   Widget\Widget   $widget
+     * @param   Rest\Controller             $rest
+     * @param   Admin\Admin                 $admin
+     * @param   Front\Front                 $front
+     * @param   Widget\Widget               $widget
+     * @param   Block\Widget                $block_widget
+     * @param   Compatibility\Compatibility $compatibility
      */
-    public function __construct(I18N $i18n, Controller $rest, Admin $admin, Front $front, Widget $widget, BlockWidget $block_widget)
+    public function __construct(Controller $rest, Admin $admin, Front $front, Widget $widget, BlockWidget $block_widget, Compatibility $compatibility)
     {
-        $this->i18n = $i18n;
         $this->rest = $rest;
         $this->admin = $admin;
         $this->front = $front;
         $this->widget = $widget;
         $this->block_widget = $block_widget;
+        $this->compatibility = $compatibility;
     }
 
     /**
@@ -92,7 +93,7 @@ class Recently {
      */
     public function init()
     {
-        $this->i18n->load_plugin_textdomain();
+        $this->compatibility->load();
         $this->rest->hooks();
         $this->admin->hooks();
         $this->front->hooks();

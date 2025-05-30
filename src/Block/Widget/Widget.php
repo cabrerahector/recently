@@ -583,7 +583,7 @@ class Widget extends Block
         $isAdmin = isset($_GET['isSelected']) ? $_GET['isSelected'] : false;
 
         if ( $this->config['tools']['data']['ajax'] && ! is_customize_preview() && ! $isAdmin ) {
-            $html .= '<script type="application/json">' . json_encode($this->options) . '</script>';
+            $html .= '<script type="application/json" data-id="recently-block-inline-js">' . json_encode($this->options) . '</script>';
             $html .= '<div class="recently-widget-block-placeholder"></div>';
 
             return $html . '</div>';

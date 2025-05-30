@@ -1,9 +1,10 @@
 <?php
 namespace Recently\Container;
 
-use Recently\{ I18N, Image, Output, Recently, Settings, Themer, Translate };
+use Recently\{ Image, Output, Recently, Settings, Themer, Translate };
 use Recently\Admin\Admin;
 use Recently\Block\Widget\Widget as BlockWidget;
+use Recently\Compatibility\Compatibility;
 use Recently\Front\Front;
 use Recently\REST\{ Controller, TaxonomiesEndpoint, ThemesEndpoint, ThumbnailsEndpoint, WidgetEndpoint };
 use Recently\Widget\Widget;
@@ -20,10 +21,6 @@ class RecentlyConfiguration implements ContainerConfigurationInterface
     {
         $container['admin_options'] = Settings::get('admin_options');
         $container['widget_options'] = Settings::get('widget_options');
-
-        $container['i18n'] = $container->service(function(Container $container) {
-            return new I18N($container['admin_options']);
-        });
 
         $container['translate'] = $container->service(function(Container $container) {
             return new Translate();
@@ -84,8 +81,19 @@ class RecentlyConfiguration implements ContainerConfigurationInterface
             return new Front($container['admin_options'], $container['translate']);
         });
 
+        $container['compatibility'] = $container->service(function(Container $container) {
+            return new Compatibility($container['admin_options']);
+        });
+
         $container['recently'] = $container->service(function(Container $container) {
-            return new Recently($container['i18n'], $container['rest'], $container['admin'], $container['front'], $container['widget'], $container['block_widget']);
+            return new Recently(
+                $container['rest'],
+                $container['admin'],
+                $container['front'],
+                $container['widget'],
+                $container['block_widget'],
+                $container['compatibility']
+            );
         });
     }
 }
