@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Recently\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/recently\n"
-"POT-Creation-Date: 2024-01-14 11:43-0400\n"
+"POT-Creation-Date: 2025-06-01 11:20-0400\n"
 "PO-Revision-Date: 2015-06-09 16:53-0430\n"
 "Last-Translator: Héctor Cabrera <me@cabrerahector.com>\n"
 "Language-Team: Héctor Cabrera <me@cabrerahector.com>\n"
@@ -14,9 +14,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.2\n"
-"X-Poedit-KeywordsList: _e;__;__ngettext;__ngettext_noop;_n_noop;_x;_nx;_nx_noop;_ex;"
-"esc_attr__;esc_attr_e;esc_attr_x;esc_html__;esc_html_e;esc_html_x;_c;_nc;_n:1,2\n"
+"X-Generator: Poedit 3.6\n"
+"X-Poedit-KeywordsList: "
+"_e;__;__ngettext;__ngettext_noop;_n_noop;_x;_nx;_nx_noop;_ex;esc_attr__;esc_attr_e;esc_attr_x;esc_html__;esc_html_e;esc_html_x;_c;_nc;_n:1,2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: i18n\n"
@@ -25,298 +25,316 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
 "X-Poedit-SearchPathExcluded-2: vendor\n"
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:133
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:133
 msgid "Preview"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:133
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:133
 msgid "Edit"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:166
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:164
 #: src/Widget/form.php:8
 msgid "Title"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:171
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:169
 msgid "Limit"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:172
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:170
 msgid "Max. number of posts to show."
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:177
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:177
 #: src/Widget/form.php:18
 msgid "Offset"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:178
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:178
 msgid "Number of posts to displace or pass over."
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:279
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:281
 #: src/Widget/form.php:25
 msgid "Filters"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:281
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:283
 msgid "Post Type(s)"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:282
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:284
 msgid " Post types, separated by comma."
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:287
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:289
 msgid "Post ID(s) to exclude"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:288
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:290
 msgid " Post / Page IDs, separated by comma."
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:293
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:295
 msgid "Author ID(s)"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:294
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:296
 msgid " Author IDs, separated by comma (prefix a minus sign to exclude)."
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:303
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:305
 msgid "Term IDs must be comma separated, prefix a minus sign to exclude."
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:400
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:400
 #: src/Widget/form.php:110
 msgid "Posts settings"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:402
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:402
 #: src/Widget/form.php:117
 msgid "Shorten title"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:409
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:409
 #: src/Widget/form.php:120
 msgid "Shorten title to"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:416
-#: src/Block/Widget/edit.js:443 src/Widget/form.php:121 src/Widget/form.php:132
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:418
+#: src/Block/Widget/edit.js:447 src/Widget/form.php:121 src/Widget/form.php:132
 msgid "characters"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:417
-#: src/Block/Widget/edit.js:444 src/Widget/form.php:122 src/Widget/form.php:133
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:419
+#: src/Block/Widget/edit.js:448 src/Widget/form.php:122 src/Widget/form.php:133
 msgid "words"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:424
-#: src/Widget/form.php:125
+#: assets/js/blocks/block-recently-widget.js:1 src/Widget/form.php:125
 msgid "Display post excerpt"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:431
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:433
 #: src/Widget/form.php:128
 msgid "Keep text format and links"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:436
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:438
 #: src/Widget/form.php:130
 msgid "Excerpt length"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:451
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:455
 #: src/Widget/form.php:136
 msgid "Display post thumbnail"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:460
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:464
 #: src/Widget/form.php:154
 msgid "Set size manually"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:461
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:465
 #: src/Widget/form.php:139
 msgid "Use predefined size"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:468
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:472
 msgid "Thumbnail width"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:469
-#: src/Block/Widget/edit.js:475
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:473
+#: src/Block/Widget/edit.js:481
 msgid "Size in px units (pixels)"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:474
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:480
 msgid "Thumbnail height"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:494
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:502
 #: src/Widget/form.php:114
 msgid "Display post rating"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:523
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:531
 msgid "Stats Tag settings"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:525
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:533
 msgid "Display comments count"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:531
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:539
 #: src/Widget/form.php:169
 msgid "Display views"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:537
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:545
 #: src/Widget/form.php:171
 msgid "Display author"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:542
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:550
 #: src/Widget/form.php:173
 msgid "Display date"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:549
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:557
 #: src/Widget/form.php:176
 msgid "Date Format"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:552
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:560
 #: src/Widget/form.php:178
 msgid "Relative"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:553
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:561
 msgid "Month Day, Year"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:554
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:562
 msgid "yyyy/mm/dd"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:555
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:563
 msgid "mm/dd/yyyy"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:556
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:564
 msgid "dd/mm/yyyy"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:557
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:565
 #: src/Widget/form.php:179
 msgid "WordPress Date Format"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:564
-#: src/Widget/form.php:186
+#: assets/js/blocks/block-recently-widget.js:1 src/Widget/form.php:186
 msgid "Display taxonomy"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:572
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:580
 #: src/Widget/form.php:40
 msgid "Taxonomy"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:624
-#: src/Widget/form.php:42 src/Widget/form.php:251
+#: assets/js/blocks/block-recently-widget.js:1 src/Widget/form.php:42
+#: src/Widget/form.php:251
 msgid "None"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:641
-#: src/Widget/form.php:203
+#: assets/js/blocks/block-recently-widget.js:1 src/Widget/form.php:203
 msgid "HTML Markup settings"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:643
-#: src/Widget/form.php:205
+#: assets/js/blocks/block-recently-widget.js:1 src/Widget/form.php:205
 msgid "Use custom HTML Markup"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:651
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:659
 msgid "Before title"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:657
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:665
 msgid "After title"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:663
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:671
 msgid "Before recent posts"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:669
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:677
 msgid "After recent posts"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:674
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:682
 msgid "Post HTML markup"
 msgstr ""
 
-#: assets/admin/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:681
+#: assets/js/blocks/block-recently-widget.js:1 src/Block/Widget/edit.js:689
 #: src/Widget/form.php:243
 msgid "Theme"
 msgstr ""
 
-#: src/Admin/Admin.php:224
-msgid "Upload"
+#: src/Admin/Admin.php:176
+msgid "This operation will delete all cached thumbnails and cannot be undone."
 msgstr ""
 
-#: src/Admin/Admin.php:271
+#: src/Admin/Admin.php:177
+msgid "Do you want to continue?"
+msgstr ""
+
+#: src/Admin/Admin.php:178
+msgid "Success! All files have been deleted!"
+msgstr ""
+
+#: src/Admin/Admin.php:179
+msgid "The thumbnail cache is already empty!"
+msgstr ""
+
+#: src/Admin/Admin.php:180
+msgid "Invalid action."
+msgstr ""
+
+#: src/Admin/Admin.php:181 src/Admin/screen-debug.php:5 src/Admin/screen-tools.php:5
+msgid ""
+"Sorry, you do not have enough permissions to do this. Please contact the site "
+"administrator for support."
+msgstr ""
+
+#: src/Admin/Admin.php:238
 msgid "Overview"
 msgstr ""
 
-#: src/Admin/Admin.php:272
+#: src/Admin/Admin.php:239
 msgid ""
 "Welcome to Recently's Dashboard! In this screen you will tools to further tweak "
 "Recently to your needs and more!"
 msgstr ""
 
-#: src/Admin/Admin.php:278
+#: src/Admin/Admin.php:245
 msgid "Like this plugin?"
 msgstr ""
 
-#: src/Admin/Admin.php:280
+#: src/Admin/Admin.php:247
 msgid ""
 "Each donation motivates me to keep releasing free stuff for the WordPress community!"
 msgstr ""
 
-#: src/Admin/Admin.php:287
+#: src/Admin/Admin.php:254
 #, php-format
 msgid "You can <a href=\"%s\" target=\"_blank\">leave a review</a>, too!"
 msgstr ""
 
-#: src/Admin/Admin.php:294
+#: src/Admin/Admin.php:261
 #, php-format
 msgid ""
 "<p><strong>For more information:</strong></p><ul><li><a href=\"%1$s\">Documentation</"
 "a></li><li><a href=\"%2$s\">Support</a></li></ul>"
 msgstr ""
 
-#: src/Admin/Admin.php:320
+#: src/Admin/Admin.php:287
 msgid "Settings"
 msgstr ""
 
-#: src/Admin/Admin.php:321
+#: src/Admin/Admin.php:288
 msgid "Support"
 msgstr ""
 
-#: src/Admin/admin-page.php:6 src/Admin/admin-page.php:134
+#: src/Admin/admin-page.php:6 src/Admin/admin-page.php:90
 msgid "Tools"
 msgstr ""
 
-#: src/Admin/admin-page.php:7 src/Admin/admin-page.php:136
+#: src/Admin/admin-page.php:7 src/Admin/admin-page.php:92
 msgid "Parameters"
 msgstr ""
 
-#: src/Admin/admin-page.php:29 src/Admin/admin-page.php:55 src/Admin/admin-page.php:69
+#: src/Admin/admin-page.php:29 src/Admin/admin-page.php:62 src/Admin/admin-page.php:76
 msgid "Settings saved."
 msgstr ""
 
@@ -324,37 +342,11 @@ msgstr ""
 msgid "Please provide the name of your custom field."
 msgstr ""
 
-#: src/Admin/admin-page.php:77
+#: src/Admin/admin-page.php:84
 msgid ""
 "Any changes made to Recently's default stylesheet will be lost after every plugin "
 "update. In order to prevent this from happening, please copy the recently.css file "
 "(located at wp-content/plugins/recently/style) into your theme's directory"
-msgstr ""
-
-#: src/Admin/admin-page.php:92
-msgid "This operation will delete all cached thumbnails and cannot be undone."
-msgstr ""
-
-#: src/Admin/admin-page.php:92
-msgid "Do you want to continue?"
-msgstr ""
-
-#: src/Admin/admin-page.php:104
-msgid "Success! All files have been deleted!"
-msgstr ""
-
-#: src/Admin/admin-page.php:108
-msgid "The thumbnail cache is already empty!"
-msgstr ""
-
-#: src/Admin/admin-page.php:112 src/Admin/admin-page.php:120
-msgid "Invalid action."
-msgstr ""
-
-#: src/Admin/admin-page.php:116 src/Admin/screen-debug.php:5 src/Admin/screen-tools.php:5
-msgid ""
-"Sorry, you do not have enough permissions to do this. Please contact the site "
-"administrator for support."
 msgstr ""
 
 #: src/Admin/screen-params.php:7
@@ -518,78 +510,94 @@ msgid "Tell Recently where it should get thumbnails from"
 msgstr ""
 
 #: src/Admin/screen-tools.php:81
-msgid "Lazy load"
+msgid "Thumbnail format"
 msgstr ""
 
 #: src/Admin/screen-tools.php:84
+msgid "Use original format"
+msgstr ""
+
+#: src/Admin/screen-tools.php:85
+msgid "Use AVIF (if server supported)"
+msgstr ""
+
+#: src/Admin/screen-tools.php:86
+msgid "Use WebP (if server supported)"
+msgstr ""
+
+#: src/Admin/screen-tools.php:91
+msgid "Lazy load"
+msgstr ""
+
+#: src/Admin/screen-tools.php:94
 msgid "No"
 msgstr ""
 
-#: src/Admin/screen-tools.php:85 src/Admin/screen-tools.php:102
+#: src/Admin/screen-tools.php:95 src/Admin/screen-tools.php:112
 msgid "Yes"
 msgstr ""
 
-#: src/Admin/screen-tools.php:88
+#: src/Admin/screen-tools.php:98
 msgid ""
 "Set to No to load thumbnails right away or choose Yes to load them only when in view."
 msgstr ""
 
-#: src/Admin/screen-tools.php:92
+#: src/Admin/screen-tools.php:102
 msgid "Custom field name"
 msgstr ""
 
-#: src/Admin/screen-tools.php:98
+#: src/Admin/screen-tools.php:108
 msgid "Resize image from Custom field?"
 msgstr ""
 
-#: src/Admin/screen-tools.php:101
+#: src/Admin/screen-tools.php:111
 msgid "No, I will upload my own thumbnail"
 msgstr ""
 
-#: src/Admin/screen-tools.php:113
+#: src/Admin/screen-tools.php:123
 msgid "Empty image cache"
 msgstr ""
 
-#: src/Admin/screen-tools.php:114
+#: src/Admin/screen-tools.php:124
 msgid "Use this button to clear Recently's thumbnails cache"
 msgstr ""
 
-#: src/Admin/screen-tools.php:124 src/Admin/screen-tools.php:150
-#: src/Admin/screen-tools.php:179
+#: src/Admin/screen-tools.php:134 src/Admin/screen-tools.php:160
+#: src/Admin/screen-tools.php:189
 msgid "Apply"
 msgstr ""
 
-#: src/Admin/screen-tools.php:131
+#: src/Admin/screen-tools.php:141
 msgid "Data"
 msgstr ""
 
-#: src/Admin/screen-tools.php:136
+#: src/Admin/screen-tools.php:146
 msgid "Ajaxify widget"
 msgstr ""
 
-#: src/Admin/screen-tools.php:139 src/Admin/screen-tools.php:170
+#: src/Admin/screen-tools.php:149 src/Admin/screen-tools.php:180
 msgid "Disabled"
 msgstr ""
 
-#: src/Admin/screen-tools.php:140 src/Admin/screen-tools.php:169
+#: src/Admin/screen-tools.php:150 src/Admin/screen-tools.php:179
 msgid "Enabled"
 msgstr ""
 
-#: src/Admin/screen-tools.php:144
+#: src/Admin/screen-tools.php:154
 msgid ""
 "If you are using a caching plugin such as WP Super Cache, enabling this feature will "
 "keep the Recently widget from being cached by it"
 msgstr ""
 
-#: src/Admin/screen-tools.php:161
+#: src/Admin/screen-tools.php:171
 msgid "Miscellaneous"
 msgstr ""
 
-#: src/Admin/screen-tools.php:166
+#: src/Admin/screen-tools.php:176
 msgid "Use plugin's stylesheet"
 msgstr ""
 
-#: src/Admin/screen-tools.php:173
+#: src/Admin/screen-tools.php:183
 msgid ""
 "By default, the plugin includes a stylesheet called recently.css which you can use to "
 "style your recent posts listing. If you wish to use your own stylesheet or do not want "
@@ -604,46 +612,42 @@ msgstr ""
 msgid "Sorry, nothing to show yet."
 msgstr ""
 
-#: src/Output.php:524
+#: src/Output.php:528
 #, php-format
 msgid "%s ago"
 msgstr ""
 
-#: src/Output.php:781
+#: src/Output.php:785
 #, php-format
 msgid "%s comment"
 msgid_plural "%s comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Output.php:788
+#: src/Output.php:792
 #, php-format
 msgid "%s view"
 msgid_plural "%s views"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Output.php:796
+#: src/Output.php:800
 #, php-format
 msgid "by %s"
 msgstr ""
 
-#: src/Output.php:802
+#: src/Output.php:806
 #, php-format
 msgid "posted %s"
 msgstr ""
 
-#: src/Output.php:802
+#: src/Output.php:806
 #, php-format
 msgid "posted on %s"
 msgstr ""
 
 #: src/REST/WidgetEndpoint.php:110
 msgid "Invalid Widget Instance ID"
-msgstr ""
-
-#: src/Widget/Widget.php:78
-msgid "Your site's most recent posts."
 msgstr ""
 
 #: src/Widget/form.php:13
