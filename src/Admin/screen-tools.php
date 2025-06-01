@@ -101,7 +101,7 @@ if ( 'tools' == $current ) {
                         <tr valign="top" <?php if ($this->options['tools']['markup']['thumbnail']['source'] != "custom_field") {?>style="display:none;"<?php } ?> id="row_custom_field">
                             <th scope="row"><label for="thumb_field"><?php _e("Custom field name", 'recently'); ?>:</label></th>
                             <td>
-                                <input type="text" id="thumb_field" name="thumb_field" value="<?php echo esc_attr( $this->options['tools']['markup']['thumbnail']['field'] ); ?>" size="10" <?php if ( $this->options['tools']['markup']['thumbnail']['source'] != "custom_field" ) { ?>style="display:none;"<?php } ?> />
+                                <input type="text" id="thumb_field" name="thumb_field" value="<?php echo esc_attr( $this->options['tools']['markup']['thumbnail']['field'] ); ?>" />
                             </td>
                         </tr>
                         <tr valign="top" <?php if ( $this->options['tools']['markup']['thumbnail']['source'] != "custom_field" ) { ?>style="display:none;"<?php } ?> id="row_custom_field_resize">

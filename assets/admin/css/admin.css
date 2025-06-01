@@ -84,6 +84,13 @@
         width: 100%;
     }
 
+        .recently-content #thumb-review {}
+
+            .recently-content #thumb-review img {
+                max-width: 300px;
+                height: auto;
+            }
+
 .clear {
     float:none;
     clear:both;

@@ -77,8 +77,6 @@ class Admin {
         // Flush cached thumbnail on featured image change/deletion
         add_action('updated_post_meta', [$this, 'updated_post_meta'], 10, 4);
         add_action('deleted_post_meta', [$this, 'deleted_post_meta'], 10, 4);
-        // Thickbox setup
-        add_action('admin_init', [$this, 'thickbox_setup']);
     }
 
     /**
@@ -170,10 +168,9 @@ class Admin {
             if ( $screen->id == $this->screen_hook_suffix ) {
                 wp_enqueue_style('recently-admin-styles', plugin_dir_url(dirname(dirname(__FILE__))) . 'assets/admin/css/admin.css', array(), RECENTLY_VERSION, 'all');
 
-                wp_enqueue_script('thickbox');
-                wp_enqueue_style('thickbox');
-                wp_enqueue_script('media-upload');
-                wp_register_script('recently-admin-script', plugin_dir_url(dirname(dirname(__FILE__))) . 'assets/admin/js/admin.js', array('jquery'), RECENTLY_VERSION, true);
+                wp_enqueue_media();
+
+                wp_register_script('recently-admin-script', plugin_dir_url(dirname(dirname(__FILE__))) . 'assets/admin/js/admin.js', array('media-upload'), RECENTLY_VERSION, true);
                 wp_localize_script('recently-admin-script', 'recently_admin_params', array(
                     'nonce' => wp_create_nonce('recently_admin_nonce')
                 ));
@@ -190,41 +187,6 @@ class Admin {
                 );
             }
         }
-    }
-
-    /**
-     * Hooks into getttext to change upload button text when uploader is called by Recently.
-     *
-     * @since   2.0.0
-     */
-    public function thickbox_setup()
-    {
-        global $pagenow;
-
-        if ( 'media-upload.php' == $pagenow || 'async-upload.php' == $pagenow ) {
-            add_filter('gettext', array($this, 'replace_thickbox_text'), 1, 3);
-        }
-    }
-
-    /**
-     * Replaces upload button text when uploader is called by Recently.
-     *
-     * @since   2.0.0
-     * @param   string  $translated_text
-     * @param   string  $text
-     * @param   string  $domain
-     * @return  string
-     */
-    public function replace_thickbox_text($translated_text, $text, $domain)
-    {
-        if ( 'Insert into Post' == $text ) {
-            $referer = strpos(wp_get_referer(), 'recently_admin');
-            if ( $referer != '' ) {
-                return __('Upload', 'recently');
-            }
-        }
-
-        return $translated_text;
     }
 
     /**
