@@ -85,6 +85,15 @@ The FAQ section has been moved [here](https://github.com/cabrerahector/recently/
 
 == Changelog ==
 
+= 4.1.0 =
+
+- Adds WebP / AVIF support.
+- Fixes an issue where the excerpt would not be truncated as expected.
+- Fixes an issue where the fallback thumbnail may revert to the stock one under certain conditions.
+- Minor fixes and improvements.
+
+[Release notes](https://cabrerahector.com/wordpress/recently-4-1-webp-avif-support-plus-some-minor-improvements/).
+
 = 4.0.3 =
 
 **If you're using a page caching plugin it's highly recommended to clear its cache after upgrading to this version.**
