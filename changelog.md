@@ -1,6 +1,19 @@
 Changelog
 =========
 
+## 4.2.0 ##
+
+**If you're using a page caching plugin it's highly recommended to clear its cache after upgrading to this version.**
+
+- Improves compatibility with Autoptimize, LiteSpeed Cache, Polylang, Speed Optimizer, W3 Total Cache, and WP Rocket.
+- Fixes an issue where your recent posts list might get stuck in the loading animation on macOS/iOS devices.
+- Fixes PHP notice about textdomain being called incorrectly.
+- Modernizes and cleans up Recently's JS files.
+- Improved CSP compatibility.
+- Block: numeric fields use type=number now.
+
+[Release notes](https://cabrerahector.com/wordpress/recently-4-2-better-compat-with-site-optimization-plugins-general-maintenance-updates).
+
 ## 4.1.0 ##
 
 - Adds WebP / AVIF support.
