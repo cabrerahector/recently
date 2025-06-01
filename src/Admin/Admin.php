@@ -172,7 +172,13 @@ class Admin {
 
                 wp_register_script('recently-admin-script', plugin_dir_url(dirname(dirname(__FILE__))) . 'assets/admin/js/admin.js', array('media-upload'), RECENTLY_VERSION, true);
                 wp_localize_script('recently-admin-script', 'recently_admin_params', array(
-                    'nonce' => wp_create_nonce('recently_admin_nonce')
+                    'nonce' => wp_create_nonce('recently_admin_nonce'),
+                    'msg_thumbnail_deletion_warning' => esc_html__('This operation will delete all cached thumbnails and cannot be undone.', 'recently'),
+                    'msg_continue' => esc_html__('Do you want to continue?', 'recently'),
+                    'msg_clear_thumbnail_success' => esc_html__('Success! All files have been deleted!', 'recently'),
+                    'msg_thumbnail_cache_already_empty' => esc_html__('The thumbnail cache is already empty!', 'recently'),
+                    'msg_invalid_action' => esc_html__('Invalid action.', 'recently'),
+                    'msg_no_permission' => esc_html__('Sorry, you do not have enough permissions to do this. Please contact the site administrator for support.', 'recently')
                 ));
                 wp_enqueue_script('recently-admin-script');
             }
@@ -294,35 +300,16 @@ class Admin {
      */
     public function clear_thumbnails()
     {
-        $recently_uploads_dir = $this->image->get_plugin_uploads_dir();
+        $token = isset($_POST['token']) ? $_POST['token'] : null; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- This is a nonce
 
-        if ( is_array($recently_uploads_dir) && ! empty($recently_uploads_dir) ) {
-            $token = isset($_POST['token']) ? $_POST['token'] : null; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- This is a nonce
-            $key = get_option("recently_rand");
-
-            if (
-                current_user_can('edit_published_posts')
-                && ( $token === $key )
-            ) {
-                if ( is_dir($recently_uploads_dir['basedir']) ) {
-                    $files = glob("{$recently_uploads_dir['basedir']}/*"); // get all related images
-
-                    if ( is_array($files) && ! empty($files) ) {
-                        foreach( $files as $file ){ // iterate files
-                            if ( is_file($file) ) {
-                                @unlink($file); // delete file
-                            }
-                        }
-                        echo 1;
-                    } else {
-                        echo 2;
-                    }
-                } else {
-                    echo 3;
-                }
-            } else {
-                echo 4;
-            }
+        if (
+            $token
+            && current_user_can('edit_published_posts')
+            && wp_verify_nonce($token, 'recently_admin_nonce')
+        ) {
+            echo $this->delete_thumbnails();
+        } else {
+            echo 4;
         }
 
         wp_die();

@@ -83,58 +83,7 @@ if ( isset($_POST['section']) ) {
 if ( $this->options['tools']['misc']['include_stylesheet'] && !file_exists( get_stylesheet_directory() . '/recently.css' ) ) {
     echo '<div id="recently-message" class="update-nag">'. __( 'Any changes made to Recently\'s default stylesheet will be lost after every plugin update. In order to prevent this from happening, please copy the recently.css file (located at wp-content/plugins/recently/style) into your theme\'s directory', 'recently' ) .'.</div>';
 }
-
-$rand = md5( uniqid(rand(), true) );
-
-if ( !$recently_rand = get_option("recently_rand") ) {
-    add_option( "recently_rand", $rand );
-} else {
-    update_option( "recently_rand", $rand );
-}
-
 ?>
-<script type="text/javascript">
-    // TOOLS
-    function confirm_clear_image_cache() {
-        if (confirm("<?php _e("This operation will delete all cached thumbnails and cannot be undone.", 'recently'); ?> \n\n" + "<?php _e("Do you want to continue?", 'recently'); ?>")) {
-            jQuery.post(
-                ajaxurl,
-                {
-                    action: 'recently_clear_thumbnail',
-                    token: '<?php echo $rand; ?>'
-                },
-                function(data){
-                    var response = "";
-
-                    switch( data ) {
-                        case "1":
-                            response = "<?php /*translators: Special characters (such as accents) must be replaced with Javascript Octal codes (eg. \341 is the Octal code for small a with acute accent) */ _e( 'Success! All files have been deleted!', 'recently' ); ?>";
-                            break;
-
-                        case "2":
-                            response = "<?php /*translators: Special characters (such as accents) must be replaced with Javascript Octal codes (eg. \341 is the Octal code for small a with acute accent) */ _e( 'The thumbnail cache is already empty!', 'recently' ); ?>";
-                            break;
-
-                        case "3":
-                            response = "<?php /*translators: Special characters (such as accents) must be replaced with Javascript Octal codes (eg. \341 is the Octal code for small a with acute accent) */ _e( 'Invalid action.', 'recently' ); ?>";
-                            break;
-
-                        case "4":
-                            response = "<?php /*translators: Special characters (such as accents) must be replaced with Javascript Octal codes (eg. \341 is the Octal code for small a with acute accent) */ _e( 'Sorry, you do not have enough permissions to do this. Please contact the site administrator for support.', 'recently' ); ?>";
-                            break;
-
-                        default:
-                            response = "<?php /*translators: Special characters (such as accents) must be replaced with Javascript Octal codes (eg. \341 is the Octal code for small a with acute accent) */ _e( 'Invalid action.', 'recently' ); ?>";
-                            break;
-                    }
-
-                    alert( response );
-                }
-            );
-        }
-    }
-</script>
-
 <nav id="recently-menu">
     <ul>
         <?php if ( current_user_can('edit_others_posts') ) : ?>

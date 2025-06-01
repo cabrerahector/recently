@@ -120,7 +120,7 @@ if ( 'tools' == $current ) {
                         <tr valign="top">
                             <th scope="row"></th>
                             <td>
-                                <input type="button" name="recently-reset-cache" id="recently-reset-cache" class="button-secondary" value="<?php _e("Empty image cache", 'recently'); ?>" onclick="confirm_clear_image_cache()" />
+                                <input type="button" name="recently-reset-cache" id="recently_reset_cache" class="button-secondary" value="<?php _e("Empty image cache", 'recently'); ?>" />
                                 <p class="description"><?php _e("Use this button to clear Recently's thumbnails cache", 'recently'); ?>.</p>
                             </td>
                         </tr>
