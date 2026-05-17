@@ -60,6 +60,7 @@ if ( 'tools' == $current ) {
                                     <img src="<?php echo esc_url($fallback_thumbnail_url); ?>" alt="" />
                                 </div>
                                 <input id="upload_thumb_button" type="button" class="button" value="<?php _e( "Upload thumbnail", 'recently' ); ?>" />
+                                <input id="reset_thumb_button" type="button" class="button" value="<?php esc_attr_e('Reset thumbnail', 'recently'); ?>">
                                 <input type="hidden" id="upload_thumb_src" name="upload_thumb_src" value="" />
                                 <p class="description"><?php _e("How-to: upload (or select) an image, set Size to Full and click on Upload", 'recently'); ?>.</p>
                             </td>

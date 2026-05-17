@@ -2,6 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     const upload_thumb_button = document.getElementById('upload_thumb_button'),
+        reset_thumb_button = document.getElementById('reset_thumb_button'),
         upload_thumb_src_field = document.getElementById('upload_thumb_src'),
         thumbnail_preview = document.getElementById('thumb-review'),
         thumb_source_dropdown = document.getElementById('thumb_source'),
@@ -28,6 +29,25 @@ document.addEventListener('DOMContentLoaded', () => {
             img.src = attachment.url;
         })
         .open();
+    });
+
+    reset_thumb_button.addEventListener('click', () => {
+        fetch(ajaxurl + '?action=recently_reset_thumbnail')
+        .then((response) => {
+            return response.text();
+        })
+        .then((thumb_url) => {
+            const img = new Image();
+            img.onload = function() {
+                thumbnail_preview.innerHTML = '';
+                thumbnail_preview.append(this);
+            }
+            img.src = thumb_url;
+            upload_thumb_src_field.value = thumb_url;
+        })
+        .catch(() => {
+            // handle the error
+        });
     });
 
     /** thumbnail source dropdown */

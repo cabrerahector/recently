@@ -77,6 +77,8 @@ class Admin {
         // Flush cached thumbnail on featured image change/deletion
         add_action('updated_post_meta', [$this, 'updated_post_meta'], 10, 4);
         add_action('deleted_post_meta', [$this, 'deleted_post_meta'], 10, 4);
+        // Reset plugin's default thumbnail
+        add_action('wp_ajax_recently_reset_thumbnail', [$this, 'get_default_thumbnail']);
     }
 
     /**
@@ -290,6 +292,17 @@ class Admin {
         }
 
         return $links;
+    }
+
+    /**
+     * Returns Recently's default thumbnail.
+     *
+     * @since 4.2.1
+     */
+    public function get_default_thumbnail()
+    {
+        echo esc_url(plugins_url('assets/images/no_thumb.jpg', dirname(__FILE__, 2)));
+        wp_die();
     }
 
     /**
