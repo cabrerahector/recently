@@ -116,6 +116,22 @@ class Image {
             return '';
         }
 
+        // Let's make sure that the image source is a known one
+        if (
+            ! in_array(
+                $source,
+                ['featured', 'first_image', 'first_attachment', 'custom_field']
+            )
+        ) {
+            $source = 'featured';
+        }
+
+        // Let's make sure that we're getting integer values here
+        $size = array_map('absint', $size);
+        $size = array_map(function($dimension) {
+            return $dimension <= 0 ? 75 : $dimension;
+        }, $size);
+
         $alt = '';
         $classes = ['recently-thumbnail', 'recently_' . $source];
         $filename = $post_id . '-' . $source . '-' . $size[0] . 'x' . $size[1];
