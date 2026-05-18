@@ -85,6 +85,16 @@ The FAQ section has been moved [here](https://github.com/cabrerahector/recently/
 
 == Changelog ==
 
+= 4.2.1 =
+
+**If you're updating from a previous version please clear your Recently posts thumbnails cache via WP Dashboard > Settings > Recently > Tools > Thumbnails > Empty image cache button.**
+
+- Improves security around image generation.
+- Adds button to easily reset the default thumbnail.
+- Minor fixes improvements.
+
+[Release notes](https://cabrerahector.com/wordpress/recently-4-2-better-compat-with-site-optimization-plugins-general-maintenance-updates#4.2.1).
+
 = 4.2.0 =
 
 **If you're using a page caching plugin it's highly recommended to clear its cache after upgrading to this version.**
