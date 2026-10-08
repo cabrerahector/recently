@@ -207,7 +207,7 @@ class Admin {
         $this->screen_hook_suffix = add_options_page(
             'Recently',
             'Recently',
-            'edit_published_posts',
+            'manage_options',
             'recently',
             array($this, 'display_plugin_admin_page')
         );
@@ -317,7 +317,7 @@ class Admin {
 
         if (
             $token
-            && current_user_can('edit_published_posts')
+            && current_user_can('manage_options')
             && wp_verify_nonce($token, 'recently_admin_nonce')
         ) {
             echo $this->delete_thumbnails();
