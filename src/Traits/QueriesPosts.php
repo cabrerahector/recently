@@ -50,6 +50,7 @@ trait QueriesPosts
         $args = apply_filters('recently_pre_get_posts', $params['args'], $params['widget_id']);
         $args['lang'] = $this->translate->get_default_language();
         $args = apply_filters('recently_query_args', $args);
+        $args['has_password'] = false; // Exclude password-protected posts
 
         return new \WP_Query($args);
     }
