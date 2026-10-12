@@ -3,7 +3,7 @@ Contributors: hcabrera
 Donate link: https://ko-fi.com/cabrerahector
 Tags: recent, posts, widget, recently
 Requires at least: 5.7
-Tested up to: 7.0
+Tested up to: 7.1.3
 Requires PHP: 7.2
 Stable tag: 4.2.2
 License: GPLv2 or later
