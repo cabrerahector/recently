@@ -1,4 +1,4 @@
-import { escape_html, unescape_html } from '../utils';
+import { strip_html } from '../utils';
 
 const { serverSideRender: ServerSideRender } = wp;
 const { Component, Fragment } = wp.element;
@@ -145,7 +145,7 @@ export class RecentlyWidgetBlockEdit extends Component
 
         function onTitleChange(value)
         {
-            value = escape_html(unescape_html(value));
+            value = strip_html(value);
             setAttributes({ title: value });
         }
 
