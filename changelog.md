@@ -1,6 +1,14 @@
 Changelog
 =========
 
+## 4.2.2 ##
+
+- Password-protected posts are now automatically excluded from the recent posts list (props to Raymond Moul!)
+- Recently's settings page is now restricted to administrators only.
+- Minor fixes and improvements.
+
+[Release notes](https://cabrerahector.com/wordpress/recently-4-2-better-compat-with-site-optimization-plugins-general-maintenance-updates#4.2.2).
+
 ## 4.2.1 ##
 
 **If you're updating from a previous version please clear your Recently posts thumbnails cache via WP Dashboard > Settings > Recently > Tools > Thumbnails > Empty image cache button.**
